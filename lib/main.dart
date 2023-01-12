@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:timetable_app/Screens/Splashscreen.dart';
+import 'Constants/primary_color.dart';
 
-import 'HomePage/ExamScreen.dart';
-import 'HomePage/ProfileScreen.dart';
-import 'HomePage/homeScreen.dart';
+import 'Pages/ExamScreen.dart';
+import 'Pages/ProfileScreen.dart';
+import 'Pages/homeScreen.dart';
 
 
 void main(){
@@ -15,12 +16,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
 
       home: SplashScreen(),
 
           // home: homeScreen(),
       theme: ThemeData(
-          primaryColor: Color(0XFF1C8E77),
+          primaryColor: Color(primaryColorCode),
           backgroundColor: Colors.white
       ),
 

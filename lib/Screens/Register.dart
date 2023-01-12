@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timetable_app/HomePage/homeScreen.dart';
+import 'package:timetable_app/Pages/homeScreen.dart';
 import 'package:timetable_app/Login.dart';
 
 

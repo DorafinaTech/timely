@@ -12,7 +12,7 @@ class homeScreen extends StatelessWidget {
       appBar: AppBar(
         actions: [
           PopupMenuButton<int>(
-            padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+            padding: EdgeInsets.only(right: 200,),
             color: Color(0xFFEEFCF9),
             position: PopupMenuPosition.over,
             child: Icon(
@@ -92,22 +92,23 @@ class homeScreen extends StatelessWidget {
             ListTile(
               leading: ClipOval(
                 child: CircleAvatar(
+                  radius: 50.0,
                   backgroundColor: Colors.transparent,
                   child: Image.asset(
                     'assets/images/thessC.png',
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
               title: Text(
                 'Hey, Thessy!',
-                style: TextStyle(fontFamily: 'Satohi', fontSize: 15),
+                style: TextStyle(fontFamily: 'Satohi', fontSize: 16),
               ),
               subtitle: Text(
                 'lets get things Scheduled, shall we?',
                 style: TextStyle(
                   fontFamily: 'Satoshi',
-                  fontSize: 12,
+                  fontSize: 14,
                 ),
               ),
               tileColor: Colors.transparent,
@@ -117,7 +118,7 @@ class homeScreen extends StatelessWidget {
               margin: EdgeInsets.all(15),
               decoration: BoxDecoration(
                 color: Color(0xFFEEFCF9),
-                borderRadius: BorderRadius.circular(40),
+                borderRadius: BorderRadius.circular(20),
               ),
               child: ListTile(
                 trailing: Icon(
@@ -131,13 +132,13 @@ class homeScreen extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
-                    fontSize: 15,
+                    fontSize: 16,
                     fontFamily: 'Satoshi',
                   ),
                 ),
                 subtitle: Text(
                   'Thursady 5th January 2023',
-                  style: TextStyle(color: Colors.black54, fontSize: 12),
+                  style: TextStyle(color: Colors.black54, fontSize: 14),
                 ),
               ),
             ),
@@ -146,7 +147,7 @@ class homeScreen extends StatelessWidget {
               margin: EdgeInsets.all(15),
               decoration: BoxDecoration(
                 color: Color(0xFFFFEBEB),
-                borderRadius: BorderRadius.circular(40),
+                borderRadius: BorderRadius.circular(20),
               ),
               child: ListTile(
                 trailing: Icon(
@@ -159,13 +160,13 @@ class homeScreen extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
-                    fontSize: 15,
+                    fontSize: 16,
                     fontFamily: 'Satoshi',
                   ),
                 ),
                 subtitle: Text(
                   'Scheduled set for the week',
-                  style: TextStyle(color: Colors.black54, fontSize: 12),
+                  style: TextStyle(color: Colors.black54, fontSize: 14),
                 ),
               ),
             ),
@@ -174,7 +175,7 @@ class homeScreen extends StatelessWidget {
               margin: EdgeInsets.all(15),
               decoration: BoxDecoration(
                 color: Color(0xFFEEFCF9),
-                borderRadius: BorderRadius.circular(40),
+                borderRadius: BorderRadius.circular(20),
               ),
               child: ListTile(
                 trailing: Icon(
@@ -187,13 +188,13 @@ class homeScreen extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
-                    fontSize: 15,
+                    fontSize: 16,
                     fontFamily: 'Satoshi',
                   ),
                 ),
                 subtitle: Text(
                   'Save your thoughts',
-                  style: TextStyle(color: Colors.black54, fontSize: 12),
+                  style: TextStyle(color: Colors.black54, fontSize: 14),
                 ),
               ),
             ),

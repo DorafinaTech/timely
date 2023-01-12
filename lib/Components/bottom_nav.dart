@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:timetable_app/HomePage/ExamScreen.dart';
-import 'package:timetable_app/HomePage/ProfileScreen.dart';
-import 'package:timetable_app/HomePage/ReadingScreen.dart';
-import 'package:timetable_app/HomePage/homeScreen.dart';
+import 'package:timetable_app/Pages/ExamScreen.dart';
+import 'package:timetable_app/Pages/ProfileScreen.dart';
+import 'package:timetable_app/Pages/ReadingScreen.dart';
+import 'package:timetable_app/Pages/homeScreen.dart';
 
-import '../HomePage/TestScreen.dart';
+import '../Pages/TestScreen.dart';
 
 
 class BottomNav extends StatefulWidget {

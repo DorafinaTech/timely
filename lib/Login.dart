@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Components/bottom_nav.dart';
-import 'HomePage/homeScreen.dart';
+import 'Pages/homeScreen.dart';
 import 'Screens/Register.dart';
 
 class Login extends StatefulWidget {
