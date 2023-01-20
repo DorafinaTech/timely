@@ -2,6 +2,9 @@
 //
 import 'package:flutter/material.dart';
 import 'package:timetable_app/Components/bottom_nav.dart';
+import 'package:timetable_app/Components/popup_menu _buttons.dart';
+import 'package:timetable_app/Constants/menu_padding.dart';
+import 'package:timetable_app/FloatingActionButton/my_floating_modal_button.dart';
 
 class homeScreen extends StatelessWidget {
   const homeScreen({Key? key}) : super(key: key);
@@ -11,69 +14,16 @@ class homeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          PopupMenuButton<int>(
-            padding: EdgeInsets.only(right: 200,),
-            color: Color(0xFFEEFCF9),
-            position: PopupMenuPosition.over,
-            child: Icon(
-              Icons.menu,
-              color: Colors.black,
-            ),
-            offset: Offset(0, 0),
-            itemBuilder: (context) => [
-              // popupmenu item 1
-              PopupMenuItem(
-                padding: EdgeInsets.all(10.5),
-                value: 1,
-                // row has two child icon and text.
-                child: Row(
-                  children: [
-                    Icon(Icons.calendar_today,
-                        color: Theme.of(context).primaryColor),
-                    SizedBox(
-                      // sized box with width 10
-                      width: 10,
-                    ),
-                    Text("Calender")
-                  ],
-                ),
+          Row(
+            children: [
+              MenuButton(
+                mypopupcolor: Colors.black,
               ),
-              // popupmenu item 2
-              PopupMenuItem(
-                padding: EdgeInsets.all(10.5),
-                value: 2,
-                // row has two child icon and text
-                child: Row(
-                  children: [
-                    Icon(Icons.sticky_note_2,
-                        color: Theme.of(context).primaryColor),
-                    SizedBox(
-                      // sized box with width 10
-                      width: 10,
-                    ),
-                    Text("Notes")
-                  ],
-                ),
-              ),
-              PopupMenuItem(
-                padding: EdgeInsets.all(10.5),
-                value: 2,
-                // row has two child icon and text
-                child: Row(
-                  children: [
-                    Icon(Icons.tag_faces,
-                        color: Theme.of(context).primaryColor),
-                    SizedBox(
-                      // sized box with width 10
-                      width: 10,
-                    ),
-                    Text("About")
-                  ],
-                ),
-              ),
+              Container(
+                width: menuPadding,
+              )
             ],
-            elevation: 2,
-          ),
+          )
         ],
         backgroundColor: Colors.white,
         foregroundColor: Colors.white,
@@ -82,7 +32,16 @@ class homeScreen extends StatelessWidget {
       // bottomNavigationBar: BottomNav(),
       floatingActionButton: FloatingActionButton(
         mini: true,
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+            backgroundColor: Colors.transparent,
+            // barrierColor: Colors.black,
+            elevation: 20,
+              context: context,
+              builder:  (context) => MyFloatingModalBotton(
+              ));
+
+        },
         backgroundColor: Theme.of(context).primaryColor,
         child: Icon(Icons.add),
       ),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:time_planner/time_planner.dart';
 import 'package:timetable_app/Components/bottom_nav.dart';
 
+import '../Components/popup_menu _buttons.dart';
+import '../Constants/menu_padding.dart';
 
 class TestScreen extends StatelessWidget {
   const TestScreen({Key? key}) : super(key: key);
@@ -9,6 +11,35 @@ class TestScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // bottomNavigationBar: BottomNav(),
+      floatingActionButton: FloatingActionButton(
+        mini: true,
+        onPressed: () {},
+        backgroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Colors.white,
+        child: Icon(Icons.add),
+      ),
+      appBar: AppBar(
+        title: Center(
+          child: Text('Week view',
+              style: TextStyle(
+                  fontFamily: 'Satoshi',
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500)),
+        ),
+        backgroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Colors.white,
+        actions: [
+          Row(children: [
+            MenuButton(mypopupcolor: Colors.white,),
+            Container(
+              width: menuPadding,
+            )
+          ]),
+        ],
+        elevation: 0,
+      ),
+
       body: TimePlanner(
         startHour: 6,
         endHour: 23,
@@ -20,87 +51,31 @@ class TestScreen extends StatelessWidget {
         headers: const [
           TimePlannerTitle(
             date: "3/10/2021",
-            title: "sunday",
+            title: "Sunday",
           ),
           TimePlannerTitle(
             date: "3/11/2021",
-            title: "TimePlannerTitle(Monday",
+            title: "Monday",
           ),
           TimePlannerTitle(
             date: "3/12/2021",
-            title: "tuesday",
+            title: "Tuesday",
           ),
           TimePlannerTitle(
             date: "3/13/2021",
-            title: "wednesday",
-          ),
-          TimePlannerTitle(
-            date: "3/14/2021",
-            title: "thursday",
-          ),
-          TimePlannerTitle(
-            date: "3/15/2021",
-            title: "friday",
-          ),
-          TimePlannerTitle(
-            date: "3/16/2021",
-            title: "saturday",
-          ),
-          TimePlannerTitle(
-            date: "3/17/2021",
-            title: "sunday",
-          ),
-          TimePlannerTitle(
-            date: "3/18/2021",
-            title: "monday",
-          ),
-          TimePlannerTitle(
-            date: "3/19/2021",
-            title: "tuesday",
-          ),
-          TimePlannerTitle(
-            date: "3/20/2021",
             title: "Wednesday",
           ),
           TimePlannerTitle(
-            date: "3/21/2021",
-            title: "thursday",
+            date: "3/14/2021",
+            title: "Thursday",
           ),
           TimePlannerTitle(
-            date: "3/22/2021",
-            title: "friday",
+            date: "3/15/2021",
+            title: "Friday",
           ),
           TimePlannerTitle(
-            date: "3/23/2021",
-            title: "saturday",
-          ),
-          TimePlannerTitle(
-            date: "3/24/2021",
-            title: "tuesday",
-          ),
-          TimePlannerTitle(
-            date: "3/25/2021",
-            title: "wednesday",
-          ),
-          TimePlannerTitle(
-            date: "3/26/2021",
-            title: "thursday",
-          ),
-          TimePlannerTitle(
-            date: "3/27/2021",
-            title: "friday",
-          ),
-          TimePlannerTitle(
-            date: "3/28/2021",
-            title: "saturday",
-          ),
-          TimePlannerTitle(
-            date: "3/29/2021",
-            title: "friday",
-          ),
-          TimePlannerTitle(
-            date: "3/30/2021",
-            title: "saturday",
+            date: "3/16/2021",
+            title: "Saturday",
           ),
         ],
         tasks: [],

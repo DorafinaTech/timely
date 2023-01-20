@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:timetable_app/Components/bottom_nav.dart';
 import 'package:timetable_app/Login.dart';
+import 'package:timetable_app/Constants/menu_padding.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -28,7 +29,7 @@ class ProfileScreen extends StatelessWidget {
                 position: PopupMenuPosition.over,
                 child: Icon(
                   Icons.menu,
-                  color: Colors.black,
+                  color: Colors.black
                 ),
                 offset: Offset(0, 0),
                 itemBuilder: (context) => [
@@ -78,15 +79,16 @@ class ProfileScreen extends StatelessWidget {
                           // sized box with width 10
                           width: 10,
                         ),
-                        Text("About")
+                        Text("About"),
                       ],
                     ),
                   ),
+
                 ],
                 elevation: 2,
               ),
               Container(
-                width: 50,
+                width: menuPadding,
               )
             ]
           ),
