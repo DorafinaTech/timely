@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:time_planner/time_planner.dart';
-import 'package:timetable_app/Components/bottom_nav.dart';
 import 'package:timetable_app/Components/popup_menu _buttons.dart';
+import 'package:timetable_app/FloatingActionButton/my_floating_modal_button.dart';
+import 'package:timetable_app/Pages/add_exams_screen.dart';
 
 import '../Constants/menu_padding.dart';
-
 
 class ExamScreen extends StatelessWidget {
   const ExamScreen({Key? key}) : super(key: key);
@@ -13,9 +13,14 @@ class ExamScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // bottomNavigationBar: BottomNav(),
-      floatingActionButton:FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         mini: true,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddExamScreen()),
+          );
+        },
         backgroundColor: Theme.of(context).primaryColor,
         child: Icon(Icons.add),
       ),
@@ -23,16 +28,14 @@ class ExamScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.white,
         actions: [
-          Row(
-              children:[
-                MenuButton(mypopupcolor: Colors.white,
-                ),
-                Container(
-                  width: menuPadding,
-                )
-              ]
-          ),
-
+          Row(children: [
+            MenuButton(
+              mypopupcolor: Colors.white,
+            ),
+            Container(
+              width: menuPadding,
+            )
+          ]),
         ],
         elevation: 0,
       ),

@@ -84,10 +84,20 @@ class About extends StatelessWidget {
                     fontSize: 16),
               ),
               ListTile(
+                contentPadding: EdgeInsets.symmetric(vertical: 4, horizontal: 20),
+                leading:Container(
+                  padding: EdgeInsets.all(8.0),
+                  child: Image.asset(
+                    'svgs/fb.png',
+                    height: 20,
+                    width: 20,
               )
 
-            ],
+
+                )
           ),
+    ]
+          )
         ));
   }
 }

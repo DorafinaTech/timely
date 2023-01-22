@@ -159,7 +159,6 @@ class ProfileScreen extends StatelessWidget {
               Container(height: 15),
               ListTile(
                 dense: true,
-
                 contentPadding: EdgeInsets.symmetric(vertical: 4, horizontal: 20),
                 leading:Container(
                   margin: EdgeInsets.zero,

@@ -29,22 +29,6 @@ class homeScreen extends StatelessWidget {
         foregroundColor: Colors.white,
         elevation: 0,
       ),
-      // bottomNavigationBar: BottomNav(),
-      floatingActionButton: FloatingActionButton(
-        mini: true,
-        onPressed: () {
-          showModalBottomSheet(
-            backgroundColor: Colors.transparent,
-            // barrierColor: Colors.black,
-            elevation: 20,
-              context: context,
-              builder:  (context) => MyFloatingModalBotton(
-              ));
-
-        },
-        backgroundColor: Theme.of(context).primaryColor,
-        child: Icon(Icons.add),
-      ),
       body: SafeArea(
         child: Expanded(
           child: ListView(children: [
