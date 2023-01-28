@@ -3,6 +3,8 @@ import 'package:timetable_app/Components/bottom_nav.dart';
 import 'package:timetable_app/Login.dart';
 import 'package:timetable_app/Constants/menu_padding.dart';
 
+import 'Edit page.dart';
+
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
 
@@ -137,7 +139,14 @@ class ProfileScreen extends StatelessWidget {
                   left: 84,
                 ),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (Context)=> EditPage(),
+                    ),
+                    );
+                  },
                   child: Text('Edit Profile'),
                   style: ElevatedButton.styleFrom(
                     shape: const RoundedRectangleBorder(

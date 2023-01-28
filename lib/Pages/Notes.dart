@@ -9,7 +9,7 @@ class Notes extends StatelessWidget {
       appBar: AppBar(
         title: Center(
           child: Text(
-            'Profile',
+            'Notes',
             style: TextStyle(
                 color: Colors.black54,
                 fontFamily: 'Satoshi',
