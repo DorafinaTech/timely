@@ -41,6 +41,7 @@ class CalenderScreen extends StatelessWidget {
           child: Column(
             children: [
               TableCalendar(
+                availableCalendarFormats: const {CalendarFormat.month : 'Month',},
                 calendarStyle: CalendarStyle(),
                 weekNumbersVisible: false,
                 headerVisible: true,
