@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:timetable_app/Components/bottom_nav.dart';
-import 'package:timetable_app/Login.dart';
-import 'package:timetable_app/Constants/menu_padding.dart';
-import 'package:timetable_app/Pages/Notes.dart';
+import 'package:timely/login.dart';
+import 'package:timely/constants/menu_padding.dart';
+import 'package:timely/pages/notes.dart';
 
-import 'Edit page.dart';
+import 'edit_page.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -13,7 +12,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
+        title: const Center(
           child: Text(
             'Profile',
             style: TextStyle(
@@ -26,66 +25,66 @@ class ProfileScreen extends StatelessWidget {
         actions: [
           Row(children: [
             PopupMenuButton<int>(
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                 right: 100,
               ),
-              color: Color(0xFFEEFCF9),
+              color: const Color(0xFFEEFCF9),
               position: PopupMenuPosition.over,
-              child: Icon(Icons.menu, color: Colors.black),
-              offset: Offset(0, 0),
+              offset: const Offset(0, 0),
               itemBuilder: (context) => [
                 // popupmenu item 1
                 PopupMenuItem(
-                  padding: EdgeInsets.all(10.5),
+                  padding: const EdgeInsets.all(10.5),
                   value: 1,
                   // row has two child icon and text.
                   child: Row(
                     children: [
                       Icon(Icons.calendar_today,
                           color: Theme.of(context).primaryColor),
-                      SizedBox(
+                      const SizedBox(
                         // sized box with width 10
                         width: 10,
                       ),
-                      Text("Calender")
+                      const Text("Calender")
                     ],
                   ),
                 ),
                 // popupmenu item 2
                 PopupMenuItem(
-                  padding: EdgeInsets.all(10.5),
+                  padding: const EdgeInsets.all(10.5),
                   value: 2,
                   // row has two child icon and text
                   child: Row(
                     children: [
                       Icon(Icons.sticky_note_2,
                           color: Theme.of(context).primaryColor),
-                      SizedBox(
+                      const SizedBox(
                         // sized box with width 10
                         width: 10,
                       ),
-                      Text("Notes")
+                      const Text("Notes")
                     ],
                   ),
                 ),
                 PopupMenuItem(
-                  padding: EdgeInsets.all(10.5),
+                  padding: const EdgeInsets.all(10.5),
                   value: 2,
                   // row has two child icon and text
                   child: Row(
                     children: [
                       Icon(Icons.tag_faces,
                           color: Theme.of(context).primaryColor),
-                      SizedBox(
+                      const SizedBox(
                         // sized box with width 10
                         width: 10,
                       ),
-                      Text("About"),
+                      const Text("About"),
                     ],
                   ),
                 ),
               ],
               elevation: 2,
+              child: const Icon(Icons.menu, color: Colors.black),
             ),
             Container(
               width: menuPadding,
@@ -101,7 +100,7 @@ class ProfileScreen extends StatelessWidget {
         mini: true,
         onPressed: () {},
         backgroundColor: Theme.of(context).primaryColor,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -118,12 +117,12 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Text(
+              const Text(
                 'Thessy Emmanuel',
                 style: TextStyle(
                     fontFamily: 'Satoshi', fontSize: 16, color: Colors.black),
               ),
-              Text(
+              const Text(
                 'thessyzilla@gmail.com',
                 style: TextStyle(
                     fontFamily: 'Satoshi', fontSize: 16, color: Colors.black54),
@@ -140,11 +139,10 @@ class ProfileScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (Context) => EditPage(),
+                        builder: (context) => const EditPage(),
                       ),
                     );
                   },
-                  child: Text('Edit Profile'),
                   style: ElevatedButton.styleFrom(
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(
@@ -153,71 +151,72 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    maximumSize: Size(double.infinity, 100),
-                    backgroundColor: Color(0XFF1C8E77),
+                    maximumSize: const Size(double.infinity, 100),
+                    backgroundColor: const Color(0XFF1C8E77),
                   ),
+                  child: const Text('Edit Profile'),
                 ),
               ),
               Container(height: 30),
-              Divider(
+              const Divider(
                 color: Color(0xFF000000),
               ),
               Container(height: 15),
               ListTile(
                 dense: true,
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 4, horizontal: 20),
+                    const EdgeInsets.symmetric(vertical: 4, horizontal: 20),
                 leading: Container(
                   margin: EdgeInsets.zero,
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Image.asset(
                     'svgs/Alarm.png',
                     // height: 20,width: 20,),
                   ),
                 ),
-                title: Text(
+                title: const Text(
                   'Activities',
                   style: TextStyle(color: Colors.black, fontSize: 16),
                 ),
               ),
               ListTile(
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 4, horizontal: 20),
+                    const EdgeInsets.symmetric(vertical: 4, horizontal: 20),
                 leading: Container(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Image.asset(
                     'svgs/Note.png',
                     height: 20,
                     width: 20,
                   ),
                 ),
-                title: Text(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Notes(),
+                    ),
+                  );
+                },
+                title: const Text(
                   'Notes',
                   style: TextStyle(
                     color: Colors.black,
                   ),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Notes(),
-                      ),
-                    );
-                  },
                 ),
               ),
               ListTile(
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 4, horizontal: 20),
+                    const EdgeInsets.symmetric(vertical: 4, horizontal: 20),
                 leading: Container(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Image.asset(
                     'svgs/Rate.png',
                     height: 20,
                     width: 20,
                   ),
                 ),
-                title: Text(
+                title: const Text(
                   'Rate',
                   style: TextStyle(
                     color: Colors.black,
@@ -226,16 +225,16 @@ class ProfileScreen extends StatelessWidget {
               ),
               ListTile(
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 4, horizontal: 20),
+                    const EdgeInsets.symmetric(vertical: 4, horizontal: 20),
                 leading: Container(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Image.asset(
                     'svgs/Share.png',
                     height: 20,
                     width: 20,
                   ),
                 ),
-                title: Text(
+                title: const Text(
                   'Share',
                   style: TextStyle(
                     color: Colors.black,
@@ -245,16 +244,16 @@ class ProfileScreen extends StatelessWidget {
               TextButton(
                 child: ListTile(
                   contentPadding:
-                      EdgeInsets.symmetric(vertical: 4, horizontal: 20),
+                      const EdgeInsets.symmetric(vertical: 4, horizontal: 20),
                   leading: Container(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Image.asset(
                       'svgs/Logout.png',
                       height: 20,
                       width: 20,
                     ),
                   ),
-                  title: Text(
+                  title: const Text(
                     'Logout',
                     style: TextStyle(
                       color: Colors.black,
@@ -264,7 +263,7 @@ class ProfileScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Login()),
+                    MaterialPageRoute(builder: (context) => const Login()),
                   );
                 },
               )

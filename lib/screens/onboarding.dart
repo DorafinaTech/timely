@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:timely/Login.dart';
+import 'package:timely/login.dart';
 
-import 'Register.dart';
+import 'register.dart';
 
 class Onboarding extends StatelessWidget {
-  Onboarding({Key? key}) : super(key: key);
+  const Onboarding({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class Onboarding extends StatelessWidget {
             Container(
               width: double.infinity,
               height: 50,
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                 top: 16,
                 bottom: 16,
                 left: 24,
@@ -48,15 +48,15 @@ class Onboarding extends StatelessWidget {
                       ),
                     ),
                   ),
-                  maximumSize: Size(double.infinity, 100),
+                  maximumSize: const Size(double.infinity, 100),
                   backgroundColor: Colors.teal,
                   side: const BorderSide(
                     color: Colors.teal,
                   ),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Login()));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => const Login()));
                 },
                 child: const Text(
                   'Log In',
@@ -79,16 +79,10 @@ class Onboarding extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Register(),
+                      builder: (context) => const Register(),
                     ),
                   );
                 },
-                child: const Text(
-                  'Register',
-                  style: TextStyle(
-                    color: Colors.teal,
-                  ),
-                ),
                 style: ElevatedButton.styleFrom(
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(
@@ -97,9 +91,15 @@ class Onboarding extends StatelessWidget {
                       ),
                     ),
                   ),
-                  maximumSize: Size(double.infinity, 100),
+                  maximumSize: const Size(double.infinity, 100),
                   backgroundColor: Colors.white,
                   side: const BorderSide(
+                    color: Colors.teal,
+                  ),
+                ),
+                child: const Text(
+                  'Register',
+                  style: TextStyle(
                     color: Colors.teal,
                   ),
                 ),

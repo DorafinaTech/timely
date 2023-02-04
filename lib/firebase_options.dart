@@ -63,7 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '262396420415',
     projectId: 'timely-ca8ad',
     storageBucket: 'timely-ca8ad.appspot.com',
-    iosClientId: '262396420415-aco5m5h6gs02272jnu98gs53rnt8nirh.apps.googleusercontent.com',
+    iosClientId:
+        '262396420415-aco5m5h6gs02272jnu98gs53rnt8nirh.apps.googleusercontent.com',
     iosBundleId: 'com.example.timetableApp',
   );
 }

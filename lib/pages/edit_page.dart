@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:timetable_app/Components/bottom_nav.dart';
-import 'package:timetable_app/Components/popup_menu%20_buttons.dart';
-import 'package:timetable_app/Constants/menu_padding.dart';
-import 'package:timetable_app/Pages/homeScreen.dart';
-
-import '../Components/bottom navigation.dart';
+import 'package:timely/components/bottom_nav.dart';
+import 'package:timely/components/popup_menu_buttons.dart';
+import 'package:timely/constants/menu_padding.dart';
+import 'package:timely/pages/home_screen.dart';
 
 class EditPage extends StatelessWidget {
   const EditPage({Key? key}) : super(key: key);
@@ -12,11 +10,11 @@ class EditPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNav(),
+      bottomNavigationBar: const BottomNav(),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.white,
-        title: Center(
+        title: const Center(
           child: Text(
             'Edit Profile',
             style: TextStyle(
@@ -29,7 +27,7 @@ class EditPage extends StatelessWidget {
         actions: [
           Row(
             children: [
-              MenuButton(
+              const MenuButton(
                 mypopupcolor: Colors.black,
               ),
               Container(
@@ -85,60 +83,60 @@ class EditPage extends StatelessWidget {
           //   ),
           // ),
           Container(
-            color: Color(0xFFF6FDFC),
-            margin: EdgeInsets.all(8.0),
+            color: const Color(0xFFF6FDFC),
+            margin: const EdgeInsets.all(8.0),
             child: TextField(
               decoration: InputDecoration(
                   // labelText: 'Name',
-                  labelStyle: TextStyle(
+                  labelStyle: const TextStyle(
                       fontSize: 16,
                       fontFamily: 'Satoshi',
                       color: Colors.black54),
                   hintText: "Thessy Emmanuel",
-                  hintStyle: TextStyle(color: Colors.black54),
+                  hintStyle: const TextStyle(color: Colors.black54),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                           color: Colors.transparent,
                           width: 1.5,
                           style: BorderStyle.solid))),
             ),
           ),
           Container(
-            color: Color(0xFFF6FDFC),
-            margin: EdgeInsets.all(8.0),
+            color: const Color(0xFFF6FDFC),
+            margin: const EdgeInsets.all(8.0),
             child: TextField(
               decoration: InputDecoration(
                   // labelText: 'Name',
-                  labelStyle: TextStyle(
+                  labelStyle: const TextStyle(
                       fontSize: 16,
                       fontFamily: 'Satoshi',
                       color: Colors.black54),
                   hintText: "Email Address",
-                  hintStyle: TextStyle(color: Colors.black54),
+                  hintStyle: const TextStyle(color: Colors.black54),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                           color: Colors.transparent,
                           width: 1.5,
                           style: BorderStyle.solid))),
             ),
           ),
           Container(
-            color: Color(0xFFF6FDFC),
-            margin: EdgeInsets.all(8.0),
+            color: const Color(0xFFF6FDFC),
+            margin: const EdgeInsets.all(8.0),
             child: TextField(
               decoration: InputDecoration(
                   // labelText: 'Name',
-                  labelStyle: TextStyle(
+                  labelStyle: const TextStyle(
                       fontSize: 16,
                       fontFamily: 'Satoshi',
                       color: Colors.black54),
                   hintText: "Phone Number",
-                  hintStyle: TextStyle(color: Colors.black54),
+                  hintStyle: const TextStyle(color: Colors.black54),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                           color: Colors.transparent,
                           width: 1.5,
                           style: BorderStyle.solid))),
@@ -147,24 +145,16 @@ class EditPage extends StatelessWidget {
           Container(
             width: double.infinity,
             height: 50,
-            margin: EdgeInsets.all(8.0),
+            margin: const EdgeInsets.all(8.0),
             child: ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => homeScreen(),
+                    builder: (context) => const HomeScreen(),
                   ),
                 );
               },
-              child: Text(
-                'Save',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
               style: OutlinedButton.styleFrom(
                 shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(
@@ -173,10 +163,18 @@ class EditPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                maximumSize: Size(double.infinity, 100),
+                maximumSize: const Size(double.infinity, 100),
                 backgroundColor: Colors.teal,
                 side: const BorderSide(
                   color: Colors.teal,
+                ),
+              ),
+              child: const Text(
+                'Save',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),

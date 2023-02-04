@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:timetable_app/Pages/Notes.dart';
-
-import '../Components/bottom navigation.dart';
 
 class FloatingButtonForNote extends StatefulWidget {
   const FloatingButtonForNote({Key? key}) : super(key: key);
@@ -13,8 +10,6 @@ class FloatingButtonForNote extends StatefulWidget {
 class _FloatingButtonForNoteState extends State<FloatingButtonForNote> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-
-    );
+    return const Scaffold();
   }
 }

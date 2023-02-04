@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:timely/Components/bottom_nav.dart';
-import '../Components/bottom navigation.dart';
-import '../Components/popup_menu _buttons.dart';
-import '../Constants/menu_padding.dart';
+import '../components/bottom_navigation.dart';
+import '../components/popup_menu_buttons.dart';
+import '../constants/menu_padding.dart';
 
 class About extends StatelessWidget {
   const About({Key? key}) : super(key: key);
@@ -10,18 +9,18 @@ class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigation(),
+      bottomNavigationBar: const BottomNavigation(),
 
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.white,
-        title: Text(
+        title: const Text(
           'About',
         ),
         actions: [
           Row(
             children: [
-              MenuButton(
+              const MenuButton(
                 mypopupcolor: Colors.white,
               ),
               Container(
@@ -42,13 +41,13 @@ class About extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                 top: 20,
                 left: 20,
                 right: 20,
                 bottom: 0,
               ),
-              child: Text(
+              child: const Text(
                 'This app is developed solely for Students to help them managed their School Activities',
                 style: TextStyle(
                     color: Color(0xFF808080),
@@ -57,7 +56,7 @@ class About extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(left: 16, top: 16),
+              margin: const EdgeInsets.only(left: 16, top: 16),
               child: Text(
                 'Developer info',
                 style: TextStyle(
@@ -68,8 +67,8 @@ class About extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(left: 16, top: 16),
-              child: Text(
+              margin: const EdgeInsets.only(left: 16, top: 16),
+              child: const Text(
                 'Thessy Emmanuel',
                 style: TextStyle(
                     color: Color(0xFF808080),
@@ -78,8 +77,8 @@ class About extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(left: 16, top: 16),
-              child: Text(
+              margin: const EdgeInsets.only(left: 16, top: 16),
+              child: const Text(
                 'thessyzilla@gmail.com',
                 style: TextStyle(
                     color: Color(0xFF808080),
@@ -88,7 +87,7 @@ class About extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                 top: 16,
                 left: 20,
                 bottom: 10,
@@ -102,52 +101,48 @@ class About extends StatelessWidget {
                     fontFamily: 'Satoshi'),
               ),
             ),
+            Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+              Container(
+                padding: const EdgeInsets.only(
+                  top: 20,
+                  left: 20,
+                  bottom: 16,
+                ),
+                child: Image.asset(
+                  'svgs/fb.png',
+                  height: 20,
+                  width: 20,
+                ),
+              ),
+              const Text(
+                'Thessy Emmanuel',
+                style: TextStyle(
+                    fontFamily: 'Satoshi',
+                    fontSize: 16,
+                    color: Color((0xFF808080))),
+              ),
+            ]),
+            Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+              Container(
+                padding: const EdgeInsets.only(
+                  left: 20,
+                ),
+                child: Image.asset(
+                  'svgs/twit.png',
+                  height: 20,
+                  width: 20,
+                ),
+              ),
+              const Text(
+                'ThessB',
+                style: TextStyle(
+                    fontFamily: 'Satoshi',
+                    fontSize: 16,
+                    color: Color((0xFF808080))),
+              ),
+            ]),
             Container(
-              child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                Container(
-                  padding: EdgeInsets.only(
-                    top: 20,
-                    left: 20,
-                    bottom: 16,
-                  ),
-                  child: Image.asset(
-                    'svgs/fb.png',
-                    height: 20,
-                    width: 20,
-                  ),
-                ),
-                Text(
-                  'Thessy Emmanuel',
-                  style: TextStyle(
-                      fontFamily: 'Satoshi',
-                      fontSize: 16,
-                      color: Color((0xFF808080))),
-                ),
-              ]),
-            ),
-            Container(
-              child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                Container(
-                  padding: EdgeInsets.only(
-                    left: 20,
-                  ),
-                  child: Image.asset(
-                    'svgs/twit.png',
-                    height: 20,
-                    width: 20,
-                  ),
-                ),
-                Text(
-                  'ThessB',
-                  style: TextStyle(
-                      fontFamily: 'Satoshi',
-                      fontSize: 16,
-                      color: Color((0xFF808080))),
-                ),
-              ]),
-            ),
-            Container(
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                 top: 16,
                 left: 20,
                 bottom: 10,
@@ -162,8 +157,8 @@ class About extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(left: 16, top: 4),
-              child: Text(
+              margin: const EdgeInsets.only(left: 16, top: 4),
+              child: const Text(
                 'agatevure.com/privacy-policy',
                 style: TextStyle(
                     color: Color(0xFF808080),
@@ -177,7 +172,7 @@ class About extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                       left: 20,
                       right: 10,
                     ),
@@ -200,7 +195,7 @@ class About extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                       left: 20,
                       right: 10,
                     ),

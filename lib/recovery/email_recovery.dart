@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:timetable_app/Components/popup_menu%20_buttons.dart';
-import 'package:timetable_app/Constants/menu_padding.dart';
+import 'package:timely/components/bottom_nav.dart';
+import 'package:timely/components/popup_menu_buttons.dart';
+import 'package:timely/constants/menu_padding.dart';
 
 class EmailRecovery extends StatefulWidget {
   const EmailRecovery({Key? key}) : super(key: key);
@@ -12,13 +13,11 @@ class EmailRecovery extends StatefulWidget {
 class _EmailRecoveryState extends State<EmailRecovery> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: SafeArea(
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+    return SafeArea(
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       Row(
         children: [
-          MenuButton(
+          const MenuButton(
             mypopupcolor: Colors.white,
           ),
           Container(
@@ -28,12 +27,12 @@ class _EmailRecoveryState extends State<EmailRecovery> {
             width: menuPadding,
           ),
           Container(
-            margin: EdgeInsets.all(8.0),
+            margin: const EdgeInsets.all(8.0),
             child: TextField(
               decoration: InputDecoration(
-                labelText: 'Phone Number',
+                  labelText: 'Phone Number',
                   hintText: "Type Registered phone number here",
-                  hintStyle: TextStyle(color: Colors.black54),
+                  hintStyle: const TextStyle(color: Colors.black54),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
                       borderSide: BorderSide(
@@ -45,24 +44,16 @@ class _EmailRecoveryState extends State<EmailRecovery> {
           Container(
             width: double.infinity,
             height: 50,
-            margin: EdgeInsets.all(8.0),
+            margin: const EdgeInsets.all(8.0),
             child: ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => BottomNav(),
+                    builder: (context) => const BottomNav(),
                   ),
                 );
               },
-              child: Text(
-                'Proceed',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
               style: OutlinedButton.styleFrom(
                 shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(
@@ -71,16 +62,24 @@ class _EmailRecoveryState extends State<EmailRecovery> {
                     ),
                   ),
                 ),
-                maximumSize: Size(double.infinity, 100),
+                maximumSize: const Size(double.infinity, 100),
                 backgroundColor: Colors.teal,
                 side: const BorderSide(
                   color: Colors.teal,
+                ),
+              ),
+              child: const Text(
+                'Proceed',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
           ),
         ],
       ),
-    ])));
+    ]));
   }
 }

@@ -1,17 +1,12 @@
-//
-//
 import 'package:flutter/material.dart';
-import 'package:timetable_app/Components/bottom%20navigation.dart';
-import 'package:timetable_app/Components/bottom_nav.dart';
-import 'package:timetable_app/Components/popup_menu _buttons.dart';
-import 'package:timetable_app/Constants/menu_padding.dart';
-import 'package:timetable_app/FloatingActionButton/my_floating_modal_button.dart';
-import 'package:timetable_app/Pages/ExamScreen.dart';
-import 'package:timetable_app/Pages/Notes.dart';
-import 'package:timetable_app/Pages/calender_screen.dart';
+import 'package:timely/components/popup_menu_buttons.dart';
+import 'package:timely/constants/menu_padding.dart';
+import 'package:timely/pages/exam_screen.dart';
+import 'package:timely/pages/notes.dart';
+import 'package:timely/pages/calender_screen.dart';
 
-class homeScreen extends StatelessWidget {
-  const homeScreen({Key? key}) : super(key: key);
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +15,7 @@ class homeScreen extends StatelessWidget {
         actions: [
           Row(
             children: [
-              MenuButton(
+              const MenuButton(
                 mypopupcolor: Colors.black,
               ),
               Container(
@@ -47,11 +42,11 @@ class homeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              title: Text(
+              title: const Text(
                 'Hey, Thessy!',
                 style: TextStyle(fontFamily: 'Satohi', fontSize: 16),
               ),
-              subtitle: Text(
+              subtitle: const Text(
                 'lets get things Scheduled, shall we?',
                 style: TextStyle(
                   fontFamily: 'Satoshi',
@@ -61,20 +56,20 @@ class homeScreen extends StatelessWidget {
               tileColor: Colors.transparent,
             ),
             Container(
-              padding: EdgeInsets.all(15),
-              margin: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
+              margin: const EdgeInsets.all(15),
               decoration: BoxDecoration(
-                color: Color(0xFFEEFCF9),
+                color: const Color(0xFFEEFCF9),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: ListTile(
-                trailing: Icon(
+                trailing: const Icon(
                   Icons.calendar_today,
                   size: 50,
                   color: Color(0xFF1C8E77),
                 ),
                 selectedColor: Theme.of(context).primaryColor,
-                title: Text(
+                title: const Text(
                   'Today',
                   style: TextStyle(
                     color: Colors.black,
@@ -84,35 +79,33 @@ class homeScreen extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>CalenderScreen(),
-                        ),
-                      );
-                    },
-                subtitle: Text(
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CalenderScreen(),
+                    ),
+                  );
+                },
+                subtitle: const Text(
                   'Thursady 5th January 2023',
                   style: TextStyle(color: Colors.black54, fontSize: 14),
                 ),
-
-
               ),
             ),
             Container(
-              padding: EdgeInsets.all(15),
-              margin: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
+              margin: const EdgeInsets.all(15),
               decoration: BoxDecoration(
-                color: Color(0xFFFFEBEB),
+                color: const Color(0xFFFFEBEB),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: ListTile(
-                trailing: Icon(
+                trailing: const Icon(
                   Icons.weekend,
                   size: 50,
                   color: Color(0xFFFF5D5A),
                 ),
-                title: Text(
+                title: const Text(
                   'Week Review',
                   style: TextStyle(
                     color: Colors.black,
@@ -125,30 +118,30 @@ class homeScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>ExamScreen(),
+                      builder: (context) => const ExamScreen(),
                     ),
                   );
                 },
-                subtitle: Text(
+                subtitle: const Text(
                   'Scheduled set for the week',
                   style: TextStyle(color: Colors.black54, fontSize: 14),
                 ),
               ),
             ),
             Container(
-              padding: EdgeInsets.all(15),
-              margin: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
+              margin: const EdgeInsets.all(15),
               decoration: BoxDecoration(
-                color: Color(0xFFEEFCF9),
+                color: const Color(0xFFEEFCF9),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: ListTile(
-                trailing: Icon(
+                trailing: const Icon(
                   Icons.note_add,
                   size: 50,
                   color: Color(0xFF1C8E77),
                 ),
-                title: Text(
+                title: const Text(
                   'Notes',
                   style: TextStyle(
                     color: Colors.black,
@@ -161,11 +154,11 @@ class homeScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>Notes(),
+                      builder: (context) => const Notes(),
                     ),
                   );
                 },
-                subtitle: Text(
+                subtitle: const Text(
                   'Save your thoughts',
                   style: TextStyle(color: Colors.black54, fontSize: 14),
                 ),

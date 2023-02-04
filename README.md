@@ -1,4 +1,4 @@
-# timetable_app
+# timely
 
 A new Flutter project.
 

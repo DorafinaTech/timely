@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:timely/Pages/ExamScreen.dart';
-import 'package:timely/Pages/ProfileScreen.dart';
-import 'package:timely/Pages/ReadingScreen.dart';
-import 'package:timely/Pages/homeScreen.dart';
+import 'package:timely/pages/exam_screen.dart';
+import 'package:timely/pages/profie_screen.dart';
+import 'package:timely/pages/reading_screen.dart';
+import 'package:timely/pages/home_screen.dart';
 
-import '../Pages/TestScreen.dart';
+import '../pages/test_screen.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({Key? key}) : super(key: key);
@@ -14,10 +14,10 @@ class BottomNav extends StatefulWidget {
 }
 
 class _BottomNavState extends State<BottomNav> {
-  @override
   int _selectedIndex = 0;
+
   static const List<Widget> _pages = <Widget>[
-    homeScreen(),
+    HomeScreen(),
     ExamScreen(),
     TestScreen(),
     ReadingScreen(),
@@ -30,6 +30,7 @@ class _BottomNavState extends State<BottomNav> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: _pages.elementAt(_selectedIndex),

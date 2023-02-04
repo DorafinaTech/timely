@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
 
-class BottomNavigation  extends StatefulWidget {
-  const BottomNavigation ({Key? key, required FloatingActionButton floatingActionButton}) : super(key: key);
+class BottomNavigation extends StatefulWidget {
+  const BottomNavigation({Key? key}) : super(key: key);
 
   @override
-  State<BottomNavigation > createState() => _BottomNavigationState();
+  State<BottomNavigation> createState() => _BottomNavigationState();
 }
 
-class _BottomNavigationState extends State<BottomNavigation > {
+class _BottomNavigationState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       showUnselectedLabels: true,
       unselectedItemColor: Colors.black54,
       selectedItemColor: Theme.of(context).primaryColor,
-
-      onTap: (index) {
-
-      },
+      onTap: (index) {},
       currentIndex: 0,
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
@@ -30,7 +27,6 @@ class _BottomNavigationState extends State<BottomNavigation > {
             color: Color(0xFFB3B3B3),
           ),
           label: 'Exams',
-
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.mode_edit, color: Color(0xFFB3B3B3)),

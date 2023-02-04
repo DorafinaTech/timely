@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:timetable_app/Components/popup_menu%20_buttons.dart';
-import 'package:timetable_app/Constants/menu_padding.dart';
+import 'package:timely/components/popup_menu_buttons.dart';
+import 'package:timely/constants/menu_padding.dart';
+import 'package:timely/screens/register.dart';
 
 class OtpNumber extends StatefulWidget {
   const OtpNumber({Key? key}) : super(key: key);
@@ -12,12 +13,10 @@ class OtpNumber extends StatefulWidget {
 class _OtpNumberState extends State<OtpNumber> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: SafeArea(
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+    return SafeArea(
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       Row(children: [
-        MenuButton(
+        const MenuButton(
           mypopupcolor: Colors.white,
         ),
         Container(
@@ -26,7 +25,7 @@ class _OtpNumberState extends State<OtpNumber> {
         Container(
           width: menuPadding,
         ),
-        Text(
+        const Text(
           "Enter the OTP we have sent to your mobile phone 08147318488 ",
           style: TextStyle(
             fontSize: 16,
@@ -44,10 +43,10 @@ class _OtpNumberState extends State<OtpNumber> {
         ),
         Center(
           child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 16.0),
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            margin: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Text(
+              const Text(
                 'Didnt get the code?',
                 style: TextStyle(
                   color: Colors.black,
@@ -59,11 +58,11 @@ class _OtpNumberState extends State<OtpNumber> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Register(),
+                        builder: (context) => const Register(),
                       ),
                     );
                   },
-                  child: Text(
+                  child: const Text(
                     'Register',
                     style: TextStyle(
                       color: Colors.teal,
@@ -72,9 +71,8 @@ class _OtpNumberState extends State<OtpNumber> {
                   ))
             ]),
           ),
-
         )
       ])
-    ])));
+    ]));
   }
 }

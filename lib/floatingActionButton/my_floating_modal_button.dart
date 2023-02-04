@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-
-import '../Components/top_modal_sheet.dart';
+import '../components/top_modal_sheet.dart';
 
 class MyFloatingModalBotton extends StatefulWidget {
   const MyFloatingModalBotton({Key? key}) : super(key: key);
@@ -11,14 +10,14 @@ class MyFloatingModalBotton extends StatefulWidget {
 }
 
 class _MyFloatingModalBottonState extends State<MyFloatingModalBotton> {
-  TextEditingController _control = TextEditingController();
-  TextEditingController _controll = TextEditingController();
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _control = TextEditingController();
+  final TextEditingController _controll = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 250,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
             topRight: Radius.circular(30), topLeft: Radius.circular(30)),
@@ -29,14 +28,14 @@ class _MyFloatingModalBottonState extends State<MyFloatingModalBotton> {
           children: <Widget>[
             Expanded(
               child: Container(
-                  padding:
-                      EdgeInsets.only(top: 5, right: 16, left: 16, bottom: 0),
+                  padding: const EdgeInsets.only(
+                      top: 5, right: 16, left: 16, bottom: 0),
                   child: TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         hintText: 'Tittle',
                         hintStyle: TextStyle(color: Colors.grey)),
                     controller: _control,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 16,
                         fontFamily: 'Satoshi, color: Color(0xFFB3B3B3)'),
                   )),
@@ -45,17 +44,17 @@ class _MyFloatingModalBottonState extends State<MyFloatingModalBotton> {
               children: [
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         top: 5, right: 16, left: 16, bottom: 20),
                     child: TextFormField(
                       controller: _controll,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Lecturer\'s name',
                         hintStyle: TextStyle(
                           color: Colors.grey,
                         ),
                       ),
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontFamily: 'Satoshi',
                           fontSize: 16,
                           color: Color(0xFFB3B3B3)),
@@ -64,15 +63,15 @@ class _MyFloatingModalBottonState extends State<MyFloatingModalBotton> {
                 ),
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         top: 5, right: 16, left: 16, bottom: 20),
                     child: TextFormField(
                       controller: _controller,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Venue',
                         hintStyle: TextStyle(color: Colors.grey),
                       ),
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 16,
                           fontFamily: 'Satoshi',
                           color: Color(0xFFB3B3B3)),
@@ -84,13 +83,13 @@ class _MyFloatingModalBottonState extends State<MyFloatingModalBotton> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   'Start:',
                   style: TextStyle(
                       fontFamily: 'Satoshi', fontSize: 16, color: Colors.black),
                 ),
                 GestureDetector(
-                  child: Text('Tue, 20 Jan',
+                  child: const Text('Tue, 20 Jan',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontFamily: 'Satoshi',
@@ -98,7 +97,7 @@ class _MyFloatingModalBottonState extends State<MyFloatingModalBotton> {
                           color: Color(0xFF1C8E77))),
                 ),
                 GestureDetector(
-                  child: Text('11:00am',
+                  child: const Text('11:00am',
                       textAlign: TextAlign.end,
                       style: TextStyle(
                           fontFamily: 'Satoshi',
@@ -108,13 +107,13 @@ class _MyFloatingModalBottonState extends State<MyFloatingModalBotton> {
               ],
             ),
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              Text('End:',
+              const Text('End:',
                   style: TextStyle(
                       fontFamily: 'Satoshi',
                       fontSize: 16,
                       color: Colors.black)),
               GestureDetector(
-                child: Text('Tue, 20 Jan',
+                child: const Text('Tue, 20 Jan',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontFamily: 'Satoshi',
@@ -122,7 +121,7 @@ class _MyFloatingModalBottonState extends State<MyFloatingModalBotton> {
                         color: Color(0xFF1C8E77))),
               ),
               GestureDetector(
-                child: Text('12:00am',
+                child: const Text('12:00am',
                     textAlign: TextAlign.end,
                     style: TextStyle(
                         fontFamily: 'Satoshi',
@@ -132,13 +131,13 @@ class _MyFloatingModalBottonState extends State<MyFloatingModalBotton> {
             ]),
             Row(mainAxisAlignment: MainAxisAlignment.start, children: [
               Container(
-                padding: EdgeInsets.only(right: 8),
+                padding: const EdgeInsets.only(right: 8),
+                height: 19,
                 child: Image.asset(
                   'svgs/vec.png',
                 ),
-                height: 19,
               ),
-              Text(
+              const Text(
                 '10 minutes Before',
                 style: TextStyle(
                   fontSize: 16,
@@ -155,12 +154,11 @@ class _MyFloatingModalBottonState extends State<MyFloatingModalBotton> {
                     child: TextButton(
                       onPressed: () {
                         showDialog(
-                             context: context,
-                             builder: (context)=> TopModalSheet());
+                            context: context,
+                            builder: (context) => const TopModalSheet());
                       },
-                      child: Icon(
-                        Icons.add,
-                        color: Theme.of(context).primaryColor),
+                      child: Icon(Icons.add,
+                          color: Theme.of(context).primaryColor),
                     ),
                   ),
                 ],

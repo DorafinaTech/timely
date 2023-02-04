@@ -11,7 +11,7 @@ class _BottomSheetwidgetState extends State<BottomSheetwidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.red,
         borderRadius: BorderRadius.only(
             topRight: Radius.circular(30), topLeft: Radius.circular(30)),
@@ -19,29 +19,29 @@ class _BottomSheetwidgetState extends State<BottomSheetwidget> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
-        children: <Widget>[
-          const Expanded(
+        children: const <Widget>[
+          Expanded(
             child: Divider(
               thickness: 0.5,
               color: Colors.black54,
             ),
           ),
-          const Text("Tittle"),
-          const Expanded(
+          Text("Tittle"),
+          Expanded(
             child: Divider(
               thickness: 0.5,
               color: Colors.black54,
             ),
           ),
-          const Text('Lecture\ns name'),
-          const Spacer(),
-          const Expanded(
+          Text('Lecture\ns name'),
+          Spacer(),
+          Expanded(
             child: Divider(
               thickness: 0.5,
               color: Colors.black54,
             ),
           ),
-          const Text('Venue')
+          Text('Venue')
         ],
       ),
     );

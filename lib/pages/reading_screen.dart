@@ -1,26 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:time_planner/time_planner.dart';
-import 'package:timely/Components/bottom_nav.dart';
 
-import '../Components/popup_menu _buttons.dart';
-import '../Constants/menu_padding.dart';
+import '../components/popup_menu_buttons.dart';
+import '../constants/menu_padding.dart';
 
-class TestScreen extends StatelessWidget {
-  const TestScreen({Key? key}) : super(key: key);
+class ReadingScreen extends StatelessWidget {
+  const ReadingScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // bottomNavigationBar: BottomNav(),
-      floatingActionButton: FloatingActionButton(
-        mini: true,
-        onPressed: () {},
-        backgroundColor: Theme.of(context).primaryColor,
-        foregroundColor: Colors.white,
-        child: Icon(Icons.add),
-      ),
       appBar: AppBar(
-        title: Center(
+        title: const Center(
           child: Text('Week view',
               style: TextStyle(
                   fontFamily: 'Satoshi',
@@ -31,7 +23,7 @@ class TestScreen extends StatelessWidget {
         foregroundColor: Colors.white,
         actions: [
           Row(children: [
-            MenuButton(
+            const MenuButton(
               mypopupcolor: Colors.white,
             ),
             Container(
@@ -41,7 +33,12 @@ class TestScreen extends StatelessWidget {
         ],
         elevation: 0,
       ),
-
+      floatingActionButton: FloatingActionButton(
+        mini: true,
+        onPressed: () {},
+        backgroundColor: Theme.of(context).primaryColor,
+        child: const Icon(Icons.add),
+      ),
       body: TimePlanner(
         startHour: 6,
         endHour: 23,
@@ -80,7 +77,7 @@ class TestScreen extends StatelessWidget {
             title: "Saturday",
           ),
         ],
-        tasks: [],
+        tasks: const [],
       ),
     );
   }

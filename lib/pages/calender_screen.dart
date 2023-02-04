@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:timely/Components/bottom%20navigation.dart';
 import 'package:table_calendar/table_calendar.dart';
-import 'package:timetable_app/Components/bottom_nav.dart';
+import 'package:timely/components/bottom_nav.dart';
 
-import '../Components/popup_menu _buttons.dart';
-import '../Constants/menu_padding.dart';
+import '../components/popup_menu_buttons.dart';
+import '../constants/menu_padding.dart';
 
 class CalenderScreen extends StatelessWidget {
   const CalenderScreen({Key? key}) : super(key: key);
@@ -14,11 +13,11 @@ class CalenderScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
-        title: Text('Jan 2023'),
+        title: const Text('Jan 2023'),
         actions: [
           Row(
             children: [
-              MenuButton(
+              const MenuButton(
                 mypopupcolor: Colors.white,
               ),
               Container(
@@ -33,10 +32,10 @@ class CalenderScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Icon(Icons.add),
         backgroundColor: Theme.of(context).primaryColor,
+        child: const Icon(Icons.add),
       ),
-      bottomNavigationBar: BottomNav(),
+      bottomNavigationBar: const BottomNav(),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -45,11 +44,11 @@ class CalenderScreen extends StatelessWidget {
                 availableCalendarFormats: const {
                   CalendarFormat.month: 'Month',
                 },
-                calendarStyle: CalendarStyle(),
+                calendarStyle: const CalendarStyle(),
                 weekNumbersVisible: false,
                 headerVisible: true,
                 daysOfWeekVisible: true,
-                headerStyle: HeaderStyle(
+                headerStyle: const HeaderStyle(
                     titleTextStyle: TextStyle(color: Colors.transparent)),
                 firstDay: DateTime.utc(2023, 1, 1),
                 lastDay: DateTime.utc(2023, 12, 31),

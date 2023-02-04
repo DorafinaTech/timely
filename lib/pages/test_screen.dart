@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:time_planner/time_planner.dart';
-import 'package:timetable_app/Components/bottom_nav.dart';
-import 'package:timetable_app/Components/popup_menu _buttons.dart';
-import 'package:timetable_app/FloatingActionButton/my_floating_modal_button.dart';
-import 'package:timetable_app/Pages/add_exams_screen.dart';
 
-import '../Constants/menu_padding.dart';
+import '../components/popup_menu_buttons.dart';
+import '../constants/menu_padding.dart';
 
-class ExamScreen extends StatelessWidget {
-  const ExamScreen({Key? key}) : super(key: key);
+class TestScreen extends StatelessWidget {
+  const TestScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,28 +13,24 @@ class ExamScreen extends StatelessWidget {
       // bottomNavigationBar: BottomNav(),
       floatingActionButton: FloatingActionButton(
         mini: true,
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => AddExamScreen()),
-          );
-        },
+        onPressed: () {},
         backgroundColor: Theme.of(context).primaryColor,
-        child: Icon(Icons.add),
+        foregroundColor: Colors.white,
+        child: const Icon(Icons.add),
       ),
       appBar: AppBar(
-        title: Center(
-          child: Text(
-            'Week view',
-            style: TextStyle(
-                fontFamily: 'Satoshi', fontSize: 20, color: Colors.white),
-          ),
+        title: const Center(
+          child: Text('Week view',
+              style: TextStyle(
+                  fontFamily: 'Satoshi',
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500)),
         ),
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.white,
         actions: [
           Row(children: [
-            MenuButton(
+            const MenuButton(
               mypopupcolor: Colors.white,
             ),
             Container(
@@ -47,6 +40,7 @@ class ExamScreen extends StatelessWidget {
         ],
         elevation: 0,
       ),
+
       body: TimePlanner(
         startHour: 6,
         endHour: 23,
@@ -85,7 +79,7 @@ class ExamScreen extends StatelessWidget {
             title: "Saturday",
           ),
         ],
-        tasks: [],
+        tasks: const [],
       ),
     );
   }

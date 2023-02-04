@@ -1,30 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:time_planner/time_planner.dart';
-import 'package:timely/Components/bottom_nav.dart';
+import 'package:timely/components/popup_menu_buttons.dart';
+import 'package:timely/pages/add_exams_screen.dart';
 
-import '../Components/popup_menu _buttons.dart';
-import '../Constants/menu_padding.dart';
+import '../constants/menu_padding.dart';
 
-class ReadingScreen extends StatelessWidget {
-  const ReadingScreen({Key? key}) : super(key: key);
+class ExamScreen extends StatelessWidget {
+  const ExamScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // bottomNavigationBar: BottomNav(),
+      floatingActionButton: FloatingActionButton(
+        mini: true,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const AddExamScreen()),
+          );
+        },
+        backgroundColor: Theme.of(context).primaryColor,
+        child: const Icon(Icons.add),
+      ),
       appBar: AppBar(
-        title: Center(
-          child: Text('Week view',
-              style: TextStyle(
-                  fontFamily: 'Satoshi',
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500)),
+        title: const Center(
+          child: Text(
+            'Week view',
+            style: TextStyle(
+                fontFamily: 'Satoshi', fontSize: 20, color: Colors.white),
+          ),
         ),
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.white,
         actions: [
           Row(children: [
-            MenuButton(
+            const MenuButton(
               mypopupcolor: Colors.white,
             ),
             Container(
@@ -33,12 +44,6 @@ class ReadingScreen extends StatelessWidget {
           ]),
         ],
         elevation: 0,
-      ),
-      floatingActionButton: FloatingActionButton(
-        mini: true,
-        onPressed: () {},
-        backgroundColor: Theme.of(context).primaryColor,
-        child: Icon(Icons.add),
       ),
       body: TimePlanner(
         startHour: 6,
@@ -78,7 +83,7 @@ class ReadingScreen extends StatelessWidget {
             title: "Saturday",
           ),
         ],
-        tasks: [],
+        tasks: const [],
       ),
     );
   }

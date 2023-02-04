@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:timely/Pages/Notes.dart';
-import 'package:timely/Pages/ProfileScreen.dart';
-import 'package:timely/Pages/calender_screen.dart';
+import 'package:timely/pages/notes.dart';
+import 'package:timely/pages/calender_screen.dart';
 
-import '../Pages/About.dart';
-import '../Pages/homeScreen.dart';
+import '../pages/about.dart';
 
 class MenuButton extends StatelessWidget {
-  MenuButton({Key? key, required this.mypopupcolor}) : super(key: key);
+  const MenuButton({Key? key, required this.mypopupcolor}) : super(key: key);
 
   final Color mypopupcolor;
 
@@ -18,69 +16,65 @@ class MenuButton extends StatelessWidget {
         Widget nextPage = Container();
         switch (index) {
           case 0:
-            nextPage = CalenderScreen();
+            nextPage = const CalenderScreen();
             break;
           case 1:
-            nextPage = Notes();
+            nextPage = const Notes();
             break;
           case 2:
-            nextPage = About();
+            nextPage = const About();
             break;
         }
 
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (context) => nextPage));
       },
-      padding: EdgeInsets.only(
+      padding: const EdgeInsets.only(
         right: 200,
       ),
-      color: Color(0xFFEEFCF9),
+      color: const Color(0xFFEEFCF9),
       position: PopupMenuPosition.over,
-      child: Icon(
-        Icons.menu,
-        color: mypopupcolor,
-      ),
-      offset: Offset(0, 0),
+      offset: const Offset(0, 0),
       itemBuilder: (context) => [
         // popupmenu item 1
         PopupMenuItem(
-          padding: EdgeInsets.all(10.5),
+          padding: const EdgeInsets.all(10.5),
           value: 0,
           // row has two child icon and text.
           child: Row(
             children: [
               Icon(Icons.calendar_today, color: Theme.of(context).primaryColor),
-              SizedBox(
+              const SizedBox(
                 // sized box with width 10
                 width: 10,
               ),
-              Text("Calender")
+              const Text("Calender")
             ],
           ),
         ),
         // popupmenu item 2
         PopupMenuItem(
-          padding: EdgeInsets.all(10.5),
+          padding: const EdgeInsets.all(10.5),
           value: 1,
           // row has two child icon and text
           child: Row(
             children: [
               Icon(Icons.sticky_note_2, color: Theme.of(context).primaryColor),
-              SizedBox(
+              const SizedBox(
                 // sized box with width 10
                 width: 10,
               ),
-              Text("Notes")
+              const Text("Notes")
             ],
           ),
         ),
         PopupMenuItem(
-          padding: EdgeInsets.all(10.5),
+          padding: const EdgeInsets.all(10.5),
           value: 2,
           // row has two child icon and text
           child: Row(children: [
             Icon(Icons.tag_faces, color: Theme.of(context).primaryColor),
-            SizedBox(
+            const SizedBox(
               // sized box with width 10
               width: 10,
             ),
@@ -89,10 +83,10 @@ class MenuButton extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => About(),
+                        builder: (context) => const About(),
                       ));
                 },
-                child: Text("About",
+                child: const Text("About",
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 16,
@@ -101,6 +95,10 @@ class MenuButton extends StatelessWidget {
         ),
       ],
       elevation: 2,
+      child: Icon(
+        Icons.menu,
+        color: mypopupcolor,
+      ),
     );
   }
 }
