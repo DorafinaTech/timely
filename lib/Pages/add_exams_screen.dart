@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:timetable_app/Components/top_modal_sheet.dart';
-import 'package:timetable_app/FloatingActionButton/my_floating_modal_button.dart';
+import 'package:timely/Components/top_modal_sheet.dart';
+import 'package:timely/FloatingActionButton/my_floating_modal_button.dart';
 
 class AddExamScreen extends StatefulWidget {
   const AddExamScreen({Key? key}) : super(key: key);
@@ -19,17 +19,11 @@ class _AddExamScreenState extends State<AddExamScreen> {
         children: [
           Container(
             child: TopModalSheet(),
-
           ),
-          Container(
-          child: MyFloatingModalBotton(
+          Container(child: MyFloatingModalBotton())
 
-          )
-          )
         ],
-
-      )
-      ,
+      ),
     );
   }
 }

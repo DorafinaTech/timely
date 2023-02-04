@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:time_planner/time_planner.dart';
-import 'package:timetable_app/Components/bottom_nav.dart';
+import 'package:timely/Components/bottom_nav.dart';
 
 import '../Components/popup_menu _buttons.dart';
 import '../Constants/menu_padding.dart';
@@ -31,7 +31,9 @@ class TestScreen extends StatelessWidget {
         foregroundColor: Colors.white,
         actions: [
           Row(children: [
-            MenuButton(mypopupcolor: Colors.white,),
+            MenuButton(
+              mypopupcolor: Colors.white,
+            ),
             Container(
               width: menuPadding,
             )

@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:timetable_app/Screens/Splashscreen.dart';
+import 'package:timely/Screens/Splashscreen.dart';
 import 'Constants/primary_color.dart';
 
-import 'Pages/ExamScreen.dart';
-import 'Pages/ProfileScreen.dart';
-import 'Pages/homeScreen.dart';
-
-
-void main(){
-  runApp(MyApp());
+void main() {
+  runApp(const TimelyApp());
 }
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+
+class TimelyApp extends StatelessWidget {
+  const TimelyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +16,9 @@ class MyApp extends StatelessWidget {
 
       home: SplashScreen(),
 
-          // home: homeScreen(),
+      // home: homeScreen(),
       theme: ThemeData(
-          primaryColor: Color(primaryColorCode),
-          backgroundColor: Colors.white
-      ),
-
+          primaryColor: Color(primaryColorCode), backgroundColor: Colors.white),
     );
   }
 }

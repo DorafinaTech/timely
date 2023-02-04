@@ -24,77 +24,73 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
         actions: [
-          Row(
-            children:[
-              PopupMenuButton<int>(
-                padding: EdgeInsets.only(right: 100,),
-                color: Color(0xFFEEFCF9),
-                position: PopupMenuPosition.over,
-                child: Icon(
-                  Icons.menu,
-                  color: Colors.black
-                ),
-                offset: Offset(0, 0),
-                itemBuilder: (context) => [
-                  // popupmenu item 1
-                  PopupMenuItem(
-                    padding: EdgeInsets.all(10.5),
-                    value: 1,
-                    // row has two child icon and text.
-                    child: Row(
-                      children: [
-                        Icon(Icons.calendar_today,
-                            color: Theme.of(context).primaryColor),
-                        SizedBox(
-                          // sized box with width 10
-                          width: 10,
-                        ),
-                        Text("Calender")
-                      ],
-                    ),
-                  ),
-                  // popupmenu item 2
-                  PopupMenuItem(
-                    padding: EdgeInsets.all(10.5),
-                    value: 2,
-                    // row has two child icon and text
-                    child: Row(
-                      children: [
-                        Icon(Icons.sticky_note_2,
-                            color: Theme.of(context).primaryColor),
-                        SizedBox(
-                          // sized box with width 10
-                          width: 10,
-                        ),
-                        Text("Notes")
-                      ],
-                    ),
-                  ),
-                  PopupMenuItem(
-                    padding: EdgeInsets.all(10.5),
-                    value: 2,
-                    // row has two child icon and text
-                    child: Row(
-                      children: [
-                        Icon(Icons.tag_faces,
-                            color: Theme.of(context).primaryColor),
-                        SizedBox(
-                          // sized box with width 10
-                          width: 10,
-                        ),
-                        Text("About"),
-                      ],
-                    ),
-                  ),
-
-                ],
-                elevation: 2,
+          Row(children: [
+            PopupMenuButton<int>(
+              padding: EdgeInsets.only(
+                right: 100,
               ),
-              Container(
-                width: menuPadding,
-              )
-            ]
-          ),
+              color: Color(0xFFEEFCF9),
+              position: PopupMenuPosition.over,
+              child: Icon(Icons.menu, color: Colors.black),
+              offset: Offset(0, 0),
+              itemBuilder: (context) => [
+                // popupmenu item 1
+                PopupMenuItem(
+                  padding: EdgeInsets.all(10.5),
+                  value: 1,
+                  // row has two child icon and text.
+                  child: Row(
+                    children: [
+                      Icon(Icons.calendar_today,
+                          color: Theme.of(context).primaryColor),
+                      SizedBox(
+                        // sized box with width 10
+                        width: 10,
+                      ),
+                      Text("Calender")
+                    ],
+                  ),
+                ),
+                // popupmenu item 2
+                PopupMenuItem(
+                  padding: EdgeInsets.all(10.5),
+                  value: 2,
+                  // row has two child icon and text
+                  child: Row(
+                    children: [
+                      Icon(Icons.sticky_note_2,
+                          color: Theme.of(context).primaryColor),
+                      SizedBox(
+                        // sized box with width 10
+                        width: 10,
+                      ),
+                      Text("Notes")
+                    ],
+                  ),
+                ),
+                PopupMenuItem(
+                  padding: EdgeInsets.all(10.5),
+                  value: 2,
+                  // row has two child icon and text
+                  child: Row(
+                    children: [
+                      Icon(Icons.tag_faces,
+                          color: Theme.of(context).primaryColor),
+                      SizedBox(
+                        // sized box with width 10
+                        width: 10,
+                      ),
+                      Text("About"),
+                    ],
+                  ),
+                ),
+              ],
+              elevation: 2,
+            ),
+            Container(
+              width: menuPadding,
+            )
+          ]),
         ],
         backgroundColor: Colors.white,
         foregroundColor: Colors.white,
@@ -142,10 +138,10 @@ class ProfileScreen extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (Context)=> EditPage(),
-                    ),
+                      context,
+                      MaterialPageRoute(
+                        builder: (Context) => EditPage(),
+                      ),
                     );
                   },
                   child: Text('Edit Profile'),
@@ -169,8 +165,9 @@ class ProfileScreen extends StatelessWidget {
               Container(height: 15),
               ListTile(
                 dense: true,
-                contentPadding: EdgeInsets.symmetric(vertical: 4, horizontal: 20),
-                leading:Container(
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 4, horizontal: 20),
+                leading: Container(
                   margin: EdgeInsets.zero,
                   padding: EdgeInsets.all(8.0),
                   child: Image.asset(
@@ -180,26 +177,24 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 title: Text(
                   'Activities',
-                  style: TextStyle(
-                    color: Colors.black, fontSize: 16
-                  ),
+                  style: TextStyle(color: Colors.black, fontSize: 16),
                 ),
               ),
-                ListTile(
-                  contentPadding: EdgeInsets.symmetric(vertical: 4, horizontal: 20),
-                  leading: Container(
-                    padding: EdgeInsets.all(8.0),
-                    child: Image.asset(
-                      'svgs/Note.png',
-                      height: 20,
-                      width: 20,
-                    ),
+              ListTile(
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 4, horizontal: 20),
+                leading: Container(
+                  padding: EdgeInsets.all(8.0),
+                  child: Image.asset(
+                    'svgs/Note.png',
+                    height: 20,
+                    width: 20,
                   ),
-                  title: Text(
-                    'Notes',
-                    style: TextStyle(
-                      color: Colors.black,
-                    ),
+                ),
+                title: Text(
+                  'Notes',
+                  style: TextStyle(
+                    color: Colors.black,
                   ),
                   onTap: () {
                     Navigator.push(
@@ -210,9 +205,10 @@ class ProfileScreen extends StatelessWidget {
                     );
                   },
                 ),
-
+              ),
               ListTile(
-                contentPadding: EdgeInsets.symmetric(vertical: 4, horizontal: 20),
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 4, horizontal: 20),
                 leading: Container(
                   padding: EdgeInsets.all(8.0),
                   child: Image.asset(
@@ -228,17 +224,17 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
               ),
-
               ListTile(
-                contentPadding: EdgeInsets.symmetric(vertical: 4, horizontal: 20),
-                leading:Container(
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 4, horizontal: 20),
+                leading: Container(
                   padding: EdgeInsets.all(8.0),
                   child: Image.asset(
                     'svgs/Share.png',
                     height: 20,
                     width: 20,
                   ),
-                ) ,
+                ),
                 title: Text(
                   'Share',
                   style: TextStyle(
@@ -246,10 +242,10 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
               ),
-
               TextButton(
                 child: ListTile(
-                  contentPadding: EdgeInsets.symmetric(vertical: 4, horizontal: 20),
+                  contentPadding:
+                      EdgeInsets.symmetric(vertical: 4, horizontal: 20),
                   leading: Container(
                     padding: EdgeInsets.all(8.0),
                     child: Image.asset(
@@ -264,16 +260,14 @@ class ProfileScreen extends StatelessWidget {
                       color: Colors.black,
                     ),
                   ),
-                ), onPressed: () {
-                  Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                  builder: (context) =>Login()
                 ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Login()),
                   );
-                 },
+                },
               )
-
             ],
           ),
         ),
