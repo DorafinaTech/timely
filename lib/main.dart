@@ -18,7 +18,10 @@ class TimelyApp extends StatelessWidget {
 
       // home: homeScreen(),
       theme: ThemeData(
-          primaryColor: Color(primaryColorCode), backgroundColor: Colors.white),
+          useMaterial3: true,
+          primaryColor: Color(primaryColorCode),
+          primarySwatch: ,
+          backgroundColor: Colors.white),
     );
   }
 }
