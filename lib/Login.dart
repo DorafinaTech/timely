@@ -1,4 +1,4 @@
-
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'Components/bottom_nav.dart';
@@ -48,7 +48,11 @@ class LoginState extends State<Login> {
                       children: [
                         Container(
                           padding: EdgeInsets.all(8.0),
-                          child: Image.asset('svgs/google_icon.png', height: 20,width: 20,),
+                          child: Image.asset(
+                            'svgs/google_icon.png',
+                            height: 20,
+                            width: 20,
+                          ),
                         ),
                         Text(
                           'Log in with Google',
@@ -102,14 +106,27 @@ class LoginState extends State<Login> {
                 child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
-                      hintText: "Password",
-                      hintStyle: TextStyle(color: Colors.black54),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: BorderSide(
-                              color: Colors.teal.shade200,
-                              width: 1.5,
-                              style: BorderStyle.solid))),
+                    hintText: "Password",
+                    hintStyle: TextStyle(color: Colors.black54),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(
+                            color: Colors.teal.shade200,
+                            width: 1.5,
+                            style: BorderStyle.solid)),
+                  ),
+                ),
+              ),
+              Login(),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                'Forgot Password?',
+                style: TextStyle(
+                  fontFamily: 'Satoshi',
+                  fontSize: 14,
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
               Container(
@@ -121,7 +138,7 @@ class LoginState extends State<Login> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>BottomNav(),
+                        builder: (context) => BottomNav(),
                       ),
                     );
                   },
@@ -168,7 +185,7 @@ class LoginState extends State<Login> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) =>Register(),
+                                builder: (context) => Register(),
                               ),
                             );
                           },

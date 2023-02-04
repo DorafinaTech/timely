@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:time_planner/time_planner.dart';
-import 'package:timely/Components/popup_menu _buttons.dart';
-import 'package:timely/FloatingActionButton/my_floating_modal_button.dart';
-import 'package:timely/Pages/add_exams_screen.dart';
+import 'package:timetable_app/Components/bottom_nav.dart';
+import 'package:timetable_app/Components/popup_menu _buttons.dart';
+import 'package:timetable_app/FloatingActionButton/my_floating_modal_button.dart';
+import 'package:timetable_app/Pages/add_exams_screen.dart';
 
 import '../Constants/menu_padding.dart';
 
@@ -25,6 +26,13 @@ class ExamScreen extends StatelessWidget {
         child: Icon(Icons.add),
       ),
       appBar: AppBar(
+        title: Center(
+          child: Text(
+            'Week view',
+            style: TextStyle(
+                fontFamily: 'Satoshi', fontSize: 20, color: Colors.white),
+          ),
+        ),
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.white,
         actions: [
