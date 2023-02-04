@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:timely/Components/bottom_nav.dart';
-import 'package:timely/Login.dart';
-import 'package:timely/Constants/menu_padding.dart';
+import 'package:timetable_app/Components/bottom_nav.dart';
+import 'package:timetable_app/Login.dart';
+import 'package:timetable_app/Constants/menu_padding.dart';
+import 'package:timetable_app/Pages/Notes.dart';
 
 import 'Edit page.dart';
 
@@ -195,6 +196,14 @@ class ProfileScreen extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.black,
                   ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Notes(),
+                      ),
+                    );
+                  },
                 ),
               ),
               ListTile(
