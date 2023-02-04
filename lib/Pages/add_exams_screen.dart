@@ -22,7 +22,9 @@ class _AddExamScreenState extends State<AddExamScreen> {
 
           ),
           Container(
-          child: MyFloatingModalBotton()
+          child: MyFloatingModalBotton(
+
+          )
           )
         ],
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:timetable_app/Components/bottom_nav.dart';
 import 'package:timetable_app/Components/popup_menu%20_buttons.dart';
 import 'package:timetable_app/Constants/menu_padding.dart';
 import 'package:timetable_app/Pages/homeScreen.dart';
@@ -11,7 +12,7 @@ class EditPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigation(),
+      bottomNavigationBar: BottomNav(),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.white,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:timetable_app/Components/bottom_nav.dart';
 import 'package:timetable_app/Login.dart';
 import 'package:timetable_app/Constants/menu_padding.dart';
+import 'package:timetable_app/Pages/Notes.dart';
 
 import 'Edit page.dart';
 
@@ -200,8 +201,15 @@ class ProfileScreen extends StatelessWidget {
                       color: Colors.black,
                     ),
                   ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Notes(),
+                      ),
+                    );
+                  },
                 ),
-
 
               ListTile(
                 contentPadding: EdgeInsets.symmetric(vertical: 4, horizontal: 20),

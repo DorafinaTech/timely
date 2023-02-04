@@ -1,10 +1,13 @@
 //
 //
 import 'package:flutter/material.dart';
+import 'package:timetable_app/Components/bottom%20navigation.dart';
 import 'package:timetable_app/Components/bottom_nav.dart';
 import 'package:timetable_app/Components/popup_menu _buttons.dart';
 import 'package:timetable_app/Constants/menu_padding.dart';
 import 'package:timetable_app/FloatingActionButton/my_floating_modal_button.dart';
+import 'package:timetable_app/Pages/ExamScreen.dart';
+import 'package:timetable_app/Pages/Notes.dart';
 import 'package:timetable_app/Pages/calender_screen.dart';
 
 class homeScreen extends StatelessWidget {
@@ -80,10 +83,20 @@ class homeScreen extends StatelessWidget {
                     fontFamily: 'Satoshi',
                   ),
                 ),
+                onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>CalenderScreen(),
+                        ),
+                      );
+                    },
                 subtitle: Text(
                   'Thursady 5th January 2023',
                   style: TextStyle(color: Colors.black54, fontSize: 14),
                 ),
+
+
               ),
             ),
             Container(
@@ -108,6 +121,14 @@ class homeScreen extends StatelessWidget {
                     fontFamily: 'Satoshi',
                   ),
                 ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>ExamScreen(),
+                    ),
+                  );
+                },
                 subtitle: Text(
                   'Scheduled set for the week',
                   style: TextStyle(color: Colors.black54, fontSize: 14),
@@ -136,6 +157,14 @@ class homeScreen extends StatelessWidget {
                     fontFamily: 'Satoshi',
                   ),
                 ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>Notes(),
+                    ),
+                  );
+                },
                 subtitle: Text(
                   'Save your thoughts',
                   style: TextStyle(color: Colors.black54, fontSize: 14),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:timetable_app/Components/bottom%20navigation.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:timetable_app/Components/bottom_nav.dart';
 
 import '../Components/popup_menu _buttons.dart';
 import '../Constants/menu_padding.dart';
@@ -35,7 +36,7 @@ class CalenderScreen extends StatelessWidget {
         child: Icon(Icons.add),
         backgroundColor: Theme.of(context).primaryColor,
       ),
-      bottomNavigationBar: BottomNavigation(),
+      bottomNavigationBar: BottomNav(),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(

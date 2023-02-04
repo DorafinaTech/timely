@@ -10,7 +10,7 @@ class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigation(
+      bottomNavigationBar: BottomNav(
       ),
 
       appBar: AppBar(
