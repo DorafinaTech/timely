@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BottomNavigation  extends StatefulWidget {
-  const BottomNavigation ({Key? key}) : super(key: key);
+  const BottomNavigation ({Key? key, required FloatingActionButton floatingActionButton}) : super(key: key);
 
   @override
   State<BottomNavigation > createState() => _BottomNavigationState();
