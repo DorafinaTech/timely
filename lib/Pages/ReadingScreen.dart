@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:time_planner/time_planner.dart';
-import 'package:timetable_app/Components/bottom_nav.dart';
+import 'package:timely/Components/bottom_nav.dart';
 
 import '../Components/popup_menu _buttons.dart';
 import '../Constants/menu_padding.dart';
-
 
 class ReadingScreen extends StatelessWidget {
   const ReadingScreen({Key? key}) : super(key: key);
@@ -24,19 +23,18 @@ class ReadingScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.white,
         actions: [
-          Row(
-              children:[
-      MenuButton(mypopupcolor: Colors.white,),
-          Container(
-                  width: menuPadding,
-                )
-              ]
-          ),
-
+          Row(children: [
+            MenuButton(
+              mypopupcolor: Colors.white,
+            ),
+            Container(
+              width: menuPadding,
+            )
+          ]),
         ],
         elevation: 0,
       ),
-     floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         mini: true,
         onPressed: () {},
         backgroundColor: Theme.of(context).primaryColor,

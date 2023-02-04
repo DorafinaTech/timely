@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:timetable_app/Components/popup_menu%20_buttons.dart';
-import 'package:timetable_app/Constants/menu_padding.dart';
-import 'package:timetable_app/Pages/homeScreen.dart';
+import 'package:timely/Components/popup_menu%20_buttons.dart';
+import 'package:timely/Constants/menu_padding.dart';
+import 'package:timely/Pages/homeScreen.dart';
 
 import '../Components/bottom navigation.dart';
 

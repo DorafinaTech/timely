@@ -1,4 +1,4 @@
-package com.example.timetable_app
+package com.gettimelyapp.mobile
 
 import io.flutter.embedding.android.FlutterActivity
 

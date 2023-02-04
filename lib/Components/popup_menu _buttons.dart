@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:timetable_app/Pages/Notes.dart';
-import 'package:timetable_app/Pages/ProfileScreen.dart';
-import 'package:timetable_app/Pages/calender_screen.dart';
+import 'package:timely/Pages/Notes.dart';
+import 'package:timely/Pages/ProfileScreen.dart';
+import 'package:timely/Pages/calender_screen.dart';
 
 import '../Pages/About.dart';
 import '../Pages/homeScreen.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timetable_app/Components/bottom_nav.dart';
+import 'package:timely/Components/bottom_nav.dart';
 import '../Components/bottom navigation.dart';
 import '../Components/popup_menu _buttons.dart';
 import '../Constants/menu_padding.dart';
@@ -10,8 +10,7 @@ class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigation(
-      ),
+      bottomNavigationBar: BottomNavigation(),
 
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,

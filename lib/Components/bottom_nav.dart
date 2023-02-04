@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:timetable_app/Pages/ExamScreen.dart';
-import 'package:timetable_app/Pages/ProfileScreen.dart';
-import 'package:timetable_app/Pages/ReadingScreen.dart';
-import 'package:timetable_app/Pages/homeScreen.dart';
+import 'package:timely/Pages/ExamScreen.dart';
+import 'package:timely/Pages/ProfileScreen.dart';
+import 'package:timely/Pages/ReadingScreen.dart';
+import 'package:timely/Pages/homeScreen.dart';
 
 import '../Pages/TestScreen.dart';
-
 
 class BottomNav extends StatefulWidget {
   const BottomNav({Key? key}) : super(key: key);
@@ -25,12 +24,12 @@ class _BottomNavState extends State<BottomNav> {
     ProfileScreen()
   ];
 
-  void _onItemTapped(int index){
+  void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
-  
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: _pages.elementAt(_selectedIndex),
@@ -38,7 +37,6 @@ class _BottomNavState extends State<BottomNav> {
         showUnselectedLabels: true,
         unselectedItemColor: Colors.black54,
         selectedItemColor: Theme.of(context).primaryColor,
-        
         onTap: _onItemTapped,
         currentIndex: _selectedIndex,
         items: const <BottomNavigationBarItem>[

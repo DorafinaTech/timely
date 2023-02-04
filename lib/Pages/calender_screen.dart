@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timetable_app/Components/bottom%20navigation.dart';
+import 'package:timely/Components/bottom%20navigation.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 import '../Components/popup_menu _buttons.dart';
@@ -41,7 +41,9 @@ class CalenderScreen extends StatelessWidget {
           child: Column(
             children: [
               TableCalendar(
-                availableCalendarFormats: const {CalendarFormat.month : 'Month',},
+                availableCalendarFormats: const {
+                  CalendarFormat.month: 'Month',
+                },
                 calendarStyle: CalendarStyle(),
                 weekNumbersVisible: false,
                 headerVisible: true,
