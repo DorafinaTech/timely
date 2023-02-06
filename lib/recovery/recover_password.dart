@@ -13,99 +13,111 @@ class RecoveryPassword extends StatefulWidget {
 class _RecoveryPasswordState extends State<RecoveryPassword> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Row(
-            children: [
-              const MenuButton(
-                mypopupcolor: Colors.white,
-              ),
-              Container(
-                width: menuPadding,
-              ),
-              Container(
-                width: menuPadding,
-              ),
-              Container(
-                width: double.infinity,
-                height: 50,
-                margin: const EdgeInsets.all(8.0),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const EmailRecovery(),
-                      ),
-                    );
-                  },
-                  style: OutlinedButton.styleFrom(
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(
-                          50,
-                        ),
-                      ),
+    return Scaffold(
+        appBar: AppBar(
+          title: Center(
+            child: Text(
+              'Recover Password',
+              style: TextStyle(
+                  fontFamily: 'Satoshi',
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+          leading: BackButton(
+            color: Colors.black,
+          ),
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            // Row(
+            //   children: [
+            //     const MenuButton(
+            //       mypopupcolor: Colors.white,
+            //     ),
+            //     Container(
+            //       width: menuPadding,
+            //     ),
+            //     Container(
+            //       width: menuPadding,
+            //     ),
+
+            Container(
+              width: double.infinity,
+              height: 50,
+              margin: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EmailRecovery(),
                     ),
-                    maximumSize: const Size(double.infinity, 100),
-                    backgroundColor: Colors.white,
-                    side: const BorderSide(
-                      color: Colors.teal,
+                  );
+                },
+                style: OutlinedButton.styleFrom(
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(
+                        50,
+                      ),
                     ),
                   ),
-                  child: const Text(
-                    'Email',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  maximumSize: const Size(double.infinity, 100),
+                  backgroundColor: Colors.white,
+                  side: const BorderSide(
+                    color: Colors.teal,
+                  ),
+                ),
+                child: const Text(
+                  'Email',
+                  style: TextStyle(
+                    color: Colors.teal,
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-              Container(
-                width: double.infinity,
-                height: 50,
-                margin: const EdgeInsets.all(8.0),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const EmailRecovery(),
-                      ),
-                    );
-                  },
-                  style: OutlinedButton.styleFrom(
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(
-                          60,
-                        ),
-                      ),
+            ),
+            Container(
+              width: double.infinity,
+              height: 50,
+              margin: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EmailRecovery(),
                     ),
-                    maximumSize: const Size(double.infinity, 100),
-                    backgroundColor: Colors.white,
-                    side: const BorderSide(
-                      color: Colors.teal,
+                  );
+                },
+                style: OutlinedButton.styleFrom(
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(
+                        60,
+                      ),
                     ),
                   ),
-                  child: const Text(
-                    'Phone Number',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  maximumSize: const Size(double.infinity, 100),
+                  backgroundColor: Colors.white,
+                  side: const BorderSide(
+                    color: Colors.teal,
+                  ),
+                ),
+                child: const Text(
+                  'Phone Number',
+                  style: TextStyle(
+                    color: Colors.teal,
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-            ],
-          )
-        ],
-      ),
-    );
+            ),
+          ],
+        ));
   }
 }

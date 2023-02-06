@@ -13,66 +13,132 @@ class OtpNumber extends StatefulWidget {
 class _OtpNumberState extends State<OtpNumber> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-      Row(children: [
-        const MenuButton(
-          mypopupcolor: Colors.white,
-        ),
-        Container(
-          width: menuPadding,
-        ),
-        Container(
-          width: menuPadding,
-        ),
-        const Text(
-          "Enter the OTP we have sent to your mobile phone 08147318488 ",
-          style: TextStyle(
-            fontSize: 16,
-            fontFamily: 'Satoshi',
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(
+          child: Text(
+            'Recover Password',
+            style: TextStyle(
+                fontFamily: 'Satoshi',
+                fontSize: 20,
+                fontWeight: FontWeight.bold),
           ),
         ),
-        Row(
-          children: [
-            Container(),
-            Container(),
-            Container(),
-            Container(),
-            Container(),
-          ],
+        leading: BackButton(
+          color: Colors.black,
         ),
-        Center(
-          child: Container(
-            margin: const EdgeInsets.symmetric(horizontal: 16.0),
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              const Text(
-                'Didnt get the code?',
+      ),
+      body: SafeArea(
+        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+          // Row(children: [
+          //   const MenuButton(
+          //     mypopupcolor: Colors.white,
+          //   ),
+          //   Container(
+          //     width: menuPadding,
+          //   ),
+          //   Container(
+          //     width: menuPadding,
+          //   ),
+          Container(
+            padding: EdgeInsets.only(left: 20),
+            child: Center(
+              child:  Text(
+                "Enter the OTP we have sent to your mobile phone 08147318488 ",
                 style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 15,
+                  fontSize: 16,
+                  fontFamily: 'Satoshi',
                 ),
               ),
-              TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Register(),
-                      ),
-                    );
-                  },
-                  child: const Text(
-                    'Register',
-                    style: TextStyle(
-                      color: Colors.teal,
-                      fontSize: 20,
-                    ),
-                  ))
-            ]),
+            ),
           ),
-        )
-      ])
-    ]));
+          Row(children: [
+            Container(
+              margin: EdgeInsets.all(8),
+              height: 30,
+              width: 30,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(Radius.circular(5.0),),
+              ),
+            ),
+
+
+
+            Row(children: [
+              Container(
+                margin: EdgeInsets.all(8),
+                height: 30,
+                width: 30,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                ),
+              ),
+              Row(children: [
+                Container(
+                  margin: EdgeInsets.all(8),
+                  height: 30,
+                  width: 30,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                  ),
+                ),
+                Row(children: [
+                  Container(
+                    margin: EdgeInsets.all(8),
+                    height: 30,
+                    width: 30,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.all(8),
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Center(
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            const Text(
+                              'Didnt get the code?',
+                              style: TextStyle(
+                                color: Colors.black,
+
+                                fontSize: 15,
+                              ),
+                            ),
+                            const Text(
+                              'resend code',
+                              style: TextStyle(
+                                color: Colors.teal,
+                                fontSize: 20,
+                              ),
+                            )
+                          ]),
+                    ),
+                  ),
+                ]),
+              ]),
+            ])
+          ]),
+        ]),
+      ),
+    );
   }
 }

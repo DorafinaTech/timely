@@ -154,7 +154,13 @@ class ProfileScreen extends StatelessWidget {
                     maximumSize: const Size(double.infinity, 100),
                     backgroundColor: const Color(0XFF1C8E77),
                   ),
-                  child: const Text('Edit Profile'),
+                  child: const Text(
+                    'Edit Profile',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Satoshi',
+                        fontSize: 14),
+                  ),
                 ),
               ),
               Container(height: 30),

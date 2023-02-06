@@ -30,15 +30,15 @@ class _SplashScreenState extends State<SplashScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: Image.asset("assets/images/student.png"),
+            child: Image.asset("assets/images/timely.gif"),
           ),
-          const Center(
-            child: Text(
-              "School TimeTable",
-              style: TextStyle(
-                  color: Colors.white, fontFamily: 'satoshi', fontSize: 30),
-            ),
-          )
+          // const Center(
+          //   child: Text(
+          //     "Timely",
+          //     style: TextStyle(
+          //         color: Colors.white, fontFamily: 'satoshi', fontSize: 30, fontWeight: FontWeight.bold),
+          //   ),
+
         ],
       )),
     );

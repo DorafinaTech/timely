@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:timely/components/bottom_nav.dart';
+import 'package:timely/recovery/recover_password.dart';
 import 'package:timely/screens/register.dart';
 
 class Login extends StatefulWidget {
@@ -116,14 +117,25 @@ class LoginState extends State<Login> {
           const SizedBox(
             height: 20,
           ),
-          Text(
-            'Forgot Password?',
-            style: TextStyle(
-              fontFamily: 'Satoshi',
-              fontSize: 14,
-              color: Theme.of(context).primaryColor,
+          TextButton(
+            child: Text(
+              'Forgot Password?',
+              style: TextStyle(
+                fontFamily: 'Satoshi',
+                fontSize: 14,
+                color: Theme.of(context).primaryColor,
+              ),
             ),
+            onPressed: (){
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context)=> RecoveryPassword()
+              ),
+              );
+            },
           ),
+
           Container(
             width: double.infinity,
             height: 50,
