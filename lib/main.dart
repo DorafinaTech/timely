@@ -5,10 +5,8 @@ import 'constants/primary_color.dart';
 import 'package:timely/utilities/get_primary_swatch.dart';
 // import 'package:flutter_web_plugins/url_strategy.dart';
 
-void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  // usePathUrlStrategy();
+void main()  {
+  WidgetsFlutterBinding.ensureInitialized();
 
   runApp(const TimelyApp());
 }
