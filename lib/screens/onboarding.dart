@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:timely/login.dart';
+import 'package:timely/screens/onboarding2.dart';
 
 import 'register.dart';
 
@@ -56,7 +57,7 @@ class Onboarding extends StatelessWidget {
                 ),
                 onPressed: () {
                   Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => const Login()));
+                      MaterialPageRoute(builder: (context) => const Onboarding2()));
                 },
                 child: const Text(
                   'Log In',

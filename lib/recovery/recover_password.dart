@@ -31,22 +31,11 @@ class _RecoveryPasswordState extends State<RecoveryPassword> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            // Row(
-            //   children: [
-            //     const MenuButton(
-            //       mypopupcolor: Colors.white,
-            //     ),
-            //     Container(
-            //       width: menuPadding,
-            //     ),
-            //     Container(
-            //       width: menuPadding,
-            //     ),
 
             Container(
               width: double.infinity,
               height: 50,
-              margin: const EdgeInsets.all(8.0),
+              margin: const EdgeInsets.only(top: 50, left: 8, right: 8),
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(

@@ -55,7 +55,7 @@ class Notes extends StatelessWidget {
                     'Method of Coding',
                     style: TextStyle(
                       fontSize: 20,
-                      fontFamily: 'Satoahi',
+                      fontFamily: 'Satoshi',
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -63,7 +63,7 @@ class Notes extends StatelessWidget {
                     '2/2/2023',
                     style: TextStyle(
                       fontSize: 16,
-                      fontFamily: 'Satoahi',
+                      fontFamily: 'Satoshi',
                     ),
                   )),
               Container(height: 5),
@@ -75,7 +75,7 @@ class Notes extends StatelessWidget {
                     'How to be Good',
                     style: TextStyle(
                       fontSize: 20,
-                      fontFamily: 'Satoahi',
+                      fontFamily: 'Satoshi',
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -95,7 +95,7 @@ class Notes extends StatelessWidget {
                     'Why I love being Wicked',
                     style: TextStyle(
                       fontSize: 20,
-                      fontFamily: 'Satoahi',
+                      fontFamily: 'Satoshi',
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -103,7 +103,7 @@ class Notes extends StatelessWidget {
                     '2/2/2023',
                     style: TextStyle(
                       fontSize: 16,
-                      fontFamily: 'Satoahi',
+                      fontFamily: 'Satoshi',
                     ),
                   )),
               Container(height: 5),
@@ -115,7 +115,7 @@ class Notes extends StatelessWidget {
                     'Can I ever stop being Good',
                     style: TextStyle(
                       fontSize: 20,
-                      fontFamily: 'Satoahi',
+                      fontFamily: 'Satoshi',
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -123,7 +123,7 @@ class Notes extends StatelessWidget {
                     '2/2/2023',
                     style: TextStyle(
                       fontSize: 16,
-                      fontFamily: 'Satoahi',
+                      fontFamily: 'Satoshi',
                     ),
                   )),
               Container(height: 5),
@@ -135,7 +135,7 @@ class Notes extends StatelessWidget {
                     'Be bad and be remembered',
                     style: TextStyle(
                       fontSize: 20,
-                      fontFamily: 'Satoahi',
+                      fontFamily: 'Satoshi',
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -143,7 +143,7 @@ class Notes extends StatelessWidget {
                     '2/2/2023',
                     style: TextStyle(
                       fontSize: 16,
-                      fontFamily: 'Satoahi',
+                      fontFamily: 'Satoshi',
                     ),
                   )),
               Container(height: 5),
@@ -155,7 +155,7 @@ class Notes extends StatelessWidget {
                     'Be Good and stay in the heart of men',
                     style: TextStyle(
                       fontSize: 20,
-                      fontFamily: 'Satoahi',
+                      fontFamily: 'Satoshi',
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -163,7 +163,7 @@ class Notes extends StatelessWidget {
                     '2/2/2023',
                     style: TextStyle(
                       fontSize: 16,
-                      fontFamily: 'Satoahi',
+                      fontFamily: 'Satoshi',
                     ),
                   )),
               Container(height: 5),
@@ -175,7 +175,7 @@ class Notes extends StatelessWidget {
                     'Being good is boring',
                     style: TextStyle(
                       fontSize: 20,
-                      fontFamily: 'Satoahi',
+                      fontFamily: 'Satoshi',
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -183,7 +183,7 @@ class Notes extends StatelessWidget {
                     '2/2/2023',
                     style: TextStyle(
                       fontSize: 16,
-                      fontFamily: 'Satoahi',
+                      fontFamily: 'Satoshi',
                     ),
                   )),
               Container(height: 5),
@@ -195,7 +195,7 @@ class Notes extends StatelessWidget {
                     'Being bad is kiling',
                     style: TextStyle(
                       fontSize: 20,
-                      fontFamily: 'Satoahi',
+                      fontFamily: 'Satoshi',
                       fontWeight: FontWeight.bold,
                     ),
                   ),

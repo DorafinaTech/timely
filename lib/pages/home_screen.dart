@@ -69,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                   color: Color(0xFF1C8E77),
                 ),
                 selectedColor: Theme.of(context).primaryColor,
-                title: const Text(
+                title: Text(
                   'Today',
                   style: TextStyle(
                     color: Colors.black,
@@ -82,7 +82,7 @@ class HomeScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const CalenderScreen(),
+                      builder: (context) => CalenderScreen(),
                     ),
                   );
                 },
@@ -118,7 +118,7 @@ class HomeScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ExamScreen(),
+                      builder: (context) =>  ExamScreen(),
                     ),
                   );
                 },
@@ -154,7 +154,7 @@ class HomeScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const Notes(),
+                      builder: (context) =>  Notes(),
                     ),
                   );
                 },

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:timely/screens/splash_screen.dart';
 import 'constants/primary_color.dart';
 import 'package:timely/utilities/get_primary_swatch.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 // import 'package:flutter_web_plugins/url_strategy.dart';
 
 void main()  {

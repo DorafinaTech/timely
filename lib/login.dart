@@ -200,7 +200,7 @@ class LoginState extends State<Login> {
                         'Register',
                         style: TextStyle(
                           color: Colors.teal,
-                          fontSize: 20,
+                          fontSize: 15,
                         ),
                       ))
                 ],

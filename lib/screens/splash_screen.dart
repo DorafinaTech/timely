@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:timely/screens/onboarding2.dart';
 import 'onboarding.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -14,11 +15,11 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-        const Duration(seconds: 3),
+        const Duration(seconds: 4),
         () => Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-                builder: (BuildContext context) => const Onboarding())));
+                builder: (BuildContext context) => const Onboarding2())));
   }
 
   @override

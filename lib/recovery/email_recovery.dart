@@ -30,19 +30,9 @@ class _EmailRecoveryState extends State<EmailRecovery> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-        // Row(
-        //   children: [
-        //     const MenuButton(
-        //       mypopupcolor: Colors.white,
-        //     ),
-        //     Container(
-        //       width: menuPadding,
-        //     ),
-        //     Container(
-        //       width: menuPadding,
-        //     ),
+
             Container(
-              margin: const EdgeInsets.all(8.0),
+              margin:  EdgeInsets.all(8.0),
               child: TextField(
                 decoration: InputDecoration(
                     labelText: 'Phone Number',
@@ -58,7 +48,7 @@ class _EmailRecoveryState extends State<EmailRecovery> {
             Container(
               width: double.infinity,
               height: 50,
-              margin: const EdgeInsets.all(8.0),
+              margin: const EdgeInsets.only(top: 50,left: 8, right: 8),
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -78,11 +68,11 @@ class _EmailRecoveryState extends State<EmailRecovery> {
                   ),
                   maximumSize: const Size(double.infinity, 100),
                   backgroundColor: Colors.teal,
-                  side: const BorderSide(
+                  side:  BorderSide(
                     color: Colors.teal,
                   ),
                 ),
-                child: const Text(
+                child: Text(
                   'Proceed',
                   style: TextStyle(
                     color: Colors.white,

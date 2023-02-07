@@ -1,5 +1,5 @@
 name: timely
-description: A time trackng app fr students.
+description: A time tracking app for students.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -31,10 +31,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  animated_splash_screen: ^1.3.0
   flutter_native_splash: any
   time_planner: ^0.1.1
   flutter_svg: 0.19.0
   table_calendar: ^3.0.9
+  otp_text_field: ^1.1.3
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -47,7 +49,7 @@ dependencies:
 flutter_native_splash:
   backgroundColor: "#0xFFFF1C8E77"
 
-  image: assets/images/student.png
+  image: assets/images/
 
 dev_dependencies:
   flutter_test:
