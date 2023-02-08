@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:timely/components/top_modal_sheet.dart';
-import 'package:timely/floatingActionButton/my_floating_modal_button.dart';
+import 'package:timely/floatingActionButton/show_modal_buttom_sheet.dart';
 
 class AddExamScreen extends StatefulWidget {
   const AddExamScreen({Key? key}) : super(key: key);
@@ -13,11 +13,13 @@ class _AddExamScreenState extends State<AddExamScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.transparent,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: const [TopModalSheet(), MyFloatingModalBotton()],
-      ),
+      bottomSheet: ShowModalButtomSheet(
+          ),
+      // body: Column(
+      //   mainAxisAlignment: MainAxisAlignment.center,
+      //   children: const [TopModalSheet(),
+      //     ShowModalButtomSheet()],
+      // ),
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
-import 'package:timely/components/bottom_nav.dart';
+import 'package:timely/components/bottom_navigation.dart';
 
 import '../components/popup_menu_buttons.dart';
 import '../constants/menu_padding.dart';
@@ -35,12 +35,13 @@ class CalenderScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).primaryColor,
         child: const Icon(Icons.add),
       ),
-      bottomNavigationBar: const BottomNav(),
+      bottomNavigationBar: BottomNavigation(),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
               TableCalendar(
+                calendarFormat: CalendarFormat.month,
                 availableCalendarFormats: const {
                   CalendarFormat.month: 'Month',
                 },
