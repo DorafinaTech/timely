@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timely/components/bottom_nav.dart';
+import '';
 import 'package:timely/components/bottom_navigation.dart';
 import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/constants/menu_padding.dart';
@@ -17,8 +17,7 @@ class Notes extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(
-                builder: (context) =>  FloatingButtonForNote()),
+            MaterialPageRoute(builder: (context) => FloatingButtonForNote()),
           );
         },
         backgroundColor: Theme.of(context).primaryColor,

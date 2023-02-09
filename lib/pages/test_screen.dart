@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:time_planner/time_planner.dart';
+import 'package:timely/components/bottom_navigation.dart';
 
 import '../components/popup_menu_buttons.dart';
 import '../constants/menu_padding.dart';
@@ -10,7 +11,7 @@ class TestScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // bottomNavigationBar: BottomNav(),
+      bottomNavigationBar: const BottomNavigation(),
       floatingActionButton: FloatingActionButton(
         mini: true,
         onPressed: () {},
@@ -40,7 +41,6 @@ class TestScreen extends StatelessWidget {
         ],
         elevation: 0,
       ),
-
       body: TimePlanner(
         startHour: 6,
         endHour: 23,

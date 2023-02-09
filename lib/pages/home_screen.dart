@@ -4,6 +4,7 @@ import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/pages/exam_screen.dart';
 import 'package:timely/pages/notes.dart';
 import 'package:timely/pages/calender_screen.dart';
+import 'package:timely/components/bottom_navigation.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -11,6 +12,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: const BottomNavigation(),
       appBar: AppBar(
         actions: [
           Row(
@@ -118,7 +120,7 @@ class HomeScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>  ExamScreen(),
+                      builder: (context) => ExamScreen(),
                     ),
                   );
                 },
@@ -154,7 +156,7 @@ class HomeScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>  Notes(),
+                      builder: (context) => Notes(),
                     ),
                   );
                 },

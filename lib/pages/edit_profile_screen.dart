@@ -1,17 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:timely/components/bottom_nav.dart';
+import 'package:go_router/go_router.dart';
+import 'package:timely/utilities/route_names.dart';
 import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/pages/home_screen.dart';
 
-class EditPage extends StatelessWidget {
-  const EditPage({Key? key}) : super(key: key);
+class EditProfileScreen extends StatelessWidget {
+  const EditProfileScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const BottomNav(),
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Theme.of(context).primaryColor,
+          ),
+          onPressed: () {
+            context.canPop()
+                ? context.pop()
+                : context.goNamed(RouteNames.profileScreen);
+          },
+        ),
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.white,
         title: const Center(

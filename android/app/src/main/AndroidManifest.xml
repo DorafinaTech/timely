@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.gettimelyapp.mobile.timely">
+    package="com.gettimelyapp.mobile">
    <application
         android:label="timely"
         android:name="${applicationName}"

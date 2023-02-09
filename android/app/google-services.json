@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "262396420415",
+    "project_id": "timely-ca8ad",
+    "storage_bucket": "timely-ca8ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262396420415:android:f2ecf8dfdf807bd9b1738a",
+        "android_client_info": {
+          "package_name": "com.gettimelyapp.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262396420415-k0dqks913ufi4a73gh5rosh74phqco7a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0wN6mkFFbizc_pa2qEeTVccyJGR4bdco"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "262396420415-h461to3s2iaru8645jbd4ukmhaphkl4p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "262396420415-aco5m5h6gs02272jnu98gs53rnt8nirh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.timetableApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

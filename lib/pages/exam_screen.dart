@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:time_planner/time_planner.dart';
+import 'package:timely/components/bottom_navigation.dart';
 import 'package:timely/components/popup_menu_buttons.dart';
-import 'package:timely/floatingActionButton/show_modal_buttom_sheet.dart';
 import 'package:timely/pages/add_exams_screen.dart';
 
 import '../constants/menu_padding.dart';
@@ -12,13 +12,13 @@ class ExamScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // bottomNavigationBar: BottomNav(),
+      bottomNavigationBar: const BottomNavigation(),
       floatingActionButton: FloatingActionButton(
         mini: true,
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) =>  AddExamScreen()),
+            MaterialPageRoute(builder: (context) => const AddExamScreen()),
           );
         },
         backgroundColor: Theme.of(context).primaryColor,

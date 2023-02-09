@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:timely/components/bottom_nav.dart';
-import 'package:timely/recovery/recover_password.dart';
-import 'package:timely/screens/register.dart';
+import 'package:go_router/go_router.dart';
+import 'package:timely/pages/recover_password.dart';
+import 'package:timely/pages/register.dart';
+import 'package:timely/utilities/route_names.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -126,12 +127,10 @@ class LoginState extends State<Login> {
                 color: Theme.of(context).primaryColor,
               ),
             ),
-            onPressed: (){
+            onPressed: () {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context)=> RecoveryPassword()
-              ),
+                context,
+                MaterialPageRoute(builder: (context) => RecoveryPassword()),
               );
             },
           ),
@@ -142,12 +141,7 @@ class LoginState extends State<Login> {
             margin: const EdgeInsets.all(8.0),
             child: ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const BottomNav(),
-                  ),
-                );
+                context.goNamed(RouteNames.homeScreen);
               },
               style: OutlinedButton.styleFrom(
                 shape: const RoundedRectangleBorder(

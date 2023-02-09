@@ -10,7 +10,6 @@ class About extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: const BottomNavigation(),
-
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.white,
@@ -34,7 +33,6 @@ class About extends StatelessWidget {
         ],
         elevation: 0,
       ),
-      // bottomNavigationBar: BottomNav(),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

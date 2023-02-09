@@ -1,4 +1,4 @@
-package com.gettimelyapp.mobile.timely
+package com.gettimelyapp.mobile
 
 import io.flutter.embedding.android.FlutterActivity
 

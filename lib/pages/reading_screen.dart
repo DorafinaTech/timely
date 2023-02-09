@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:time_planner/time_planner.dart';
+import 'package:timely/components/bottom_navigation.dart';
 
 import '../components/popup_menu_buttons.dart';
 import '../constants/menu_padding.dart';
@@ -10,7 +11,7 @@ class ReadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // bottomNavigationBar: BottomNav(),
+      bottomNavigationBar: const BottomNavigation(),
       appBar: AppBar(
         title: const Center(
           child: Text('Week view',

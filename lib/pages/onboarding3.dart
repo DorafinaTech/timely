@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:timely/login.dart';
-import 'package:timely/screens/onboarding3.dart';
+import 'package:timely/utilities/route_names.dart';
 
-import 'register.dart';
-
-class Onboarding2 extends StatelessWidget {
-  const Onboarding2({Key? key}) : super(key: key);
+class Onboarding3 extends StatelessWidget {
+  const Onboarding3({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,19 +20,21 @@ class Onboarding2 extends StatelessWidget {
               ),
           child: Center(
             // child: Row(children: [
-            child: Image.asset("assets/images/student.png"),
+            child: Image.asset("assets/images/girl&boy.png"),
             // ]),
           ),
         ),
         Container(
-          padding: EdgeInsets.only(left: 30),
+          padding: const EdgeInsets.only(left: 30),
           child: const Center(
-            child: Text("Get to schedule yourself for your school dealings",
-                style: TextStyle(
-                    color: Colors.teal,
-                    fontSize: 20,
-                    fontFamily: 'Satoshi',
-                    fontWeight: FontWeight.w100)),
+            child: Text(
+              "Every moment should count, So make a TimeTable for that here",
+              style: TextStyle(
+                  color: Colors.teal,
+                  fontSize: 20,
+                  fontFamily: "Satoshi",
+                  fontWeight: FontWeight.w100),
+            ),
           ),
         ),
         TextButton(
@@ -41,10 +42,9 @@ class Onboarding2 extends StatelessWidget {
             width: 50,
             height: 50,
             margin: const EdgeInsets.all(8.0),
-            child: Row(mainAxisAlignment: MainAxisAlignment.end,
-                children: [
+            child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
               Container(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Image.asset(
                   "svgs/nexticon.png",
                   height: 30,
@@ -54,8 +54,7 @@ class Onboarding2 extends StatelessWidget {
             ]),
           ),
           onPressed: () {
-            Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const onboarding3()));
+            context.goNamed(RouteNames.login);
           },
         )
       ]),

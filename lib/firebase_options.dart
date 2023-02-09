@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -49,9 +43,19 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyDBg6_VMzTiU_ZbpVUajphSOIm9_wefjI8',
+    appId: '1:262396420415:web:5f43ecf3c0ba2e5ab1738a',
+    messagingSenderId: '262396420415',
+    projectId: 'timely-ca8ad',
+    authDomain: 'timely-ca8ad.firebaseapp.com',
+    storageBucket: 'timely-ca8ad.appspot.com',
+    measurementId: 'G-2XY00ZQYV7',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyA0wN6mkFFbizc_pa2qEeTVccyJGR4bdco',
-    appId: '1:262396420415:android:44be6ed9419434c8b1738a',
+    appId: '1:262396420415:android:f2ecf8dfdf807bd9b1738a',
     messagingSenderId: '262396420415',
     projectId: 'timely-ca8ad',
     storageBucket: 'timely-ca8ad.appspot.com',
@@ -59,12 +63,23 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAxF2T9m_dARUBzOq9Ni0YIbN42AVu0bHI',
-    appId: '1:262396420415:ios:01dc485835e2f926b1738a',
+    appId: '1:262396420415:ios:a79fa48ab897e7aeb1738a',
     messagingSenderId: '262396420415',
     projectId: 'timely-ca8ad',
     storageBucket: 'timely-ca8ad.appspot.com',
     iosClientId:
-        '262396420415-aco5m5h6gs02272jnu98gs53rnt8nirh.apps.googleusercontent.com',
-    iosBundleId: 'com.example.timetableApp',
+        '262396420415-49rvsfl11qgeg6lttaqs4368f8du2bpg.apps.googleusercontent.com',
+    iosBundleId: 'com.gettimelyapp.mobile.timely',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyAxF2T9m_dARUBzOq9Ni0YIbN42AVu0bHI',
+    appId: '1:262396420415:ios:f066d590884696dab1738a',
+    messagingSenderId: '262396420415',
+    projectId: 'timely-ca8ad',
+    storageBucket: 'timely-ca8ad.appspot.com',
+    iosClientId:
+        '262396420415-aj9ob3lmpu4dm0uc4fcq98sne2i7sjvs.apps.googleusercontent.com',
+    iosBundleId: 'com.gettimelyapp.timely',
   );
 }

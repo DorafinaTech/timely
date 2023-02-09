@@ -8,7 +8,7 @@ class ConfirmPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
+        title: const Center(
           child: Text(
             'Recover Password',
             style: TextStyle(
@@ -17,7 +17,7 @@ class ConfirmPassword extends StatelessWidget {
                 fontWeight: FontWeight.bold),
           ),
         ),
-        leading: BackButton(
+        leading: const BackButton(
           color: Colors.black,
         ),
       ),
@@ -60,13 +60,13 @@ class ConfirmPassword extends StatelessWidget {
             Container(
               width: double.infinity,
               height: 50,
-              margin: const EdgeInsets.only(top: 50,left: 8, right: 8),
+              margin: const EdgeInsets.only(top: 50, left: 8, right: 8),
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>  HomeScreen(),
+                      builder: (context) => const HomeScreen(),
                     ),
                   );
                 },
@@ -80,11 +80,11 @@ class ConfirmPassword extends StatelessWidget {
                   ),
                   maximumSize: const Size(double.infinity, 100),
                   backgroundColor: Colors.teal,
-                  side:  BorderSide(
+                  side: const BorderSide(
                     color: Colors.teal,
                   ),
                 ),
-                child: Text(
+                child: const Text(
                   'Proceed',
                   style: TextStyle(
                     color: Colors.white,

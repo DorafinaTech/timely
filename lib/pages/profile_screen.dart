@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:timely/components/bottom_navigation.dart';
 import 'package:timely/login.dart';
 import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/pages/notes.dart';
 
-import 'edit_page.dart';
+import 'package:timely/pages/edit_profile_screen.dart';
+import 'package:timely/utilities/route_names.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -95,7 +98,7 @@ class ProfileScreen extends StatelessWidget {
         foregroundColor: Colors.white,
         elevation: 0,
       ),
-      // bottomNavigationBar: BottomNav(),
+      bottomNavigationBar: const BottomNavigation(),
       floatingActionButton: FloatingActionButton(
         mini: true,
         onPressed: () {},
@@ -136,12 +139,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const EditPage(),
-                      ),
-                    );
+                    context.goNamed(RouteNames.editProfileScreen);
                   },
                   style: ElevatedButton.styleFrom(
                     shape: const RoundedRectangleBorder(
