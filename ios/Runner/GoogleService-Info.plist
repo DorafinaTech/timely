@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>262396420415-49rvsfl11qgeg6lttaqs4368f8du2bpg.apps.googleusercontent.com</string>
+	<string>262396420415-1gvr17ib64v9ql20b0gtl53hb1qn5fdr.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.262396420415-49rvsfl11qgeg6lttaqs4368f8du2bpg</string>
+	<string>com.googleusercontent.apps.262396420415-1gvr17ib64v9ql20b0gtl53hb1qn5fdr</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAxF2T9m_dARUBzOq9Ni0YIbN42AVu0bHI</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.gettimelyapp.mobile.timely</string>
+	<string>com.example.timely</string>
 	<key>PROJECT_ID</key>
 	<string>timely-ca8ad</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:262396420415:ios:a79fa48ab897e7aeb1738a</string>
+	<string>1:262396420415:ios:2beb4936f296e320b1738a</string>
 </dict>
 </plist>

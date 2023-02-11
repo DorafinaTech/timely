@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyA0wN6mkFFbizc_pa2qEeTVccyJGR4bdco',
-    appId: '1:262396420415:android:f2ecf8dfdf807bd9b1738a',
+    appId: '1:262396420415:android:ed5430c1c0a91d8eb1738a',
     messagingSenderId: '262396420415',
     projectId: 'timely-ca8ad',
     storageBucket: 'timely-ca8ad.appspot.com',
@@ -63,23 +63,21 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAxF2T9m_dARUBzOq9Ni0YIbN42AVu0bHI',
-    appId: '1:262396420415:ios:a79fa48ab897e7aeb1738a',
+    appId: '1:262396420415:ios:2beb4936f296e320b1738a',
     messagingSenderId: '262396420415',
     projectId: 'timely-ca8ad',
     storageBucket: 'timely-ca8ad.appspot.com',
-    iosClientId:
-        '262396420415-49rvsfl11qgeg6lttaqs4368f8du2bpg.apps.googleusercontent.com',
-    iosBundleId: 'com.gettimelyapp.mobile.timely',
+    iosClientId: '262396420415-1gvr17ib64v9ql20b0gtl53hb1qn5fdr.apps.googleusercontent.com',
+    iosBundleId: 'com.example.timely',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyAxF2T9m_dARUBzOq9Ni0YIbN42AVu0bHI',
-    appId: '1:262396420415:ios:f066d590884696dab1738a',
+    appId: '1:262396420415:ios:2beb4936f296e320b1738a',
     messagingSenderId: '262396420415',
     projectId: 'timely-ca8ad',
     storageBucket: 'timely-ca8ad.appspot.com',
-    iosClientId:
-        '262396420415-aj9ob3lmpu4dm0uc4fcq98sne2i7sjvs.apps.googleusercontent.com',
-    iosBundleId: 'com.gettimelyapp.timely',
+    iosClientId: '262396420415-1gvr17ib64v9ql20b0gtl53hb1qn5fdr.apps.googleusercontent.com',
+    iosBundleId: 'com.example.timely',
   );
 }
