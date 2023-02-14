@@ -67,7 +67,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '262396420415',
     projectId: 'timely-ca8ad',
     storageBucket: 'timely-ca8ad.appspot.com',
-    iosClientId: '262396420415-1gvr17ib64v9ql20b0gtl53hb1qn5fdr.apps.googleusercontent.com',
+    iosClientId:
+        '262396420415-1gvr17ib64v9ql20b0gtl53hb1qn5fdr.apps.googleusercontent.com',
     iosBundleId: 'com.example.timely',
   );
 
@@ -77,7 +78,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '262396420415',
     projectId: 'timely-ca8ad',
     storageBucket: 'timely-ca8ad.appspot.com',
-    iosClientId: '262396420415-1gvr17ib64v9ql20b0gtl53hb1qn5fdr.apps.googleusercontent.com',
+    iosClientId:
+        '262396420415-1gvr17ib64v9ql20b0gtl53hb1qn5fdr.apps.googleusercontent.com',
     iosBundleId: 'com.example.timely',
   );
 }

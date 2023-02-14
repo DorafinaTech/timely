@@ -31,10 +31,10 @@
               "client_type": 3
             },
             {
-              "client_id": "262396420415-49rvsfl11qgeg6lttaqs4368f8du2bpg.apps.googleusercontent.com",
+              "client_id": "262396420415-1gvr17ib64v9ql20b0gtl53hb1qn5fdr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.gettimelyapp.mobile.timely"
+                "bundle_id": "com.example.timely"
               }
             }
           ]
@@ -67,10 +67,10 @@
               "client_type": 3
             },
             {
-              "client_id": "262396420415-49rvsfl11qgeg6lttaqs4368f8du2bpg.apps.googleusercontent.com",
+              "client_id": "262396420415-1gvr17ib64v9ql20b0gtl53hb1qn5fdr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.gettimelyapp.mobile.timely"
+                "bundle_id": "com.example.timely"
               }
             }
           ]

@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/pages/recover_password.dart';
 import 'package:timely/pages/register.dart';
 import 'package:timely/utilities/route_names.dart';
 
 class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+  Login({Key? key}) : super(key: key);
 
   @override
   State<Login> createState() => LoginState();
 }
 
 class LoginState extends State<Login> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +39,7 @@ class LoginState extends State<Login> {
             margin: const EdgeInsets.all(8.0),
             child: OutlinedButton(
               onPressed: () {
-                // logic for google sign in
+                AuthController().signInwithGoogle();
               },
               style: OutlinedButton.styleFrom(
                   side: BorderSide(color: Colors.teal.shade200),
@@ -87,6 +91,7 @@ class LoginState extends State<Login> {
           Container(
             margin: const EdgeInsets.all(8.0),
             child: TextField(
+              controller: _emailController,
               decoration: InputDecoration(
                   hintText: "Email Addresss",
                   hintStyle: const TextStyle(color: Colors.black54),
@@ -101,6 +106,7 @@ class LoginState extends State<Login> {
           Container(
             margin: const EdgeInsets.all(8.0),
             child: TextField(
+              controller: _passwordController,
               obscureText: true,
               decoration: InputDecoration(
                 hintText: "Password",
@@ -141,7 +147,9 @@ class LoginState extends State<Login> {
             margin: const EdgeInsets.all(8.0),
             child: ElevatedButton(
               onPressed: () {
-                context.goNamed(RouteNames.homeScreen);
+                AuthController().signInwithEmailAndPassword(
+                    _emailController.value.text,
+                    _passwordController.value.text);
               },
               style: OutlinedButton.styleFrom(
                 shape: const RoundedRectangleBorder(
@@ -183,12 +191,7 @@ class LoginState extends State<Login> {
                   ),
                   TextButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const Register(),
-                          ),
-                        );
+                        context.goNamed(RouteNames.register);
                       },
                       child: const Text(
                         'Register',

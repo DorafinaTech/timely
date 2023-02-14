@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:timely/pages/home_screen.dart';
-import 'package:timely/login.dart';
+import 'package:timely/utilities/route_names.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -203,12 +204,7 @@ class RegisterState extends State<Register> {
                     ),
                     TextButton(
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const Login(),
-                            ),
-                          );
+                          context.goNamed(RouteNames.login);
                         },
                         child: const Text(
                           'Sign in',

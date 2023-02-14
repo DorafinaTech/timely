@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 import 'package:timely/firebase_options.dart';
-import 'package:timely/login.dart';
+import 'package:timely/pages/login.dart';
 import 'package:timely/pages/edit_profile_screen.dart';
 import 'package:timely/pages/exam_screen.dart';
 import 'package:timely/pages/home_screen.dart';
@@ -10,6 +10,7 @@ import 'package:timely/pages/onboarding2.dart';
 import 'package:timely/pages/onboarding3.dart';
 import 'package:timely/pages/profile_screen.dart';
 import 'package:timely/pages/reading_screen.dart';
+import 'package:timely/pages/register.dart';
 import 'package:timely/pages/splash_screen.dart';
 import 'package:timely/pages/test_screen.dart';
 import 'package:timely/utilities/route_names.dart';
@@ -65,7 +66,14 @@ final GoRouter _router = GoRouter(
       path: RoutePaths.login,
       name: RouteNames.login,
       builder: (BuildContext context, GoRouterState state) {
-        return const Login();
+        return Login();
+      },
+    ),
+    GoRoute(
+      path: RoutePaths.register,
+      name: RouteNames.register,
+      builder: (BuildContext context, GoRouterState state) {
+        return const Register();
       },
     ),
     GoRoute(

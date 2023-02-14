@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:timely/login.dart';
+import 'package:timely/pages/login.dart';
 import 'package:timely/pages/onboarding2.dart';
+
 
 import 'register.dart';
 
-class Onboarding extends StatelessWidget {
+class Onboarding extends StatefulWidget {
   const Onboarding({Key? key}) : super(key: key);
 
+  @override
+  State<Onboarding> createState() => _OnboardingState();
+}
+
+class _OnboardingState extends State<Onboarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
