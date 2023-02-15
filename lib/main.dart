@@ -17,6 +17,7 @@ import 'package:timely/utilities/route_names.dart';
 import 'package:timely/utilities/route_paths.dart';
 import 'constants/primary_color.dart';
 import 'package:timely/utilities/get_primary_swatch.dart';
+import 'package:get/get.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 
 void main() async {
@@ -119,10 +120,11 @@ class TimelyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return GetMaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Timely assistant',
-      routerConfig: _router,
+      routerDelegate: _router.routerDelegate,
+      // routerConfig: _router,
       theme: ThemeData(
           useMaterial3: true,
           primaryColor: Color(primaryColorCode),
