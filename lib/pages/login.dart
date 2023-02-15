@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/pages/recover_password.dart';
@@ -38,8 +39,12 @@ class LoginState extends State<Login> {
             height: 50,
             margin: const EdgeInsets.all(8.0),
             child: OutlinedButton(
-              onPressed: () {
-                AuthController().signInwithGoogle();
+              onPressed: () async {
+                if (await AuthController().signInwithGoogle()) {
+                  context.goNamed(RouteNames.homeScreen);
+                } else {
+                  Get.snackbar("Oops", "Something went wrong");
+                }
               },
               style: OutlinedButton.styleFrom(
                   side: BorderSide(color: Colors.teal.shade200),
