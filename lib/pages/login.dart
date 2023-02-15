@@ -42,8 +42,12 @@ class LoginState extends State<Login> {
               onPressed: () async {
                 if (await AuthController().signInwithGoogle()) {
                   context.pushReplacementNamed(RouteNames.homeScreen);
+
+                  debugPrint("Loggin in successfully");
                 } else {
                   Get.snackbar("Oops", "Something went wrong");
+
+                  debugPrint("Login failed");
                 }
               },
               style: OutlinedButton.styleFrom(
