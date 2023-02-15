@@ -123,8 +123,12 @@ class TimelyApp extends StatelessWidget {
     return GetMaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Timely assistant',
-      routerDelegate: _router.routerDelegate,
       // routerConfig: _router,
+
+      routerDelegate: _router.routerDelegate,
+      routeInformationParser: _router.routeInformationParser,
+      routeInformationProvider: _router.routeInformationProvider,
+
       theme: ThemeData(
           useMaterial3: true,
           primaryColor: Color(primaryColorCode),
