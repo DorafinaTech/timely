@@ -1,15 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:timely/utilities/route_names.dart';
 
 class AuthController extends GetxController {
   Future<bool> signInwithEmailAndPassword(String email, String password) async {
     try {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
-
-      // Get.toNamed(RouteNames.homeScreen);
 
       return true;
     } on FirebaseAuthException catch (e) {

@@ -34,6 +34,7 @@ void main() async {
 
 /// The route configuration.
 final GoRouter _router = GoRouter(
+  initialLocation: '/',
   routes: <RouteBase>[
     GoRoute(
       path: RoutePaths.splash,
@@ -123,6 +124,7 @@ class TimelyApp extends StatelessWidget {
     return GetMaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Timely assistant',
+
       // routerConfig: _router,
 
       routerDelegate: _router.routerDelegate,
