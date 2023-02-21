@@ -1,9 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:otp_text_field/style.dart';
-import 'package:timely/components/popup_menu_buttons.dart';
-import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/pages/confirm_password.dart';
-import 'package:timely/pages/register.dart';
 import 'package:otp_text_field/otp_text_field.dart';
 
 class OtpNumber extends StatefulWidget {
@@ -18,7 +16,7 @@ class _OtpNumberState extends State<OtpNumber> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Center(
+          title: const Center(
             child: Text(
               'Recover Password',
               style: TextStyle(
@@ -27,7 +25,7 @@ class _OtpNumberState extends State<OtpNumber> {
                   fontWeight: FontWeight.bold),
             ),
           ),
-          leading: BackButton(
+          leading: const BackButton(
             color: Colors.black,
           ),
         ),
@@ -35,8 +33,8 @@ class _OtpNumberState extends State<OtpNumber> {
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
+                padding: const EdgeInsets.all(8.0),
+                child: const Text(
                   "Enter the OTP we have sent to your mobile phone 08147318488 ",
                   style: TextStyle(
                     fontSize: 16,
@@ -53,12 +51,16 @@ class _OtpNumberState extends State<OtpNumber> {
                   fieldWidth: 45,
                   fieldStyle: FieldStyle.box,
                   outlineBorderRadius: 15,
-                  style: TextStyle(fontSize: 20),
+                  style: const TextStyle(fontSize: 20),
                   onChanged: (pin) {
-                    print("Changed: " + pin);
+                    if (kDebugMode) {
+                      print("Changed: $pin");
+                    }
                   },
                   onCompleted: (pin) {
-                    print("Completed: " + pin);
+                    if (kDebugMode) {
+                      print("Completed: $pin");
+                    }
                   },
                 ),
               ),

@@ -35,7 +35,7 @@ class CalenderScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).primaryColor,
         child: const Icon(Icons.add),
       ),
-      bottomNavigationBar: BottomNavigation(),
+      bottomNavigationBar: const BottomNavigation(),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(

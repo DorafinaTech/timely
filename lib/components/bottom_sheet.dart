@@ -16,10 +16,10 @@ class _BottomSheetwidgetState extends State<BottomSheetwidget> {
         borderRadius: BorderRadius.only(
             topRight: Radius.circular(30), topLeft: Radius.circular(30)),
       ),
-      child: Column(
+      child: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
-        children: const <Widget>[
+        children: <Widget>[
           Expanded(
             child: Divider(
               thickness: 0.5,

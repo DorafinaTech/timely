@@ -22,7 +22,7 @@ class _EmailRecoveryState extends State<EmailRecovery> {
                   fontWeight: FontWeight.bold),
             ),
           ),
-          leading: BackButton(
+          leading: const BackButton(
             color: Colors.black,
           ),
         ),
@@ -31,7 +31,7 @@ class _EmailRecoveryState extends State<EmailRecovery> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                margin: EdgeInsets.all(8.0),
+                margin: const EdgeInsets.all(8.0),
                 child: TextField(
                   decoration: InputDecoration(
                       labelText: 'Phone Number',
@@ -67,11 +67,11 @@ class _EmailRecoveryState extends State<EmailRecovery> {
                     ),
                     maximumSize: const Size(double.infinity, 100),
                     backgroundColor: Colors.teal,
-                    side: BorderSide(
+                    side: const BorderSide(
                       color: Colors.teal,
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Proceed',
                     style: TextStyle(
                       color: Colors.white,

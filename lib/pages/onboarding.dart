@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timely/pages/login.dart';
 import 'package:timely/pages/onboarding2.dart';
-
 
 import 'register.dart';
 
@@ -19,17 +17,10 @@ class _OnboardingState extends State<Onboarding> {
       body: SafeArea(
         child: Expanded(
           child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
-            Container(
-              margin: const EdgeInsets.only(
-                  // left: 50,
-                  // top: 50,
-                  // bottom: 100,
-                  ),
-              child: Center(
-                // child: Row(children: [
-                child: Image.asset("assets/images/babygal.png"),
-                // ]),
-              ),
+            Center(
+              // child: Row(children: [
+              child: Image.asset("assets/images/babygal.png"),
+              // ]),
             ),
             const Center(
               child: Text(

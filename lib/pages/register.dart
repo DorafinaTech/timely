@@ -1,6 +1,8 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
-import 'package:timely/pages/home_screen.dart';
+import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/utilities/route_names.dart';
 
 class Register extends StatefulWidget {
@@ -11,6 +13,15 @@ class Register extends StatefulWidget {
 }
 
 class RegisterState extends State<Register> {
+  final TextEditingController _firstAndLastNameController =
+      TextEditingController();
+
+  final TextEditingController _emailController = TextEditingController();
+
+  final TextEditingController _phoneNumberController = TextEditingController();
+
+  final TextEditingController _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +44,24 @@ class RegisterState extends State<Register> {
               height: 50,
               margin: const EdgeInsets.all(8.0),
               child: OutlinedButton(
-                onPressed: () {},
+                onPressed: () async {
+                  String userMessage = '';
+                  AuthController().signInwithGoogle().then((value) {
+                    if (value) {
+                      context.pushReplacementNamed(RouteNames.homeScreen);
+                      userMessage = "Loggin in successfully";
+                      debugPrint(userMessage);
+                    }
+                  }).catchError((error) {
+                    userMessage = "Login failed, Something went wrong";
+                    Get.snackbar("Oops", userMessage);
+                    debugPrint(userMessage);
+
+                    if (kDebugMode) {
+                      print(error);
+                    }
+                  });
+                },
                 style: OutlinedButton.styleFrom(
                     side: BorderSide(color: Colors.teal.shade100),
                     shape: RoundedRectangleBorder(
@@ -61,9 +89,9 @@ class RegisterState extends State<Register> {
             ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 16),
-              child: Center(
+              child: const Center(
                 child: Row(
-                  children: const [
+                  children: [
                     Expanded(
                       child: Divider(
                         thickness: 0.5,
@@ -84,6 +112,7 @@ class RegisterState extends State<Register> {
             Container(
               margin: const EdgeInsets.all(8.0),
               child: TextField(
+                controller: _firstAndLastNameController,
                 decoration: InputDecoration(
                     hintText: " First and last name",
                     hintStyle: const TextStyle(color: Colors.black54),
@@ -98,6 +127,7 @@ class RegisterState extends State<Register> {
             Container(
               margin: const EdgeInsets.all(8.0),
               child: TextField(
+                controller: _emailController,
                 decoration: InputDecoration(
                     hintText: " Email Address",
                     hintStyle: const TextStyle(color: Colors.black54),
@@ -112,6 +142,7 @@ class RegisterState extends State<Register> {
             Container(
               margin: const EdgeInsets.all(8.0),
               child: TextField(
+                controller: _phoneNumberController,
                 decoration: InputDecoration(
                     hintText: "start with your country code (+234)",
                     hintStyle: const TextStyle(color: Colors.black54),
@@ -126,6 +157,7 @@ class RegisterState extends State<Register> {
             Container(
               margin: const EdgeInsets.all(8.0),
               child: TextField(
+                controller: _passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
                     hintText: "Password",
@@ -158,18 +190,27 @@ class RegisterState extends State<Register> {
               margin: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const HomeScreen(),
-                    ),
-                  );
+                  AuthController()
+                      .register(
+                          _emailController.value.text.trim(),
+                          _passwordController.value.text.trim(),
+                          _phoneNumberController.value.text.trim(),
+                          _firstAndLastNameController.value.text.trim())
+                      .then((value) {
+                    if (value) {
+                      context.goNamed(RouteNames.homeScreen);
+                    }
+                  }).catchError((error) {
+                    Get.snackbar("Oops", "Sign in failed");
+                    if (kDebugMode) {
+                      print(error);
+                    }
+                  });
                 },
                 style: ElevatedButton.styleFrom(
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(
                       Radius.circular(50),
-                      // backgroundColor: Colors.pink,
                     ),
                   ),
                   maximumSize: const Size(double.infinity, 100),

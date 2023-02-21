@@ -171,7 +171,7 @@ class _ShowModalButtomState extends State<ShowModalButtomSheet> {
               ]),
               Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                 Container(
-                  padding:  EdgeInsets.only(right: 8),
+                  padding: const EdgeInsets.only(right: 8),
                   height: 19,
                   child: Image.asset(
                     'svgs/dont repeat.png',
@@ -191,18 +191,19 @@ class _ShowModalButtomState extends State<ShowModalButtomSheet> {
                   Container(
                     width: 80,
                     height: 30,
-                    margin: const EdgeInsets.only( top: 20.0,  left: 8.0, right: 8.0),
+                    margin:
+                        const EdgeInsets.only(top: 20.0, left: 8.0, right: 8.0),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => HomeScreen(),
+                            builder: (context) => const HomeScreen(),
                           ),
                         );
                       },
                       style: OutlinedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
+                        shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(
                             Radius.circular(
                               10,
@@ -232,18 +233,19 @@ class _ShowModalButtomState extends State<ShowModalButtomSheet> {
                         Container(
                           width: 80,
                           height: 30,
-                          margin: const EdgeInsets.only( top: 20.0,  left: 8.0, right: 8.0),
+                          margin: const EdgeInsets.only(
+                              top: 20.0, left: 8.0, right: 8.0),
                           child: ElevatedButton(
                             onPressed: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => HomeScreen(),
+                                  builder: (context) => const HomeScreen(),
                                 ),
                               );
                             },
                             style: OutlinedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
+                              shape: const RoundedRectangleBorder(
                                 borderRadius: BorderRadius.all(
                                   Radius.circular(
                                     10,

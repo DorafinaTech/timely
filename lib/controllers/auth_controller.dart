@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -20,15 +21,18 @@ class AuthController extends GetxController {
     }
   }
 
-  Future<bool> registerwithEmailAndPassword(
-      String email, String password) async {
+  Future<bool> register(String email, String password, String phoneNumber,
+      String fullName) async {
     try {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      var credentials =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
 
-      // Get.toNamed(RouteNames.homeScreen);
+      var user = credentials.user!;
+      await user.updateDisplayName(fullName);
+      await user.sendEmailVerification();
 
       return true;
     } on FirebaseAuthException catch (e) {
@@ -40,7 +44,9 @@ class AuthController extends GetxController {
 
       return false;
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
       Get.snackbar('Error', "Something went wrong");
 
       return false;
@@ -69,7 +75,9 @@ class AuthController extends GetxController {
 
       // Get.toNamed(RouteNames.homeScreen);
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
 
       return false;
     }
@@ -81,7 +89,9 @@ class AuthController extends GetxController {
 
       return true;
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
 
       return false;
     }
@@ -93,7 +103,9 @@ class AuthController extends GetxController {
 
       return true;
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
 
       return false;
     }

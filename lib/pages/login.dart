@@ -1,13 +1,13 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/pages/recover_password.dart';
-import 'package:timely/pages/register.dart';
 import 'package:timely/utilities/route_names.dart';
 
 class Login extends StatefulWidget {
-  Login({Key? key}) : super(key: key);
+  const Login({Key? key}) : super(key: key);
 
   @override
   State<Login> createState() => LoginState();
@@ -40,15 +40,22 @@ class LoginState extends State<Login> {
             margin: const EdgeInsets.all(8.0),
             child: OutlinedButton(
               onPressed: () async {
-                if (await AuthController().signInwithGoogle()) {
-                  context.pushReplacementNamed(RouteNames.homeScreen);
+                String userMessage = '';
+                AuthController().signInwithGoogle().then((value) {
+                  if (value) {
+                    context.pushReplacementNamed(RouteNames.homeScreen);
+                    userMessage = "Loggin in successfully";
+                    debugPrint(userMessage);
+                  }
+                }).catchError((error) {
+                  userMessage = "Login failed, Something went wrong";
+                  Get.snackbar("Oops", userMessage);
+                  debugPrint(userMessage);
 
-                  debugPrint("Loggin in successfully");
-                } else {
-                  Get.snackbar("Oops", "Something went wrong");
-
-                  debugPrint("Login failed");
-                }
+                  if (kDebugMode) {
+                    print(error);
+                  }
+                });
               },
               style: OutlinedButton.styleFrom(
                   side: BorderSide(color: Colors.teal.shade200),
@@ -77,9 +84,9 @@ class LoginState extends State<Login> {
           ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 16),
-            child: Center(
+            child: const Center(
               child: Row(
-                children: const [
+                children: [
                   Expanded(
                     child: Divider(
                       thickness: 0.5,
@@ -145,7 +152,8 @@ class LoginState extends State<Login> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => RecoveryPassword()),
+                MaterialPageRoute(
+                    builder: (context) => const RecoveryPassword()),
               );
             },
           ),
@@ -157,8 +165,8 @@ class LoginState extends State<Login> {
             child: ElevatedButton(
               onPressed: () {
                 AuthController().signInwithEmailAndPassword(
-                    _emailController.value.text,
-                    _passwordController.value.text);
+                    _emailController.value.text.trim(),
+                    _passwordController.value.text.trim());
               },
               style: OutlinedButton.styleFrom(
                 shape: const RoundedRectangleBorder(

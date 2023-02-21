@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:timely/components/bottom_navigation.dart';
 import 'package:timely/controllers/auth_controller.dart';
-import 'package:timely/pages/login.dart';
 import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/pages/notes.dart';
 
-import 'package:timely/pages/edit_profile_screen.dart';
 import 'package:timely/utilities/route_names.dart';
 
 class ProfileScreen extends StatelessWidget {

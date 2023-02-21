@@ -68,7 +68,7 @@ final GoRouter _router = GoRouter(
       path: RoutePaths.login,
       name: RouteNames.login,
       builder: (BuildContext context, GoRouterState state) {
-        return Login();
+        return const Login();
       },
     ),
     GoRoute(
