@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -7,8 +8,6 @@ class AuthController extends GetxController {
     try {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
-
-      // Get.toNamed(RouteNames.homeScreen);
 
       return true;
     } on FirebaseAuthException catch (e) {
@@ -22,6 +21,7 @@ class AuthController extends GetxController {
     }
   }
 
+<<<<<<< HEAD
   // Future<void> registerwithEmailAndPassword(String email, String password) async {
   Future<bool> registerwithEmailAndPassword(
       String email, String password) async {
@@ -32,9 +32,24 @@ class AuthController extends GetxController {
     );
 
     // Get.toNamed(RouteNames.homeScreen);
+=======
+  Future<bool> register(String email, String password, String phoneNumber,
+      String fullName) async {
+    try {
+      var credentials =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+
+      var user = credentials.user!;
+      await user.updateDisplayName(fullName);
+      await user.sendEmailVerification();
+>>>>>>> cb8cf5e7f821d6d39842d15d62cfd6462efdbe56
 
     return true;
     } on FirebaseAuthException catch (e) {
+<<<<<<< HEAD
     if (e.code == 'weak-password') {
     Get.snackbar('Error', 'The password provided is too weak.');
     } else if (e.code == 'email-already-in-use') {
@@ -48,6 +63,22 @@ class AuthController extends GetxController {
 
     return false;
     }
+=======
+      if (e.code == 'weak-password') {
+        Get.snackbar('Error', 'The password provided is too weak.');
+      } else if (e.code == 'email-already-in-use') {
+        Get.snackbar('Error', 'An account already exists for that email.');
+      }
+
+      return false;
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+      Get.snackbar('Error', "Something went wrong");
+
+      return false;
+>>>>>>> cb8cf5e7f821d6d39842d15d62cfd6462efdbe56
     }
 
   Future<bool> signInwithGoogle() async {
@@ -55,9 +86,11 @@ class AuthController extends GetxController {
       // Trigger the authentication flow
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
+      print(googleUser);
+
       // Obtain the auth details from the request
       final GoogleSignInAuthentication? googleAuth =
-          await googleUser?.authentication;
+          await googleUser?.authentication!;
 
       // Create a new credential
       final credential = GoogleAuthProvider.credential(
@@ -72,7 +105,9 @@ class AuthController extends GetxController {
 
       // Get.toNamed(RouteNames.homeScreen);
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
 
       return false;
     }
@@ -84,7 +119,9 @@ class AuthController extends GetxController {
 
       return true;
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
 
       return false;
     }
@@ -96,7 +133,9 @@ class AuthController extends GetxController {
 
       return true;
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
 
       return false;
     }

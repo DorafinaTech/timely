@@ -4,8 +4,8 @@
 # This file should be version controlled.
 
 version:
-  revision: 7048ed95a5ad3e43d697e0c397464193991fc230
-  channel: stable
+  revision: 22e17bb71050fb6bc18c95fede935fa4715772e8
+  channel: master
 
 project_type: app
 
@@ -13,26 +13,26 @@ project_type: app
 migration:
   platforms:
     - platform: root
-      create_revision: 7048ed95a5ad3e43d697e0c397464193991fc230
-      base_revision: 7048ed95a5ad3e43d697e0c397464193991fc230
+      create_revision: 22e17bb71050fb6bc18c95fede935fa4715772e8
+      base_revision: 22e17bb71050fb6bc18c95fede935fa4715772e8
     - platform: android
-      create_revision: 7048ed95a5ad3e43d697e0c397464193991fc230
-      base_revision: 7048ed95a5ad3e43d697e0c397464193991fc230
+      create_revision: 22e17bb71050fb6bc18c95fede935fa4715772e8
+      base_revision: 22e17bb71050fb6bc18c95fede935fa4715772e8
     - platform: ios
-      create_revision: 7048ed95a5ad3e43d697e0c397464193991fc230
-      base_revision: 7048ed95a5ad3e43d697e0c397464193991fc230
+      create_revision: 22e17bb71050fb6bc18c95fede935fa4715772e8
+      base_revision: 22e17bb71050fb6bc18c95fede935fa4715772e8
     - platform: linux
-      create_revision: 7048ed95a5ad3e43d697e0c397464193991fc230
-      base_revision: 7048ed95a5ad3e43d697e0c397464193991fc230
+      create_revision: 22e17bb71050fb6bc18c95fede935fa4715772e8
+      base_revision: 22e17bb71050fb6bc18c95fede935fa4715772e8
     - platform: macos
-      create_revision: 7048ed95a5ad3e43d697e0c397464193991fc230
-      base_revision: 7048ed95a5ad3e43d697e0c397464193991fc230
+      create_revision: 22e17bb71050fb6bc18c95fede935fa4715772e8
+      base_revision: 22e17bb71050fb6bc18c95fede935fa4715772e8
     - platform: web
-      create_revision: 7048ed95a5ad3e43d697e0c397464193991fc230
-      base_revision: 7048ed95a5ad3e43d697e0c397464193991fc230
+      create_revision: 22e17bb71050fb6bc18c95fede935fa4715772e8
+      base_revision: 22e17bb71050fb6bc18c95fede935fa4715772e8
     - platform: windows
-      create_revision: 7048ed95a5ad3e43d697e0c397464193991fc230
-      base_revision: 7048ed95a5ad3e43d697e0c397464193991fc230
+      create_revision: 22e17bb71050fb6bc18c95fede935fa4715772e8
+      base_revision: 22e17bb71050fb6bc18c95fede935fa4715772e8
 
   # User provided section
 

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 
 import '../components/bottom_navigation.dart';
 import '../constants/menu_padding.dart';
 import 'notes.dart';
 
 class FloatingButtonForNote extends StatefulWidget {
-  FloatingButtonForNote({Key? key}) : super(key: key);
+  const FloatingButtonForNote({Key? key}) : super(key: key);
 
   @override
   State<FloatingButtonForNote> createState() => _FloatingButtonForNoteState();
@@ -18,20 +17,20 @@ class _FloatingButtonForNoteState extends State<FloatingButtonForNote> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigation(),
+      bottomNavigationBar: const BottomNavigation(),
       floatingActionButton: FloatingActionButton(
         mini: true,
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Notes()),
+            MaterialPageRoute(builder: (context) => const Notes()),
           );
         },
         backgroundColor: Theme.of(context).primaryColor,
         child: const Icon(Icons.save),
       ),
       appBar: AppBar(
-        title: Center(
+        title: const Center(
           child: Text(
             'Note',
             style: TextStyle(
@@ -127,7 +126,10 @@ class _FloatingButtonForNoteState extends State<FloatingButtonForNote> {
               Expanded(
                 child: Container(
                     padding: const EdgeInsets.only(
-                        top: 10, right: 16, left: 16,),
+                      top: 10,
+                      right: 16,
+                      left: 16,
+                    ),
                     child: TextField(
                       decoration: const InputDecoration(
                           hintText: 'Tittle',

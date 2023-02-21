@@ -1,5 +1,3 @@
-import 'package:timely/pages/register.dart';
-
 abstract class RoutePaths {
   static const splash = '/';
   static const homeScreen = '/home';
