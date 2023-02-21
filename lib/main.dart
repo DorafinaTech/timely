@@ -6,8 +6,9 @@ import 'package:timely/pages/login.dart';
 import 'package:timely/pages/edit_profile_screen.dart';
 import 'package:timely/pages/exam_screen.dart';
 import 'package:timely/pages/home_screen.dart';
+import 'package:timely/pages/onboarding.dart';
+import 'package:timely/pages/onboarding1.dart';
 import 'package:timely/pages/onboarding2.dart';
-import 'package:timely/pages/onboarding3.dart';
 import 'package:timely/pages/profile_screen.dart';
 import 'package:timely/pages/reading_screen.dart';
 import 'package:timely/pages/register.dart';
@@ -47,22 +48,24 @@ final GoRouter _router = GoRouter(
       name: RouteNames.homeScreen,
       builder: (BuildContext context, GoRouterState state) {
         return const HomeScreen();
-      },
-    ),
-    GoRoute(
-      path: RoutePaths.onboarding2,
-      name: RouteNames.onboarding2,
-      builder: (BuildContext context, GoRouterState state) {
-        return const Onboarding2();
+
+
       },
     ),
     GoRoute(
       path: RoutePaths.onboarding3,
       name: RouteNames.onboarding3,
       builder: (BuildContext context, GoRouterState state) {
-        return const Onboarding3();
+        return const Onboarding2();
       },
     ),
+GoRoute(
+path: RoutePaths.onboarding3,
+name: RouteNames.onboarding3,
+builder: (BuildContext context, GoRouterState state) {
+return const Onboarding();
+},
+),
     GoRoute(
       path: RoutePaths.login,
       name: RouteNames.login,

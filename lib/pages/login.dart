@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:timely/controllers/auth_controller.dart';
+import 'package:timely/pages/home_screen.dart';
 import 'package:timely/pages/recover_password.dart';
-import 'package:timely/pages/register.dart';
 import 'package:timely/utilities/route_names.dart';
 
 class Login extends StatefulWidget {
@@ -41,9 +41,11 @@ class LoginState extends State<Login> {
             child: OutlinedButton(
               onPressed: () async {
                 if (await AuthController().signInwithGoogle()) {
-                  context.pushReplacementNamed(RouteNames.homeScreen);
+                  // context.pushReplacementNamed(RouteNames.homeScreen);
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()));
 
-                  debugPrint("Loggin in successfully");
+                  debugPrint("Login is successfully");
                 } else {
                   Get.snackbar("Oops", "Something went wrong");
 

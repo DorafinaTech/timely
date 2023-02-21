@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:timely/pages/login.dart';
-import 'package:timely/pages/onboarding2.dart';
+import 'package:timely/pages/onboarding1.dart';
 
 
 import 'register.dart';
 
 class Onboarding extends StatefulWidget {
-  const Onboarding({Key? key}) : super(key: key);
+  const Onboarding ({Key? key}) : super(key: key);
 
   @override
   State<Onboarding> createState() => _OnboardingState();
@@ -63,7 +63,7 @@ class _OnboardingState extends State<Onboarding> {
                 ),
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const Onboarding2()));
+                      builder: (context) =>  Login()));
                 },
                 child: const Text(
                   'Log In',

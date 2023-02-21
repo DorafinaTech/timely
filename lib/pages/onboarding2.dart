@@ -19,19 +19,21 @@ class Onboarding2 extends StatelessWidget {
               ),
           child: Center(
             // child: Row(children: [
-            child: Image.asset("assets/images/student.png"),
+            child: Image.asset("assets/images/girl&boy.png"),
             // ]),
           ),
         ),
         Container(
           padding: const EdgeInsets.only(left: 30),
           child: const Center(
-            child: Text("Get to schedule yourself for your school dealings",
-                style: TextStyle(
-                    color: Colors.teal,
-                    fontSize: 20,
-                    fontFamily: 'Satoshi',
-                    fontWeight: FontWeight.w100)),
+            child: Text(
+              "Every moment should count, So make a TimeTable for that here",
+              style: TextStyle(
+                  color: Colors.teal,
+                  fontSize: 20,
+                  fontFamily: "Satoshi",
+                  fontWeight: FontWeight.w100),
+            ),
           ),
         ),
         TextButton(
@@ -51,7 +53,7 @@ class Onboarding2 extends StatelessWidget {
             ]),
           ),
           onPressed: () {
-            context.goNamed(RouteNames.onboarding3);
+            context.goNamed(RouteNames.login);
           },
         )
       ]),

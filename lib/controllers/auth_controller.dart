@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:timely/utilities/route_names.dart';
 
 class AuthController extends GetxController {
   Future<bool> signInwithEmailAndPassword(String email, String password) async {
@@ -23,36 +22,33 @@ class AuthController extends GetxController {
     }
   }
 
-<<<<<<< HEAD
-  Future<void> registerwithEmailAndPassword(String email, String password) async {
-=======
+  // Future<void> registerwithEmailAndPassword(String email, String password) async {
   Future<bool> registerwithEmailAndPassword(
       String email, String password) async {
->>>>>>> 88892959e65ed8c83e203571121a35214bc745fd
     try {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(
+    email: email,
+    password: password,
+    );
 
-      // Get.toNamed(RouteNames.homeScreen);
+    // Get.toNamed(RouteNames.homeScreen);
 
-      return true;
+    return true;
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'weak-password') {
-        Get.snackbar('Error', 'The password provided is too weak.');
-      } else if (e.code == 'email-already-in-use') {
-        Get.snackbar('Error', 'An account already exists for that email.');
-      }
-
-      return false;
-    } catch (e) {
-      print(e);
-      Get.snackbar('Error', "Something went wrong");
-
-      return false;
+    if (e.code == 'weak-password') {
+    Get.snackbar('Error', 'The password provided is too weak.');
+    } else if (e.code == 'email-already-in-use') {
+    Get.snackbar('Error', 'An account already exists for that email.');
     }
-  }
+
+    return false;
+    } catch (e) {
+    print(e);
+    Get.snackbar('Error', "Something went wrong");
+
+    return false;
+    }
+    }
 
   Future<bool> signInwithGoogle() async {
     try {
