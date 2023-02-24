@@ -265,6 +265,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 onPressed: () {
                   AuthController().signout();
+                  context.goNamed('/login');
                 },
               )
             ],
