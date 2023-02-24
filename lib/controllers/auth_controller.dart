@@ -21,18 +21,6 @@ class AuthController extends GetxController {
     }
   }
 
-<<<<<<< HEAD
-  // Future<void> registerwithEmailAndPassword(String email, String password) async {
-  Future<bool> registerwithEmailAndPassword(
-      String email, String password) async {
-    try {
-    await FirebaseAuth.instance.createUserWithEmailAndPassword(
-    email: email,
-    password: password,
-    );
-
-    // Get.toNamed(RouteNames.homeScreen);
-=======
   Future<bool> register(String email, String password, String phoneNumber,
       String fullName) async {
     try {
@@ -45,25 +33,9 @@ class AuthController extends GetxController {
       var user = credentials.user!;
       await user.updateDisplayName(fullName);
       await user.sendEmailVerification();
->>>>>>> cb8cf5e7f821d6d39842d15d62cfd6462efdbe56
 
     return true;
     } on FirebaseAuthException catch (e) {
-<<<<<<< HEAD
-    if (e.code == 'weak-password') {
-    Get.snackbar('Error', 'The password provided is too weak.');
-    } else if (e.code == 'email-already-in-use') {
-    Get.snackbar('Error', 'An account already exists for that email.');
-    }
-
-    return false;
-    } catch (e) {
-    print(e);
-    Get.snackbar('Error', "Something went wrong");
-
-    return false;
-    }
-=======
       if (e.code == 'weak-password') {
         Get.snackbar('Error', 'The password provided is too weak.');
       } else if (e.code == 'email-already-in-use') {
@@ -78,7 +50,6 @@ class AuthController extends GetxController {
       Get.snackbar('Error', "Something went wrong");
 
       return false;
->>>>>>> cb8cf5e7f821d6d39842d15d62cfd6462efdbe56
     }
 
   Future<bool> signInwithGoogle() async {
