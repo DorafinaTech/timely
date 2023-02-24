@@ -47,6 +47,8 @@ class LoginState extends State<Login> {
                         context.pushReplacementNamed(RouteNames.homeScreen);
                         userMessage = "Login in successfully";
                         debugPrint(userMessage);
+                      } else {
+                        Get.snackbar("Oops", "Could not login");
                       }
                     }).catchError((error) {
                       userMessage = "Login failed, Something went wrong";
@@ -167,7 +169,23 @@ class LoginState extends State<Login> {
                   onPressed: () {
                     AuthController().signInwithEmailAndPassword(
                         _emailController.value.text.trim(),
-                        _passwordController.value.text.trim());
+                        _passwordController.value.text.trim()).then((value) {
+                      if (value) {
+                        context.pushReplacementNamed(RouteNames.homeScreen);
+                        userMessage = "Login in successfully";
+                        debugPrint(userMessage);
+                      } else {
+                        Get.snackbar("Oops", "Could not login");
+                      }
+                    }).catchError((error) {
+                      userMessage = "Login failed, Something went wrong";
+                      Get.snackbar("Oops", userMessage);
+                      debugPrint(userMessage);
+
+                      if (kDebugMode) {
+                        print(error);
+                      }
+                    });;
                   },
                   style: OutlinedButton.styleFrom(
                     shape: const RoundedRectangleBorder(
