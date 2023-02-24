@@ -1,33 +1,61 @@
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:timely/pages/onboarding.dart';
-import 'package:timely/pages/onboarding1.dart';
-import 'package:timely/pages/onboarding2.dart';
+import 'package:go_router/go_router.dart';
+import 'package:timely/utilities/route_names.dart';
 
-class NewOnboarding extends StatelessWidget {
-  NewOnboarding({Key? key}) : super(key: key);
-  final PageController _controller = PageController();
-  static const routeName = "/onboarding1";
+class Onboarding2 extends StatelessWidget {
+  const Onboarding2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          PageView(
-            controller: _controller,
-            children: [
-              Onboarding2(),
-              Onboarding(),
-            ],
-          ),
-          Container(
-            alignment: const Alignment(0, 0.5),
-            child: SmoothPageIndicator(controller: _controller, count: 3),
-          ),
+        body: SafeArea(
+            child: Expanded(
+              child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Container(
+                  margin: const EdgeInsets.only(
+                    // left: 50,
+                    // top: 50,
+                    // bottom: 100,
+                  ),
+                ),
+                Center(
+                  child: Image.asset("assets/images/student.png"),
 
-        ],
-      ),
-    );
+                ),
+                Container(
+                  padding: const EdgeInsets.only(left: 30),
+                  child: const Center(
+                    child: Text(
+                      "Every moment should count, So make a TimeTable for that here",
+                      style: TextStyle(
+                          color: Colors.teal,
+                          fontSize: 20,
+                          fontFamily: "Satoshi",
+                          fontWeight: FontWeight.w100),
+                    ),
+                  ),
+                ),
+                TextButton(
+                  child: Container(
+                    width: 50,
+                    height: 50,
+                    margin: const EdgeInsets.all(8.0),
+                    child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                      Container(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset(
+                          "svgs/nexticon.png",
+                          height: 30,
+                          width: 30,
+                        ),
+                      ),
+                    ]),
+                  ),
+                  onPressed: () {
+                    context.goNamed(RouteNames.onboarding2);
+                  },
+                )
+              ]),
+            )));
   }
 }

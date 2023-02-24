@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:timely/utilities/route_names.dart';
 
+import 'onboarding.dart';
+
 class Onboarding2 extends StatelessWidget {
   const Onboarding2({Key? key}) : super(key: key);
 
@@ -52,7 +54,7 @@ class Onboarding2 extends StatelessWidget {
             ]),
           ),
           onPressed: () {
-            context.goNamed(RouteNames.login);
+            context.goNamed(RouteNames.onboarding);
           },
         )
       ]),

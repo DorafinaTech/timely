@@ -55,7 +55,7 @@ final GoRouter _router = GoRouter(
       path: RoutePaths.onboarding1,
       name: RouteNames.onboarding1,
       builder: (BuildContext context, GoRouterState state) {
-        return const Onboarding2();
+        return const Onboarding1();
       },
     ),GoRoute(
       path: RoutePaths.onboarding2,
