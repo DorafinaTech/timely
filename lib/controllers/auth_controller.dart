@@ -51,6 +51,7 @@ class AuthController extends GetxController {
 
       return false;
     }
+      }
 
   Future<bool> signInwithGoogle() async {
     try {
