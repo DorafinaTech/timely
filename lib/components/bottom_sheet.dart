@@ -16,7 +16,7 @@ class _BottomSheetwidgetState extends State<BottomSheetwidget> {
         borderRadius: BorderRadius.only(
             topRight: Radius.circular(30), topLeft: Radius.circular(30)),
       ),
-      child: const Column(
+      child:  Column(
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[

@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:timely/pages/login.dart';
-import 'package:timely/pages/onboarding1.dart';
-=======
 import 'package:timely/pages/onboarding2.dart';
->>>>>>> cb8cf5e7f821d6d39842d15d62cfd6462efdbe56
 
 import 'register.dart';
 

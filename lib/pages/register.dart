@@ -89,7 +89,7 @@ class RegisterState extends State<Register> {
             ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 16),
-              child: const Center(
+              child:  Center(
                 child: Row(
                   children: [
                     Expanded(

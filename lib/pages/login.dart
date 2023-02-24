@@ -41,7 +41,7 @@ class LoginState extends State<Login> {
             margin: const EdgeInsets.all(8.0),
             child: OutlinedButton(
               onPressed: () async {
-<<<<<<< HEAD
+
                 if (await AuthController().signInwithGoogle()) {
                   // context.pushReplacementNamed(RouteNames.homeScreen);
                   Navigator.push(context,
@@ -53,7 +53,6 @@ class LoginState extends State<Login> {
 
                   debugPrint("Login failed");
                 }
-=======
                 String userMessage = '';
                 AuthController().signInwithGoogle().then((value) {
                   if (value) {
@@ -70,7 +69,6 @@ class LoginState extends State<Login> {
                     print(error);
                   }
                 });
->>>>>>> cb8cf5e7f821d6d39842d15d62cfd6462efdbe56
               },
               style: OutlinedButton.styleFrom(
                   side: BorderSide(color: Colors.teal.shade200),
@@ -99,7 +97,7 @@ class LoginState extends State<Login> {
           ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 16),
-            child: const Center(
+            child:  Center(
               child: Row(
                 children: [
                   Expanded(
