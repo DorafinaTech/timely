@@ -21,7 +21,7 @@ class Onboarding2 extends StatelessWidget {
               ),
           ),
         Center(
-          child: Image.asset("assets/images/student.png"),
+          child: Image.asset("assets/images/girl&boy.png"),
 
         ),
         Container(

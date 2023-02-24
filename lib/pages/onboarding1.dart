@@ -26,7 +26,7 @@ class Onboarding2 extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 30),
                   child: const Center(
                     child: Text(
-                      "Every moment should count, So make a TimeTable for that here",
+                      "Get to schedule yourself for your school dealings",
                       style: TextStyle(
                           color: Colors.teal,
                           fontSize: 20,

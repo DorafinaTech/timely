@@ -49,7 +49,7 @@ class RegisterState extends State<Register> {
                   AuthController().signInwithGoogle().then((value) {
                     if (value) {
                       context.pushReplacementNamed(RouteNames.homeScreen);
-                      userMessage = "Loggin in successfully";
+                      userMessage = "Login in successfully";
                       debugPrint(userMessage);
                     }
                   }).catchError((error) {
@@ -173,8 +173,10 @@ class RegisterState extends State<Register> {
             Container(
               margin: const EdgeInsets.all(8.0),
               child: TextField(
+                controller: _passwordController,
+                obscureText: true,
                 decoration: InputDecoration(
-                    hintText: "confirm Password",
+                    hintText: " Confirm Password",
                     hintStyle: const TextStyle(color: Colors.black54),
                     enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(50),
