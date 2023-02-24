@@ -34,7 +34,7 @@ class AuthController extends GetxController {
       await user.updateDisplayName(fullName);
       await user.sendEmailVerification();
 
-    return true;
+      return true;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         Get.snackbar('Error', 'The password provided is too weak.');
@@ -51,7 +51,7 @@ class AuthController extends GetxController {
 
       return false;
     }
-      }
+  }
 
   Future<bool> signInwithGoogle() async {
     try {

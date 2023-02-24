@@ -49,24 +49,28 @@ final GoRouter _router = GoRouter(
       name: RouteNames.homeScreen,
       builder: (BuildContext context, GoRouterState state) {
         return const HomeScreen();
-
-
       },
     ),
     GoRoute(
-      path: RoutePaths.onboarding3,
-      name: RouteNames.onboarding3,
+      path: RoutePaths.onboarding1,
+      name: RouteNames.onboarding1,
       builder: (BuildContext context, GoRouterState state) {
         return const Onboarding2();
       },
+    ),GoRoute(
+      path: RoutePaths.onboarding2,
+      name: RouteNames.onboarding2,
+      builder: (BuildContext context, GoRouterState state) {
+        return const Onboarding();
+      },
     ),
-GoRoute(
-path: RoutePaths.onboarding3,
-name: RouteNames.onboarding3,
-builder: (BuildContext context, GoRouterState state) {
-return const Onboarding();
-},
-),
+    // GoRoute(
+    //   path: RoutePaths.onboarding3,
+    //   name: RouteNames.onboarding3,
+    //   builder: (BuildContext context, GoRouterState state) {
+    //     return const Onboarding();
+    //   },
+    // ),
     GoRoute(
       path: RoutePaths.login,
       name: RouteNames.login,
@@ -126,7 +130,7 @@ class TimelyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: 'Timely assistant',
+      title: 'Timely ',
 
       // routerConfig: _router,
 
