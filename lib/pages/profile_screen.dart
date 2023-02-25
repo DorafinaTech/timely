@@ -1,6 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:go_router/go_router.dart';
 import 'package:timely/components/bottom_navigation.dart';
 import 'package:timely/controllers/auth_controller.dart';
@@ -266,14 +266,25 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () async {
-                  print( "Working");
-                  var isSuccessful = await   AuthController().signout();
-                  if (isSuccessful) {
-                    context.goNamed('/login');
-                    Get.snackbar("Alert", "You've logged out");
-                  } else {
-                    Get.snackbar("Alert", "Logout failed");
+                  if (kDebugMode) {
+                    print("Working");
                   }
+                  var userMessage = '';
+
+                  AuthController().signout().then((value) {
+                    if (value) {
+                      context.goNamed('/login');
+                      Get.snackbar("Alert", "You've logged out");
+                    } else {
+                      Get.snackbar("Alert", "Logout failed");
+                    }
+                  }).catchError((error) {
+                    Get.snackbar("Alert", "Logout failed");
+
+                    if (kDebugMode) {
+                      print(error);
+                    }
+                  });
                 },
               )
             ],

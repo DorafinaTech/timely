@@ -92,6 +92,7 @@ class AuthController extends GetxController {
       return true;
     } catch (e) {
       if (kDebugMode) {
+        print('Logout failed');
         print(e);
       }
 
