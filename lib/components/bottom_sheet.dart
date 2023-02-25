@@ -19,7 +19,7 @@ class _BottomSheetwidgetState extends State<BottomSheetwidget> {
       child:  Column(
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
-        children: <Widget>[
+        children: const <Widget>[
           Expanded(
             child: Divider(
               thickness: 0.5,
