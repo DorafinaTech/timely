@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:timely/utilities/route_names.dart';
 
-class Onboarding2 extends StatelessWidget {
-  const Onboarding2({Key? key}) : super(key: key);
+class Onboarding1 extends StatelessWidget {
+  const Onboarding1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

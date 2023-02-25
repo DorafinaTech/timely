@@ -4,6 +4,9 @@ abstract class RouteNames {
   static const onboarding2 = 'Onboarding2';
   static const onboarding = 'Onboarding';
   static const onboarding1 = 'Onboarding1';
+  static const calenderscreen = 'Calenderscreen';
+  static const notescreen = 'Notescreen';
+  static const aboutscreen = 'Aboutscreen';
   static const login = 'Login';
   static const register = 'Register';
   static const examsScreen = 'Exams';

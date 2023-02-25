@@ -2,10 +2,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 import 'package:timely/firebase_options.dart';
+import 'package:timely/pages/calender_screen.dart';
 import 'package:timely/pages/login.dart';
 import 'package:timely/pages/edit_profile_screen.dart';
 import 'package:timely/pages/exam_screen.dart';
 import 'package:timely/pages/home_screen.dart';
+import 'package:timely/pages/notes.dart';
 import 'package:timely/pages/onboarding.dart';
 import 'package:timely/pages/onboarding1.dart';
 import 'package:timely/pages/onboarding2.dart';
@@ -44,24 +46,32 @@ final GoRouter _router = GoRouter(
         return const SplashScreen();
       },
     ),
+
+    GoRoute(
+      path: RoutePaths.onboarding1,
+      name: RouteNames.onboarding1,
+      builder: (BuildContext context, GoRouterState state) {
+        return const Onboarding1();
+      },
+    ),
+    GoRoute(
+      path: RoutePaths.onboarding2,
+      name: RouteNames.onboarding2,
+      builder: (BuildContext context, GoRouterState state) {
+        return const Onboarding2();
+      },
+    ),GoRoute(
+      path: RoutePaths.onboarding,
+      name: RouteNames.onboarding,
+      builder: (BuildContext context, GoRouterState state) {
+        return const Onboarding();
+      },
+    ),
     GoRoute(
       path: RoutePaths.homeScreen,
       name: RouteNames.homeScreen,
       builder: (BuildContext context, GoRouterState state) {
         return const HomeScreen();
-      },
-    ),
-    GoRoute(
-      path: RoutePaths.onboarding1,
-      name: RouteNames.onboarding1,
-      builder: (BuildContext context, GoRouterState state) {
-        return const Onboarding();
-      },
-    ),GoRoute(
-      path: RoutePaths.onboarding2,
-      name: RouteNames.onboarding2,
-      builder: (BuildContext context, GoRouterState state) {
-        return const Onboarding();
       },
     ),
     // GoRoute(
@@ -118,6 +128,27 @@ final GoRouter _router = GoRouter(
       name: RouteNames.editProfileScreen,
       builder: (BuildContext context, GoRouterState state) {
         return const EditProfileScreen();
+      },
+    ),
+    // GoRoute(
+    //   path: RoutePaths.editProfileScreen,
+    //   name: RouteNames.editProfileScreen,
+    //   builder: (BuildContext context, GoRouterState state) {
+    //     return const EditProfileScreen();
+    //   },
+    // ),
+    GoRoute(
+      path: RoutePaths.calendersreen,
+      name: RouteNames.calenderscreen,
+      builder: (BuildContext context, GoRouterState state) {
+        return const CalenderScreen();
+      },
+    ),
+    GoRoute(
+      path: RoutePaths.notescreen,
+      name: RouteNames.notescreen,
+      builder: (BuildContext context, GoRouterState state) {
+        return const Notes();
       },
     ),
   ],
