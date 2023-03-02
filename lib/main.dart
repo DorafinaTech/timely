@@ -46,7 +46,6 @@ final GoRouter _router = GoRouter(
         return const SplashScreen();
       },
     ),
-
     GoRoute(
       path: RoutePaths.onboarding1,
       name: RouteNames.onboarding1,
@@ -60,7 +59,8 @@ final GoRouter _router = GoRouter(
       builder: (BuildContext context, GoRouterState state) {
         return const Onboarding2();
       },
-    ),GoRoute(
+    ),
+    GoRoute(
       path: RoutePaths.onboarding,
       name: RouteNames.onboarding,
       builder: (BuildContext context, GoRouterState state) {
@@ -74,13 +74,6 @@ final GoRouter _router = GoRouter(
         return const HomeScreen();
       },
     ),
-    // GoRoute(
-    //   path: RoutePaths.onboarding3,
-    //   name: RouteNames.onboarding3,
-    //   builder: (BuildContext context, GoRouterState state) {
-    //     return const Onboarding();
-    //   },
-    // ),
     GoRoute(
       path: RoutePaths.login,
       name: RouteNames.login,
@@ -130,13 +123,6 @@ final GoRouter _router = GoRouter(
         return const EditProfileScreen();
       },
     ),
-    // GoRoute(
-    //   path: RoutePaths.editProfileScreen,
-    //   name: RouteNames.editProfileScreen,
-    //   builder: (BuildContext context, GoRouterState state) {
-    //     return const EditProfileScreen();
-    //   },
-    // ),
     GoRoute(
       path: RoutePaths.calendersreen,
       name: RouteNames.calenderscreen,
@@ -161,14 +147,10 @@ class TimelyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: 'Timely ',
-
-      // routerConfig: _router,
-
+      title: 'Timely',
       routerDelegate: _router.routerDelegate,
       routeInformationParser: _router.routeInformationParser,
       routeInformationProvider: _router.routeInformationProvider,
-
       theme: ThemeData(
           useMaterial3: true,
           primaryColor: Color(primaryColorCode),

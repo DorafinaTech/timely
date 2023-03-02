@@ -46,9 +46,11 @@ class LoginState extends State<Login> {
                   if (value) {
                     context.pushReplacementNamed(RouteNames.homeScreen);
                     userMessage = "Login in successfully";
-                    debugPrint(userMessage);
+
+                    debugPrint("Value is true" + userMessage);
                   } else {
                     Get.snackbar("Oops", "Could not login");
+                    debugPrint("Value is false");
                   }
                 }).catchError((error) {
                   userMessage = "Login failed, Something went wrong";

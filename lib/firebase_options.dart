@@ -45,17 +45,17 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyDBg6_VMzTiU_ZbpVUajphSOIm9_wefjI8',
-    appId: '1:262396420415:web:5f43ecf3c0ba2e5ab1738a',
+    appId: '1:262396420415:web:51539d837ce2e550b1738a',
     messagingSenderId: '262396420415',
     projectId: 'timely-ca8ad',
     authDomain: 'timely-ca8ad.firebaseapp.com',
     storageBucket: 'timely-ca8ad.appspot.com',
-    measurementId: 'G-2XY00ZQYV7',
+    measurementId: 'G-V9Y4WJKKCE',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyA0wN6mkFFbizc_pa2qEeTVccyJGR4bdco',
-    appId: '1:262396420415:android:ed5430c1c0a91d8eb1738a',
+    appId: '1:262396420415:android:7fd6e7fd6350489db1738a',
     messagingSenderId: '262396420415',
     projectId: 'timely-ca8ad',
     storageBucket: 'timely-ca8ad.appspot.com',
@@ -63,23 +63,21 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAxF2T9m_dARUBzOq9Ni0YIbN42AVu0bHI',
-    appId: '1:262396420415:ios:2beb4936f296e320b1738a',
+    appId: '1:262396420415:ios:9812feb297d9d6d3b1738a',
     messagingSenderId: '262396420415',
     projectId: 'timely-ca8ad',
     storageBucket: 'timely-ca8ad.appspot.com',
-    iosClientId:
-        '262396420415-1gvr17ib64v9ql20b0gtl53hb1qn5fdr.apps.googleusercontent.com',
-    iosBundleId: 'com.example.timely',
+    iosClientId: '262396420415-49rvsfl11qgeg6lttaqs4368f8du2bpg.apps.googleusercontent.com',
+    iosBundleId: 'com.gettimelyapp.mobile.timely',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyAxF2T9m_dARUBzOq9Ni0YIbN42AVu0bHI',
-    appId: '1:262396420415:ios:2beb4936f296e320b1738a',
+    appId: '1:262396420415:ios:9812feb297d9d6d3b1738a',
     messagingSenderId: '262396420415',
     projectId: 'timely-ca8ad',
     storageBucket: 'timely-ca8ad.appspot.com',
-    iosClientId:
-        '262396420415-1gvr17ib64v9ql20b0gtl53hb1qn5fdr.apps.googleusercontent.com',
-    iosBundleId: 'com.example.timely',
+    iosClientId: '262396420415-49rvsfl11qgeg6lttaqs4368f8du2bpg.apps.googleusercontent.com',
+    iosBundleId: 'com.gettimelyapp.mobile.timely',
   );
 }
