@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/pages/recover_password.dart';
-import 'package:timely/utilities/route_names.dart';
 import 'package:timely/utilities/route_paths.dart';
+import 'package:timely/utilities/show_snackbar.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -48,12 +48,12 @@ class LoginState extends State<Login> {
 
                     debugPrint("Value is true$userMessage");
                   } else {
-                    Get.snackbar("Oops", "Could not login");
+                    showSnackbar("Oops", "Could not login");
                     debugPrint("Value is false");
                   }
                 }).catchError((error) {
                   userMessage = "Login failed, Something went wrong";
-                  Get.snackbar("Oops", userMessage);
+                  showSnackbar("Oops", userMessage);
                   debugPrint(userMessage);
 
                   if (kDebugMode) {
@@ -180,12 +180,10 @@ class LoginState extends State<Login> {
                     Get.offAllNamed(RoutePaths.homeScreen);
                     userMessage = "Login in successfully";
                     debugPrint(userMessage);
-                  } else {
-                    Get.snackbar("Oops", "Could not login");
                   }
                 }).catchError((error) {
                   userMessage = "Login failed, Something went wrong";
-                  Get.snackbar("Oops", userMessage);
+                  showSnackbar("Oops", userMessage);
                   debugPrint(userMessage);
 
                   if (kDebugMode) {

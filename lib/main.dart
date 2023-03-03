@@ -34,7 +34,6 @@ void main() async {
   runApp(const TimelyApp());
 }
 
-
 class TimelyApp extends StatelessWidget {
   const TimelyApp({Key? key}) : super(key: key);
 

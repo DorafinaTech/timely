@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
+import 'package:timely/utilities/show_error_snackbar.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -59,7 +60,7 @@ class RegisterState extends State<Register> {
                     }
                   }).catchError((error) {
                     userMessage = "Login failed, Something went wrong";
-                    Get.snackbar("Oops", userMessage);
+                    showErrorSnackbar(userMessage);
                     debugPrint(userMessage);
 
                     if (kDebugMode) {
@@ -208,7 +209,7 @@ class RegisterState extends State<Register> {
                       Get.toNamed(RoutePaths.homeScreen);
                     }
                   }).catchError((error) {
-                    Get.snackbar("Oops", "Sign in failed");
+                    showErrorSnackbar( "Sign in failed");
                     if (kDebugMode) {
                       print(error);
                     }
