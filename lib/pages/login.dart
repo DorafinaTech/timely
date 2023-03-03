@@ -43,7 +43,7 @@ class LoginState extends State<Login> {
                 String userMessage = '';
                 AuthController().signInwithGoogle().then((value) {
                   if (value) {
-                    Get.offAndToNamed(RouteNames.homeScreen);
+                    Get.offAndToNamed(RoutePaths.homeScreen);
                     userMessage = "Login in successfully";
 
                     debugPrint("Value is true$userMessage");

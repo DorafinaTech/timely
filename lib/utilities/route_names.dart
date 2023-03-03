@@ -1,8 +1,8 @@
 abstract class RouteNames {
-  static const splash = 'SPlash';
+  static const splash = 'Splash';
   static const homeScreen = 'Home';
   static const onboarding2 = 'Onboarding2';
-  static const onboarding = 'Onboarding';
+  static const onboarding3 = 'Onboarding3';
   static const onboarding1 = 'Onboarding1';
   static const calenderscreen = 'Calenderscreen';
   static const notescreen = 'Notescreen';

@@ -21,6 +21,9 @@ class RegisterState extends State<Register> {
 
   final TextEditingController _passwordController = TextEditingController();
 
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +37,10 @@ class RegisterState extends State<Register> {
                 margin: const EdgeInsets.only(bottom: 25),
                 child: const Text(
                   "Register and lets get started ",
-                  style: TextStyle(color: Colors.black, fontSize: 20),
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
             ),
@@ -88,7 +94,7 @@ class RegisterState extends State<Register> {
             ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 16),
-              child:  Center(
+              child: Center(
                 child: Row(
                   children: const [
                     Expanded(
@@ -172,7 +178,7 @@ class RegisterState extends State<Register> {
             Container(
               margin: const EdgeInsets.all(8.0),
               child: TextField(
-                controller: _passwordController,
+                controller: _confirmPasswordController,
                 obscureText: true,
                 decoration: InputDecoration(
                     hintText: " Confirm Password",

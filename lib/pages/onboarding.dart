@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:timely/pages/login.dart';
-
-import 'register.dart';
+import 'package:get/get.dart';
+import 'package:timely/utilities/route_paths.dart';
 
 class Onboarding extends StatefulWidget {
-  const Onboarding ({Key? key}) : super(key: key);
+  const Onboarding({Key? key}) : super(key: key);
 
   @override
   State<Onboarding> createState() => _OnboardingState();
@@ -53,8 +52,7 @@ class _OnboardingState extends State<Onboarding> {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) =>  const Login()));
+                  Get.offAllNamed(RoutePaths.login);
                 },
                 child: const Text(
                   'Log In',
@@ -74,12 +72,7 @@ class _OnboardingState extends State<Onboarding> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Register(),
-                    ),
-                  );
+                  Get.offAllNamed(RoutePaths.register);
                 },
                 style: ElevatedButton.styleFrom(
                   shape: const RoundedRectangleBorder(

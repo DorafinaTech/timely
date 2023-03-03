@@ -25,7 +25,6 @@ import 'constants/primary_color.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   usePathUrlStrategy();
 
   await Firebase.initializeApp(
@@ -35,111 +34,112 @@ void main() async {
   runApp(const TimelyApp());
 }
 
-/// The route configuration.
-var getPages = [
-  GetPage(
-    title: RouteNames.splash,
-    name: RoutePaths.splash,
-    page: () => const SplashScreen(),
-  ),
-  GetPage(
-    title: RouteNames.onboarding1,
-    name: RoutePaths.onboarding1,
-    page: () => const Onboarding1(),
-  ),
-  GetPage(
-    title: RouteNames.onboarding2,
-    name: RoutePaths.onboarding2,
-    page: () => const Onboarding2(),
-  ),
-  GetPage(
-    title: RoutePaths.onboarding,
-    name: RouteNames.onboarding,
-    page: () {
-      return const Onboarding();
-    },
-  ),
-  GetPage(
-    title: RoutePaths.homeScreen,
-    name: RouteNames.homeScreen,
-    page: () {
-      return const HomeScreen();
-    },
-  ),
-  GetPage(
-    title: RoutePaths.login,
-    name: RouteNames.login,
-    page: () {
-      return const Login();
-    },
-  ),
-  GetPage(
-    title: RoutePaths.register,
-    name: RouteNames.register,
-    page: () {
-      return const Register();
-    },
-  ),
-  GetPage(
-    title: RoutePaths.examsScreen,
-    name: RouteNames.examsScreen,
-    page: () {
-      return const ExamScreen();
-    },
-  ),
-  GetPage(
-    title: RoutePaths.testScreen,
-    name: RouteNames.testScreen,
-    page: () {
-      return const TestScreen();
-    },
-  ),
-  GetPage(
-    title: RoutePaths.readingScreen,
-    name: RouteNames.readingScreen,
-    page: () {
-      return const ReadingScreen();
-    },
-  ),
-  GetPage(
-    title: RoutePaths.profileScreen,
-    name: RouteNames.profileScreen,
-    page: () {
-      return const ProfileScreen();
-    },
-  ),
-  GetPage(
-    title: RoutePaths.editProfileScreen,
-    name: RouteNames.editProfileScreen,
-    page: () {
-      return const EditProfileScreen();
-    },
-  ),
-  GetPage(
-    name: RoutePaths.calendersreen,
-    title: RouteNames.calenderscreen,
-    page: () {
-      return const CalenderScreen();
-    },
-  ),
-  GetPage(
-    title: RoutePaths.notescreen,
-    name: RouteNames.notescreen,
-    page: () {
-      return const Notes();
-    },
-  ),
-];
 
 class TimelyApp extends StatelessWidget {
   const TimelyApp({Key? key}) : super(key: key);
+
+  final splashScreen = const SplashScreen();
 
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Timely',
-      getPages: getPages,
+      initialRoute: RoutePaths.splash,
+      getPages: [
+        GetPage(
+          title: RouteNames.splash,
+          name: RoutePaths.splash,
+          page: () => splashScreen,
+        ),
+        GetPage(
+          title: RouteNames.onboarding1,
+          name: RoutePaths.onboarding1,
+          page: () => const Onboarding1(),
+        ),
+        GetPage(
+          title: RouteNames.onboarding2,
+          name: RoutePaths.onboarding2,
+          page: () => const Onboarding2(),
+        ),
+        GetPage(
+          name: RoutePaths.onboarding3,
+          title: RouteNames.onboarding3,
+          page: () {
+            return const Onboarding();
+          },
+        ),
+        GetPage(
+          name: RoutePaths.homeScreen,
+          title: RouteNames.homeScreen,
+          page: () {
+            return const HomeScreen();
+          },
+        ),
+        GetPage(
+          name: RoutePaths.login,
+          title: RouteNames.login,
+          page: () {
+            return const Login();
+          },
+        ),
+        GetPage(
+          name: RoutePaths.register,
+          title: RouteNames.register,
+          page: () {
+            return const Register();
+          },
+        ),
+        GetPage(
+          name: RoutePaths.examsScreen,
+          title: RouteNames.examsScreen,
+          page: () {
+            return const ExamScreen();
+          },
+        ),
+        GetPage(
+          name: RoutePaths.testScreen,
+          title: RouteNames.testScreen,
+          page: () {
+            return const TestScreen();
+          },
+        ),
+        GetPage(
+          name: RoutePaths.readingScreen,
+          title: RouteNames.readingScreen,
+          page: () {
+            return const ReadingScreen();
+          },
+        ),
+        GetPage(
+          name: RoutePaths.profileScreen,
+          title: RouteNames.profileScreen,
+          page: () {
+            return const ProfileScreen();
+          },
+        ),
+        GetPage(
+          name: RoutePaths.editProfileScreen,
+          title: RouteNames.editProfileScreen,
+          page: () {
+            return const EditProfileScreen();
+          },
+        ),
+        GetPage(
+          name: RoutePaths.calendersreen,
+          title: RouteNames.calenderscreen,
+          page: () {
+            return const CalenderScreen();
+          },
+        ),
+        GetPage(
+          name: RoutePaths.notescreen,
+          title: RouteNames.notescreen,
+          page: () {
+            return const Notes();
+          },
+        ),
+      ],
       theme: ThemeData(
           useMaterial3: true,
           primaryColor: Color(primaryColorCode),
