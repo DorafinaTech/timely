@@ -1,9 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     package="com.example.timely">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+=======
+    package="com.gettimelyapp.mobile.timely">
+   <application
+        android:label="timely"
+>>>>>>> 80786434efcd648acbf33c1d7bbc3b189aa3295f
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:label="timely">

@@ -56,7 +56,8 @@ class AuthController extends GetxController {
   Future<bool> signInwithGoogle() async {
     try {
       // Trigger the authentication flow
-      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      final GoogleSignInAccount? googleUser =
+          await GoogleSignIn(clientId: "").signIn();
 
       if (kDebugMode) {
         print(googleUser);
