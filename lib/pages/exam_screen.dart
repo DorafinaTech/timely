@@ -3,9 +3,6 @@ import 'package:time_planner/time_planner.dart';
 import 'package:timely/components/bottom_navigation.dart';
 import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/pages/add_exams_screen.dart';
-
-
-import '../components/bottom_modal_sheet.dart';
 import '../constants/menu_padding.dart';
 
 class ExamScreen extends StatelessWidget {

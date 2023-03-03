@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:timely/utilities/route_names.dart';
+import 'package:get/get.dart';
 
 
 class Onboarding2 extends StatelessWidget {
@@ -53,7 +53,7 @@ class Onboarding2 extends StatelessWidget {
             ]),
           ),
           onPressed: () {
-            context.goNamed(RouteNames.onboarding);
+            Get.toNamed(RouteNames.onboarding);
           },
         )
       ]),

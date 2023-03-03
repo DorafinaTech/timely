@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:timely/pages/login.dart';
-import 'package:timely/pages/onboarding2.dart';
 
 import 'register.dart';
 
@@ -55,7 +54,7 @@ class _OnboardingState extends State<Onboarding> {
                 ),
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) =>  Login()));
+                      builder: (context) =>  const Login()));
                 },
                 child: const Text(
                   'Log In',

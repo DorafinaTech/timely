@@ -1,9 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:go_router/go_router.dart';
 import 'package:timely/controllers/auth_controller.dart';
-import 'package:timely/utilities/route_names.dart';
+import 'package:timely/utilities/route_paths.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -48,7 +47,7 @@ class RegisterState extends State<Register> {
                   String userMessage = '';
                   AuthController().signInwithGoogle().then((value) {
                     if (value) {
-                      context.pushReplacementNamed(RouteNames.homeScreen);
+                      Get.offAllNamed(RoutePaths.homeScreen);
                       userMessage = "Login in successfully";
                       debugPrint(userMessage);
                     }
@@ -91,7 +90,7 @@ class RegisterState extends State<Register> {
               margin: const EdgeInsets.symmetric(horizontal: 16),
               child:  Center(
                 child: Row(
-                  children: [
+                  children: const [
                     Expanded(
                       child: Divider(
                         thickness: 0.5,
@@ -200,7 +199,7 @@ class RegisterState extends State<Register> {
                           _firstAndLastNameController.value.text.trim())
                       .then((value) {
                     if (value) {
-                      context.goNamed(RouteNames.homeScreen);
+                      Get.toNamed(RoutePaths.homeScreen);
                     }
                   }).catchError((error) {
                     Get.snackbar("Oops", "Sign in failed");
@@ -247,7 +246,7 @@ class RegisterState extends State<Register> {
                     ),
                     TextButton(
                         onPressed: () {
-                          context.goNamed(RouteNames.login);
+                          Get.toNamed(RoutePaths.login);
                         },
                         child: const Text(
                           'Sign in',

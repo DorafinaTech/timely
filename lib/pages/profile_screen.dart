@@ -1,13 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:go_router/go_router.dart';
 import 'package:timely/components/bottom_navigation.dart';
 import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/pages/notes.dart';
-
-import 'package:timely/utilities/route_names.dart';
 import 'package:timely/utilities/route_paths.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -141,7 +138,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 child: ElevatedButton(
                   onPressed: () {
-                    context.goNamed(RouteNames.editProfileScreen);
+                    Get.toNamed(RoutePaths.editProfileScreen);
                   },
                   style: ElevatedButton.styleFrom(
                     shape: const RoundedRectangleBorder(
@@ -270,11 +267,10 @@ class ProfileScreen extends StatelessWidget {
                   if (kDebugMode) {
                     print("Working");
                   }
-                  var userMessage = '';
 
                   AuthController().signout().then((value) {
                     if (value) {
-                      context.goNamed(RouteNames.login);
+                      Get.toNamed(RoutePaths.login);
                       Get.snackbar("Alert", "You've logged out");
                     } else {
                       Get.snackbar("Alert", "Logout failed");

@@ -1,12 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:go_router/go_router.dart';
 import 'package:timely/controllers/auth_controller.dart';
-import 'package:timely/pages/home_screen.dart';
 import 'package:timely/pages/recover_password.dart';
 import 'package:timely/utilities/route_names.dart';
-import 'package:http/http.dart' as http;
+import 'package:timely/utilities/route_paths.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -45,10 +43,10 @@ class LoginState extends State<Login> {
                 String userMessage = '';
                 AuthController().signInwithGoogle().then((value) {
                   if (value) {
-                    context.pushReplacementNamed(RouteNames.homeScreen);
+                    Get.offAndToNamed(RouteNames.homeScreen);
                     userMessage = "Login in successfully";
 
-                    debugPrint("Value is true" + userMessage);
+                    debugPrint("Value is true$userMessage");
                   } else {
                     Get.snackbar("Oops", "Could not login");
                     debugPrint("Value is false");
@@ -92,7 +90,7 @@ class LoginState extends State<Login> {
             margin: const EdgeInsets.symmetric(horizontal: 16),
             child: Center(
               child: Row(
-                children: [
+                children: const [
                   Expanded(
                     child: Divider(
                       thickness: 0.5,
@@ -171,8 +169,6 @@ class LoginState extends State<Login> {
             child: ElevatedButton(
               onPressed: () async {
 
-                // print('Google request: ' + await http.read(Uri.http('google.com')));
-
                 var userMessage = "";
 
                 AuthController()
@@ -181,7 +177,7 @@ class LoginState extends State<Login> {
                         _passwordController.value.text.trim())
                     .then((value) {
                   if (value) {
-                    context.pushReplacementNamed(RouteNames.homeScreen);
+                    Get.offAllNamed(RoutePaths.homeScreen);
                     userMessage = "Login in successfully";
                     debugPrint(userMessage);
                   } else {
@@ -196,7 +192,6 @@ class LoginState extends State<Login> {
                     print(error);
                   }
                 });
-                ;
               },
               style: OutlinedButton.styleFrom(
                 shape: const RoundedRectangleBorder(
@@ -238,7 +233,7 @@ class LoginState extends State<Login> {
                   ),
                   TextButton(
                       onPressed: () {
-                        context.goNamed(RouteNames.register);
+                        Get.toNamed(RoutePaths.register);
                       },
                       child: const Text(
                         'Register',
