@@ -103,7 +103,27 @@ class EditProfileScreen extends StatelessWidget {
                       fontSize: 16,
                       fontFamily: 'Satoshi',
                       color: Colors.black54),
-                  hintText: "Thessy Emmanuel",
+                  hintText: "First Name ",
+                  hintStyle: const TextStyle(color: Colors.black54),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: const BorderSide(
+                          color: Colors.transparent,
+                          width: 1.5,
+                          style: BorderStyle.solid))),
+            ),
+          ),
+          Container(
+            color: const Color(0xFFF6FDFC),
+            margin: const EdgeInsets.all(8.0),
+            child: TextField(
+              decoration: InputDecoration(
+                  // labelText: 'Name',
+                  labelStyle: const TextStyle(
+                      fontSize: 16,
+                      fontFamily: 'Satoshi',
+                      color: Colors.black54),
+                  hintText: "Last Name ",
                   hintStyle: const TextStyle(color: Colors.black54),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
@@ -162,7 +182,7 @@ class EditProfileScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const HomeScreen(),
+                    builder: (context) =>  HomeScreen(),
                   ),
                 );
               },

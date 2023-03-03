@@ -6,6 +6,7 @@ import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/pages/home_screen.dart';
 import 'package:timely/pages/recover_password.dart';
 import 'package:timely/utilities/route_names.dart';
+import 'package:http/http.dart' as http;
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -168,7 +169,10 @@ class LoginState extends State<Login> {
             height: 50,
             margin: const EdgeInsets.all(8.0),
             child: ElevatedButton(
-              onPressed: () {
+              onPressed: () async {
+
+                // print('Google request: ' + await http.read(Uri.http('google.com')));
+
                 var userMessage = "";
 
                 AuthController()
