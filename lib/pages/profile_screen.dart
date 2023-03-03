@@ -8,6 +8,7 @@ import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/pages/notes.dart';
 
 import 'package:timely/utilities/route_names.dart';
+import 'package:timely/utilities/route_paths.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -273,7 +274,7 @@ class ProfileScreen extends StatelessWidget {
 
                   AuthController().signout().then((value) {
                     if (value) {
-                      context.goNamed('/login');
+                      context.goNamed(RouteNames.login);
                       Get.snackbar("Alert", "You've logged out");
                     } else {
                       Get.snackbar("Alert", "Logout failed");
