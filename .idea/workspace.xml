@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="80bc6a95-9819-457e-953f-77a872b60449" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/lib/components/task_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/components/task_screen2.dart" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/exams_model.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/.filecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/app.dill" afterDir="false" />
@@ -22,11 +21,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/timely.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/timely.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/timely.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/bottom_modal_sheet.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/bottom_modal_sheet.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/task_screen2.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/components/bottom_navigation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/bottom_navigation.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/components/old_bottom_sheet.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/old_bottom_sheet.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
