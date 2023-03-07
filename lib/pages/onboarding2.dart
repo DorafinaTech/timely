@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:timely/utilities/route_names.dart';
 import 'package:timely/utilities/route_paths.dart';
 
 class Onboarding2 extends StatelessWidget {

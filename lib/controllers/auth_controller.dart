@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:timely/utilities/show_error_snackbar.dart';
 
 class AuthController extends GetxController {
   Future<bool> signInwithEmailAndPassword(String email, String password) async {
@@ -12,9 +13,9 @@ class AuthController extends GetxController {
       return true;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        Get.snackbar('Error', 'No user found for that email.');
+        showErrorSnackbar('No user found for that email.');
       } else if (e.code == 'wrong-password') {
-        Get.snackbar('Error', 'Wrong password provided.');
+        showErrorSnackbar('Wrong password provided.');
       }
 
       return false;
@@ -37,9 +38,9 @@ class AuthController extends GetxController {
       return true;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        Get.snackbar('Error', 'The password provided is too weak.');
+        showErrorSnackbar('The password provided is too weak.');
       } else if (e.code == 'email-already-in-use') {
-        Get.snackbar('Error', 'An account already exists for that email.');
+        showErrorSnackbar('An account already exists for that email.');
       }
 
       return false;
@@ -47,7 +48,7 @@ class AuthController extends GetxController {
       if (kDebugMode) {
         print(e);
       }
-      Get.snackbar('Error', "Something went wrong");
+      showErrorSnackbar("Something went wrong");
 
       return false;
     }

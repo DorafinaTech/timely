@@ -6,6 +6,7 @@ import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/pages/notes.dart';
 import 'package:timely/utilities/route_paths.dart';
+import 'package:timely/utilities/show_snackbar.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -271,12 +272,12 @@ class ProfileScreen extends StatelessWidget {
                   AuthController().signout().then((value) {
                     if (value) {
                       Get.toNamed(RoutePaths.login);
-                      Get.snackbar("Alert", "You've logged out");
+                      showSnackbar("Alert", "You've logged out");
                     } else {
-                      Get.snackbar("Alert", "Logout failed");
+                      showSnackbar("Alert", "Logout failed");
                     }
                   }).catchError((error) {
-                    Get.snackbar("Alert", "Logout failed");
+                    showSnackbar("Alert", "Logout failed");
 
                     if (kDebugMode) {
                       print(error);
