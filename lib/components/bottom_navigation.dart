@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:get/get.dart';
 import 'package:timely/utilities/route_names.dart';
+import 'package:timely/utilities/route_paths.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({Key? key}) : super(key: key);
@@ -15,19 +16,19 @@ class _BottomNavigationState extends State<BottomNavigation> {
   int currentRouteIndex = 0;
 
   Map<String, int> pagesListIndicies = {
-    RouteNames.homeScreen: 0,
-    RouteNames.examsScreen: 1,
-    RouteNames.testScreen: 2,
-    RouteNames.readingScreen: 3,
-    RouteNames.profileScreen: 4,
+    RoutePaths.homeScreen: 0,
+    RoutePaths.examsScreen: 1,
+    RoutePaths.testScreen: 2,
+    RoutePaths.readingScreen: 3,
+    RoutePaths.profileScreen: 4,
   };
 
   Map<int, String> pagesListNames = {
-    0: RouteNames.homeScreen,
-    1: RouteNames.examsScreen,
-    2: RouteNames.testScreen,
-    3: RouteNames.readingScreen,
-    4: RouteNames.profileScreen,
+    0: RoutePaths.homeScreen,
+    1: RoutePaths.examsScreen,
+    2: RoutePaths.testScreen,
+    3: RoutePaths.readingScreen,
+    4: RoutePaths.profileScreen,
   };
 
   void setCurrentIndex(int index) {
@@ -57,7 +58,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
 
             if (route != null) {
               if (currentRouteName != pagesListNames[currentRouteIndex]) {
-                context.goNamed(pagesListNames[currentRouteIndex]!);
+                Get.toNamed(pagesListNames[currentRouteIndex]!);
               }
             }
           },

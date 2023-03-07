@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:time_planner/time_planner.dart';
+import 'package:timely/components/task_screen.dart';
 import 'package:timely/components/bottom_navigation.dart';
 import 'package:timely/components/popup_menu_buttons.dart';
-import 'package:timely/pages/add_exams_screen.dart';
-
-
-import '../components/bottom_modal_sheet.dart';
 import '../constants/menu_padding.dart';
 
 class ExamScreen extends StatelessWidget {
-  const ExamScreen({Key? key}) : super(key: key);
+  // const ExamScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +15,11 @@ class ExamScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         mini: true,
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const AddExamScreen()),
-          );
+          showModalBottomSheet(context: context, builder: (BuildContext context)=> TaskScreen());
+          // // Navigator.push(
+          // //   context,
+          // //   MaterialPageRoute(builder: (context) => const BottomModalSheet()),
+          // );
         },
         backgroundColor: Theme.of(context).primaryColor,
         child: const Icon(Icons.add),
@@ -86,9 +84,7 @@ class ExamScreen extends StatelessWidget {
             title: "Saturday",
           ),
         ],
-        tasks: const [
-
-        ],
+        tasks: const [],
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:get/get.dart';
 import 'package:timely/utilities/route_names.dart';
-
+import 'package:timely/utilities/route_paths.dart';
 
 class Onboarding2 extends StatelessWidget {
   const Onboarding2({Key? key}) : super(key: key);
@@ -12,16 +12,9 @@ class Onboarding2 extends StatelessWidget {
         body: SafeArea(
             child: Expanded(
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Container(
-          margin: const EdgeInsets.only(
-              // left: 50,
-              // top: 50,
-              // bottom: 100,
-              ),
-          ),
+        Container(),
         Center(
           child: Image.asset("assets/images/girl&boy.png"),
-
         ),
         Container(
           padding: const EdgeInsets.only(left: 30),
@@ -53,7 +46,7 @@ class Onboarding2 extends StatelessWidget {
             ]),
           ),
           onPressed: () {
-            context.goNamed(RouteNames.onboarding);
+            Get.toNamed(RoutePaths.onboarding3);
           },
         )
       ]),

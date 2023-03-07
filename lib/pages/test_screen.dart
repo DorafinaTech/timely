@@ -3,6 +3,7 @@ import 'package:time_planner/time_planner.dart';
 import 'package:timely/components/bottom_navigation.dart';
 
 import '../components/popup_menu_buttons.dart';
+import '../components/task_screen.dart';
 import '../constants/menu_padding.dart';
 
 class TestScreen extends StatelessWidget {
@@ -14,7 +15,9 @@ class TestScreen extends StatelessWidget {
       bottomNavigationBar: const BottomNavigation(),
       floatingActionButton: FloatingActionButton(
         mini: true,
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(context: context, builder: (BuildContext context)=> TaskScreen());
+        },
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.white,
         child: const Icon(Icons.add),

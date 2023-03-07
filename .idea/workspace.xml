@@ -4,10 +4,53 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b9d5344-5dee-4e77-b60c-e18c3011d37c" name="Changes" comment="">
+    <list default="true" id="80bc6a95-9819-457e-953f-77a872b60449" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/components/task_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/components/task_screen2.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/exams_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/.filecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/app.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/debug_android_application.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/debug_android_application.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/flutter_assets.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/kernel_snapshot.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/kernel_snapshot.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/kernel_snapshot.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/timely.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/timely.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/bottom_modal_sheet.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/bottom_navigation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/bottom_navigation.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/old_bottom_sheet.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/old_bottom_sheet.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/add_exams_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/add_exams_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/confirm_password.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/confirm_password.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/edit_profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/edit_profile_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/email_recovery.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/email_recovery.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/exam_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/exam_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/onboarding.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/onboarding.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/onboarding1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/onboarding1.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/onboarding2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/onboarding2.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/otp_number.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/otp_number.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/profile_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/reading_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/reading_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/recover_password.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/recover_password.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/register.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/register.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/splash_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/test_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/test_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utilities/route_names.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/route_names.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utilities/route_paths.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/route_paths.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +70,17 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2LgMl1z0JvFSOCmtmYznln50uBM" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectId" id="2MdRv4nKbiiqdZaLMcKZpEYKQ1m" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" />
+    <panes>
+      <pane id="ProjectPane">
+        <option name="show-excluded-files" value="false" />
+      </pane>
+    </panes>
   </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
@@ -42,46 +93,25 @@
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/AndroidStudioProjects/timely/lib/controllers&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;flutter.settings&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\USER\AndroidStudioProjects\timely\lib\controllers" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Flutter.main.dart">
-    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
-      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
-      <method v="2" />
-    </configuration>
-    <configuration name="all tests in timely" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testDir" value="$PROJECT_DIR$" />
-      <option name="useRegexp" value="false" />
-      <option name="additionalArgs" value="" />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Flutter Test.all tests in timely" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8b9d5344-5dee-4e77-b60c-e18c3011d37c" name="Changes" comment="" />
-      <created>1676288423564</created>
+      <changelist id="80bc6a95-9819-457e-953f-77a872b60449" name="Changes" comment="" />
+      <created>1678095728583</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1676288423564</updated>
+      <updated>1678095728583</updated>
     </task>
     <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+    </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

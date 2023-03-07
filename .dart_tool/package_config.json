@@ -3,11 +3,7 @@
   "packages": [
     {
       "name": "_flutterfire_internals",
-<<<<<<< HEAD
-      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/_flutterfire_internals-1.0.12",
-=======
-      "rootUri": "file:///home/danroyal001/.pub-cache/hosted/pub.dev/_flutterfire_internals-1.0.16",
->>>>>>> 80786434efcd648acbf33c1d7bbc3b189aa3295f
+      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/_flutterfire_internals-1.0.16",
       "packageUri": "lib/",
       "languageVersion": "2.16"
     },
@@ -103,11 +99,7 @@
     },
     {
       "name": "firebase_auth_platform_interface",
-<<<<<<< HEAD
-      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_auth_platform_interface-6.11.7",
-=======
-      "rootUri": "file:///home/danroyal001/.pub-cache/hosted/pub.dev/firebase_auth_platform_interface-6.11.11",
->>>>>>> 80786434efcd648acbf33c1d7bbc3b189aa3295f
+      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_auth_platform_interface-6.11.11",
       "packageUri": "lib/",
       "languageVersion": "2.16"
     },
@@ -119,31 +111,19 @@
     },
     {
       "name": "firebase_core",
-<<<<<<< HEAD
-      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_core-2.4.1",
-=======
-      "rootUri": "file:///home/danroyal001/.pub-cache/hosted/pub.dev/firebase_core-2.7.0",
->>>>>>> 80786434efcd648acbf33c1d7bbc3b189aa3295f
+      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_core-2.7.0",
       "packageUri": "lib/",
       "languageVersion": "2.16"
     },
     {
       "name": "firebase_core_platform_interface",
-<<<<<<< HEAD
-      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_core_platform_interface-4.5.2",
-=======
-      "rootUri": "file:///home/danroyal001/.pub-cache/hosted/pub.dev/firebase_core_platform_interface-4.5.3",
->>>>>>> 80786434efcd648acbf33c1d7bbc3b189aa3295f
+      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_core_platform_interface-4.5.3",
       "packageUri": "lib/",
       "languageVersion": "2.16"
     },
     {
       "name": "firebase_core_web",
-<<<<<<< HEAD
-      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_core_web-2.1.0",
-=======
-      "rootUri": "file:///home/danroyal001/.pub-cache/hosted/pub.dev/firebase_core_web-2.2.1",
->>>>>>> 80786434efcd648acbf33c1d7bbc3b189aa3295f
+      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_core_web-2.2.1",
       "packageUri": "lib/",
       "languageVersion": "2.16"
     },
@@ -161,11 +141,7 @@
     },
     {
       "name": "flutter_native_splash",
-<<<<<<< HEAD
-      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_native_splash-2.2.17",
-=======
-      "rootUri": "file:///home/danroyal001/.pub-cache/hosted/pub.dev/flutter_native_splash-2.2.18",
->>>>>>> 80786434efcd648acbf33c1d7bbc3b189aa3295f
+      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_native_splash-2.2.18",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -188,16 +164,6 @@
       "languageVersion": "2.15"
     },
     {
-      "name": "go_router",
-<<<<<<< HEAD
-      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/go_router-6.0.5",
-=======
-      "rootUri": "file:///home/danroyal001/.pub-cache/hosted/pub.dev/go_router-6.2.0",
->>>>>>> 80786434efcd648acbf33c1d7bbc3b189aa3295f
-      "packageUri": "lib/",
-      "languageVersion": "2.17"
-    },
-    {
       "name": "google_sign_in",
       "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/google_sign_in-5.4.4",
       "packageUri": "lib/",
@@ -205,31 +171,19 @@
     },
     {
       "name": "google_sign_in_android",
-<<<<<<< HEAD
-      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/google_sign_in_android-6.1.6",
-=======
-      "rootUri": "file:///home/danroyal001/.pub-cache/hosted/pub.dev/google_sign_in_android-6.1.7",
->>>>>>> 80786434efcd648acbf33c1d7bbc3b189aa3295f
+      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/google_sign_in_android-6.1.7",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
     {
       "name": "google_sign_in_ios",
-<<<<<<< HEAD
-      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/google_sign_in_ios-5.5.1",
-=======
-      "rootUri": "file:///home/danroyal001/.pub-cache/hosted/pub.dev/google_sign_in_ios-5.5.2",
->>>>>>> 80786434efcd648acbf33c1d7bbc3b189aa3295f
+      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/google_sign_in_ios-5.5.2",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
     {
       "name": "google_sign_in_platform_interface",
-<<<<<<< HEAD
-      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/google_sign_in_platform_interface-2.3.0",
-=======
-      "rootUri": "file:///home/danroyal001/.pub-cache/hosted/pub.dev/google_sign_in_platform_interface-2.3.1",
->>>>>>> 80786434efcd648acbf33c1d7bbc3b189aa3295f
+      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/google_sign_in_platform_interface-2.3.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -282,12 +236,6 @@
       "languageVersion": "2.17"
     },
     {
-      "name": "logging",
-      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/logging-1.1.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.18"
-    },
-    {
       "name": "matcher",
       "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/matcher-0.12.13",
       "packageUri": "lib/",
@@ -331,11 +279,7 @@
     },
     {
       "name": "plugin_platform_interface",
-<<<<<<< HEAD
-      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/plugin_platform_interface-2.1.3",
-=======
-      "rootUri": "file:///home/danroyal001/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.4",
->>>>>>> 80786434efcd648acbf33c1d7bbc3b189aa3295f
+      "rootUri": "file:///C:/Users/USER/AppData/Local/Pub/Cache/hosted/pub.dev/plugin_platform_interface-2.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -454,11 +398,7 @@
       "languageVersion": "2.18"
     }
   ],
-<<<<<<< HEAD
-  "generated": "2023-03-02T17:00:13.749259Z",
-=======
-  "generated": "2023-03-01T16:23:46.595807Z",
->>>>>>> 80786434efcd648acbf33c1d7bbc3b189aa3295f
+  "generated": "2023-03-03T15:22:23.002659Z",
   "generator": "pub",
   "generatorVersion": "2.19.2"
 }

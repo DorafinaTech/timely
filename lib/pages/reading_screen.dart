@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:time_planner/time_planner.dart';
 import 'package:timely/components/bottom_navigation.dart';
+import 'package:timely/components/task_screen2.dart';
 
 import '../components/popup_menu_buttons.dart';
+import '../components/task_screen.dart';
 import '../constants/menu_padding.dart';
 
 class ReadingScreen extends StatelessWidget {
@@ -36,7 +38,10 @@ class ReadingScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         mini: true,
-        onPressed: () {},
+        onPressed: () {
+    showModalBottomSheet(context: context, builder: (BuildContext context)=> TaskScreen2());
+
+        },
         backgroundColor: Theme.of(context).primaryColor,
         child: const Icon(Icons.add),
       ),

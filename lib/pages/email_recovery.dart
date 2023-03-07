@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:timely/pages/confirm_password.dart';
 import 'package:timely/pages/otp_number.dart';
 
 class EmailRecovery extends StatefulWidget {
@@ -31,17 +32,12 @@ class _EmailRecoveryState extends State<EmailRecovery> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                margin: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                 child: TextField(
-                  decoration: InputDecoration(
-                      labelText: 'Phone Number',
-                      hintStyle: const TextStyle(color: Colors.black54),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: BorderSide(
-                              color: Colors.teal.shade200,
-                              width: 1.5,
-                              style: BorderStyle.solid))),
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Email',
+                  ),
                 ),
               ),
               Container(
@@ -53,7 +49,7 @@ class _EmailRecoveryState extends State<EmailRecovery> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const OtpNumber(),
+                        builder: (context) => const ConfirmPassword(),
                       ),
                     );
                   },

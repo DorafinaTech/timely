@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:otp_text_field/style.dart';
 import 'package:timely/pages/confirm_password.dart';
 import 'package:otp_text_field/otp_text_field.dart';
+import 'package:timely/pages/home_screen.dart';
 
 class OtpNumber extends StatefulWidget {
   const OtpNumber({Key? key}) : super(key: key);
@@ -98,7 +99,7 @@ class _OtpNumberState extends State<OtpNumber> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const ConfirmPassword(),
+                        builder: (context) =>   const HomeScreen(),
                       ),
                     );
                   },
