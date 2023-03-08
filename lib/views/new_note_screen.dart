@@ -4,14 +4,14 @@ import '../components/bottom_navigation.dart';
 import '../constants/menu_padding.dart';
 import 'notes.dart';
 
-class FloatingButtonForNote extends StatefulWidget {
-  const FloatingButtonForNote({Key? key}) : super(key: key);
+class NewNoteScreen extends StatefulWidget {
+  const NewNoteScreen({Key? key}) : super(key: key);
 
   @override
-  State<FloatingButtonForNote> createState() => _FloatingButtonForNoteState();
+  State<NewNoteScreen> createState() => _NewNoteScreenState();
 }
 
-class _FloatingButtonForNoteState extends State<FloatingButtonForNote> {
+class _NewNoteScreenState extends State<NewNoteScreen> {
   final TextEditingController _control = TextEditingController();
   final TextEditingController _controll = TextEditingController();
   @override

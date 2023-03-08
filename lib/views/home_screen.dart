@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/controllers/auth_controller.dart';
+import 'package:timely/utilities/route_paths.dart';
 import 'package:timely/views/exam_screen.dart';
 import 'package:timely/views/notes.dart';
 import 'package:timely/views/calender_screen.dart';
@@ -18,6 +19,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: const BottomNavigation(),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         actions: [
           Row(
             children: [
@@ -52,7 +54,7 @@ class HomeScreen extends StatelessWidget {
                 'Hey, ${authController.currentUser?.displayName!}',
                 style: const TextStyle(fontFamily: 'Satohi', fontSize: 16),
               ),
-              subtitle: const Text( 
+              subtitle: const Text(
                 'lets get things Scheduled, shall we?',
                 style: TextStyle(
                   fontFamily: 'Satoshi',
@@ -85,12 +87,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const CalenderScreen(),
-                    ),
-                  );
+                  Get.toNamed(RoutePaths.calendersreen);
                 },
                 subtitle: const Text(
                   'Thursady 5th January 2023',
@@ -121,12 +118,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>  ExamScreen(),
-                    ),
-                  );
+                  Get.toNamed(RoutePaths.examsScreen);
                 },
                 subtitle: const Text(
                   'Scheduled set for the week',
@@ -157,12 +149,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Notes(),
-                    ),
-                  );
+                  Get.toNamed(RoutePaths.notescreen);
                 },
                 subtitle: const Text(
                   'Save your thoughts',

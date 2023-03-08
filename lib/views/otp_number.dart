@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:otp_text_field/style.dart';
-import 'package:timely/views/confirm_password.dart';
 import 'package:otp_text_field/otp_text_field.dart';
 import 'package:timely/views/home_screen.dart';
 
@@ -99,7 +98,7 @@ class _OtpNumberState extends State<OtpNumber> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>   const HomeScreen(),
+                        builder: (context) => HomeScreen(),
                       ),
                     );
                   },

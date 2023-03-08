@@ -9,7 +9,7 @@ class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const BottomNavigation(),
+      // bottomNavigationBar: const BottomNavigation(),
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.white,

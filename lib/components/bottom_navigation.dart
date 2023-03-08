@@ -43,7 +43,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
     if (route != null) {
       currentRouteName = route.settings.name!;
 
-      setCurrentIndex(pagesListIndicies[currentRouteName]!);
+      setCurrentIndex(pagesListIndicies[currentRouteName] ?? 0);
     }
 
     return Hero(
@@ -58,7 +58,8 @@ class _BottomNavigationState extends State<BottomNavigation> {
 
             if (route != null) {
               if (currentRouteName != pagesListNames[currentRouteIndex]) {
-                Get.toNamed(pagesListNames[currentRouteIndex]!);
+                Get.toNamed(
+                    pagesListNames[currentRouteIndex] ?? RoutePaths.homeScreen);
               }
             }
           },

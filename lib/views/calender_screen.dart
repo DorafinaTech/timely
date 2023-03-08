@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:timely/components/bottom_navigation.dart';
-
-import '../components/popup_menu_buttons.dart';
-import '../constants/menu_padding.dart';
+import 'package:timely/components/popup_menu_buttons.dart';
+import 'package:timely/constants/menu_padding.dart';
 
 class CalenderScreen extends StatelessWidget {
   const CalenderScreen({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class CalenderScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Get.theme.primaryColor,
         title: const Text('Jan 2023'),
         actions: [
           Row(
@@ -32,7 +32,7 @@ class CalenderScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Get.theme.primaryColor,
         child: const Icon(Icons.add),
       ),
       bottomNavigationBar: const BottomNavigation(),

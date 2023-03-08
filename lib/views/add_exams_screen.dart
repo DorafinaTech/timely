@@ -12,18 +12,18 @@ class AddExamScreen extends StatefulWidget {
 }
 
 class _AddExamScreenState extends State<AddExamScreen> {
-  final authController = Get.put<TestFormController>(TestFormController());
+  final testFormController = Get.put<TestFormController>(TestFormController());
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: Obx(() => Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          if (controller.showTop.value) const TopModalSheet(),
-          if (controller.showBottom.value) const TaskScreen()
-        ],
-      )),
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (testFormController.showTop.value) const TopModalSheet(),
+              if (testFormController.showBottom.value) const TaskScreen()
+            ],
+          )),
     );
   }
 }

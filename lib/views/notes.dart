@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:timely/components/bottom_navigation.dart';
 import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/constants/menu_padding.dart';
-import 'package:timely/views/floating_button_for_note.dart';
+import 'package:get/get.dart';
+import 'package:timely/utilities/route_paths.dart';
 
 class Notes extends StatelessWidget {
   const Notes({Key? key}) : super(key: key);
@@ -14,16 +15,18 @@ class Notes extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         mini: true,
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => const FloatingButtonForNote()),
-          );
+          Get.toNamed(RoutePaths.newNoteScreen);
         },
         backgroundColor: Theme.of(context).primaryColor,
         child: const Icon(Icons.add),
       ),
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Get.toNamed(RoutePaths.homeScreen);
+          },
+        ),
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.white,
         title: const Text(

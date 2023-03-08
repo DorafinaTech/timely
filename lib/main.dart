@@ -10,6 +10,7 @@ import 'package:timely/views/about.dart';
 import 'package:timely/views/home_screen.dart';
 import 'package:timely/views/confirm_password.dart';
 import 'package:timely/views/login.dart';
+import 'package:timely/views/new_note_screen.dart';
 import 'package:timely/views/notes.dart';
 import 'package:timely/views/calender_screen.dart';
 import 'package:timely/views/onboarding.dart';
@@ -138,6 +139,13 @@ class TimelyApp extends StatelessWidget {
           title: RouteNames.notescreen,
           page: () {
             return const Notes();
+          },
+        ),
+        GetPage(
+          name: RoutePaths.newNoteScreen,
+          title: RouteNames.newNoteScreen,
+          page: () {
+            return const NewNoteScreen();
           },
         ),
         GetPage(

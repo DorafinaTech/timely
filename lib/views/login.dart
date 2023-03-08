@@ -5,6 +5,7 @@ import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/views/recover_password.dart';
 import 'package:timely/utilities/route_paths.dart';
 import 'package:timely/utilities/show_snackbar.dart';
+import 'package:timely/utilities/show_error_snackbar.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -129,76 +130,76 @@ class LoginState extends State<Login> {
           // SizedBox(
           //   height: 20,
           // ),
-    //       Container(
-    //         padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-    //         child: TextField(
-    //           controller: _emailController,
-    //           decoration: InputDecoration(
-    //             labelText: "Email Address",
-    //             // labelText: "Password",
-    //             hintStyle: const TextStyle(color: Colors.black54),
-    //             border: OutlineInputBorder(
-    //                 borderRadius: BorderRadius.circular(30),
-    //                 borderSide: BorderSide(
-    //                     color: Colors.teal.shade200,
-    //                     width: 1.5,
-    //                     style: BorderStyle.solid)),
-    //           ),
-    // ),
-    //       ),
-    //       Container(
-    //         padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-    //         width: double.infinity,
-    //         height: 50,
-    //         margin: const EdgeInsets.all(8.0),
-    //         child: OutlinedButton(
-    //           onPressed: () async {
-    //             String userMessage = '';
-    //             AuthController().signInwithGoogle().then((value) {
-    //               if (value) {
-    //                 Get.offAndToNamed(RoutePaths.homeScreen);
-    //                 userMessage = "Login in successfully";
-    //
-    //                 debugPrint("Value is true$userMessage");
-    //               } else {
-    //                 showSnackbar("Oops", "Could not login");
-    //                 debugPrint("Value is false");
-    //               }
-    //             }).catchError((error) {
-    //               userMessage = "Login failed, Something went wrong";
-    //               showSnackbar("Oops", userMessage);
-    //               debugPrint(userMessage);
-    //
-    //               if (kDebugMode) {
-    //                 print(error);
-    //               }
-    //             });
-    //           },
-    //           style: OutlinedButton.styleFrom(
-    //               side: BorderSide(color: Colors.teal.shade200),
-    //               shape: RoundedRectangleBorder(
-    //                   borderRadius: BorderRadius.circular(30))),
-    //           child: Row(
-    //             mainAxisAlignment: MainAxisAlignment.center,
-    //             children: [
-    //               Container(
-    //                 padding: const EdgeInsets.all(8.0),
-    //                 child: Image.asset(
-    //                   'svgs/google_icon.png',
-    //                   height: 20,
-    //                   width: 20,
-    //                 ),
-    //               ),
-    //               const Text(
-    //                 'Log in with Google',
-    //                 style: TextStyle(
-    //                   color: Colors.teal,
-    //                 ),
-    //               ),
-    //             ],
-    //           ),
-    //         ),
-    //       ),
+          //       Container(
+          //         padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+          //         child: TextField(
+          //           controller: _emailController,
+          //           decoration: InputDecoration(
+          //             labelText: "Email Address",
+          //             // labelText: "Password",
+          //             hintStyle: const TextStyle(color: Colors.black54),
+          //             border: OutlineInputBorder(
+          //                 borderRadius: BorderRadius.circular(30),
+          //                 borderSide: BorderSide(
+          //                     color: Colors.teal.shade200,
+          //                     width: 1.5,
+          //                     style: BorderStyle.solid)),
+          //           ),
+          // ),
+          //       ),
+          //       Container(
+          //         padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+          //         width: double.infinity,
+          //         height: 50,
+          //         margin: const EdgeInsets.all(8.0),
+          //         child: OutlinedButton(
+          //           onPressed: () async {
+          //             String userMessage = '';
+          //             AuthController().signInwithGoogle().then((value) {
+          //               if (value) {
+          //                 Get.offAndToNamed(RoutePaths.homeScreen);
+          //                 userMessage = "Login in successfully";
+          //
+          //                 debugPrint("Value is true$userMessage");
+          //               } else {
+          //                 showSnackbar("Oops", "Could not login");
+          //                 debugPrint("Value is false");
+          //               }
+          //             }).catchError((error) {
+          //               userMessage = "Login failed, Something went wrong";
+          //               showSnackbar("Oops", userMessage);
+          //               debugPrint(userMessage);
+          //
+          //               if (kDebugMode) {
+          //                 print(error);
+          //               }
+          //             });
+          //           },
+          //           style: OutlinedButton.styleFrom(
+          //               side: BorderSide(color: Colors.teal.shade200),
+          //               shape: RoundedRectangleBorder(
+          //                   borderRadius: BorderRadius.circular(30))),
+          //           child: Row(
+          //             mainAxisAlignment: MainAxisAlignment.center,
+          //             children: [
+          //               Container(
+          //                 padding: const EdgeInsets.all(8.0),
+          //                 child: Image.asset(
+          //                   'svgs/google_icon.png',
+          //                   height: 20,
+          //                   width: 20,
+          //                 ),
+          //               ),
+          //               const Text(
+          //                 'Log in with Google',
+          //                 style: TextStyle(
+          //                   color: Colors.teal,
+          //                 ),
+          //               ),
+          //             ],
+          //           ),
+          //         ),
+          //       ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 16),
             child: Center(
@@ -242,14 +243,14 @@ class LoginState extends State<Login> {
                 helperText: "Password must contain special Characters",
                 hintStyle: const TextStyle(color: Colors.black54),
                 border: OutlineInputBorder(
-                //     borderRadius: BorderRadius.circular(30),
-                //     borderSide: BorderSide(
-                //         color: Colors.teal.shade200,
-                //         width: 1.5,
-                //         style: BorderStyle.solid)),
-                // helperStyle: TextStyle(
-                //   color: Colors.teal.shade200,
-                ),
+                    //     borderRadius: BorderRadius.circular(30),
+                    //     borderSide: BorderSide(
+                    //         color: Colors.teal.shade200,
+                    //         width: 1.5,
+                    //         style: BorderStyle.solid)),
+                    // helperStyle: TextStyle(
+                    //   color: Colors.teal.shade200,
+                    ),
                 suffixIcon: IconButton(
                   color: Colors.teal.shade200,
                   icon: Icon(passwordVisible
@@ -309,12 +310,10 @@ class LoginState extends State<Login> {
                     userMessage = "Login in successfully";
                     debugPrint(userMessage);
                   } else {
-                    Get.snackbar(
-                      "Oops",
+                    showErrorSnackbar(
                       "incorrect email or password",
                     );
-                    // Get.snackbar(titleText: Text('Oops'), messageText: Text('incorrect email or password'));
-}
+                  }
                 }).catchError((error) {
                   userMessage = "Login failed, Something went wrong";
                   showSnackbar("Oops", userMessage);

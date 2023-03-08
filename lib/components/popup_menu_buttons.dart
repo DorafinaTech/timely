@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:timely/utilities/route_paths.dart';
 import 'package:timely/views/notes.dart';
 import 'package:timely/views/calender_screen.dart';
 
@@ -13,21 +15,20 @@ class MenuButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopupMenuButton<int>(
       onSelected: (int index) {
-        Widget nextPage = Container();
+        String nextPage = RoutePaths.calendersreen;
         switch (index) {
           case 0:
-            nextPage = const CalenderScreen();
+            nextPage = RoutePaths.calendersreen;
             break;
           case 1:
-            nextPage = const Notes();
+            nextPage = RoutePaths.notescreen;
             break;
           case 2:
-            nextPage = const About();
+            nextPage = RoutePaths.aboutscreen;
             break;
         }
 
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => nextPage));
+        Get.toNamed(nextPage);
       },
       padding: const EdgeInsets.only(
         right: 200,
