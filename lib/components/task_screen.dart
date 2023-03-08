@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:timely/pages/home_screen.dart';
 
 import '../components/top_modal_sheet.dart';
@@ -14,8 +15,14 @@ class _TaskScreen extends State<TaskScreen> {
   final TextEditingController _control = TextEditingController();
   final TextEditingController _controll = TextEditingController();
   final TextEditingController _controller = TextEditingController();
+  String buttonText = "Choose Date";
+  TimeOfDay? startInitialTime;
+  String endInitialTime = "" as String;
+
   @override
   Widget build(BuildContext context) {
+    TimeOfDay selectedTime = TimeOfDay.now();
+
     return Container(
       padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
       decoration: const BoxDecoration(
@@ -30,7 +37,8 @@ class _TaskScreen extends State<TaskScreen> {
                 padding: EdgeInsets.fromLTRB(10,10,10,10),
                 child: TextField(
                   decoration:  InputDecoration(
-                      labelText: 'Tittle',
+                      labelText: 'Title',
+                      enabledBorder: OutlineInputBorder(),
                       hintStyle: TextStyle(color: Colors.grey)
                   ),
                   controller: _control,
@@ -67,55 +75,109 @@ class _TaskScreen extends State<TaskScreen> {
                 ),
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'Start:',
-                  style: TextStyle(
-                      fontFamily: 'Satoshi', fontSize: 16, color: Colors.black),
-                ),
+            Expanded(
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      margin: EdgeInsets.symmetric(horizontal: 16),
+                      child: TextButton(
+                          onPressed: ()  async {
+                            DateTime? pickedDate = await showDatePicker(
+                                context: context,
+                                initialDate: DateTime.now(),
+                                firstDate: DateTime(1950),
+                                //DateTime.now() - not to allow to choose before today.
+                                lastDate: DateTime(2100));
+
+                            if (pickedDate != null) {
+                              print(
+                                  pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
+                              String formattedDate =
+                              DateFormat('yyyy-MM-dd').format(pickedDate);
+
+                              print(
+                                  formattedDate); //formatted date output using intl package =>  2021-03-16
+                              setState(() {
+                                buttonText =
+                                    formattedDate; //set output date to TextField value.
+                              });
+                            } else {}
+                          }, child: Text(buttonText)),
+                    ),
+                    Flexible(
+
+                      child: Column(
+
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text(
+                                'Start Time:',
+                                style: TextStyle(
+                                    fontFamily: 'Satoshi', fontSize: 16, color: Colors.black),
+                              ),
+/*
                 GestureDetector(
                   child: const Text('Tue, 20 Jan',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontFamily: 'Satoshi',
+                            fontSize: 16,
+                            color: Color(0xFF1C8E77))),
+                ),
+*/
+                              TextButton(
+                                child: Text('10:20am',
+                                    textAlign: TextAlign.end,
+                                    style: TextStyle(
+                                        fontFamily: 'Satoshi',
+                                        fontSize: 16,
+                                        color: Color(0xFF1C8E77))),
+                                onPressed: (){},
+                              ),
+                            ],
+                          ),
+                          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                            const Text('End Time:',
+                                style: TextStyle(
+                                    fontFamily: 'Satoshi',
+                                    fontSize: 16,
+                                    color: Colors.black)),
+/*
+              GestureDetector(
+                child: const Text('Tue, 20 Jan',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontFamily: 'Satoshi',
                           fontSize: 16,
                           color: Color(0xFF1C8E77))),
+              ),
+*/
+                            TextButton(
+                              child: const Text('12:00am',
+                                  textAlign: TextAlign.end,
+                                  style: TextStyle(
+                                      fontFamily: 'Satoshi',
+                                      fontSize: 16,
+                                      color: Color(0xFF1C8E77))),
+                              onPressed: () {
+                              },
+                            ),
+
+                          ]),
+
+                        ],
+                      ),
+                    )
+                  ],
                 ),
-                GestureDetector(
-                  child: const Text('11:00am',
-                      textAlign: TextAlign.end,
-                      style: TextStyle(
-                          fontFamily: 'Satoshi',
-                          fontSize: 16,
-                          color: Color(0xFF1C8E77))),
-                ),
-              ],
+              ),
             ),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              const Text('End:',
-                  style: TextStyle(
-                      fontFamily: 'Satoshi',
-                      fontSize: 16,
-                      color: Colors.black)),
-              GestureDetector(
-                child: const Text('Tue, 20 Jan',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontFamily: 'Satoshi',
-                        fontSize: 16,
-                        color: Color(0xFF1C8E77))),
-              ),
-              GestureDetector(
-                child: const Text('12:00am',
-                    textAlign: TextAlign.end,
-                    style: TextStyle(
-                        fontFamily: 'Satoshi',
-                        fontSize: 16,
-                        color: Color(0xFF1C8E77))),
-              ),
-            ]),
+
             Row(mainAxisAlignment: MainAxisAlignment.start, children: [
               Container(
                 padding: const EdgeInsets.only(right: 8),
@@ -257,5 +319,20 @@ class _TaskScreen extends State<TaskScreen> {
             ),
     ]),
     );
+
+    Future <void> selectTime(BuildContext context) async {
+      final TimeOfDay? timeOfDay = await showTimePicker(
+        context: context,
+        initialTime: selectedTime,
+        initialEntryMode: TimePickerEntryMode.dial,
+      );
+      if(timeOfDay != null && timeOfDay != selectedTime)
+      {
+        setState(() {
+          selectedTime = timeOfDay;
+        });
+      }
+    }
+
   }
 }

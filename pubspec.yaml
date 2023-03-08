@@ -44,6 +44,8 @@ dependencies:
   google_sign_in: ^5.4.4
   smooth_page_indicator: ^1.0.1
   http: ^0.13.5
+  intl: ^0.18.0
+
 
 flutter_native_splash:
   backgroundColor: "#FF1C8E77"

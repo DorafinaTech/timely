@@ -146,61 +146,59 @@ class LoginState extends State<Login> {
     //           ),
     // ),
     //       ),
-          Container(
-<<<<<<< HEAD
-            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-=======
-            width: double.infinity,
-            height: 50,
-            margin: const EdgeInsets.all(8.0),
-            child: OutlinedButton(
-              onPressed: () async {
-                String userMessage = '';
-                AuthController().signInwithGoogle().then((value) {
-                  if (value) {
-                    Get.offAndToNamed(RoutePaths.homeScreen);
-                    userMessage = "Login in successfully";
-
-                    debugPrint("Value is true$userMessage");
-                  } else {
-                    showSnackbar("Oops", "Could not login");
-                    debugPrint("Value is false");
-                  }
-                }).catchError((error) {
-                  userMessage = "Login failed, Something went wrong";
-                  showSnackbar("Oops", userMessage);
-                  debugPrint(userMessage);
-
-                  if (kDebugMode) {
-                    print(error);
-                  }
-                });
-              },
-              style: OutlinedButton.styleFrom(
-                  side: BorderSide(color: Colors.teal.shade200),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30))),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Image.asset(
-                      'svgs/google_icon.png',
-                      height: 20,
-                      width: 20,
-                    ),
-                  ),
-                  const Text(
-                    'Log in with Google',
-                    style: TextStyle(
-                      color: Colors.teal,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+    //       Container(
+    //         padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+    //         width: double.infinity,
+    //         height: 50,
+    //         margin: const EdgeInsets.all(8.0),
+    //         child: OutlinedButton(
+    //           onPressed: () async {
+    //             String userMessage = '';
+    //             AuthController().signInwithGoogle().then((value) {
+    //               if (value) {
+    //                 Get.offAndToNamed(RoutePaths.homeScreen);
+    //                 userMessage = "Login in successfully";
+    //
+    //                 debugPrint("Value is true$userMessage");
+    //               } else {
+    //                 showSnackbar("Oops", "Could not login");
+    //                 debugPrint("Value is false");
+    //               }
+    //             }).catchError((error) {
+    //               userMessage = "Login failed, Something went wrong";
+    //               showSnackbar("Oops", userMessage);
+    //               debugPrint(userMessage);
+    //
+    //               if (kDebugMode) {
+    //                 print(error);
+    //               }
+    //             });
+    //           },
+    //           style: OutlinedButton.styleFrom(
+    //               side: BorderSide(color: Colors.teal.shade200),
+    //               shape: RoundedRectangleBorder(
+    //                   borderRadius: BorderRadius.circular(30))),
+    //           child: Row(
+    //             mainAxisAlignment: MainAxisAlignment.center,
+    //             children: [
+    //               Container(
+    //                 padding: const EdgeInsets.all(8.0),
+    //                 child: Image.asset(
+    //                   'svgs/google_icon.png',
+    //                   height: 20,
+    //                   width: 20,
+    //                 ),
+    //               ),
+    //               const Text(
+    //                 'Log in with Google',
+    //                 style: TextStyle(
+    //                   color: Colors.teal,
+    //                 ),
+    //               ),
+    //             ],
+    //           ),
+    //         ),
+    //       ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 16),
             child: Center(
@@ -225,7 +223,6 @@ class LoginState extends State<Login> {
           ),
           Container(
             margin: const EdgeInsets.all(8.0),
->>>>>>> b8bd6571405973a4ce45dac2e6e94140041bc403
             child: TextField(
               controller: _emailController,
               decoration: const InputDecoration(
@@ -311,16 +308,13 @@ class LoginState extends State<Login> {
                     Get.offAllNamed(RoutePaths.homeScreen);
                     userMessage = "Login in successfully";
                     debugPrint(userMessage);
-<<<<<<< HEAD
                   } else {
                     Get.snackbar(
                       "Oops",
                       "incorrect email or password",
                     );
                     // Get.snackbar(titleText: Text('Oops'), messageText: Text('incorrect email or password'));
-=======
->>>>>>> b8bd6571405973a4ce45dac2e6e94140041bc403
-                  }
+}
                 }).catchError((error) {
                   userMessage = "Login failed, Something went wrong";
                   showSnackbar("Oops", userMessage);
