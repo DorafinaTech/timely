@@ -35,7 +35,7 @@ class EditProfileScreen extends StatelessWidget {
           Row(
             children: [
               const MenuButton(
-                mypopupcolor: Colors.black,
+                popupColor: Colors.black,
               ),
               Container(
                 width: menuPadding,

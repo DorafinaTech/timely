@@ -128,7 +128,7 @@ class TimelyApp extends StatelessWidget {
           },
         ),
         GetPage(
-          name: RoutePaths.calendersreen,
+          name: RoutePaths.calendarScreen,
           title: RouteNames.calenderscreen,
           page: () {
             return const CalenderScreen();

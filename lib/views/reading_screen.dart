@@ -27,7 +27,7 @@ class ReadingScreen extends StatelessWidget {
         actions: [
           Row(children: [
             const MenuButton(
-              mypopupcolor: Colors.white,
+              popupColor: Colors.white,
             ),
             Container(
               width: menuPadding,
@@ -39,8 +39,9 @@ class ReadingScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         mini: true,
         onPressed: () {
-    showModalBottomSheet(context: context, builder: (BuildContext context)=> TaskScreen2());
-
+          showModalBottomSheet(
+              context: context,
+              builder: (BuildContext context) => TaskScreen2());
         },
         backgroundColor: Theme.of(context).primaryColor,
         child: const Icon(Icons.add),

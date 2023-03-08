@@ -16,7 +16,9 @@ class TestScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         mini: true,
         onPressed: () {
-          showModalBottomSheet(context: context, builder: (BuildContext context)=> TaskScreen());
+          showModalBottomSheet(
+              context: context,
+              builder: (BuildContext context) => TaskScreen());
         },
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.white,
@@ -35,7 +37,7 @@ class TestScreen extends StatelessWidget {
         actions: [
           Row(children: [
             const MenuButton(
-              mypopupcolor: Colors.white,
+              popupColor: Colors.white,
             ),
             Container(
               width: menuPadding,

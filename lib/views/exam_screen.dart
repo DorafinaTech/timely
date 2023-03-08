@@ -15,7 +15,9 @@ class ExamScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         mini: true,
         onPressed: () {
-          showModalBottomSheet(context: context, builder: (BuildContext context)=> TaskScreen());
+          showModalBottomSheet(
+              context: context,
+              builder: (BuildContext context) => TaskScreen());
           // // Navigator.push(
           // //   context,
           // //   MaterialPageRoute(builder: (context) => const BottomModalSheet()),
@@ -37,7 +39,7 @@ class ExamScreen extends StatelessWidget {
         actions: [
           Row(children: [
             const MenuButton(
-              mypopupcolor: Colors.white,
+              popupColor: Colors.white,
             ),
             Container(
               width: menuPadding,
