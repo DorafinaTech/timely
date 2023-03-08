@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:timely/pages/notes.dart';
-import 'package:timely/pages/calender_screen.dart';
+import 'package:timely/views/notes.dart';
+import 'package:timely/views/calender_screen.dart';
 
-import '../pages/about.dart';
+import '../views/about.dart';
 
 class MenuButton extends StatelessWidget {
   const MenuButton({Key? key, required this.mypopupcolor}) : super(key: key);

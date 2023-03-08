@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/constants/menu_padding.dart';
-import 'package:timely/pages/home_screen.dart';
+import 'package:timely/views/home_screen.dart';
 import 'package:timely/utilities/route_paths.dart';
 import 'package:get/get.dart';
 

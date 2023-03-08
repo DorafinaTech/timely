@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timely/pages/email_recovery.dart';
+import 'package:timely/views/email_recovery.dart';
 
 class RecoveryPassword extends StatefulWidget {
   const RecoveryPassword({Key? key}) : super(key: key);

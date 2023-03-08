@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:timely/pages/confirm_password.dart';
-import 'package:timely/pages/otp_number.dart';
+import 'package:timely/views/confirm_password.dart';
+import 'package:timely/views/otp_number.dart';
 
 class EmailRecovery extends StatefulWidget {
   const EmailRecovery({Key? key}) : super(key: key);

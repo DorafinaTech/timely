@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:timely/components/bottom_navigation.dart';
 import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/constants/menu_padding.dart';
-import 'package:timely/pages/floating_button_for_note.dart';
+import 'package:timely/views/floating_button_for_note.dart';
 
 class Notes extends StatelessWidget {
   const Notes({Key? key}) : super(key: key);

@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:timely/components/bottom_navigation.dart';
 import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/constants/menu_padding.dart';
-import 'package:timely/pages/notes.dart';
+import 'package:timely/views/notes.dart';
 import 'package:timely/utilities/route_paths.dart';
 import 'package:timely/utilities/show_snackbar.dart';
 

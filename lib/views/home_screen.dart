@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/controllers/auth_controller.dart';
-import 'package:timely/pages/exam_screen.dart';
-import 'package:timely/pages/notes.dart';
-import 'package:timely/pages/calender_screen.dart';
+import 'package:timely/views/exam_screen.dart';
+import 'package:timely/views/notes.dart';
+import 'package:timely/views/calender_screen.dart';
 import 'package:timely/components/bottom_navigation.dart';
 
 class HomeScreen extends StatelessWidget {

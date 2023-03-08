@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timely/pages/home_screen.dart';
+import 'package:timely/views/home_screen.dart';
 
 import '../components/top_modal_sheet.dart';
 
@@ -180,7 +180,7 @@ class _TaskScreen extends State<TaskScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const HomeScreen(),
+                          builder: (context) =>  HomeScreen(),
                         ),
                       );
                     },
@@ -222,7 +222,7 @@ class _TaskScreen extends State<TaskScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const HomeScreen(),
+                                builder: (context) =>  HomeScreen(),
                               ),
                             );
                           },

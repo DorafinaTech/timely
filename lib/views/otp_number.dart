@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:otp_text_field/style.dart';
-import 'package:timely/pages/confirm_password.dart';
+import 'package:timely/views/confirm_password.dart';
 import 'package:otp_text_field/otp_text_field.dart';
-import 'package:timely/pages/home_screen.dart';
+import 'package:timely/views/home_screen.dart';
 
 class OtpNumber extends StatefulWidget {
   const OtpNumber({Key? key}) : super(key: key);

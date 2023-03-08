@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:timely/controllers/auth_controller.dart';
-import 'package:timely/pages/recover_password.dart';
+import 'package:timely/views/recover_password.dart';
 import 'package:timely/utilities/route_paths.dart';
 import 'package:timely/utilities/show_snackbar.dart';
 
