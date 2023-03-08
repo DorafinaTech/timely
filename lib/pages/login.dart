@@ -16,6 +16,7 @@ class Login extends StatefulWidget {
 class LoginState extends State<Login> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  bool passwordVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -28,13 +29,127 @@ class LoginState extends State<Login> {
           Center(
             child: Container(
               margin: const EdgeInsets.only(bottom: 25),
-              child: const Text(
-                "Log in and Let's get started",
-                style: TextStyle(color: Colors.black, fontSize: 20),
+              child: Center(
+                child: const Text(
+                  "Log in and Let's get started",
+                  style: TextStyle(color: Colors.black, fontSize: 25),
+                ),
               ),
             ),
           ),
+          // Container(
+          //   width: double.infinity,
+          //   height: 50,
+          //   margin: const EdgeInsets.all(8.0),
+          //   child: OutlinedButton(
+          //     onPressed: () async {
+          //       String userMessage = '';
+          //       AuthController().signInwithGoogle().then((value) {
+          //         if (value) {
+          //           Get.offAndToNamed(RoutePaths.homeScreen);
+          //           userMessage = "Login in successfully";
+          //
+          //           debugPrint("Value is true$userMessage");
+          //         } else {
+          //           Get.snackbar("Oops", "Could not login");
+          //           debugPrint("Value is false");
+          //         }
+          //       }).catchError((error) {
+          //         userMessage = "Login failed, Something went wrong";
+          //         Get.snackbar("Oops", userMessage);
+          //         debugPrint(userMessage);
+          //
+          //         if (kDebugMode) {
+          //           print(error);
+          //         }
+          //       });
+          //     },
+          //     style: OutlinedButton.styleFrom(
+          //         side: BorderSide(color: Colors.teal.shade200),
+          //         shape: RoundedRectangleBorder(
+          //             borderRadius: BorderRadius.circular(30))),
+          //     child: Row(
+          //       mainAxisAlignment: MainAxisAlignment.center,
+          //       children: [
+          //         Container(
+          //           padding: const EdgeInsets.all(8.0),
+          //           child: Image.asset(
+          //             'svgs/google_icon.png',
+          //             height: 20,
+          //             width: 20,
+          //           ),
+          //         ),
+          //         const Text(
+          //           'Log in with Google',
+          //           style: TextStyle(
+          //             color: Colors.teal,
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
+          // Container(
+          //   margin: const EdgeInsets.symmetric(horizontal: 16),
+          //   child: Center(
+          //     child: Row(
+          //       children: const [
+          //         Expanded(
+          //           child: Divider(
+          //             thickness: 0.5,
+          //             color: Colors.black54,
+          //           ),
+          //         ),
+          //         Text('  Or  '),
+          //         Expanded(
+          //           child: Divider(
+          //             thickness: 0.5,
+          //             color: Colors.black54,
+          //           ),
+          //         )
+          //       ],
+          //     ),
+          //   ),
+          // ),
+          // Container(
+          //   margin: const EdgeInsets.all(8.0),
+          //   child: TextField(
+          //     controller: _emailController,
+          //     decoration: InputDecoration(
+          //         hintText: "Email Addresss",
+          //         hintStyle: const TextStyle(color: Colors.black54),
+          //         border: OutlineInputBorder(
+          //             borderRadius: BorderRadius.circular(30),
+          //             borderSide: BorderSide(
+          //                 color: Colors.teal.shade200,
+          //                 width: 1.5,
+          //                 style: BorderStyle.solid))),
+          //   ),
+          // ),
+          // SizedBox(
+          //   height: 20,
+          // ),
+    //       Container(
+    //         padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+    //         child: TextField(
+    //           controller: _emailController,
+    //           decoration: InputDecoration(
+    //             labelText: "Email Address",
+    //             // labelText: "Password",
+    //             hintStyle: const TextStyle(color: Colors.black54),
+    //             border: OutlineInputBorder(
+    //                 borderRadius: BorderRadius.circular(30),
+    //                 borderSide: BorderSide(
+    //                     color: Colors.teal.shade200,
+    //                     width: 1.5,
+    //                     style: BorderStyle.solid)),
+    //           ),
+    // ),
+    //       ),
           Container(
+<<<<<<< HEAD
+            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+=======
             width: double.infinity,
             height: 50,
             margin: const EdgeInsets.all(8.0),
@@ -110,36 +225,53 @@ class LoginState extends State<Login> {
           ),
           Container(
             margin: const EdgeInsets.all(8.0),
+>>>>>>> b8bd6571405973a4ce45dac2e6e94140041bc403
             child: TextField(
               controller: _emailController,
-              decoration: InputDecoration(
-                  hintText: "Email Addresss",
-                  hintStyle: const TextStyle(color: Colors.black54),
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      borderSide: BorderSide(
-                          color: Colors.teal.shade200,
-                          width: 1.5,
-                          style: BorderStyle.solid))),
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.all(8.0),
-            child: TextField(
-              controller: _passwordController,
-              obscureText: true,
-              decoration: InputDecoration(
-                hintText: "Password",
-                hintStyle: const TextStyle(color: Colors.black54),
-                enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: BorderSide(
-                        color: Colors.teal.shade200,
-                        width: 1.5,
-                        style: BorderStyle.solid)),
+              decoration: const InputDecoration(
+                enabledBorder: OutlineInputBorder(),
+                labelText: 'Email',
               ),
             ),
           ),
+          Container(
+            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+            child: TextField(
+              obscureText: passwordVisible,
+              controller: _passwordController,
+              decoration: InputDecoration(
+                labelText: "Password",
+                // labelText: "Password",
+                helperText: "Password must contain special Characters",
+                hintStyle: const TextStyle(color: Colors.black54),
+                border: OutlineInputBorder(
+                //     borderRadius: BorderRadius.circular(30),
+                //     borderSide: BorderSide(
+                //         color: Colors.teal.shade200,
+                //         width: 1.5,
+                //         style: BorderStyle.solid)),
+                // helperStyle: TextStyle(
+                //   color: Colors.teal.shade200,
+                ),
+                suffixIcon: IconButton(
+                  color: Colors.teal.shade200,
+                  icon: Icon(passwordVisible
+                      ? Icons.visibility
+                      : Icons.visibility_off),
+                  onPressed: () {
+                    setState(
+                      () {
+                        passwordVisible = !passwordVisible;
+                      },
+                    );
+                  },
+                ),
+                alignLabelWithHint: false,
+                filled: true,
+              ),
+            ),
+          ),
+
           // const Login(),
           const SizedBox(
             height: 20,
@@ -168,7 +300,6 @@ class LoginState extends State<Login> {
             margin: const EdgeInsets.all(8.0),
             child: ElevatedButton(
               onPressed: () async {
-
                 var userMessage = "";
 
                 AuthController()
@@ -180,6 +311,15 @@ class LoginState extends State<Login> {
                     Get.offAllNamed(RoutePaths.homeScreen);
                     userMessage = "Login in successfully";
                     debugPrint(userMessage);
+<<<<<<< HEAD
+                  } else {
+                    Get.snackbar(
+                      "Oops",
+                      "incorrect email or password",
+                    );
+                    // Get.snackbar(titleText: Text('Oops'), messageText: Text('incorrect email or password'));
+=======
+>>>>>>> b8bd6571405973a4ce45dac2e6e94140041bc403
                   }
                 }).catchError((error) {
                   userMessage = "Login failed, Something went wrong";

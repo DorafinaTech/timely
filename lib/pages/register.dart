@@ -15,6 +15,7 @@ class Register extends StatefulWidget {
 class RegisterState extends State<Register> {
   final TextEditingController _firstAndLastNameController =
       TextEditingController();
+  bool passwordVisible = false;
 
   final TextEditingController _emailController = TextEditingController();
 
@@ -45,6 +46,56 @@ class RegisterState extends State<Register> {
                 ),
               ),
             ),
+<<<<<<< HEAD
+            // Container(
+            //   width: double.infinity,
+            //   height: 50,
+            //   margin: const EdgeInsets.all(8.0),
+            //   child: OutlinedButton(
+            //     onPressed: () async {
+            //       String userMessage = '';
+            //       AuthController().signInwithGoogle().then((value) {
+            //         if (value) {
+            //           Get.offAllNamed(RoutePaths.homeScreen);
+            //           userMessage = "Login in successfully";
+            //           debugPrint(userMessage);
+            //         }
+            //       }).catchError((error) {
+            //         userMessage = "Login failed, Something went wrong";
+            //         Get.snackbar("Oops", userMessage);
+            //         debugPrint(userMessage);
+            //
+            //         if (kDebugMode) {
+            //           print(error);
+            //         }
+            //       });
+            //     },
+            //     style: OutlinedButton.styleFrom(
+            //         side: BorderSide(color: Colors.teal.shade100),
+            //         shape: RoundedRectangleBorder(
+            //             borderRadius: BorderRadius.circular(50))),
+            //     child: Row(
+            //       mainAxisAlignment: MainAxisAlignment.center,
+            //       children: [
+            //         // Container(
+            //         //   padding: const EdgeInsets.all(8.0),
+            //         //   child: Image.asset(
+            //         //     'svgs/google_icon.png',
+            //         //     height: 20,
+            //         //     width: 20,
+            //         //   ),
+            //         // ),
+            //         // const Text(
+            //         //   'Sign up with Google',
+            //         //   style: TextStyle(
+            //         //     color: Colors.teal,
+            //         //   ),
+            //         // ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
+=======
             Container(
               width: double.infinity,
               height: 50,
@@ -93,6 +144,7 @@ class RegisterState extends State<Register> {
                 ),
               ),
             ),
+>>>>>>> b8bd6571405973a4ce45dac2e6e94140041bc403
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 16),
               child: Center(
@@ -163,24 +215,43 @@ class RegisterState extends State<Register> {
             Container(
               margin: const EdgeInsets.all(8.0),
               child: TextField(
+                obscureText: passwordVisible,
                 controller: _passwordController,
-                obscureText: true,
                 decoration: InputDecoration(
-                    hintText: "Password",
-                    hintStyle: const TextStyle(color: Colors.black54),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(50),
-                        borderSide: BorderSide(
-                            color: Colors.teal.shade100,
-                            width: 1.0,
-                            style: BorderStyle.solid))),
+                  hintText: "Password",
+                  hintStyle: const TextStyle(color: Colors.black54),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(50),
+                      borderSide: BorderSide(
+                          color: Colors.teal.shade100,
+                          width: 1.0,
+                          style: BorderStyle.solid)),
+                  helperStyle: TextStyle(
+                    color: Colors.teal.shade200,
+                  ),
+                  suffixIcon: IconButton(
+                    color: Colors.teal.shade200,
+                    icon: Icon(passwordVisible
+                        ? Icons.visibility
+                        : Icons.visibility_off),
+                    onPressed: () {
+                      setState(
+                        () {
+                          passwordVisible = !passwordVisible;
+                        },
+                      );
+                    },
+                  ),
+                  alignLabelWithHint: false,
+                  filled: true,
+                ),
               ),
             ),
             Container(
               margin: const EdgeInsets.all(8.0),
               child: TextField(
                 controller: _confirmPasswordController,
-                obscureText: true,
+                obscureText: passwordVisible,
                 decoration: InputDecoration(
                     hintText: " Confirm Password",
                     hintStyle: const TextStyle(color: Colors.black54),
