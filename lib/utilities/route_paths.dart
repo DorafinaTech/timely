@@ -14,4 +14,6 @@ abstract class RoutePaths {
   static const readingScreen = '/reading';
   static const profileScreen = '/profile';
   static const editProfileScreen = '/edit-profile';
+  static const confirmPasswordScreen = '/confirm-password';
+  static const emailecoveryScreen = '/email-recovery';
 }

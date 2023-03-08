@@ -46,7 +46,7 @@ class RegisterState extends State<Register> {
                 ),
               ),
             ),
-<<<<<<< HEAD
+
             // Container(
             //   width: double.infinity,
             //   height: 50,
@@ -95,56 +95,54 @@ class RegisterState extends State<Register> {
             //     ),
             //   ),
             // ),
-=======
-            Container(
-              width: double.infinity,
-              height: 50,
-              margin: const EdgeInsets.all(8.0),
-              child: OutlinedButton(
-                onPressed: () async {
-                  String userMessage = '';
-                  AuthController().signInwithGoogle().then((value) {
-                    if (value) {
-                      Get.offAllNamed(RoutePaths.homeScreen);
-                      userMessage = "Login in successfully";
-                      debugPrint(userMessage);
-                    }
-                  }).catchError((error) {
-                    userMessage = "Login failed, Something went wrong";
-                    showErrorSnackbar(userMessage);
-                    debugPrint(userMessage);
-
-                    if (kDebugMode) {
-                      print(error);
-                    }
-                  });
-                },
-                style: OutlinedButton.styleFrom(
-                    side: BorderSide(color: Colors.teal.shade100),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50))),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset(
-                        'svgs/google_icon.png',
-                        height: 20,
-                        width: 20,
-                      ),
-                    ),
-                    const Text(
-                      'Sign up with Google',
-                      style: TextStyle(
-                        color: Colors.teal,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
->>>>>>> b8bd6571405973a4ce45dac2e6e94140041bc403
+            // Container(
+            //   width: double.infinity,
+            //   height: 50,
+            //   margin: const EdgeInsets.all(8.0),
+            //   child: OutlinedButton(
+            //     onPressed: () async {
+            //       String userMessage = '';
+            //       AuthController().signInwithGoogle().then((value) {
+            //         if (value) {
+            //           Get.offAllNamed(RoutePaths.homeScreen);
+            //           userMessage = "Login in successfully";
+            //           debugPrint(userMessage);
+            //         }
+            //       }).catchError((error) {
+            //         userMessage = "Login failed, Something went wrong";
+            //         showErrorSnackbar(userMessage);
+            //         debugPrint(userMessage);
+            //
+            //         if (kDebugMode) {
+            //           print(error);
+            //         }
+            //       });
+            //     },
+            //     style: OutlinedButton.styleFrom(
+            //         side: BorderSide(color: Colors.teal.shade100),
+            //         shape: RoundedRectangleBorder(
+            //             borderRadius: BorderRadius.circular(50))),
+            //     child: Row(
+            //       mainAxisAlignment: MainAxisAlignment.center,
+            //       children: [
+            //         Container(
+            //           padding: const EdgeInsets.all(8.0),
+            //           child: Image.asset(
+            //             'svgs/google_icon.png',
+            //             height: 20,
+            //             width: 20,
+            //           ),
+            //         ),
+            //         const Text(
+            //           'Sign up with Google',
+            //           style: TextStyle(
+            //             color: Colors.teal,
+            //           ),
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 16),
               child: Center(

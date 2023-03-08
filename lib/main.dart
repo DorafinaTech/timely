@@ -3,12 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:get/get.dart';
 import 'package:timely/firebase_options.dart';
-import 'package:timely/views/calender_screen.dart';
 import 'package:timely/views/edit_profile_screen.dart';
+import 'package:timely/views/email_recovery.dart';
 import 'package:timely/views/exam_screen.dart';
+import 'package:timely/views/about.dart';
 import 'package:timely/views/home_screen.dart';
+import 'package:timely/views/confirm_password.dart';
 import 'package:timely/views/login.dart';
 import 'package:timely/views/notes.dart';
+import 'package:timely/views/calender_screen.dart';
 import 'package:timely/views/onboarding.dart';
 import 'package:timely/views/onboarding1.dart';
 import 'package:timely/views/onboarding2.dart';
@@ -135,6 +138,27 @@ class TimelyApp extends StatelessWidget {
           title: RouteNames.notescreen,
           page: () {
             return const Notes();
+          },
+        ),
+        GetPage(
+          name: RoutePaths.aboutscreen,
+          title: RouteNames.aboutscreen,
+          page: () {
+            return const About();
+          },
+        ),
+        GetPage(
+          name: RoutePaths.confirmPasswordScreen,
+          title: RouteNames.confirmPasswordScreen,
+          page: () {
+            return const ConfirmPassword();
+          },
+        ),
+        GetPage(
+          name: RoutePaths.emailecoveryScreen,
+          title: RouteNames.emailecoveryScreen,
+          page: () {
+            return const EmailRecovery();
           },
         ),
       ],
