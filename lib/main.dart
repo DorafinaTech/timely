@@ -72,7 +72,7 @@ class TimelyApp extends StatelessWidget {
           name: RoutePaths.homeScreen,
           title: RouteNames.homeScreen,
           page: () {
-            return const HomeScreen();
+            return HomeScreen();
           },
         ),
         GetPage(

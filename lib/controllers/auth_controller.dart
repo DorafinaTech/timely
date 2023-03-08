@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
-import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:timely/controllers/base_controller.dart';
 import 'package:timely/utilities/show_error_snackbar.dart';
 
-class AuthController extends GetxController {
+class AuthController extends BaseController {
   Future<bool> signInwithEmailAndPassword(String email, String password) async {
     try {
       await FirebaseAuth.instance
@@ -116,5 +116,9 @@ class AuthController extends GetxController {
 
       return false;
     }
+  }
+
+  User? get currentUser {
+    return FirebaseAuth.instance.currentUser;
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:timely/pages/home_screen.dart';
+import 'package:get/get.dart';
+import 'package:timely/utilities/route_paths.dart';
 
 import '../components/top_modal_sheet.dart';
 
@@ -14,6 +15,7 @@ class _ShowModalButtomState extends State<BottomModalSheet> {
   final TextEditingController _control = TextEditingController();
   final TextEditingController _controll = TextEditingController();
   final TextEditingController _controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -88,9 +90,7 @@ class _ShowModalButtomState extends State<BottomModalSheet> {
                 const Text(
                   'Start:',
                   style: TextStyle(
-                      fontFamily: 'Satoshi',
-                      fontSize: 16,
-                      color: Colors.black),
+                      fontFamily: 'Satoshi', fontSize: 16, color: Colors.black),
                 ),
                 GestureDetector(
                   child: const Text('Tue, 20 Jan',
@@ -110,31 +110,29 @@ class _ShowModalButtomState extends State<BottomModalSheet> {
                 ),
               ],
             ),
-            Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text('End:',
-                      style: TextStyle(
-                          fontFamily: 'Satoshi',
-                          fontSize: 16,
-                          color: Colors.black)),
-                  GestureDetector(
-                    child: const Text('Tue, 20 Jan',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontFamily: 'Satoshi',
-                            fontSize: 16,
-                            color: Color(0xFF1C8E77))),
-                  ),
-                  GestureDetector(
-                    child: const Text('12:00am',
-                        textAlign: TextAlign.end,
-                        style: TextStyle(
-                            fontFamily: 'Satoshi',
-                            fontSize: 16,
-                            color: Color(0xFF1C8E77))),
-                  ),
-                ]),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              const Text('End:',
+                  style: TextStyle(
+                      fontFamily: 'Satoshi',
+                      fontSize: 16,
+                      color: Colors.black)),
+              GestureDetector(
+                child: const Text('Tue, 20 Jan',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontFamily: 'Satoshi',
+                        fontSize: 16,
+                        color: Color(0xFF1C8E77))),
+              ),
+              GestureDetector(
+                child: const Text('12:00am',
+                    textAlign: TextAlign.end,
+                    style: TextStyle(
+                        fontFamily: 'Satoshi',
+                        fontSize: 16,
+                        color: Color(0xFF1C8E77))),
+              ),
+            ]),
             Row(mainAxisAlignment: MainAxisAlignment.start, children: [
               Container(
                 padding: const EdgeInsets.only(right: 8),
@@ -153,22 +151,22 @@ class _ShowModalButtomState extends State<BottomModalSheet> {
               ),
               Expanded(
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.zero,
-                        child: TextButton(
-                          onPressed: () {
-                            showDialog(
-                                context: context,
-                                builder: (context) => const TopModalSheet());
-                          },
-                          child: Icon(Icons.add,
-                              color: Theme.of(context).primaryColor),
-                        ),
-                      ),
-                    ],
-                  ))
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    padding: EdgeInsets.zero,
+                    child: TextButton(
+                      onPressed: () {
+                        showDialog(
+                            context: context,
+                            builder: (context) => const TopModalSheet());
+                      },
+                      child: Icon(Icons.add,
+                          color: Theme.of(context).primaryColor),
+                    ),
+                  ),
+                ],
+              ))
             ]),
             Row(mainAxisAlignment: MainAxisAlignment.start, children: [
               Container(
@@ -192,16 +190,11 @@ class _ShowModalButtomState extends State<BottomModalSheet> {
                 Container(
                   width: 80,
                   height: 30,
-                  margin: const EdgeInsets.only(
-                      top: 20.0, left: 8.0, right: 8.0),
+                  margin:
+                      const EdgeInsets.only(top: 20.0, left: 8.0, right: 8.0),
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const HomeScreen(),
-                        ),
-                      );
+                      Get.toNamed(RoutePaths.homeScreen);
                     },
                     style: OutlinedButton.styleFrom(
                       shape: const RoundedRectangleBorder(
@@ -238,12 +231,7 @@ class _ShowModalButtomState extends State<BottomModalSheet> {
                             top: 20.0, left: 8.0, right: 8.0),
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const HomeScreen(),
-                              ),
-                            );
+                            Get.toNamed(RoutePaths.homeScreen);
                           },
                           style: OutlinedButton.styleFrom(
                             shape: const RoundedRectangleBorder(

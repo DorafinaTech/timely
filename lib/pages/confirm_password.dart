@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:timely/pages/home_screen.dart';
+import 'package:get/get.dart';
+import 'package:timely/utilities/route_paths.dart';
 
 class ConfirmPassword extends StatelessWidget {
   const ConfirmPassword({Key? key}) : super(key: key);
@@ -63,12 +64,7 @@ class ConfirmPassword extends StatelessWidget {
               margin: const EdgeInsets.only(top: 50, left: 8, right: 8),
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>  const HomeScreen(),
-                    ),
-                  );
+                  Get.toNamed(RoutePaths.homeScreen);
                 },
                 style: OutlinedButton.styleFrom(
                   shape: const RoundedRectangleBorder(

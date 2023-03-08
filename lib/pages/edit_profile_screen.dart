@@ -175,12 +175,7 @@ class EditProfileScreen extends StatelessWidget {
             margin: const EdgeInsets.all(8.0),
             child: ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>  const HomeScreen(),
-                  ),
-                );
+                Get.toNamed(RoutePaths.homeScreen);
               },
               style: OutlinedButton.styleFrom(
                 shape: const RoundedRectangleBorder(

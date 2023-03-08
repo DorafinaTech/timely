@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/constants/menu_padding.dart';
+import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/pages/exam_screen.dart';
 import 'package:timely/pages/notes.dart';
 import 'package:timely/pages/calender_screen.dart';
 import 'package:timely/components/bottom_navigation.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
+
+  final authController = Get.put<AuthController>(AuthController());
 
   @override
   Widget build(BuildContext context) {
@@ -44,11 +48,11 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              title: const Text(
-                'Hey, Thessy!',
-                style: TextStyle(fontFamily: 'Satohi', fontSize: 16),
+              title: Text(
+                'Hey, ${authController.currentUser?.displayName!}',
+                style: const TextStyle(fontFamily: 'Satohi', fontSize: 16),
               ),
-              subtitle: const Text(
+              subtitle: const Text( 
                 'lets get things Scheduled, shall we?',
                 style: TextStyle(
                   fontFamily: 'Satoshi',

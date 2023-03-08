@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:timely/components/bottom_modal_sheet.dart';
 import 'package:timely/components/top_modal_sheet.dart';
-import 'package:timely/controllers/form_controller.dart';
+import 'package:timely/controllers/test_form_controller.dart';
 
 class AddExamScreen extends StatefulWidget {
   const AddExamScreen({Key? key}) : super(key: key);
@@ -12,18 +12,21 @@ class AddExamScreen extends StatefulWidget {
 }
 
 class _AddExamScreenState extends State<AddExamScreen> {
-  final controller = FormController();
+  final authController = Get.put<TestFormController>(TestFormController());
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body: Obx(() => Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          if (controller.showTop.value) const TopModalSheet(),
-          if (controller.showBottom.value) const BottomModalSheet()
-        ],
-      )),
-    );
+    return Scaffold(
+        body: SizedBox.fromSize(
+      size: Size(Get.width, Get.height),
+      child: Obx(() => Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: const [
+              // if (authController.showTop.value) const
+              TopModalSheet(),
+              BottomModalSheet()
+            ],
+          )),
+    ));
   }
 }
