@@ -166,23 +166,23 @@ class ProfileScreen extends StatelessWidget {
                 color: Color(0xFF000000),
               ),
               Container(height: 15),
-              ListTile(
-                dense: true,
-                contentPadding:
-                    const EdgeInsets.symmetric(vertical: 4, horizontal: 20),
-                leading: Container(
-                  margin: EdgeInsets.zero,
-                  padding: const EdgeInsets.all(8.0),
-                  child: Image.asset(
-                    'svgs/Alarm.png',
-                    // height: 20,width: 20,),
-                  ),
-                ),
-                title: const Text(
-                  'Activities',
-                  style: TextStyle(color: Colors.black, fontSize: 16),
-                ),
-              ),
+              // ListTile(
+              //   dense: true,
+              //   contentPadding:
+              //       const EdgeInsets.symmetric(vertical: 4, horizontal: 20),
+              //   leading: Container(
+              //     margin: EdgeInsets.zero,
+              //     padding: const EdgeInsets.all(8.0),
+              //     child: Image.asset(
+              //       'svgs/Alarm.png',
+              //       // height: 20,width: 20,),
+              //     ),
+              //   ),
+              //   title: const Text(
+              //     'Activities',
+              //     style: TextStyle(color: Colors.black, fontSize: 16),
+              //   ),
+              // ),
               ListTile(
                 contentPadding:
                     const EdgeInsets.symmetric(vertical: 4, horizontal: 20),
