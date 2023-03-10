@@ -14,4 +14,7 @@ abstract class RouteNames {
   static const readingScreen = 'Reading';
   static const profileScreen = 'Profile';
   static const editProfileScreen = 'EditProfile';
+  static const confirmPasswordScreen = 'ConfirmPassword';
+  static const emailecoveryScreen = 'EmailRecovery';
+  static const newNoteScreen = 'NewNote';
 }

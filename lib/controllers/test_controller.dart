@@ -1,5 +1,5 @@
-import 'package:get/get.dart';
+import 'package:timely/controllers/base_controller.dart';
 
-class TextController extends GetxController {
+class TestController extends BaseController {
   //
 }
