@@ -36,7 +36,7 @@ class Notes extends StatelessWidget {
           Row(
             children: [
               const MenuButton(
-                mypopupcolor: Colors.white,
+                popupColor: Colors.white,
               ),
               Container(
                 width: menuPadding,

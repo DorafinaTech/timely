@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:timely/utilities/route_paths.dart';
-import 'package:timely/views/notes.dart';
-import 'package:timely/views/calender_screen.dart';
-
-import '../views/about.dart';
+import 'package:timely/views/about.dart';
 
 class MenuButton extends StatelessWidget {
-  const MenuButton({Key? key, required this.mypopupcolor}) : super(key: key);
+  const MenuButton({Key? key, required this.popupColor}) : super(key: key);
 
-  final Color mypopupcolor;
+  final Color popupColor;
 
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton<int>(
       onSelected: (int index) {
-        String nextPage = RoutePaths.calendersreen;
+        String nextPage = RoutePaths.calendarScreen;
         switch (index) {
           case 0:
-            nextPage = RoutePaths.calendersreen;
+            nextPage = RoutePaths.calendarScreen;
             break;
           case 1:
             nextPage = RoutePaths.notescreen;
@@ -98,7 +95,7 @@ class MenuButton extends StatelessWidget {
       elevation: 2,
       child: Icon(
         Icons.menu,
-        color: mypopupcolor,
+        color: popupColor,
       ),
     );
   }

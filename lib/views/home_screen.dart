@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
           Row(
             children: [
               const MenuButton(
-                mypopupcolor: Colors.black,
+                popupColor: Colors.black,
               ),
               Container(
                 width: menuPadding,
@@ -87,7 +87,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  Get.toNamed(RoutePaths.calendersreen);
+                  Get.toNamed(RoutePaths.calendarScreen);
                 },
                 subtitle: const Text(
                   'Thursady 5th January 2023',

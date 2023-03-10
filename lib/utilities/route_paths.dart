@@ -4,7 +4,7 @@ abstract class RoutePaths {
   static const onboarding2 = '/onboarding2';
   static const onboarding3 = '/onboarding3';
   static const onboarding1 = '/onboarding1';
-  static const calendersreen = '/calenderscreen';
+  static const calendarScreen = '/calenderscreen';
   static const notescreen = '/notescreen';
   static const aboutscreen = '/aboutscreen';
   static const login = '/login';
