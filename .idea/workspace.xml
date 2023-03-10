@@ -9,72 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80bc6a95-9819-457e-953f-77a872b60449" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/android/app/google-services.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/controllers/test_form_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/.filecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/app.dill" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/debug_android_application.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/flutter_assets.d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/gen_dart_plugin_registrant.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/gen_localizations.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/kernel_snapshot.d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/kernel_snapshot.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f8492d2ad0ad7a6e2bc00862f38bb6d4/outputs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies~8da12cf523a3360aa1cd596ad0ea4558bf34478d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.metadata" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/debug/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/profile/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/profile/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/bottom_navigation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/bottom_navigation.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/popup_menu_buttons.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/popup_menu_buttons.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/task_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/task_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/task_screen2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/task_screen2.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controllers/auth_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/auth_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controllers/exam_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/exam_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controllers/form_controller.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controllers/reading_schedule_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/reading_schedule_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controllers/test_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/test_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/exams_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/exams_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/about.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/about.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/add_exams_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/add_exams_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/calender_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/calender_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/confirm_password.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/confirm_password.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/edit_profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/edit_profile_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/email_recovery.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/email_recovery.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/exam_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/exam_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/floating_button_for_note.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/new_note_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/home_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/notes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/notes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/onboarding.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/onboarding.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/onboarding1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/onboarding1.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/onboarding2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/onboarding2.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/otp_number.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/otp_number.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/profile_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/reading_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/reading_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/recover_password.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/recover_password.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/register.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/register.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/splash_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/test_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/test_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utilities/route_names.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/route_names.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utilities/route_paths.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/route_paths.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="80bc6a95-9819-457e-953f-77a872b60449" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,18 +43,18 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "io.flutter.reload.alreadyRun": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
