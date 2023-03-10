@@ -1,9 +1,15 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:timely/utilities/route_paths.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+import 'package:timely/views/exam_screen.dart';
 
 import '../components/top_modal_sheet.dart';
+import '../models/exams_model.dart';
 
 class TaskScreen extends StatefulWidget {
   const TaskScreen({Key? key}) : super(key: key);
@@ -13,12 +19,19 @@ class TaskScreen extends StatefulWidget {
 }
 
 class _TaskScreen extends State<TaskScreen> {
-  final TextEditingController _control = TextEditingController();
-  final TextEditingController _controll = TextEditingController();
-  final TextEditingController _controller = TextEditingController();
-  String buttonText = "Choose Date";
+  final TextEditingController titlecontroller = TextEditingController();
+  final TextEditingController lecturercontroller = TextEditingController();
+  final TextEditingController venuecontroller = TextEditingController();
+  String mDate = "Choose Date";
   TimeOfDay? startInitialTime;
-  String endInitialTime = "" as String;
+
+  // StartTime
+  String sTime = "Choose Time";
+  TimeOfDay starttime = TimeOfDay(hour: 10, minute: 30);
+
+  // EndTime
+  String mTime = "Choose Time";
+  TimeOfDay endtime = TimeOfDay(hour: 10, minute: 30);
 
   @override
   Widget build(BuildContext context) {
@@ -38,9 +51,9 @@ class _TaskScreen extends State<TaskScreen> {
             child: TextField(
               decoration: InputDecoration(
                   labelText: 'Title',
-                  enabledBorder: OutlineInputBorder(),
+                  border: OutlineInputBorder(),
                   hintStyle: TextStyle(color: Colors.grey)),
-              controller: _control,
+              controller: titlecontroller,
               style: const TextStyle(
                   fontSize: 16,
                   fontFamily: 'Satoshi, color: Color(0xFFB3B3B3)'),
@@ -51,7 +64,7 @@ class _TaskScreen extends State<TaskScreen> {
               child: Container(
                 padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                 child: TextField(
-                  controller: _controll,
+                  controller: lecturercontroller,
                   decoration: const InputDecoration(
                     labelText: 'Lecturer\'s name',
                     hintStyle: TextStyle(
@@ -66,7 +79,7 @@ class _TaskScreen extends State<TaskScreen> {
               child: Container(
                 padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                 child: TextField(
-                  controller: _controller,
+                  controller: venuecontroller,
                   decoration: const InputDecoration(
                     labelText: 'Venue',
                     hintStyle: TextStyle(
@@ -79,14 +92,14 @@ class _TaskScreen extends State<TaskScreen> {
             ),
           ],
         ),
-        Expanded(
+        Flexible(
           child: Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
                   padding: EdgeInsets.symmetric(vertical: 10),
-                  margin: EdgeInsets.symmetric(horizontal: 16),
+                  margin: EdgeInsets.symmetric(horizontal: 8),
                   child: TextButton(
                       onPressed: () async {
                         DateTime? pickedDate = await showDatePicker(
@@ -100,17 +113,18 @@ class _TaskScreen extends State<TaskScreen> {
                           print(
                               pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
                           String formattedDate =
-                              DateFormat('yyyy-MM-dd').format(pickedDate);
+                              // DateFormat('yyyy-MM-dd').format(pickedDate);
+                              DateFormat('dd-MM-yyyy').format(pickedDate);
 
                           print(
                               formattedDate); //formatted date output using intl package =>  2021-03-16
                           setState(() {
-                            buttonText =
+                            mDate =
                                 formattedDate; //set output date to TextField value.
                           });
                         } else {}
                       },
-                      child: Text(buttonText)),
+                      child: Text(mDate)),
                 ),
                 Flexible(
                   child: Column(
@@ -136,13 +150,36 @@ class _TaskScreen extends State<TaskScreen> {
                 ),
 */
                           TextButton(
-                            child: Text('10:20am',
+                            child: Text(sTime,
                                 textAlign: TextAlign.end,
                                 style: TextStyle(
                                     fontFamily: 'Satoshi',
                                     fontSize: 16,
                                     color: Color(0xFF1C8E77))),
-                            onPressed: () {},
+                            onPressed: () async {
+                              {
+                                TimeOfDay? newTime = await showTimePicker(
+                                  context: context,
+                                  initialTime: starttime,
+                                  builder:
+                                      (BuildContext context, Widget? child) {
+                                    return MediaQuery(
+                                      data: MediaQuery.of(context).copyWith(
+                                          alwaysUse24HourFormat: true),
+                                      child: child!,
+                                    );
+                                  },
+                                );
+                                if (newTime == null) return;
+
+                                setState(() {
+                                  starttime = newTime;
+
+                                  sTime = newTime.toString();
+                                  sTime = '${newTime.hour} : ${newTime.minute}';
+                                });
+                              }
+                            },
                           ),
                         ],
                       ),
@@ -165,13 +202,39 @@ class _TaskScreen extends State<TaskScreen> {
               ),
 */
                             TextButton(
-                              child: const Text('12:00am',
+                              child: Text(mTime,
                                   textAlign: TextAlign.end,
                                   style: TextStyle(
                                       fontFamily: 'Satoshi',
                                       fontSize: 16,
                                       color: Color(0xFF1C8E77))),
-                              onPressed: () {},
+                              onPressed: () async {
+                                {
+                                  {
+                                    TimeOfDay? newTime = await showTimePicker(
+                                      context: context,
+                                      initialTime: endtime,
+                                      builder: (BuildContext context,
+                                          Widget? child) {
+                                        return MediaQuery(
+                                          data: MediaQuery.of(context).copyWith(
+                                              alwaysUse24HourFormat: true),
+                                          child: child!,
+                                        );
+                                      },
+                                    );
+                                    if (newTime == null) return;
+
+                                    setState(() {
+                                      endtime = newTime;
+
+                                      mTime = newTime.toString();
+                                      mTime =
+                                          '${newTime.hour} : ${newTime.minute}';
+                                    });
+                                  }
+                                }
+                              },
                             ),
                           ]),
                     ],
@@ -275,7 +338,16 @@ class _TaskScreen extends State<TaskScreen> {
                         const EdgeInsets.only(top: 20.0, left: 8.0, right: 8.0),
                     child: ElevatedButton(
                       onPressed: () {
-                        Get.toNamed(RoutePaths.homeScreen);
+                        ExamsModel examModel = ExamsModel(
+                            course_title: titlecontroller.text,
+                            date: mDate,
+                            start_time: sTime,
+                            end_time: mTime,
+                            color: 'blue',
+                            notification: 'true',
+                            venue: venuecontroller.text,
+                            lecturerName: lecturercontroller.text);
+                        addToFireBase(examModel, context);
                       },
                       style: OutlinedButton.styleFrom(
                         shape: const RoundedRectangleBorder(
@@ -308,18 +380,27 @@ class _TaskScreen extends State<TaskScreen> {
         ),
       ]),
     );
+  }
 
-    Future<void> selectTime(BuildContext context) async {
-      final TimeOfDay? timeOfDay = await showTimePicker(
-        context: context,
-        initialTime: selectedTime,
-        initialEntryMode: TimePickerEntryMode.dial,
-      );
-      if (timeOfDay != null && timeOfDay != selectedTime) {
-        setState(() {
-          selectedTime = timeOfDay;
-        });
-      }
-    }
+  void addToFireBase(ExamsModel examModel, BuildContext context) {
+    final examsRef =
+        FirebaseFirestore.instance.collection('examSchedule').doc();
+    examModel.id = examsRef.id;
+    final data = examModel.toJson();
+    examsRef.set(data).whenComplete(() {
+      log('exams inserted');
+      var snackbar = SnackBar(content: Text('Exams Successfully Added'));
+      ScaffoldMessenger.of(context).showSnackBar(snackbar);
+      Get.toNamed(RoutePaths.examsScreen);
+
+/*      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(
+          builder: (context) => HomePage(),
+        ),
+            (route) => false,
+      );*/
+      //
+    });
   }
 }
