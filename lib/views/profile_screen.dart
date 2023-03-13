@@ -2,11 +2,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:timely/components/bottom_navigation.dart';
-import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/constants/menu_padding.dart';
-import 'package:timely/views/notes.dart';
+import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
 import 'package:timely/utilities/show_snackbar.dart';
+import 'package:timely/views/notes.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -110,15 +110,10 @@ class ProfileScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ClipOval(
-                child: CircleAvatar(
-                  radius: 50.0,
-                  backgroundColor: Colors.transparent,
-                  child: Image.asset(
-                    'assets/images/thessC.png',
-                    fit: BoxFit.fill,
-                  ),
-                ),
+              const CircleAvatar(
+                radius: 50.0,
+                backgroundImage: AssetImage('assets/images/thessC.png'),
+                backgroundColor: Colors.transparent,
               ),
               const Text(
                 'Thessy Emmanuel',
@@ -195,12 +190,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Notes(),
-                    ),
-                  );
+                  Get.toNamed(RoutePaths.notescreen);
                 },
                 title: const Text(
                   'Notes',
@@ -265,9 +255,6 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () async {
-                  if (kDebugMode) {
-                    print("Working");
-                  }
 
                   AuthController().signout().then((value) {
                     if (value) {

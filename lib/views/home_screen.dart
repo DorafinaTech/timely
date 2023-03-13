@@ -4,9 +4,6 @@ import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
-import 'package:timely/views/exam_screen.dart';
-import 'package:timely/views/notes.dart';
-import 'package:timely/views/calender_screen.dart';
 import 'package:timely/components/bottom_navigation.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -40,15 +37,10 @@ class HomeScreen extends StatelessWidget {
         child: Expanded(
           child: ListView(children: [
             ListTile(
-              leading: ClipOval(
-                child: CircleAvatar(
-                  radius: 50.0,
-                  backgroundColor: Colors.transparent,
-                  child: Image.asset(
-                    'assets/images/thessC.png',
-                    fit: BoxFit.cover,
-                  ),
-                ),
+              leading: const CircleAvatar(
+                radius: 50.0,
+                backgroundImage: AssetImage('assets/images/thessC.png'),
+                backgroundColor: Colors.transparent,
               ),
               title: Text(
                 'Hey, ${authController.currentUser?.displayName!}',

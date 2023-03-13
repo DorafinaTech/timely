@@ -1,9 +1,3 @@
-// To parse this JSON data, do
-//
-//     final student = studentFromJson(jsonString);
-
-// ignore_for_file: non_constant_identifier_names
-
 import 'dart:convert';
 
 TestsModel testFromJson(String str) => TestsModel.fromJson(json.decode(str));

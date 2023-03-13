@@ -12,6 +12,7 @@ class CalenderScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        foregroundColor: Colors.white,
         backgroundColor: Get.theme.primaryColor,
         title: const Text('Jan 2023'),
         actions: [

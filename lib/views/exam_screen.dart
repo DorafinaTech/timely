@@ -17,11 +17,7 @@ class ExamScreen extends StatelessWidget {
         onPressed: () {
           showModalBottomSheet(
               context: context,
-              builder: (BuildContext context) => TaskScreen());
-          // // Navigator.push(
-          // //   context,
-          // //   MaterialPageRoute(builder: (context) => const BottomModalSheet()),
-          // );
+              builder: (BuildContext context) => const TaskScreen());
         },
         backgroundColor: Theme.of(context).primaryColor,
         child: const Icon(Icons.add),

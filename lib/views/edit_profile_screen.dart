@@ -51,29 +51,11 @@ class EditProfileScreen extends StatelessWidget {
         child: SingleChildScrollView(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          ClipOval(
-            child: Stack(children: [
-              CircleAvatar(
-                radius: 50.0,
-                backgroundColor: Colors.transparent,
-                child: Image.asset(
-                  'assets/images/thessC.png',
-                  fit: BoxFit.fill,
-                ),
-              ),
-              Positioned(
-                bottom: 80.0,
-                right: 80.0,
-                child: IconButton(
-                  icon: Icon(
-                    Icons.camera_alt,
-                    color: Colors.teal,
+                  const CircleAvatar(
+                    radius: 50.0,
+                    backgroundImage: AssetImage('assets/images/thessC.png'),
+                    backgroundColor: Colors.transparent,
                   ),
-                  onPressed: () {},
-                ),
-              ),
-            ]),
-          ),
           // Padding(
           //   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
           //   child: TextFormField(
