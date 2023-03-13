@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/constants/menu_padding.dart';
-import 'package:timely/views/home_screen.dart';
 import 'package:timely/utilities/route_paths.dart';
 import 'package:get/get.dart';
 
@@ -53,14 +52,27 @@ class EditProfileScreen extends StatelessWidget {
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           ClipOval(
-            child: CircleAvatar(
-              radius: 50.0,
-              backgroundColor: Colors.transparent,
-              child: Image.asset(
-                'assets/images/thessC.png',
-                fit: BoxFit.fill,
+            child: Stack(children: [
+              CircleAvatar(
+                radius: 50.0,
+                backgroundColor: Colors.transparent,
+                child: Image.asset(
+                  'assets/images/thessC.png',
+                  fit: BoxFit.fill,
+                ),
               ),
-            ),
+              Positioned(
+                bottom: 80.0,
+                right: 80.0,
+                child: IconButton(
+                  icon: Icon(
+                    Icons.camera_alt,
+                    color: Colors.teal,
+                  ),
+                  onPressed: () {},
+                ),
+              ),
+            ]),
           ),
           // Padding(
           //   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
