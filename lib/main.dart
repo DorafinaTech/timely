@@ -44,6 +44,7 @@ class TimelyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Timely',
@@ -141,6 +142,7 @@ class TimelyApp extends StatelessWidget {
             return const Notes();
           },
         ),
+        
         GetPage(
           name: RoutePaths.newNoteScreen,
           title: RouteNames.newNoteScreen,
@@ -148,6 +150,7 @@ class TimelyApp extends StatelessWidget {
             return const NewNoteScreen();
           },
         ),
+
         GetPage(
           name: RoutePaths.aboutscreen,
           title: RouteNames.aboutscreen,
@@ -155,6 +158,7 @@ class TimelyApp extends StatelessWidget {
             return const About();
           },
         ),
+
         GetPage(
           name: RoutePaths.confirmPasswordScreen,
           title: RouteNames.confirmPasswordScreen,
@@ -162,6 +166,7 @@ class TimelyApp extends StatelessWidget {
             return const ConfirmPassword();
           },
         ),
+
         GetPage(
           name: RoutePaths.emailecoveryScreen,
           title: RouteNames.emailecoveryScreen,
@@ -169,7 +174,9 @@ class TimelyApp extends StatelessWidget {
             return const EmailRecovery();
           },
         ),
+
       ],
+
       theme: ThemeData(
           useMaterial3: true,
           primaryColor: Color(primaryColorCode),
