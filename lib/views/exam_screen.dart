@@ -6,7 +6,6 @@ import 'package:timely/components/popup_menu_buttons.dart';
 import '../constants/menu_padding.dart';
 
 class ExamScreen extends StatelessWidget {
-  // const ExamScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
