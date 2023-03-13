@@ -14,7 +14,15 @@ class TaskScreen2 extends StatefulWidget {
 class _TaskScreen2 extends State<TaskScreen2> {
   final TextEditingController _daysController = TextEditingController();
   final TextEditingController _coursesController = TextEditingController();
-  final TextEditingController _controllerer3 = TextEditingController();
+  final TextEditingController _controller3 = TextEditingController();
+
+  // StartTime
+  String sTime = "Choose Time";
+  TimeOfDay starttime = TimeOfDay(hour: 10, minute: 30);
+
+  // EndTime
+  String mTime = "Choose Time";
+  TimeOfDay endtime = TimeOfDay(hour: 10, minute: 30);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +39,7 @@ class _TaskScreen2 extends State<TaskScreen2> {
             padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
             child: TextField(
               decoration: const InputDecoration(
-                  labelText: 'Days', hintStyle: TextStyle(color: Colors.grey)),
+                  labelText: 'Day', hintStyle: TextStyle(color: Colors.grey)),
               controller: _daysController,
               style: const TextStyle(
                   fontSize: 16,
@@ -43,7 +51,7 @@ class _TaskScreen2 extends State<TaskScreen2> {
           child: TextField(
             controller: _coursesController,
             decoration: const InputDecoration(
-              labelText: 'Courses',
+              labelText: 'Course',
               hintStyle: TextStyle(
                   color: Colors.grey, fontFamily: "satoshi", fontSize: 16),
             ),
@@ -61,52 +69,101 @@ class _TaskScreen2 extends State<TaskScreen2> {
         //     ),
         //   ),
         // ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Text(
-              'Start:',
-              style: TextStyle(
-                  fontFamily: 'Satoshi', fontSize: 16, color: Colors.black),
-            ),
-            GestureDetector(
-              child: const Text('Tue, 20 Jan',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontFamily: 'Satoshi',
-                      fontSize: 16,
-                      color: Color(0xFF1C8E77))),
-            ),
-            GestureDetector(
-              child: const Text('11:00am',
-                  textAlign: TextAlign.end,
-                  style: TextStyle(
-                      fontFamily: 'Satoshi',
-                      fontSize: 16,
-                      color: Color(0xFF1C8E77))),
-            ),
-          ],
+        Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              const Text(
+                'Start:',
+                style: TextStyle(
+                    fontFamily: 'Satoshi', fontSize: 16, color: Colors.black),
+              ),
+              TextButton(
+                child: const Text('Choose_Time',
+                    textAlign: TextAlign.end,
+                    style: TextStyle(
+                        fontFamily: 'Satoshi',
+                        fontSize: 16,
+                        color: Color(0xFF1C8E77))),
+                onPressed: () async {
+                  {
+                    TimeOfDay? newTime = await showTimePicker(
+                      context: context,
+                      initialTime: starttime,
+                      builder: (BuildContext context, Widget? child) {
+                        return MediaQuery(
+                          data: MediaQuery.of(context)
+                              .copyWith(alwaysUse24HourFormat: true),
+                          child: child!,
+                        );
+                      },
+                    );
+                    if (newTime == null) return;
+
+                    setState(() {
+                      starttime = newTime;
+
+                      sTime = newTime.toString();
+                      sTime = '${newTime.hour} : ${newTime.minute}';
+                    });
+                  }
+                },
+              ),
+              // GestureDetector(
+              //   child: const Text('11:00am',
+              //       textAlign: TextAlign.end,
+              //       style: TextStyle(
+              //           fontFamily: 'Satoshi',
+              //           fontSize: 16,
+              //           color: Color(0xFF1C8E77))),
+              // ),
+            ],
+          ),
         ),
-        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Row(mainAxisAlignment: MainAxisAlignment.start,
+            children: [
           const Text('End:',
               style: TextStyle(
                   fontFamily: 'Satoshi', fontSize: 16, color: Colors.black)),
-          GestureDetector(
-            child: const Text('Tue, 20 Jan',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontFamily: 'Satoshi',
-                    fontSize: 16,
-                    color: Color(0xFF1C8E77))),
-          ),
-          GestureDetector(
-            child: const Text('12:00am',
+          TextButton(
+            child: const Text('Choose_Time',
                 textAlign: TextAlign.end,
                 style: TextStyle(
                     fontFamily: 'Satoshi',
                     fontSize: 16,
                     color: Color(0xFF1C8E77))),
+            onPressed: () async {
+              {
+                TimeOfDay? newTime = await showTimePicker(
+                  context: context,
+                  initialTime: starttime,
+                  builder: (BuildContext context, Widget? child) {
+                    return MediaQuery(
+                      data: MediaQuery.of(context)
+                          .copyWith(alwaysUse24HourFormat: true),
+                      child: child!,
+                    );
+                  },
+                );
+                if (newTime == null) return;
+
+                setState(() {
+                  starttime = newTime;
+
+                  sTime = newTime.toString();
+                  sTime = '${newTime.hour} : ${newTime.minute}';
+                });
+              }
+            },
           ),
+          // GestureDetector(
+          //   child: const Text('12:00am',
+          //       textAlign: TextAlign.end,
+          //       style: TextStyle(
+          //           fontFamily: 'Satoshi',
+          //           fontSize: 16,
+          //           color: Color(0xFF1C8E77))),
+          // ),
         ]),
         Row(mainAxisAlignment: MainAxisAlignment.start, children: [
           Container(

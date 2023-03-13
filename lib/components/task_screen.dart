@@ -6,7 +6,6 @@ import 'package:intl/intl.dart';
 import 'package:timely/utilities/route_paths.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'package:timely/views/exam_screen.dart';
 
 import '../components/top_modal_sheet.dart';
 import '../models/exams_model.dart';
@@ -95,7 +94,7 @@ class _TaskScreen extends State<TaskScreen> {
         Flexible(
           child: Container(
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween ,
               children: [
                 Container(
                   padding: EdgeInsets.symmetric(vertical: 10),
@@ -130,7 +129,7 @@ class _TaskScreen extends State<TaskScreen> {
                   child: Column(
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           const Text(
                             'Start Time:',
@@ -184,7 +183,7 @@ class _TaskScreen extends State<TaskScreen> {
                         ],
                       ),
                       Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             const Text('End Time:',
                                 style: TextStyle(
