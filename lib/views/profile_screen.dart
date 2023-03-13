@@ -99,12 +99,12 @@ class ProfileScreen extends StatelessWidget {
         elevation: 0,
       ),
       bottomNavigationBar: const BottomNavigation(),
-      floatingActionButton: FloatingActionButton(
-        mini: true,
-        onPressed: () {},
-        backgroundColor: Theme.of(context).primaryColor,
-        child: const Icon(Icons.add),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   mini: true,
+      //   onPressed: () {},
+      //   backgroundColor: Theme.of(context).primaryColor,
+      //   child: const Icon(Icons.add),
+      // ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
