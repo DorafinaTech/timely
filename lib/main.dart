@@ -30,7 +30,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   usePathUrlStrategy();
 
-  await Firebase.initializeApp(
+  var app = await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
@@ -132,7 +132,7 @@ class TimelyApp extends StatelessWidget {
           name: RoutePaths.calendarScreen,
           title: RouteNames.calenderscreen,
           page: () {
-            return const CalenderScreen();
+            return  CalendarScreen();
           },
         ),
         GetPage(

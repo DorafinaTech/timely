@@ -6,6 +6,6 @@ void showSnackbar(String title, String message) {
   Get.snackbar(title, message,
       duration: const Duration(seconds: 3),
       backgroundColor: Color(primaryColorCode),
-      colorText: Colors.white,
+      colorText: Colors.black,
       snackPosition: SnackPosition.BOTTOM);
 }

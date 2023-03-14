@@ -4,7 +4,8 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:timely/controllers/base_controller.dart';
 import 'package:timely/utilities/show_error_snackbar.dart';
 
-class AuthController extends BaseController {
+class
+AuthController extends BaseController {
   Future<bool> signInwithEmailAndPassword(String email, String password) async {
     try {
       await FirebaseAuth.instance

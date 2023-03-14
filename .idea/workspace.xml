@@ -1,17 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="main.dart" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/main.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9299fccc-381d-456e-81c1-7c3965eac0dd" name="Changes" comment="&quot;_&quot;">
+      <change afterPath="$PROJECT_DIR$/lib/controllers/note_controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/models/notes_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/google-services.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/kotlin/com/gettimely/mobile/timely/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/GoogleService-Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GoogleService-Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/firebase_app_id_file.json" beforeDir="false" afterPath="$PROJECT_DIR$/ios/firebase_app_id_file.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/task_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/task_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/task_screen2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/task_screen2.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/auth_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/auth_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/firebase_options.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/firebase_options.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utilities/show_snackbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/show_snackbar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/calender_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/calender_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/exam_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/exam_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/new_note_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/new_note_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/ephemeral/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/ephemeral/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/firebase_app_id_file.json" beforeDir="false" afterPath="$PROJECT_DIR$/macos/firebase_app_id_file.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2N03bGPN6FFoCZU2IfPqXyBn87k" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" />
+    <panes>
+      <pane id="ProjectPane">
+        <option name="show-excluded-files" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "C:/Users/USER/AndroidStudioProjects/timely/lib/controllers",
+    "show.migrate.to.gradle.popup": "false"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\AndroidStudioProjects\timely\lib\controllers" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9299fccc-381d-456e-81c1-7c3965eac0dd" name="Changes" comment="" />
+      <created>1678698393999</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678698393999</updated>
+    </task>
+    <task id="LOCAL-00001" summary="&quot;_&quot;">
+      <created>1678710846207</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678710846207</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
   </component>
   <component name="ToolWindowManager">
     <editor active="true" />
@@ -19,18 +110,19 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
     </layout>
   </component>
-  <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <option name="show-excluded-files" value="false" />
-      </pane>
-    </panes>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
-  <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="dart.analysis.tool.window.force.activate" value="true" />
-    <property name="show.migrate.to.gradle.popup" value="false" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&quot;_&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;_&quot;" />
   </component>
 </project>

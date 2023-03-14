@@ -16,6 +16,7 @@ class ExamScreen extends StatelessWidget {
         onPressed: () {
           showModalBottomSheet(
               context: context,
+              // isScrollControlled: true,
               builder: (BuildContext context) => const TaskScreen());
         },
         backgroundColor: Theme.of(context).primaryColor,

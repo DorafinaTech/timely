@@ -223,18 +223,26 @@ class LoginState extends State<Login> {
             ),
           ),
           Container(
-            margin: const EdgeInsets.all(8.0),
-            child: TextField(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+            // margin:  EdgeInsets.all(8.0),
+            child: TextFormField(
               controller: _emailController,
-              decoration: const InputDecoration(
-                enabledBorder: OutlineInputBorder(),
+              decoration:  InputDecoration(
                 labelText: 'Email',
+                border: OutlineInputBorder(
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.teal,
+                    width: 2
+                  )
+                ),
               ),
             ),
           ),
           Container(
             padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-            child: TextField(
+            child: TextFormField(
               obscureText: passwordVisible,
               controller: _passwordController,
               decoration: InputDecoration(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:timely/controllers/note_controller.dart';
+import 'package:get/get.dart';
 
 import '../components/bottom_navigation.dart';
 import '../constants/menu_padding.dart';
@@ -12,8 +14,10 @@ class NewNoteScreen extends StatefulWidget {
 }
 
 class _NewNoteScreenState extends State<NewNoteScreen> {
-  final TextEditingController _control = TextEditingController();
-  final TextEditingController _controll = TextEditingController();
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _bodyController = TextEditingController();
+  final NoteController _noteController = Get.put(NoteController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,10 +25,7 @@ class _NewNoteScreenState extends State<NewNoteScreen> {
       floatingActionButton: FloatingActionButton(
         mini: true,
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const Notes()),
-          );
+          // _noteController.addNewNote(_titleController.value.text, _bodyController.value.text);
         },
         backgroundColor: Theme.of(context).primaryColor,
         child: const Icon(Icons.save),
@@ -134,7 +135,7 @@ class _NewNoteScreenState extends State<NewNoteScreen> {
                       decoration: const InputDecoration(
                           hintText: 'Tittle',
                           hintStyle: TextStyle(color: Colors.grey)),
-                      controller: _control,
+                      controller: _titleController,
                       style: const TextStyle(
                           fontSize: 16,
                           fontFamily: 'Satoshi, color: Color(0xFFB3B3B3)'),
@@ -145,7 +146,7 @@ class _NewNoteScreenState extends State<NewNoteScreen> {
                   padding: const EdgeInsets.only(
                       top: 10, right: 16, left: 16, bottom: 5),
                   child: TextField(
-                    controller: _controll,
+                    controller: _bodyController,
                     decoration: const InputDecoration(
                       hintText: 'Note',
                       hintStyle: TextStyle(
