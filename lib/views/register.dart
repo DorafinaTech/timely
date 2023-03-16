@@ -262,6 +262,7 @@ class RegisterState extends State<Register> {
                 controller: _passwordController,
                 decoration: InputDecoration(
                   labelText: "Confirm Password",
+                  helperText: "Password must contain special Characters",
                   // labelText: "Password",
                   border: OutlineInputBorder(
                   ),

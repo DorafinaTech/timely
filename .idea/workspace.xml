@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9299fccc-381d-456e-81c1-7c3965eac0dd" name="Changes" comment="&quot;_&quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/constants/menu_padding.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/constants/primary_color.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utilities/route_names.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/route_names.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utilities/route_paths.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/route_paths.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/calender_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/calender_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/edit_profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/edit_profile_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/views/register.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/register.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
