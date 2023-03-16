@@ -11,8 +11,8 @@ class ExamsModel {
     required this.date,
     required this.start_time,
     required this.end_time,
-    required this.color,
-    required this.notification,
+    // required this.color,
+    required this.interval,
     required this.venue,
     required this.lecturerName,
   });
@@ -22,8 +22,8 @@ class ExamsModel {
   final String date;
   final String start_time;
   final String end_time;
-  final String color;
-  final String notification;
+  // final String color;
+  final String interval;
   final String venue;
   final String lecturerName;
 
@@ -33,8 +33,8 @@ class ExamsModel {
         date: json["date"],
         start_time: json["start_time"],
         end_time: json["end_time"],
-        color: json["color"],
-        notification: json["notification"],
+        // color: json["color"],
+        interval: json["interval"],
         venue: json["venue"],
         lecturerName: json["lecturerName"],
       );
@@ -45,8 +45,8 @@ class ExamsModel {
         "date": date,
         "start_time": start_time,
         "end_time": end_time,
-        "color": color,
-        "notification": notification,
+        // "color": color,
+        "interval": interval,
         "venue": venue,
         "lecturerName": lecturerName,
       };

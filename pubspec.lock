@@ -321,7 +321,7 @@ packages:
     source: hosted
     version: "0.15.2"
   http:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: http
       sha256: "6aa2946395183537c8b880962d935877325d6a09a2867c3970c05c0fed6ac482"
@@ -509,14 +509,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.4.16"
-  time_planner:
-    dependency: "direct main"
-    description:
-      name: time_planner
-      sha256: "48b21412ed4af53d0b304424290028cbac2f1900a7568c7db091c692eabb6cb5"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.1.1"
   typed_data:
     dependency: transitive
     description:

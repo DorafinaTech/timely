@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:timely/components/task_screen.dart';
+import 'package:timely/components/new_exam_bottom_sheet.dart';
 import 'package:timely/components/top_modal_sheet.dart';
 import 'package:timely/controllers/test_form_controller.dart';
 
@@ -21,7 +21,7 @@ class _AddExamScreenState extends State<AddExamScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               if (testFormController.showTop.value) const TopModalSheet(),
-              if (testFormController.showBottom.value) const TaskScreen()
+              if (testFormController.showBottom.value) const AddExamBottomSheet()
             ],
           )),
     );

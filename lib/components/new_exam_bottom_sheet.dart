@@ -1,26 +1,31 @@
 import 'dart:developer';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:timely/components/top_modal_sheet.dart';
+import 'package:timely/controllers/exam_controller.dart';
+import 'package:timely/models/exams_model.dart';
 import 'package:timely/utilities/route_paths.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:timely/utilities/show_snackbar.dart';
 
-import '../components/top_modal_sheet.dart';
-import '../models/exams_model.dart';
-import '../utilities/show_snackbar.dart';
-
-class TaskScreen extends StatefulWidget {
-  const TaskScreen({Key? key}) : super(key: key);
+class AddExamBottomSheet extends StatefulWidget {
+  const AddExamBottomSheet({Key? key}) : super(key: key);
 
   @override
-  State<TaskScreen> createState() => _TaskScreen();
+  State<AddExamBottomSheet> createState() => _TaskScreen();
 }
 
-class _TaskScreen extends State<TaskScreen> {
+class _TaskScreen extends State<AddExamBottomSheet> {
+
+
+  final ExamController _examController = Get.put<ExamController>(ExamController());
+
   final TextEditingController titlecontroller = TextEditingController();
   final TextEditingController lecturercontroller = TextEditingController();
   final TextEditingController venuecontroller = TextEditingController();
+
   String mDate = "Choose Date";
   TimeOfDay? startInitialTime;
 
@@ -50,8 +55,12 @@ class _TaskScreen extends State<TaskScreen> {
             child: TextField(
               decoration: InputDecoration(
                   labelText: 'Title',
-                  border: OutlineInputBorder(),
-                  hintStyle: TextStyle(color: Colors.grey)),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(width: 0.5, color: Colors.black),
+                  ),
+                  hintStyle: TextStyle(color: Colors.grey),
+
+              ),
               controller: titlecontroller,
               style: const TextStyle(
                   fontSize: 16,
@@ -61,33 +70,39 @@ class _TaskScreen extends State<TaskScreen> {
           children: [
             Expanded(
               child: Container(
-                padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                child: TextField(
-                  controller: lecturercontroller,
-                  decoration: const InputDecoration(
-                    labelText: 'Lecturer\'s name',
-                    hintStyle: TextStyle(
-                        color: Colors.grey,
-                        fontFamily: "satoshi",
-                        fontSize: 16),
-                  ),
-                ),
-              ),
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Lecturers Name',
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(width: 0.5, color: Colors.black),
+                      ),
+                      hintStyle: TextStyle(color: Colors.grey),
+
+                    ),
+                    controller: lecturercontroller,
+                    style: const TextStyle(
+                        fontSize: 16,
+                        fontFamily: 'Satoshi, color: Color(0xFFB3B3B3)'),
+                  )),
             ),
             Expanded(
               child: Container(
-                padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                child: TextField(
-                  controller: venuecontroller,
-                  decoration: const InputDecoration(
-                    labelText: 'Venue',
-                    hintStyle: TextStyle(
-                        color: Colors.grey,
-                        fontFamily: "satoshi",
-                        fontSize: 16),
-                  ),
-                ),
-              ),
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      labelText: ' Venue',
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(width: 0.5, color: Colors.black),
+                      ),
+                      hintStyle: TextStyle(color: Colors.grey),
+
+                    ),
+                    controller: venuecontroller,
+                    style: const TextStyle(
+                        fontSize: 16,
+                        fontFamily: 'Satoshi, color: Color(0xFFB3B3B3)'),
+                  )),
             ),
           ],
         ),
@@ -243,54 +258,54 @@ class _TaskScreen extends State<TaskScreen> {
             ),
           ),
         ),
-        Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-          Container(
-            padding: const EdgeInsets.only(right: 8),
-            height: 19,
-            child: Image.asset(
-              'svgs/vec.png',
-            ),
-          ),
-          const Text(
-            '10 minutes Before',
-            style: TextStyle(
-              fontSize: 16,
-              fontFamily: 'Satoshi',
-              color: Color(0xFF03110E),
-            ),
-          ),
-          Expanded(
-              child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Container(
-                padding: EdgeInsets.zero,
-                child: TextButton(
-                  onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (context) => const TopModalSheet());
-                  },
-                  child: Icon(Icons.add, color: Theme.of(context).primaryColor),
-                ),
-              ),
-            ],
-          ))
-        ]),
-        Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-          Container(
-            padding: const EdgeInsets.only(right: 8),
-            height: 19,
-            child: Image.asset(
-              'svgs/dont repeat.png',
-            ),
-          ),
-          const Text(
-            'Dont repeat',
-            style: TextStyle(
-                fontSize: 16, fontFamily: 'Satoshi', color: Color(0xFF1C8E77)),
-          ),
-        ]),
+        // Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+        //   Container(
+        //     padding: const EdgeInsets.only(right: 8),
+        //     height: 19,
+        //     child: Image.asset(
+        //       'svgs/vec.png',
+        //     ),
+        //   ),
+        //   const Text(
+        //     '10 minutes Before',
+        //     style: TextStyle(
+        //       fontSize: 16,
+        //       fontFamily: 'Satoshi',
+        //       color: Color(0xFF03110E),
+        //     ),
+        //   ),
+        //   Expanded(
+        //       child: Row(
+        //     mainAxisAlignment: MainAxisAlignment.end,
+        //     children: [
+        //       Container(
+        //         padding: EdgeInsets.zero,
+        //         child: TextButton(
+        //           onPressed: () {
+        //             showDialog(
+        //                 context: context,
+        //                 builder: (context) => const TopModalSheet());
+        //           },
+        //           child: Icon(Icons.add, color: Theme.of(context).primaryColor),
+        //         ),
+        //       ),
+        //     ],
+        //   ))
+        // ]),
+        // Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+        //   Container(
+        //     padding: const EdgeInsets.only(right: 8),
+        //     height: 19,
+        //     child: Image.asset(
+        //       'svgs/dont repeat.png',
+        //     ),
+        //   ),
+        //   const Text(
+        //     'Dont repeat',
+        //     style: TextStyle(
+        //         fontSize: 16, fontFamily: 'Satoshi', color: Color(0xFF1C8E77)),
+        //   ),
+        // ]),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -300,7 +315,7 @@ class _TaskScreen extends State<TaskScreen> {
               margin: const EdgeInsets.only(top: 20.0, left: 8.0, right: 8.0),
               child: ElevatedButton(
                 onPressed: () {
-                  Get.toNamed(RoutePaths.homeScreen);
+                  Get.toNamed(RoutePaths.testScreen);
                 },
                 style: OutlinedButton.styleFrom(
                   shape: const RoundedRectangleBorder(
@@ -342,8 +357,8 @@ class _TaskScreen extends State<TaskScreen> {
                             date: mDate,
                             start_time: sTime,
                             end_time: mTime,
-                            color: 'blue',
-                            notification: 'true',
+                            // color: 'blue',
+                            interval: 'true',
                             venue: venuecontroller.text,
                             lecturerName: lecturercontroller.text);
                         addToFireBase(examModel, context);
@@ -382,27 +397,6 @@ class _TaskScreen extends State<TaskScreen> {
   }
 
   void addToFireBase(ExamsModel examModel, BuildContext context) {
-    final examsRef =
-        FirebaseFirestore.instance.collection('examSchedule').doc();
-    examModel.id = examsRef.id;
-    final data = examModel.toJson();
-    examsRef.set(data).whenComplete(() {
-      log('exams inserted');
-
-      showSnackbar('Successful', 'your Task has been added successfully');
-
-      Future.delayed(Duration(seconds: 1)).then((value) {
-        Navigator.pop(Get.context!);
-      });
-
-/*      Navigator.pushAndRemoveUntil(
-        context,
-        MaterialPageRoute(
-          builder: (context) => HomePage(),
-        ),
-            (route) => false,
-      );*/
-      //
-    });
+    _examController.addToFirebase(examModel, context);
   }
 }
