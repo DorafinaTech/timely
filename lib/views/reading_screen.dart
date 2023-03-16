@@ -1,14 +1,14 @@
+import 'package:calendar_view/calendar_view.dart';
 import 'package:flutter/material.dart';
-import 'package:time_planner/time_planner.dart';
 import 'package:timely/components/bottom_navigation.dart';
+import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/components/task_screen2.dart';
-
-import '../components/popup_menu_buttons.dart';
-import '../components/task_screen.dart';
-import '../constants/menu_padding.dart';
+import 'package:timely/constants/menu_padding.dart';
 
 class ReadingScreen extends StatelessWidget {
-  const ReadingScreen({Key? key}) : super(key: key);
+  ReadingScreen({Key? key}) : super(key: key);
+
+  final EventController _readingEventController = EventController();
 
   @override
   Widget build(BuildContext context) {
@@ -46,45 +46,8 @@ class ReadingScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).primaryColor,
         child: const Icon(Icons.add),
       ),
-      body: TimePlanner(
-        startHour: 6,
-        endHour: 23,
-        style: TimePlannerStyle(
-          // cellHeight: 60,
-          // cellWidth: 60,
-          showScrollBar: true,
-        ),
-        headers: const [
-          TimePlannerTitle(
-            date: "3/10/2021",
-            title: "Sunday",
-          ),
-          TimePlannerTitle(
-            date: "3/11/2021",
-            title: "Monday",
-          ),
-          TimePlannerTitle(
-            date: "3/12/2021",
-            title: "Tuesday",
-          ),
-          TimePlannerTitle(
-            date: "3/13/2021",
-            title: "Wednesday",
-          ),
-          TimePlannerTitle(
-            date: "3/14/2021",
-            title: "Thursday",
-          ),
-          TimePlannerTitle(
-            date: "3/15/2021",
-            title: "Friday",
-          ),
-          TimePlannerTitle(
-            date: "3/16/2021",
-            title: "Saturday",
-          ),
-        ],
-        tasks: const [],
+      body: WeekView(
+        controller: _readingEventController,
       ),
     );
   }

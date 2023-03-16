@@ -3,27 +3,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:get/get.dart';
 import 'package:timely/firebase_options.dart';
+import 'package:timely/utilities/get_primary_swatch.dart';
+import 'package:timely/utilities/route_names.dart';
+import 'package:timely/utilities/route_paths.dart';
+import 'package:timely/views/about.dart';
+import 'package:timely/views/confirm_password.dart';
 import 'package:timely/views/edit_profile_screen.dart';
 import 'package:timely/views/email_recovery.dart';
 import 'package:timely/views/exam_screen.dart';
-import 'package:timely/views/about.dart';
 import 'package:timely/views/home_screen.dart';
-import 'package:timely/views/confirm_password.dart';
 import 'package:timely/views/login.dart';
 import 'package:timely/views/new_note_screen.dart';
 import 'package:timely/views/notes.dart';
-import 'package:timely/views/calender_screen.dart';
 import 'package:timely/views/onboarding.dart';
 import 'package:timely/views/onboarding1.dart';
 import 'package:timely/views/onboarding2.dart';
 import 'package:timely/views/profile_screen.dart';
 import 'package:timely/views/reading_screen.dart';
+import 'package:timely/views/calender_screen.dart';
 import 'package:timely/views/register.dart';
 import 'package:timely/views/splash_screen.dart';
 import 'package:timely/views/test_screen.dart';
-import 'package:timely/utilities/get_primary_swatch.dart';
-import 'package:timely/utilities/route_names.dart';
-import 'package:timely/utilities/route_paths.dart';
+
 import 'constants/primary_color.dart';
 
 void main() async {
@@ -44,7 +45,6 @@ class TimelyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Timely',
@@ -104,14 +104,14 @@ class TimelyApp extends StatelessWidget {
           name: RoutePaths.testScreen,
           title: RouteNames.testScreen,
           page: () {
-            return const TestScreen();
+            return TestScreen();
           },
         ),
         GetPage(
           name: RoutePaths.readingScreen,
           title: RouteNames.readingScreen,
           page: () {
-            return const ReadingScreen();
+            return ReadingScreen();
           },
         ),
         GetPage(
@@ -128,13 +128,13 @@ class TimelyApp extends StatelessWidget {
             return const EditProfileScreen();
           },
         ),
-        // GetPage(
-        //   name: RoutePaths.calendarScreen,
-        //   title: RouteNames.calenderscreen,
-        //   page: () {
-        //     return const CalendarScreen();
-        //   },
-        // ),
+        GetPage(
+          name: RoutePaths.calendarScreen,
+          title: RouteNames.calenderscreen,
+          page: () {
+            return CalendarScreen();
+          },
+        ),
         GetPage(
           name: RoutePaths.notescreen,
           title: RouteNames.notescreen,
@@ -142,7 +142,7 @@ class TimelyApp extends StatelessWidget {
             return const Notes();
           },
         ),
-        
+
         GetPage(
           name: RoutePaths.newNoteScreen,
           title: RouteNames.newNoteScreen,
@@ -174,9 +174,7 @@ class TimelyApp extends StatelessWidget {
             return const EmailRecovery();
           },
         ),
-
       ],
-
       theme: ThemeData(
           useMaterial3: true,
           primaryColor: Color(primaryColorCode),

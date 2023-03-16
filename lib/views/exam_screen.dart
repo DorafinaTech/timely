@@ -1,11 +1,30 @@
+import 'package:calendar_view/calendar_view.dart';
 import 'package:flutter/material.dart';
-import 'package:time_planner/time_planner.dart';
-import 'package:timely/components/task_screen.dart';
+import 'package:intl/intl.dart';
+
+// import 'package:time_planner/time_planner.dart';
 import 'package:timely/components/bottom_navigation.dart';
 import 'package:timely/components/popup_menu_buttons.dart';
-import '../constants/menu_padding.dart';
+import 'package:timely/components/new_exam_bottom_sheet.dart';
+import 'package:timely/constants/menu_padding.dart';
 
-class ExamScreen extends StatelessWidget {
+class ExamScreen extends StatefulWidget {
+  @override
+  State<ExamScreen> createState() => _ExamScreenState();
+}
+
+class _ExamScreenState extends State<ExamScreen> {
+  var now = DateTime.now();
+  var dateFormatter = DateFormat('yyyy-MM-dd');
+
+  String todaysDate = '';
+  final EventController _examEventController = EventController();
+
+  @override
+  void initState() {
+    dateFormatter.format(now);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +36,7 @@ class ExamScreen extends StatelessWidget {
           showModalBottomSheet(
               context: context,
               // isScrollControlled: true,
-              builder: (BuildContext context) => const TaskScreen());
+              builder: (BuildContext context) => const AddExamBottomSheet());
         },
         backgroundColor: Theme.of(context).primaryColor,
         child: const Icon(Icons.add),
@@ -44,45 +63,8 @@ class ExamScreen extends StatelessWidget {
         ],
         elevation: 0,
       ),
-      body: TimePlanner(
-        startHour: 6,
-        endHour: 23,
-        style: TimePlannerStyle(
-          // cellHeight: 60,
-          // cellWidth: 60,
-          showScrollBar: true,
-        ),
-        headers: const [
-          TimePlannerTitle(
-            date: "3/10/2021",
-            title: "Sunday",
-          ),
-          TimePlannerTitle(
-            date: "3/11/2021",
-            title: "Monday",
-          ),
-          TimePlannerTitle(
-            date: "3/12/2021",
-            title: "Tuesday",
-          ),
-          TimePlannerTitle(
-            date: "3/13/2021",
-            title: "Wednesday",
-          ),
-          TimePlannerTitle(
-            date: "3/14/2021",
-            title: "Thursday",
-          ),
-          TimePlannerTitle(
-            date: "3/15/2021",
-            title: "Friday",
-          ),
-          TimePlannerTitle(
-            date: "3/16/2021",
-            title: "Saturday",
-          ),
-        ],
-        tasks: const [],
+      body: WeekView(
+        controller: _examEventController,
       ),
     );
   }

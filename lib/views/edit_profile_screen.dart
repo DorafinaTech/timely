@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/utilities/route_paths.dart';
-import 'package:get/get.dart';
 
 class EditProfileScreen extends StatelessWidget {
   const EditProfileScreen({Key? key}) : super(key: key);
@@ -52,7 +52,7 @@ class EditProfileScreen extends StatelessWidget {
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Stack(children: [
-            Positioned(
+            const Positioned(
               child: CircleAvatar(
                 radius: 50.0,
                 backgroundImage: AssetImage('assets/images/thessC.png'),
@@ -62,11 +62,23 @@ class EditProfileScreen extends StatelessWidget {
             Positioned(
                 bottom: 0.2,
                 right: 0.2,
-                child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.camera_alt,
-                      color: Colors.white,
+                child: Container(
+                  width: 30,
+                  height: 30,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(100),
+                        border: Border.all(
+                            color: Get.theme.primaryColor, width: .5)),
+
+                    child: Center(
+                      child: IconButton(
+                        iconSize: 15,
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.camera_alt_rounded,
+                            color: Get.theme.primaryColor,
+                          )),
                     ))),
           ]),
           Container(

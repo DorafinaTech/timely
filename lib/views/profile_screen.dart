@@ -4,12 +4,34 @@ import 'package:get/get.dart';
 import 'package:timely/components/bottom_navigation.dart';
 import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/controllers/auth_controller.dart';
+import 'package:timely/controllers/profile_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
 import 'package:timely/utilities/show_snackbar.dart';
-import 'package:timely/views/notes.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  final ProfileController profileController =
+      Get.put<ProfileController>(ProfileController());
+  String userName = '';
+  String userEmail = '';
+
+  @override
+  void initState() {
+    profileController.getBioData().then((bioData) {
+      setState(() {
+        userName = bioData['name'];
+        userEmail = bioData['email'];
+      });
+    });
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -115,14 +137,14 @@ class ProfileScreen extends StatelessWidget {
                 backgroundImage: AssetImage('assets/images/thessC.png'),
                 backgroundColor: Colors.transparent,
               ),
-              const Text(
-                'Thessy Emmanuel',
-                style: TextStyle(
+              Text(
+                userName,
+                style: const TextStyle(
                     fontFamily: 'Satoshi', fontSize: 16, color: Colors.black),
               ),
-              const Text(
-                'thessyzilla@gmail.com',
-                style: TextStyle(
+              Text(
+                userEmail,
+                style: const TextStyle(
                     fontFamily: 'Satoshi', fontSize: 16, color: Colors.black54),
               ),
               Container(
@@ -131,6 +153,7 @@ class ProfileScreen extends StatelessWidget {
                 margin: const EdgeInsets.only(
                   right: 84,
                   left: 84,
+                  top: 10,
                 ),
                 child: ElevatedButton(
                   onPressed: () {
@@ -255,7 +278,6 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () async {
-
                   AuthController().signout().then((value) {
                     if (value) {
                       Get.toNamed(RoutePaths.login);
