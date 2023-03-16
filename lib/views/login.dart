@@ -222,21 +222,33 @@ class LoginState extends State<Login> {
               ),
             ),
           ),
+          // Container(
+          //   padding: const EdgeInsets.all(10),
+          //   child: TextFormField(
+          //     controller: _emailController,
+          //     decoration: const InputDecoration(
+          //       border: OutlineInputBorder(),
+          //       labelText: 'Email Address',
+          //     ),
+          //   ),
+          // ),
           Container(
-            padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-            // margin:  EdgeInsets.all(8.0),
+            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
             child: TextFormField(
               controller: _emailController,
-              decoration:  InputDecoration(
-                labelText: 'Email',
+              decoration: InputDecoration(
+                labelText: "Email",
                 border: OutlineInputBorder(
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.teal,
-                    width: 2
-                  )
-                ),
+                    //     borderRadius: BorderRadius.circular(30),
+                    //     borderSide: BorderSide(
+                    //         color: Colors.teal.shade200,
+                    //         width: 1.5,
+                    //         style: BorderStyle.solid)),
+                    // helperStyle: TextStyle(
+                    //   color: Colors.teal.shade200,
+                    ),
+                alignLabelWithHint: false,
+                filled: true,
               ),
             ),
           ),
@@ -319,10 +331,15 @@ class LoginState extends State<Login> {
                     debugPrint(userMessage);
                   } else {
                     showErrorSnackbar(
-                      "incorrect email or password",
+                        "Login failed, Something went wrong"
                     );
                   }
-                }).catchError((error) {
+                }).onError((error, stackTrace) {
+                  userMessage = "Login failed, Something went wrong";
+                    showSnackbar("Oops", userMessage);
+                debugPrint(userMessage);
+              });
+/*                    .catchError((error) {
                   userMessage = "Login failed, Something went wrong";
                   showSnackbar("Oops", userMessage);
                   debugPrint(userMessage);
@@ -330,7 +347,7 @@ class LoginState extends State<Login> {
                   if (kDebugMode) {
                     print(error);
                   }
-                });
+                });*/
               },
               style: OutlinedButton.styleFrom(
                 shape: const RoundedRectangleBorder(
@@ -387,6 +404,7 @@ class LoginState extends State<Login> {
           ),
         ],
       ),
-    ));
+    )
+    );
   }
 }

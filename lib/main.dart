@@ -128,13 +128,13 @@ class TimelyApp extends StatelessWidget {
             return const EditProfileScreen();
           },
         ),
-        GetPage(
-          name: RoutePaths.calendarScreen,
-          title: RouteNames.calenderscreen,
-          page: () {
-            return  CalendarScreen();
-          },
-        ),
+        // GetPage(
+        //   name: RoutePaths.calendarScreen,
+        //   title: RouteNames.calenderscreen,
+        //   page: () {
+        //     return const CalendarScreen();
+        //   },
+        // ),
         GetPage(
           name: RoutePaths.notescreen,
           title: RouteNames.notescreen,

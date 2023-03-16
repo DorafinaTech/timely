@@ -17,4 +17,5 @@ abstract class RoutePaths {
   static const confirmPasswordScreen = '/confirm-password';
   static const emailecoveryScreen = '/email-recovery';
   static const newNoteScreen = '/new-note';
+  static const monthViewPage = '/monthviewpage';
 }

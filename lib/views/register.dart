@@ -13,8 +13,8 @@ class Register extends StatefulWidget {
 }
 
 class RegisterState extends State<Register> {
-  final TextEditingController _firstAndLastNameController =
-      TextEditingController();
+  final TextEditingController _firstAndNameController =TextEditingController();
+
   bool passwordVisible = false;
 
   final TextEditingController _emailController = TextEditingController();
@@ -166,66 +166,76 @@ class RegisterState extends State<Register> {
               ),
             ),
             Container(
-              margin: const EdgeInsets.all(8.0),
-              child: TextField(
-                controller: _firstAndLastNameController,
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+              child: TextFormField(
+                controller: _firstAndNameController,
                 decoration: InputDecoration(
-                    hintText: " First and last name",
-                    hintStyle: const TextStyle(color: Colors.black54),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(50),
-                        borderSide: BorderSide(
-                            color: Colors.teal.shade100,
-                            width: 1.0,
-                            style: BorderStyle.solid))),
+                  labelText: "First and last Name",
+                  border: OutlineInputBorder(
+                    //     borderRadius: BorderRadius.circular(30),
+                    //     borderSide: BorderSide(
+                    //         color: Colors.teal.shade200,
+                    //         width: 1.5,
+                    //         style: BorderStyle.solid)),
+                    // helperStyle: TextStyle(
+                    //   color: Colors.teal.shade200,
+                  ),
+                  alignLabelWithHint: false,
+                  filled: true,
+                ),
               ),
             ),
             Container(
-              margin: const EdgeInsets.all(8.0),
-              child: TextField(
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+              child: TextFormField(
                 controller: _emailController,
                 decoration: InputDecoration(
-                    hintText: " Email Address",
-                    hintStyle: const TextStyle(color: Colors.black54),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(50),
-                        borderSide: BorderSide(
-                            color: Colors.teal.shade100,
-                            width: 1.0,
-                            style: BorderStyle.solid))),
+                  labelText: "Email Address",
+                  border: OutlineInputBorder(
+                    //     borderRadius: BorderRadius.circular(30),
+                    //     borderSide: BorderSide(
+                    //         color: Colors.teal.shade200,
+                    //         width: 1.5,
+                    //         style: BorderStyle.solid)),
+                    // helperStyle: TextStyle(
+                    //   color: Colors.teal.shade200,
+                  ),
+                  alignLabelWithHint: false,
+                  filled: true,
+                ),
               ),
             ),
             Container(
-              margin: const EdgeInsets.all(8.0),
-              child: TextField(
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+              child: TextFormField(
                 controller: _phoneNumberController,
                 decoration: InputDecoration(
-                    hintText: "start with your country code (+234)",
-                    hintStyle: const TextStyle(color: Colors.black54),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(50),
-                        borderSide: BorderSide(
-                            color: Colors.teal.shade100,
-                            width: 1.0,
-                            style: BorderStyle.solid))),
+                  labelText: "start with your country code (+234)",
+                  border: OutlineInputBorder(
+                    //     borderRadius: BorderRadius.circular(30),
+                    //     borderSide: BorderSide(
+                    //         color: Colors.teal.shade200,
+                    //         width: 1.5,
+                    //         style: BorderStyle.solid)),
+                    // helperStyle: TextStyle(
+                    //   color: Colors.teal.shade200,
+                  ),
+                  alignLabelWithHint: false,
+                  filled: true,
+                ),
               ),
             ),
             Container(
-              margin: const EdgeInsets.all(8.0),
-              child: TextField(
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+              child: TextFormField(
                 obscureText: passwordVisible,
                 controller: _passwordController,
                 decoration: InputDecoration(
-                  hintText: "Password",
+                  labelText: "Password",
+                  // labelText: "Password",
+                  helperText: "Password must contain special Characters",
                   hintStyle: const TextStyle(color: Colors.black54),
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(50),
-                      borderSide: BorderSide(
-                          color: Colors.teal.shade100,
-                          width: 1.0,
-                          style: BorderStyle.solid)),
-                  helperStyle: TextStyle(
-                    color: Colors.teal.shade200,
+                  border: OutlineInputBorder(
                   ),
                   suffixIcon: IconButton(
                     color: Colors.teal.shade200,
@@ -234,7 +244,7 @@ class RegisterState extends State<Register> {
                         : Icons.visibility_off),
                     onPressed: () {
                       setState(
-                        () {
+                            () {
                           passwordVisible = !passwordVisible;
                         },
                       );
@@ -246,19 +256,31 @@ class RegisterState extends State<Register> {
               ),
             ),
             Container(
-              margin: const EdgeInsets.all(8.0),
-              child: TextField(
-                controller: _confirmPasswordController,
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+              child: TextFormField(
                 obscureText: passwordVisible,
+                controller: _passwordController,
                 decoration: InputDecoration(
-                    hintText: " Confirm Password",
-                    hintStyle: const TextStyle(color: Colors.black54),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(50),
-                        borderSide: BorderSide(
-                            color: Colors.teal.shade100,
-                            width: 1.0,
-                            style: BorderStyle.solid))),
+                  labelText: "Confirm Password",
+                  // labelText: "Password",
+                  border: OutlineInputBorder(
+                  ),
+                  suffixIcon: IconButton(
+                    color: Colors.teal.shade200,
+                    icon: Icon(passwordVisible
+                        ? Icons.visibility
+                        : Icons.visibility_off),
+                    onPressed: () {
+                      setState(
+                            () {
+                          passwordVisible = !passwordVisible;
+                        },
+                      );
+                    },
+                  ),
+                  alignLabelWithHint: false,
+                  filled: true,
+                ),
               ),
             ),
             Container(
@@ -272,7 +294,7 @@ class RegisterState extends State<Register> {
                           _emailController.value.text.trim(),
                           _passwordController.value.text.trim(),
                           _phoneNumberController.value.text.trim(),
-                          _firstAndLastNameController.value.text.trim())
+                          _firstAndNameController.value.text.trim())
                       .then((value) {
                     if (value) {
                       Get.toNamed(RoutePaths.homeScreen);
@@ -284,6 +306,7 @@ class RegisterState extends State<Register> {
                     }
                   });
                 },
+
                 style: ElevatedButton.styleFrom(
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(
