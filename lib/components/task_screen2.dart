@@ -1,9 +1,14 @@
+import 'dart:developer';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:timely/utilities/route_paths.dart';
 
 import '../components/top_modal_sheet.dart';
+import '../models/reading_model.dart';
+import '../utilities/show_snackbar.dart';
 
 class TaskScreen2 extends StatefulWidget {
   const TaskScreen2({Key? key}) : super(key: key);
@@ -75,7 +80,7 @@ class _TaskScreen2 extends State<TaskScreen2> {
         Flexible(
           child: Container(
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween ,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
                   padding: EdgeInsets.symmetric(vertical: 10),
@@ -93,8 +98,8 @@ class _TaskScreen2 extends State<TaskScreen2> {
                           print(
                               pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
                           String formattedDate =
-                          // DateFormat('yyyy-MM-dd').format(pickedDate);
-                          DateFormat('dd-MM-yyyy').format(pickedDate);
+                              // DateFormat('yyyy-MM-dd').format(pickedDate);
+                              DateFormat('dd-MM-yyyy').format(pickedDate);
 
                           print(
                               formattedDate); //formatted date output using intl package =>  2021-03-16
@@ -210,7 +215,7 @@ class _TaskScreen2 extends State<TaskScreen2> {
 
                                       mTime = newTime.toString();
                                       mTime =
-                                      '${newTime.hour} : ${newTime.minute}';
+                                          '${newTime.hour} : ${newTime.minute}';
                                     });
                                   }
                                 }
@@ -282,7 +287,7 @@ class _TaskScreen2 extends State<TaskScreen2> {
               margin: const EdgeInsets.only(top: 20.0, left: 8.0, right: 8.0),
               child: ElevatedButton(
                 onPressed: () {
-                  Get.toNamed(RoutePaths.homeScreen);
+                  Get.toNamed(RoutePaths.readingScreen);
                 },
                 style: OutlinedButton.styleFrom(
                   shape: const RoundedRectangleBorder(
@@ -319,7 +324,7 @@ class _TaskScreen2 extends State<TaskScreen2> {
                         const EdgeInsets.only(top: 20.0, left: 8.0, right: 8.0),
                     child: ElevatedButton(
                       onPressed: () {
-                        Get.toNamed(RoutePaths.homeScreen);
+                        Get.toNamed(RoutePaths.readingScreen);
                       },
                       style: OutlinedButton.styleFrom(
                         shape: const RoundedRectangleBorder(
@@ -350,7 +355,23 @@ class _TaskScreen2 extends State<TaskScreen2> {
             ),
           ],
         ),
-    ]),
+      ]),
     );
+  }
+
+  void addToFireBase(ReadingModel readingModel, BuildContext context) {
+    final readingRef =
+        FirebaseFirestore.instance.collection('readingSchedule').doc();
+    readingModel.id = readingRef.id;
+    final data = readingModel.toJson();
+    readingRef.set(data).whenComplete(() {
+      log('reading inserted');
+
+      showSnackbar('Successful', 'your Task has been added successfully');
+
+      Future.delayed(Duration(seconds: 1)).then((value) {
+        Navigator.pop(Get.context!);
+      });
+    });
   }
 }

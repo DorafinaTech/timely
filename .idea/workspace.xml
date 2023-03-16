@@ -5,11 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a921c91c-1e08-4f39-8a1a-38c883d9e14d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/controllers/profile_controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/controllers/note_controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/models/notes_model.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/google-services.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/kotlin/com/gettimely/mobile/timely/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/task_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/task_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/task_screen2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/task_screen2.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/auth_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/auth_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utilities/route_names.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/route_names.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utilities/route_paths.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/route_paths.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utilities/show_snackbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/show_snackbar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/calender_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/calender_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/edit_profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/edit_profile_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/exam_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/exam_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/new_note_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/new_note_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/register.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/register.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/ephemeral/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/ephemeral/flutter_export_environment.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>

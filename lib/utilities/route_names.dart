@@ -17,4 +17,6 @@ abstract class RouteNames {
   static const confirmPasswordScreen = 'ConfirmPassword';
   static const emailecoveryScreen = 'EmailRecovery';
   static const newNoteScreen = 'NewNote';
+  static const monthViewpage = 'MonthViewPage';
 }
+

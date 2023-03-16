@@ -51,38 +51,24 @@ class EditProfileScreen extends StatelessWidget {
         child: SingleChildScrollView(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  const CircleAvatar(
-                    radius: 50.0,
-                    backgroundImage: AssetImage('assets/images/thessC.png'),
-                    backgroundColor: Colors.transparent,
-                  ),
-          // Padding(
-          //   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          //   child: TextFormField(
-          //     decoration: const InputDecoration(
-          //       labelText: 'Name',
-          //       labelStyle: TextStyle(
-          //           fontFamily: 'Satoshi',
-          //           fontSize: 16,
-          //           color: Color(
-          //             0xFF03110E,
-          //           )),
-          //       hintText: 'Thessy Emmanuel',
-          //       hintStyle: TextStyle(
-          //           fontFamily: 'Satoshi', fontSize: 13, color: Colors.black54),
-          //       enabledBorder: OutlineInputBorder(
-          //         borderSide: BorderSide(style: BorderStyle.solid, width: 1.5,
-          //             color: Color(0xFFF6FDFC)),
-          //         borderRadius: BorderRadius.only(
-          //           bottomLeft: Radius.circular(20.0),
-          //           bottomRight: Radius.circular(20.0),
-          //           topLeft: Radius.circular(20.0),
-          //           topRight: Radius.circular(20.0),
-          //         ),
-          //       ),
-          //     ),
-          //   ),
-          // ),
+          Stack(children: [
+            Positioned(
+              child: CircleAvatar(
+                radius: 50.0,
+                backgroundImage: AssetImage('assets/images/thessC.png'),
+                backgroundColor: Colors.transparent,
+              ),
+            ),
+            Positioned(
+                bottom: 0.2,
+                right: 0.2,
+                child: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.camera_alt,
+                      color: Colors.white,
+                    ))),
+          ]),
           Container(
             color: const Color(0xFFF6FDFC),
             margin: const EdgeInsets.all(8.0),

@@ -6,9 +6,9 @@ import 'package:intl/intl.dart';
 import 'package:timely/utilities/route_paths.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-
 import '../components/top_modal_sheet.dart';
 import '../models/exams_model.dart';
+import '../utilities/show_snackbar.dart';
 
 class TaskScreen extends StatefulWidget {
   const TaskScreen({Key? key}) : super(key: key);
@@ -94,7 +94,7 @@ class _TaskScreen extends State<TaskScreen> {
         Flexible(
           child: Container(
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween ,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
                   padding: EdgeInsets.symmetric(vertical: 10),
@@ -388,9 +388,12 @@ class _TaskScreen extends State<TaskScreen> {
     final data = examModel.toJson();
     examsRef.set(data).whenComplete(() {
       log('exams inserted');
-      var snackbar = SnackBar(content: Text('Exams Successfully Added'));
-      ScaffoldMessenger.of(context).showSnackBar(snackbar);
-      Get.toNamed(RoutePaths.examsScreen);
+
+      showSnackbar('Successful', 'your Task has been added successfully');
+
+      Future.delayed(Duration(seconds: 1)).then((value) {
+        Navigator.pop(Get.context!);
+      });
 
 /*      Navigator.pushAndRemoveUntil(
         context,

@@ -30,7 +30,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   usePathUrlStrategy();
 
-  await Firebase.initializeApp(
+  var app = await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
@@ -128,13 +128,13 @@ class TimelyApp extends StatelessWidget {
             return const EditProfileScreen();
           },
         ),
-        GetPage(
-          name: RoutePaths.calendarScreen,
-          title: RouteNames.calenderscreen,
-          page: () {
-            return const CalenderScreen();
-          },
-        ),
+        // GetPage(
+        //   name: RoutePaths.calendarScreen,
+        //   title: RouteNames.calenderscreen,
+        //   page: () {
+        //     return const CalendarScreen();
+        //   },
+        // ),
         GetPage(
           name: RoutePaths.notescreen,
           title: RouteNames.notescreen,

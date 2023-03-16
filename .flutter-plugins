@@ -1,14 +1,14 @@
 # This is a generated file; do not edit or check into version control.
 cloud_firestore=/home/danroyal001/.pub-cache/hosted/pub.dev/cloud_firestore-4.4.4/
 cloud_firestore_web=/home/danroyal001/.pub-cache/hosted/pub.dev/cloud_firestore_web-3.3.4/
-firebase_auth=/home/danroyal001/.pub-cache/hosted/pub.dev/firebase_auth-4.2.2/
-firebase_auth_web=/home/danroyal001/.pub-cache/hosted/pub.dev/firebase_auth_web-5.2.2/
+firebase_auth=/home/danroyal001/.pub-cache/hosted/pub.dev/firebase_auth-4.2.10/
+firebase_auth_web=/home/danroyal001/.pub-cache/hosted/pub.dev/firebase_auth_web-5.2.9/
 firebase_core=/home/danroyal001/.pub-cache/hosted/pub.dev/firebase_core-2.7.1/
 firebase_core_web=/home/danroyal001/.pub-cache/hosted/pub.dev/firebase_core_web-2.2.2/
 firebase_storage=/home/danroyal001/.pub-cache/hosted/pub.dev/firebase_storage-11.0.15/
 firebase_storage_web=/home/danroyal001/.pub-cache/hosted/pub.dev/firebase_storage_web-3.3.24/
 flutter_native_splash=/home/danroyal001/.pub-cache/hosted/pub.dev/flutter_native_splash-2.2.19/
-google_sign_in=/home/danroyal001/.pub-cache/hosted/pub.dev/google_sign_in-5.4.4/
+google_sign_in=/home/danroyal001/.pub-cache/hosted/pub.dev/google_sign_in-6.0.2/
 google_sign_in_android=/home/danroyal001/.pub-cache/hosted/pub.dev/google_sign_in_android-6.1.8/
 google_sign_in_ios=/home/danroyal001/.pub-cache/hosted/pub.dev/google_sign_in_ios-5.6.1/
-google_sign_in_web=/home/danroyal001/.pub-cache/hosted/pub.dev/google_sign_in_web-0.10.2+1/
+google_sign_in_web=/home/danroyal001/.pub-cache/hosted/pub.dev/google_sign_in_web-0.11.0+2/
