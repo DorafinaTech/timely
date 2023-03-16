@@ -46,6 +46,7 @@ dependencies:
   smooth_page_indicator: ^1.0.1
   http: ^0.13.5
   intl: ^0.18.0
+  firebase_storage: ^11.0.15
 
 
 
