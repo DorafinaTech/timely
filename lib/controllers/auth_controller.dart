@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -123,7 +124,7 @@ class AuthController extends BaseController {
     return FirebaseAuth.instance.currentUser;
   }
 
-  Future<bool> forgtePasword() async {
+  Future<bool> passwordReset() async {
     try {
       FirebaseAuth.instance.sendPasswordResetEmail(
           email: FirebaseAuth.instance.currentUser!.email!);
@@ -134,5 +135,12 @@ class AuthController extends BaseController {
 
       return false;
     }
+  }
+
+  Future<bool> confirmPasswordReset(String code, String newPassword) async {
+    FirebaseAuth.instance
+        .confirmPasswordReset(code: code, newPassword: newPassword);
+
+    return true;
   }
 }
