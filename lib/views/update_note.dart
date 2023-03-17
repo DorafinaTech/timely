@@ -47,7 +47,7 @@ class UpdateNote extends StatelessWidget {
                     onPressed: () {
                       //
                       // ToDO: Update a note
-                      Notes updatedNote = note;
+                      Notes updatedNote = note as Notes;
                       //
                       final collectionReference =
                       FirebaseFirestore.instance.collection('note');

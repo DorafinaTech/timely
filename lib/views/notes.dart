@@ -13,7 +13,6 @@ class Notes extends StatelessWidget {
    Notes({Key? key}) : super(key: key);
    final CollectionReference _reference = FirebaseFirestore .instance.collection('notes');
 
-   NoteController _noteController = new NoteController();
 
   @override
   Widget build(BuildContext context) {
