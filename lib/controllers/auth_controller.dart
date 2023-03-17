@@ -4,8 +4,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:timely/controllers/base_controller.dart';
 import 'package:timely/utilities/show_error_snackbar.dart';
 
-class
-AuthController extends BaseController {
+class AuthController extends BaseController {
   Future<bool> signInwithEmailAndPassword(String email, String password) async {
     try {
       await FirebaseAuth.instance
@@ -47,7 +46,7 @@ AuthController extends BaseController {
       return false;
     } catch (e) {
       if (kDebugMode) {
-        print(e);
+        debugPrint(e.toString());
       }
       showErrorSnackbar("Something went wrong");
 
@@ -62,7 +61,7 @@ AuthController extends BaseController {
           await GoogleSignIn(clientId: "").signIn();
 
       if (kDebugMode) {
-        print(googleUser);
+        debugPrint(googleUser.toString());
       }
 
       // Obtain the auth details from the request
@@ -75,7 +74,6 @@ AuthController extends BaseController {
         idToken: googleAuth?.idToken,
       );
 
-      // Once signed in, return the UserCredential
       await FirebaseAuth.instance.signInWithCredential(credential);
 
       return true;
@@ -83,22 +81,22 @@ AuthController extends BaseController {
       // Get.toNamed(RouteNames.homeScreen);
     } catch (e) {
       if (kDebugMode) {
-        print(e);
+        debugPrint(e.toString());
       }
 
       return false;
     }
   }
 
-  Future<bool> signout() async {
+  Future<bool> signOut() async {
     try {
       await FirebaseAuth.instance.signOut();
 
       return true;
     } catch (e) {
       if (kDebugMode) {
-        print('Logout failed');
-        print(e);
+        debugPrint('Logout failed');
+        debugPrint(e.toString());
       }
 
       return false;
@@ -112,7 +110,7 @@ AuthController extends BaseController {
       return true;
     } catch (e) {
       if (kDebugMode) {
-        print(e);
+        debugPrint(e.toString());
       }
 
       return false;

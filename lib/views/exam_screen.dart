@@ -35,7 +35,8 @@ class _ExamScreenState extends State<ExamScreen> {
     return Scaffold(
       bottomNavigationBar: const BottomNavigation(),
       floatingActionButton: FloatingActionButton(
-        mini: true,
+        // mini: true,
+        shape: const CircleBorder(),
         onPressed: () {
           showModalBottomSheet(
               context: context,
@@ -48,7 +49,7 @@ class _ExamScreenState extends State<ExamScreen> {
       appBar: AppBar(
         title: const Center(
           child: Text(
-            'Week view',
+            'Exams Week view',
             style: TextStyle(
                 fontFamily: 'Satoshi', fontSize: 20, color: Colors.white),
           ),
@@ -76,12 +77,18 @@ class _ExamScreenState extends State<ExamScreen> {
             );
           }
 
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+
           List<CalendarEventData<ExamsModel>> eventsToBeAdded = [];
 
           snapshot.data?.docs.forEach((examDoc) {
             var examMap = examDoc.data();
             if (kDebugMode) {
-              print(examMap);
+              debugPrint(examMap.toString());
             }
 
             var examModel =

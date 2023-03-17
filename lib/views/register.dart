@@ -66,7 +66,7 @@ class RegisterState extends State<Register> {
             //         debugPrint(userMessage);
             //
             //         if (kDebugMode) {
-            //           print(error);
+            //           debugPrint(error);
             //         }
             //       });
             //     },
@@ -114,7 +114,7 @@ class RegisterState extends State<Register> {
             //         debugPrint(userMessage);
             //
             //         if (kDebugMode) {
-            //           print(error);
+            //           debugPrint(error);
             //         }
             //       });
             //     },
@@ -303,7 +303,7 @@ class RegisterState extends State<Register> {
                   }).catchError((error) {
                     showErrorSnackbar( "Sign in failed");
                     if (kDebugMode) {
-                      print(error);
+                      debugPrint(error);
                     }
                   });
                 },

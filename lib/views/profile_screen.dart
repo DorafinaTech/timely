@@ -8,6 +8,8 @@ import 'package:timely/controllers/profile_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
 import 'package:timely/utilities/show_snackbar.dart';
 
+import '../components/popup_menu_buttons.dart';
+
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
 
@@ -49,84 +51,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ),
         actions: [
           Row(children: [
-            PopupMenuButton<int>(
-              padding: const EdgeInsets.only(
-                right: 100,
-              ),
-              color: const Color(0xFFEEFCF9),
-              position: PopupMenuPosition.over,
-              offset: const Offset(0, 0),
-              itemBuilder: (context) => [
-                // popupmenu item 1
-                PopupMenuItem(
-                  padding: const EdgeInsets.all(10.5),
-                  value: 1,
-                  // row has two child icon and text.
-                  child: Row(
-                    children: [
-                      Icon(Icons.calendar_today,
-                          color: Theme.of(context).primaryColor),
-                      const SizedBox(
-                        // sized box with width 10
-                        width: 10,
-                      ),
-                      const Text("Calender")
-                    ],
-                  ),
-                ),
-                // popupmenu item 2
-                PopupMenuItem(
-                  padding: const EdgeInsets.all(10.5),
-                  value: 2,
-                  // row has two child icon and text
-                  child: Row(
-                    children: [
-                      Icon(Icons.sticky_note_2,
-                          color: Theme.of(context).primaryColor),
-                      const SizedBox(
-                        // sized box with width 10
-                        width: 10,
-                      ),
-                      const Text("Notes")
-                    ],
-                  ),
-                ),
-                PopupMenuItem(
-                  padding: const EdgeInsets.all(10.5),
-                  value: 2,
-                  // row has two child icon and text
-                  child: Row(
-                    children: [
-                      Icon(Icons.tag_faces,
-                          color: Theme.of(context).primaryColor),
-                      const SizedBox(
-                        // sized box with width 10
-                        width: 10,
-                      ),
-                      const Text("About"),
-                    ],
-                  ),
-                ),
-              ],
-              elevation: 2,
-              child: const Icon(Icons.menu, color: Colors.black),
+            const MenuButton(
+              popupColor: Colors.black,
             ),
             Container(
               width: menuPadding,
             )
           ]),
         ],
+        elevation: 0,
         backgroundColor: Colors.white,
         foregroundColor: Colors.white,
-        elevation: 0,
       ),
       bottomNavigationBar: const BottomNavigation(),
-      // floatingActionButton: FloatingActionButton(
-      //   mini: true,
-      //   onPressed: () {},
-      //   backgroundColor: Theme.of(context).primaryColor,
-      //   child: const Icon(Icons.add),
-      // ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -184,23 +121,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 color: Color(0xFF000000),
               ),
               Container(height: 15),
-              // ListTile(
-              //   dense: true,
-              //   contentPadding:
-              //       const EdgeInsets.symmetric(vertical: 4, horizontal: 20),
-              //   leading: Container(
-              //     margin: EdgeInsets.zero,
-              //     padding: const EdgeInsets.all(8.0),
-              //     child: Image.asset(
-              //       'svgs/Alarm.png',
-              //       // height: 20,width: 20,),
-              //     ),
-              //   ),
-              //   title: const Text(
-              //     'Activities',
-              //     style: TextStyle(color: Colors.black, fontSize: 16),
-              //   ),
-              // ),
               ListTile(
                 contentPadding:
                     const EdgeInsets.symmetric(vertical: 4, horizontal: 20),
@@ -278,7 +198,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
                 onPressed: () async {
-                  AuthController().signout().then((value) {
+                  AuthController().signOut().then((value) {
                     if (value) {
                       Get.toNamed(RoutePaths.login);
                       showSnackbar("Alert", "You've logged out");
@@ -289,7 +209,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     showSnackbar("Alert", "Logout failed");
 
                     if (kDebugMode) {
-                      print(error);
+                      debugPrint(error);
                     }
                   });
                 },

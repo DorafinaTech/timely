@@ -18,7 +18,8 @@ class TestScreen extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: const BottomNavigation(),
       floatingActionButton: FloatingActionButton(
-        mini: true,
+        // mini: true,
+        shape: const CircleBorder(),
         onPressed: () {
           showModalBottomSheet(
               context: context,
@@ -30,7 +31,7 @@ class TestScreen extends StatelessWidget {
       ),
       appBar: AppBar(
         title: const Center(
-          child: Text('Week view',
+          child: Text('Tests Week view',
               style: TextStyle(
                   fontFamily: 'Satoshi',
                   fontSize: 20,
