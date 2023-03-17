@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -121,8 +123,16 @@ class AuthController extends BaseController {
     return FirebaseAuth.instance.currentUser;
   }
 
-  Future<void> forgtePasword() async {
-    FirebaseAuth.instance.sendPasswordResetEmail(
-        email: FirebaseAuth.instance.currentUser!.email!);
+  Future<bool> forgtePasword() async {
+    try {
+      FirebaseAuth.instance.sendPasswordResetEmail(
+          email: FirebaseAuth.instance.currentUser!.email!);
+
+      return true;
+    } catch (e) {
+      log(e.toString());
+
+      return false;
+    }
   }
 }
