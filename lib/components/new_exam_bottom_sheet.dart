@@ -1,14 +1,9 @@
-import 'dart:developer';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:timely/components/top_modal_sheet.dart';
 import 'package:timely/controllers/exam_controller.dart';
 import 'package:timely/models/exams_model.dart';
 import 'package:timely/utilities/route_paths.dart';
-import 'package:timely/utilities/show_snackbar.dart';
 
 class AddExamBottomSheet extends StatefulWidget {
   const AddExamBottomSheet({Key? key}) : super(key: key);

@@ -6,21 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a921c91c-1e08-4f39-8a1a-38c883d9e14d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/task_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/new_exam_bottom_sheet.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/new_exam_bottom_sheet.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/new_exam_bottom_sheet.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/controllers/exam_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/exam_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controllers/profile_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/profile_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/exams_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/exams_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utilities/show_snackbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/show_snackbar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/add_exams_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/add_exams_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/calender_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/calender_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/edit_profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/edit_profile_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/views/exam_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/exam_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/profile_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/reading_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/reading_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/test_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/test_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

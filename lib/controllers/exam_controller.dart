@@ -12,7 +12,7 @@ class ExamController extends BaseController {
 
   Future<void> addToFirebase(ExamsModel examModel, BuildContext context) async {
     final examsRef =
-        FirebaseFirestore.instance.collection(collectionName).doc();
+    FirebaseFirestore.instance.collection(collectionName).doc();
 
     examModel.id = examsRef.id;
     final data = examModel.toJson();
@@ -26,4 +26,9 @@ class ExamController extends BaseController {
       });
     });
   }
+
+  Stream<QuerySnapshot> getSnapshots() {
+    return FirebaseFirestore.instance.collection(collectionName).snapshots();
+  }
+
 }
