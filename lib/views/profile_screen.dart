@@ -198,7 +198,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
                 onPressed: () async {
-                  AuthController().signout().then((value) {
+                  AuthController().signOut().then((value) {
                     if (value) {
                       Get.toNamed(RoutePaths.login);
                       showSnackbar("Alert", "You've logged out");
@@ -209,7 +209,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     showSnackbar("Alert", "Logout failed");
 
                     if (kDebugMode) {
-                      print(error);
+                      debugPrint(error);
                     }
                   });
                 },

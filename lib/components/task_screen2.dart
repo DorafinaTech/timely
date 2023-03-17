@@ -93,13 +93,13 @@ class _TaskScreen2 extends State<TaskScreen2> {
                             lastDate: DateTime(2100));
 
                         if (pickedDate != null) {
-                          print(
-                              pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
+                          debugPrint(
+                              pickedDate.toString()); //pickedDate output format => 2021-03-10 00:00:00.000
                           String formattedDate =
                               // DateFormat('yyyy-MM-dd').format(pickedDate);
                               DateFormat('dd-MM-yyyy').format(pickedDate);
 
-                          print(
+                          debugPrint(
                               formattedDate); //formatted date output using intl package =>  2021-03-16
                           setState(() {
                             mDate =

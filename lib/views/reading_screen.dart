@@ -37,11 +37,12 @@ class ReadingScreen extends StatelessWidget {
         elevation: 0,
       ),
       floatingActionButton: FloatingActionButton(
-        mini: true,
+        // mini: true,
+        shape: const CircleBorder(),
         onPressed: () {
           showModalBottomSheet(
               context: context,
-              builder: (BuildContext context) => TaskScreen2());
+              builder: (BuildContext context) => const TaskScreen2());
         },
         backgroundColor: Theme.of(context).primaryColor,
         child: const Icon(Icons.add),

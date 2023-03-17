@@ -4,11 +4,16 @@ import 'package:timely/components/bottom_navigation.dart';
 import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/constants/menu_padding.dart';
 import 'package:get/get.dart';
+import 'package:timely/controllers/note_controller.dart';
+import 'package:timely/models/notemodel.dart';
 import 'package:timely/utilities/route_paths.dart';
+import 'package:timely/views/update_note.dart';
 
 class Notes extends StatelessWidget {
    Notes({Key? key}) : super(key: key);
-  final CollectionReference _reference = FirebaseFirestore.instance.collection('Notes');
+   final CollectionReference _reference = FirebaseFirestore .instance.collection('notes');
+
+   NoteController _noteController = new NoteController();
 
   @override
   Widget build(BuildContext context) {
@@ -51,191 +56,94 @@ class Notes extends StatelessWidget {
         ],
         elevation: 0,
       ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const ListTile(
-                  title: Text(
-                    'Method of Coding',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontFamily: 'Satoshi',
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  subtitle: Text(
-                    '2/2/2023',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'Satoshi',
-                    ),
-                  )),
-              Container(height: 5),
-              const Divider(
-                color: Color(0xFFB3B3B3),
-              ),
-              const ListTile(
-                  title: Text(
-                    'How to be Good',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontFamily: 'Satoshi',
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  subtitle: Text(
-                    '2/2/2023',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'Satoshi',
-                    ),
-                  )),
-              Container(height: 5),
-              const Divider(
-                color: Color(0xFFB3B3B3),
-              ),
-              const ListTile(
-                  title: Text(
-                    'Why I love being Wicked',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontFamily: 'Satoshi',
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  subtitle: Text(
-                    '2/2/2023',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'Satoshi',
-                    ),
-                  )),
-              Container(height: 5),
-              const Divider(
-                color: Color(0xFFB3B3B3),
-              ),
-              const ListTile(
-                  title: Text(
-                    'Can I ever stop being Good',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontFamily: 'Satoshi',
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  subtitle: Text(
-                    '2/2/2023',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'Satoshi',
-                    ),
-                  )),
-              Container(height: 5),
-              const Divider(
-                color: Color(0xFFB3B3B3),
-              ),
-              const ListTile(
-                  title: Text(
-                    'Be bad and be remembered',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontFamily: 'Satoshi',
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  subtitle: Text(
-                    '2/2/2023',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'Satoshi',
-                    ),
-                  )),
-              Container(height: 5),
-              const Divider(
-                color: Color(0xFFB3B3B3),
-              ),
-              const ListTile(
-                  title: Text(
-                    'Be Good and stay in the heart of men',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontFamily: 'Satoshi',
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  subtitle: Text(
-                    '2/2/2023',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'Satoshi',
-                    ),
-                  )),
-              Container(height: 5),
-              const Divider(
-                color: Color(0xFFB3B3B3),
-              ),
-              const ListTile(
-                  title: Text(
-                    'Being good is boring',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontFamily: 'Satoshi',
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  subtitle: Text(
-                    '2/2/2023',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'Satoshi',
-                    ),
-                  )),
-              Container(height: 5),
-              const Divider(
-                color: Color(0xFFB3B3B3),
-              ),
-              const ListTile(
-                  title: Text(
-                    'Being bad is kiling',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontFamily: 'Satoshi',
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  subtitle: Text(
-                    '2/2/2023',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'Satoahi',
-                    ),
-                  )),
-              Container(height: 5),
-              const Divider(
-                color: Color(0xFFB3B3B3),
-              ),
-              const ListTile(
-                title: Text(
-                  'Just be yourself',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontFamily: 'Satoahi',
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                subtitle: Text(
-                  '2/2/2023',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontFamily: 'Satoahi',
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
+      body: FutureBuilder<QuerySnapshot>(
+        future: _reference.get(),
+        builder:(context, snapshot){
+          if(snapshot.hasError){
+            return Center(child: Text('Something went wrong'),);
+          }
+          if(snapshot.hasData){
+            QuerySnapshot querySnapshot = snapshot.data! ;
+            List<QueryDocumentSnapshot> documents = querySnapshot.docs;
+
+            List <NotesModel> notes = documents.map((e) => NotesModel(
+                userID: e['userID'],
+                time: e['time'],
+                title: e['title'],
+                body: e['body'])).toList();
+            return _getBody(notes as NotesModel);
+          }
+        },
       ),
     );
   }
+
+   Widget _getBody(notes) {
+     return notes.isEmpty
+         ? const Center(
+       child: Text(
+         'No Student Yet\nClick + to start adding',
+         textAlign: TextAlign.center,
+       ),
+     )
+         : ListView.builder(
+       itemCount: notes.length,
+       itemBuilder: (context, index) => Card(
+         color: notes[index].marks < 33
+             ? Colors.red.shade100
+             : notes[index].marks < 65
+             ? Colors.yellow.shade100
+             : Colors.green.shade100,
+         child: ListTile(
+           title: Text(notes[index].name),
+           subtitle: Text('Rollno: ${notes[index].rollno}'),
+           leading: CircleAvatar(
+             radius: 25,
+             child: Text('${notes[index].marks}'),
+           ),
+           trailing: SizedBox(
+             width: 60,
+             child: Row(
+               children: [
+                 InkWell(
+                   child: Icon(
+                     Icons.edit,
+                     color: Colors.black.withOpacity(0.75),
+                   ),
+                   onTap: () {
+                     //
+                     Navigator.push(
+                         context,
+                         MaterialPageRoute(
+                           builder: (context) =>
+                               UpdateNote(note: notes[index]),
+                         ));
+                     //
+                   },
+                 ),
+/*
+                 InkWell(
+                   child: const Icon(Icons.delete),
+                   onTap: () {
+                     //
+                     _reference.doc(notes[index].id).delete();
+                     // To refresh
+                     Navigator.pushReplacement(
+                         context,
+                         MaterialPageRoute(
+                           builder: (context) => HomePage(),
+                         ));
+
+                     //
+                   },
+                 ),
+*/
+               ],
+             ),
+           ),
+         ),
+       ),
+     );
+   }
 }
+

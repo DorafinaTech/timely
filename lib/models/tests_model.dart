@@ -1,11 +1,11 @@
 import 'dart:convert';
 
-TestsModel testFromJson(String str) => TestsModel.fromJson(json.decode(str));
+TestModel testFromJson(String str) => TestModel.fromJson(json.decode(str));
 
-String testToJson(TestsModel data) => json.encode(data.toJson());
+String testToJson(TestModel data) => json.encode(data.toJson());
 
-class TestsModel {
-  TestsModel({
+class TestModel {
+  TestModel({
     this.id,
     required this.course_title,
     required this.date,
@@ -27,7 +27,7 @@ class TestsModel {
   final String venue;
   final String lecturerName;
 
-  factory TestsModel.fromJson(Map<String, dynamic> json) => TestsModel(
+  factory TestModel.fromJson(Map<String, dynamic> json) => TestModel(
     id: json["id"],
     course_title: json["course_title"],
     date: json["date"],

@@ -4,16 +4,17 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:timely/views/notes.dart';
 
+import '../models/notemodel.dart';
+
 
 class UpdateNote extends StatelessWidget {
-  late final Note note;
+  late final NotesModel note;
   final TextEditingController titleController = TextEditingController();
   final TextEditingController timeController = TextEditingController();
   final TextEditingController bodyController = TextEditingController();
   final FocusNode focusNode = FocusNode();
 
-  UpdateNote({super.key, required this. note});{
-  }
+  UpdateNote({super.key, required this.note});
 
   @override
   Widget build(BuildContext context) {

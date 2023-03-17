@@ -4,44 +4,44 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="9299fccc-381d-456e-81c1-7c3965eac0dd" name="Changes" comment="&quot;_&quot;">
+    <list default="true" id="87ff8109-a765-434f-aea1-98d9d984d7e8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-=======
-    <list default="true" id="a921c91c-1e08-4f39-8a1a-38c883d9e14d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/task_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/new_exam_bottom_sheet.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/new_exam_bottom_sheet.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/new_exam_bottom_sheet.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/task_screen2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/task_screen2.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/auth_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/auth_controller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/controllers/exam_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/exam_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controllers/profile_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/profile_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/note_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/note_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/test_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/test_controller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/exams_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/exams_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utilities/show_snackbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/show_snackbar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/add_exams_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/add_exams_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/tests_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/tests_model.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/views/calender_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/calender_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/edit_profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/edit_profile_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/views/exam_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/exam_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/notes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/notes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/otp_number.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/otp_number.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/views/profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/profile_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/views/reading_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/reading_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/register.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/register.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/views/test_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/test_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
->>>>>>> 122288b1403f92e9089bf524b9fbc66482f558ef
+      <change beforePath="$PROJECT_DIR$/lib/views/update_note.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/update_note.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
   </component>
   <component name="KotlinMultiplatform">
     <allAvailableExecutables />
@@ -49,7 +49,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2My0EMU8ZStvNIlSgq4LaMLmMxh" />
+  <component name="ProjectId" id="2N9nSxnBFAYVIweGstWqXLEITkh" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
@@ -59,31 +59,33 @@
     </panes>
   </component>
   <component name="ProjectViewState">
-    <option name="autoscrollFromSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="cidr.known.project.marker" value="true" />
-    <property name="dart.analysis.tool.window.force.activate" value="true" />
-    <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/controllers" />
-    <property name="show.migrate.to.gradle.popup" value="false" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "show.migrate.to.gradle.popup": "false"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/lib/controllers" />
+      <recent name="C:\Users\USER\AndroidStudioProjects\timely\lib\models" />
+      <recent name="C:\Users\USER\AndroidStudioProjects\timely\lib\controllers" />
+      <recent name="C:\Users\USER\AndroidStudioProjects\timely\lib\Widgets" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a921c91c-1e08-4f39-8a1a-38c883d9e14d" name="Changes" comment="" />
-      <created>1678724443351</created>
+      <changelist id="87ff8109-a765-434f-aea1-98d9d984d7e8" name="Changes" comment="" />
+      <created>1679085193152</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1678724443351</updated>
+      <updated>1679085193152</updated>
     </task>
     <servers />
   </component>
@@ -103,5 +105,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/views/new_note_screen.dart</url>
+          <line>154</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -38,7 +38,7 @@ class _TaskScreen extends State<AddExamBottomSheet> {
     TimeOfDay selectedTime = TimeOfDay.now();
 
     return Container(
-      padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+      padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -47,9 +47,9 @@ class _TaskScreen extends State<AddExamBottomSheet> {
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <
           Widget>[
         Container(
-            padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+            padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
             child: TextField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   labelText: 'Title',
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(width: 0.5, color: Colors.black),
@@ -66,9 +66,9 @@ class _TaskScreen extends State<AddExamBottomSheet> {
           children: [
             Expanded(
               child: Container(
-                  padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                   child: TextField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Lecturers Name',
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(width: 0.5, color: Colors.black),
@@ -84,9 +84,9 @@ class _TaskScreen extends State<AddExamBottomSheet> {
             ),
             Expanded(
               child: Container(
-                  padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                   child: TextField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: ' Venue',
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(width: 0.5, color: Colors.black),
@@ -120,13 +120,13 @@ class _TaskScreen extends State<AddExamBottomSheet> {
                             lastDate: DateTime(2100));
 
                         if (pickedDate != null) {
-                          print(
-                              pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
+                          debugPrint(
+                              pickedDate.toString()); //pickedDate output format => 2021-03-10 00:00:00.000
                           String formattedDate =
                               // DateFormat('yyyy-MM-dd').format(pickedDate);
                               DateFormat('dd-MM-yyyy').format(pickedDate);
 
-                          print(
+                          debugPrint(
                               formattedDate); //formatted date output using intl package =>  2021-03-16
                           setState(() {
                             mDate =
@@ -192,11 +192,10 @@ class _TaskScreen extends State<AddExamBottomSheet> {
                                     fontFamily: 'Satoshi',
                                     fontSize: 16,
                                     color: Colors.black)),
-
                             TextButton(
                               child: Text(mTime,
                                   textAlign: TextAlign.end,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontFamily: 'Satoshi',
                                       fontSize: 16,
                                       color: Color(0xFF1C8E77))),
@@ -236,7 +235,6 @@ class _TaskScreen extends State<AddExamBottomSheet> {
             ),
           ),
         ),
-
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -283,6 +281,7 @@ class _TaskScreen extends State<AddExamBottomSheet> {
                         const EdgeInsets.only(top: 20.0, left: 8.0, right: 8.0),
                     child: ElevatedButton(
                       onPressed: () {
+
                         ExamsModel examModel = ExamsModel(
                             course_title: titlecontroller.text,
                             date: mDate,
@@ -292,7 +291,9 @@ class _TaskScreen extends State<AddExamBottomSheet> {
                             interval: 'true',
                             venue: venuecontroller.text,
                             lecturerName: lecturercontroller.text);
+
                         addToFireBase(examModel, context);
+
                       },
                       style: OutlinedButton.styleFrom(
                         shape: const RoundedRectangleBorder(

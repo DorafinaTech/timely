@@ -54,12 +54,12 @@ class _OtpNumberState extends State<OtpNumber> {
                   style: const TextStyle(fontSize: 20),
                   onChanged: (pin) {
                     if (kDebugMode) {
-                      print("Changed: $pin");
+                      debugPrint("Changed: $pin");
                     }
                   },
                   onCompleted: (pin) {
                     if (kDebugMode) {
-                      print("Completed: $pin");
+                      debugPrint("Completed: $pin");
                     }
                   },
                 ),

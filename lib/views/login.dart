@@ -61,7 +61,7 @@ class LoginState extends State<Login> {
           //         debugPrint(userMessage);
           //
           //         if (kDebugMode) {
-          //           print(error);
+          //           debugPrint(error);
           //         }
           //       });
           //     },
@@ -171,7 +171,7 @@ class LoginState extends State<Login> {
           //               debugPrint(userMessage);
           //
           //               if (kDebugMode) {
-          //                 print(error);
+          //                 debugPrint(error);
           //               }
           //             });
           //           },
@@ -345,7 +345,7 @@ class LoginState extends State<Login> {
                   debugPrint(userMessage);
 
                   if (kDebugMode) {
-                    print(error);
+                    debugPrint(error);
                   }
                 });*/
               },
