@@ -120,4 +120,9 @@ class AuthController extends BaseController {
   User? get currentUser {
     return FirebaseAuth.instance.currentUser;
   }
+
+  Future<void> forgtePasword() async {
+    FirebaseAuth.instance.sendPasswordResetEmail(
+        email: FirebaseAuth.instance.currentUser!.email!);
+  }
 }
