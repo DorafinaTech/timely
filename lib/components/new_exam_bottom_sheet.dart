@@ -1,14 +1,10 @@
-import 'dart:developer';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:timely/components/top_modal_sheet.dart';
 import 'package:timely/controllers/exam_controller.dart';
 import 'package:timely/models/exams_model.dart';
 import 'package:timely/utilities/route_paths.dart';
-import 'package:timely/utilities/show_snackbar.dart';
 
 class AddExamBottomSheet extends StatefulWidget {
   const AddExamBottomSheet({Key? key}) : super(key: key);
@@ -153,16 +149,7 @@ class _TaskScreen extends State<AddExamBottomSheet> {
                                 fontSize: 16,
                                 color: Colors.black),
                           ),
-/*
-                GestureDetector(
-                  child: const Text('Tue, 20 Jan',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontFamily: 'Satoshi',
-                            fontSize: 16,
-                            color: Color(0xFF1C8E77))),
-                ),
-*/
+
                           TextButton(
                             child: Text(sTime,
                                 textAlign: TextAlign.end,
@@ -205,16 +192,7 @@ class _TaskScreen extends State<AddExamBottomSheet> {
                                     fontFamily: 'Satoshi',
                                     fontSize: 16,
                                     color: Colors.black)),
-/*
-              GestureDetector(
-                child: const Text('Tue, 20 Jan',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontFamily: 'Satoshi',
-                          fontSize: 16,
-                          color: Color(0xFF1C8E77))),
-              ),
-*/
+
                             TextButton(
                               child: Text(mTime,
                                   textAlign: TextAlign.end,
@@ -258,54 +236,7 @@ class _TaskScreen extends State<AddExamBottomSheet> {
             ),
           ),
         ),
-        // Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-        //   Container(
-        //     padding: const EdgeInsets.only(right: 8),
-        //     height: 19,
-        //     child: Image.asset(
-        //       'svgs/vec.png',
-        //     ),
-        //   ),
-        //   const Text(
-        //     '10 minutes Before',
-        //     style: TextStyle(
-        //       fontSize: 16,
-        //       fontFamily: 'Satoshi',
-        //       color: Color(0xFF03110E),
-        //     ),
-        //   ),
-        //   Expanded(
-        //       child: Row(
-        //     mainAxisAlignment: MainAxisAlignment.end,
-        //     children: [
-        //       Container(
-        //         padding: EdgeInsets.zero,
-        //         child: TextButton(
-        //           onPressed: () {
-        //             showDialog(
-        //                 context: context,
-        //                 builder: (context) => const TopModalSheet());
-        //           },
-        //           child: Icon(Icons.add, color: Theme.of(context).primaryColor),
-        //         ),
-        //       ),
-        //     ],
-        //   ))
-        // ]),
-        // Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-        //   Container(
-        //     padding: const EdgeInsets.only(right: 8),
-        //     height: 19,
-        //     child: Image.asset(
-        //       'svgs/dont repeat.png',
-        //     ),
-        //   ),
-        //   const Text(
-        //     'Dont repeat',
-        //     style: TextStyle(
-        //         fontSize: 16, fontFamily: 'Satoshi', color: Color(0xFF1C8E77)),
-        //   ),
-        // ]),
+
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [

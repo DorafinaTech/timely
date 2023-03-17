@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:timely/components/bottom_navigation.dart';
 import 'package:timely/components/popup_menu_buttons.dart';
@@ -6,7 +7,8 @@ import 'package:get/get.dart';
 import 'package:timely/utilities/route_paths.dart';
 
 class Notes extends StatelessWidget {
-  const Notes({Key? key}) : super(key: key);
+   Notes({Key? key}) : super(key: key);
+  final CollectionReference _reference = FirebaseFirestore.instance.collection('Notes');
 
   @override
   Widget build(BuildContext context) {

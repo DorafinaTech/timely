@@ -147,7 +147,7 @@ class TimelyApp extends StatelessWidget {
           name: RoutePaths.newNoteScreen,
           title: RouteNames.newNoteScreen,
           page: () {
-            return const NewNoteScreen();
+            return NewNoteScreen();
           },
         ),
 
