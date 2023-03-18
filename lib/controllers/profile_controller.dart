@@ -5,7 +5,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 // import 'package:image_picker/image_picker.dart';
 
 class ProfileController extends BaseController {
-  Future<bool> updateProfilePicture(String newURL) async {
+  Future<bool> updateProfilePicture() async {
     // ImagePicker();
 
     FirebaseStorage.instance;

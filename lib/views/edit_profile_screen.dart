@@ -84,7 +84,7 @@ class EditProfileScreen extends StatelessWidget {
                       child: IconButton(
                           iconSize: 15,
                           onPressed: () {
-                            //
+                            _profileController.updateProfilePicture();
                           },
                           icon: Icon(
                             Icons.camera_alt_rounded,
