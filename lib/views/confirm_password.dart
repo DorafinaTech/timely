@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
+import 'package:timely/utilities/show_error_snackbar.dart';
+import 'package:timely/utilities/show_snackbar.dart';
 
 class ConfirmPassword extends StatelessWidget {
-  const ConfirmPassword({Key? key}) : super(key: key);
+  ConfirmPassword({Key? key}) : super(key: key);
+
+  final AuthController _authController =
+      Get.put<AuthController>(AuthController());
+
+  final TextEditingController _newPasswordController = TextEditingController();
+  final TextEditingController _otpController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +39,7 @@ class ConfirmPassword extends StatelessWidget {
               margin: const EdgeInsets.all(8.0),
               child: TextField(
                 obscureText: true,
+                controller: _newPasswordController,
                 decoration: InputDecoration(
                   hintText: " New Password",
                   hintStyle: const TextStyle(color: Colors.black54),
@@ -46,8 +56,9 @@ class ConfirmPassword extends StatelessWidget {
               margin: const EdgeInsets.all(8.0),
               child: TextField(
                 obscureText: true,
+                controller: _otpController,
                 decoration: InputDecoration(
-                  hintText: "Confirm Password",
+                  hintText: "OTP",
                   hintStyle: const TextStyle(color: Colors.black54),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
@@ -64,7 +75,19 @@ class ConfirmPassword extends StatelessWidget {
               margin: const EdgeInsets.only(top: 50, left: 8, right: 8),
               child: ElevatedButton(
                 onPressed: () {
-                  Get.toNamed(RoutePaths.homeScreen);
+                  _authController
+                      .confirmPasswordReset(_otpController.value.text,
+                          _newPasswordController.value.text)
+                      .then((value) {
+                    showSnackbar('Successful',
+                        'Your pasword has been updated, Login with the new password');
+                    Get.toNamed(RoutePaths.login);
+                  }).catchError((err) {
+                    debugPrint(err.toString());
+
+                    showErrorSnackbar(
+                        'Password rest failed, network error or wrong OTP provided');
+                  });
                 },
                 style: OutlinedButton.styleFrom(
                   shape: const RoundedRectangleBorder(

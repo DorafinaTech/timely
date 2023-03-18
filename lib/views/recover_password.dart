@@ -66,43 +66,6 @@ class _RecoveryPasswordState extends State<RecoveryPassword> {
                 ),
               ),
             ),
-            // Container(
-            //   width: double.infinity,
-            //   height: 50,
-            //   margin: const EdgeInsets.all(8.0),
-            //   child: ElevatedButton(
-            //     onPressed: () {
-            //       Navigator.push(
-            //         context,
-            //         MaterialPageRoute(
-            //           builder: (context) => const EmailRecovery(),
-            //         ),
-            //       );
-            //     },
-            //     style: OutlinedButton.styleFrom(
-            //       shape: const RoundedRectangleBorder(
-            //         borderRadius: BorderRadius.all(
-            //           Radius.circular(
-            //             60,
-            //           ),
-            //         ),
-            //       ),
-            //       maximumSize: const Size(double.infinity, 100),
-            //       backgroundColor: Colors.white,
-            //       side: const BorderSide(
-            //         color: Colors.teal,
-            //       ),
-            //     ),
-            //     child: const Text(
-            //       'Phone Number',
-            //       style: TextStyle(
-            //         color: Colors.teal,
-            //         fontSize: 15,
-            //         fontWeight: FontWeight.bold,
-            //       ),
-            //     ),
-            //   ),
-            // ),
           ],
         ));
   }

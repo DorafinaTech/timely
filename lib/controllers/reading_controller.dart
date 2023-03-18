@@ -1,6 +1,4 @@
 import 'dart:developer';
-import 'dart:js';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -24,7 +22,7 @@ class ReadingController extends BaseController {
       showSnackbar('Successful', 'your Task has been added successfully');
 
       Future.delayed(const Duration(seconds: 1)).then((value) {
-        Navigator.pop(Get.context!);
+        Navigator.pop(context);
       });
     });
   }

@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:timely/controllers/auth_controller.dart';
+import 'package:timely/controllers/loading_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
 import 'package:timely/utilities/show_error_snackbar.dart';
 
@@ -13,7 +14,7 @@ class Register extends StatefulWidget {
 }
 
 class RegisterState extends State<Register> {
-  final TextEditingController _firstAndNameController =TextEditingController();
+  final TextEditingController _firstAndNameController = TextEditingController();
 
   bool passwordVisible = false;
 
@@ -172,14 +173,14 @@ class RegisterState extends State<Register> {
                 decoration: InputDecoration(
                   labelText: "First and last Name",
                   border: OutlineInputBorder(
-                    //     borderRadius: BorderRadius.circular(30),
-                    //     borderSide: BorderSide(
-                    //         color: Colors.teal.shade200,
-                    //         width: 1.5,
-                    //         style: BorderStyle.solid)),
-                    // helperStyle: TextStyle(
-                    //   color: Colors.teal.shade200,
-                  ),
+                      //     borderRadius: BorderRadius.circular(30),
+                      //     borderSide: BorderSide(
+                      //         color: Colors.teal.shade200,
+                      //         width: 1.5,
+                      //         style: BorderStyle.solid)),
+                      // helperStyle: TextStyle(
+                      //   color: Colors.teal.shade200,
+                      ),
                   alignLabelWithHint: false,
                   filled: true,
                 ),
@@ -192,14 +193,14 @@ class RegisterState extends State<Register> {
                 decoration: InputDecoration(
                   labelText: "Email Address",
                   border: OutlineInputBorder(
-                    //     borderRadius: BorderRadius.circular(30),
-                    //     borderSide: BorderSide(
-                    //         color: Colors.teal.shade200,
-                    //         width: 1.5,
-                    //         style: BorderStyle.solid)),
-                    // helperStyle: TextStyle(
-                    //   color: Colors.teal.shade200,
-                  ),
+                      //     borderRadius: BorderRadius.circular(30),
+                      //     borderSide: BorderSide(
+                      //         color: Colors.teal.shade200,
+                      //         width: 1.5,
+                      //         style: BorderStyle.solid)),
+                      // helperStyle: TextStyle(
+                      //   color: Colors.teal.shade200,
+                      ),
                   alignLabelWithHint: false,
                   filled: true,
                 ),
@@ -212,14 +213,14 @@ class RegisterState extends State<Register> {
                 decoration: InputDecoration(
                   labelText: "start with your country code (+234)",
                   border: OutlineInputBorder(
-                    //     borderRadius: BorderRadius.circular(30),
-                    //     borderSide: BorderSide(
-                    //         color: Colors.teal.shade200,
-                    //         width: 1.5,
-                    //         style: BorderStyle.solid)),
-                    // helperStyle: TextStyle(
-                    //   color: Colors.teal.shade200,
-                  ),
+                      //     borderRadius: BorderRadius.circular(30),
+                      //     borderSide: BorderSide(
+                      //         color: Colors.teal.shade200,
+                      //         width: 1.5,
+                      //         style: BorderStyle.solid)),
+                      // helperStyle: TextStyle(
+                      //   color: Colors.teal.shade200,
+                      ),
                   alignLabelWithHint: false,
                   filled: true,
                 ),
@@ -235,8 +236,7 @@ class RegisterState extends State<Register> {
                   // labelText: "Password",
                   helperText: "Password must contain special Characters",
                   hintStyle: const TextStyle(color: Colors.black54),
-                  border: OutlineInputBorder(
-                  ),
+                  border: OutlineInputBorder(),
                   suffixIcon: IconButton(
                     color: Colors.teal.shade200,
                     icon: Icon(passwordVisible
@@ -244,7 +244,7 @@ class RegisterState extends State<Register> {
                         : Icons.visibility_off),
                     onPressed: () {
                       setState(
-                            () {
+                        () {
                           passwordVisible = !passwordVisible;
                         },
                       );
@@ -259,13 +259,12 @@ class RegisterState extends State<Register> {
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: TextFormField(
                 obscureText: passwordVisible,
-                controller: _passwordController,
+                controller: _confirmPasswordController,
                 decoration: InputDecoration(
                   labelText: "Confirm Password",
                   helperText: "Password must contain special Characters",
                   // labelText: "Password",
-                  border: OutlineInputBorder(
-                  ),
+                  border: const OutlineInputBorder(),
                   suffixIcon: IconButton(
                     color: Colors.teal.shade200,
                     icon: Icon(passwordVisible
@@ -273,7 +272,7 @@ class RegisterState extends State<Register> {
                         : Icons.visibility_off),
                     onPressed: () {
                       setState(
-                            () {
+                        () {
                           passwordVisible = !passwordVisible;
                         },
                       );
@@ -290,6 +289,14 @@ class RegisterState extends State<Register> {
               margin: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 onPressed: () {
+                  LoadingControler().startLoading();
+
+                  if (_passwordController.value.text.trim() !=
+                      _confirmPasswordController.value.text.trim()) {
+                    showErrorSnackbar('Password must match');
+                    LoadingControler().stopLoading();
+                  }
+
                   AuthController()
                       .register(
                           _emailController.value.text.trim(),
@@ -301,13 +308,14 @@ class RegisterState extends State<Register> {
                       Get.toNamed(RoutePaths.homeScreen);
                     }
                   }).catchError((error) {
-                    showErrorSnackbar( "Sign in failed");
+                    LoadingControler().stopLoading();
+
+                    showErrorSnackbar("Sign in failed");
                     if (kDebugMode) {
                       debugPrint(error);
                     }
                   });
                 },
-
                 style: ElevatedButton.styleFrom(
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(

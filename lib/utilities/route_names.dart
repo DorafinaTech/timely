@@ -18,5 +18,6 @@ abstract class RouteNames {
   static const emailecoveryScreen = 'EmailRecovery';
   static const newNoteScreen = 'NewNote';
   static const monthViewpage = 'MonthViewPage';
+  static const forgotPassword = 'ForgotPassword';
+  static const resetPasswordViaEmail = 'ResetPasswordViaEmail';
 }
-

@@ -18,4 +18,6 @@ abstract class RoutePaths {
   static const emailecoveryScreen = '/email-recovery';
   static const newNoteScreen = '/new-note';
   static const monthViewPage = '/monthviewpage';
+  static const forgotPassword = '/forgot-password';
+  static const resetPasswordViaEmail = '/reset-password-via-email';
 }

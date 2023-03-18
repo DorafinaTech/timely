@@ -6,7 +6,8 @@ import 'package:timely/utilities/show_error_snackbar.dart';
 import 'package:timely/utilities/show_snackbar.dart';
 
 class NoteController extends BaseController {
-  final String collectionName = 'notes';
+  @override
+  String get collectionName => 'notes';
 
   Future<void> addNewNote(String title, String body) async {
     try {
@@ -22,9 +23,11 @@ class NoteController extends BaseController {
 
       showSnackbar('Hurray', 'Your note has been saved');
     } catch (exception) {
-      showErrorSnackbar('An error occurred while trying to save your note: $exception');
+      showErrorSnackbar(
+          'An error occurred while trying to save your note: $exception');
     }
   }
+
   Future<void> updateNote(String title, String body) async {
     try {
       var note = NotesModel(
@@ -33,18 +36,16 @@ class NoteController extends BaseController {
           title: title,
           body: body);
 
-      await FirebaseFirestore.instance
-          .collection('notes')
-          .add(note.toJson());
+      await FirebaseFirestore.instance.collection('notes').add(note.toJson());
 
       showSnackbar('Hurray', 'Your note has been saved');
     } catch (exception) {
-      showErrorSnackbar('An error occurred while trying to save your note: $exception');
+      showErrorSnackbar(
+          'An error occurred while trying to save your note: $exception');
     }
   }
 
   Stream<QuerySnapshot> getSnapshots() {
     return FirebaseFirestore.instance.collection(collectionName).snapshots();
   }
-
 }

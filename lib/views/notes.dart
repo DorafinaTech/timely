@@ -10,9 +10,10 @@ import 'package:timely/utilities/route_paths.dart';
 import 'package:timely/views/update_note.dart';
 
 class Notes extends StatelessWidget {
-   Notes({Key? key}) : super(key: key);
-   final CollectionReference _reference = FirebaseFirestore .instance.collection('notes');
+  Notes({Key? key}) : super(key: key);
 
+  final NoteController _noteController =
+      Get.put<NoteController>(NoteController());
 
   @override
   Widget build(BuildContext context) {
@@ -55,23 +56,42 @@ class Notes extends StatelessWidget {
         ],
         elevation: 0,
       ),
-      body: FutureBuilder<QuerySnapshot>(
-        future: _reference.get(),
-        builder:(context, snapshot)  {
-          if(snapshot.hasError){
-            return Center(child: Text('Something went wrong'),);
+      // body: FutureBuilder<QuerySnapshot>(
+      //   future: _reference.get(),
+      //   builder:(context, snapshot)  {
+      //     if(snapshot.hasError){
+      //       return Center(child: Text('Something went wrong'),);
+      body: StreamBuilder<QuerySnapshot>(
+        stream: _noteController.getSnapshots(),
+        builder: (context, snapshot) {
+          if (snapshot.hasError) {
+            return const Center(child: Text('Something went wrong'));
           }
-          if(snapshot.hasData){
-            QuerySnapshot querySnapshot = snapshot.data! ;
+
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+
+          if (snapshot.hasData) {
+            QuerySnapshot querySnapshot = snapshot.data!;
             List<QueryDocumentSnapshot> documents = querySnapshot.docs;
 
-            List <NotesModel> notes = documents.map((e) => NotesModel(
-                userID: e['userID'],
-                time: e['time'],
-                title: e['title'],
-                body: e['body'])).toList();
+            List<NotesModel> notes = documents
+                .map((e) => NotesModel(
+                    userID: e['userID'],
+                    time: e['time'],
+                    title: e['title'],
+                    body: e['body']))
+                .toList();
+
             return _getBody(notes as NotesModel);
           }
+
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
         },
       ),
     );
@@ -143,5 +163,53 @@ class Notes extends StatelessWidget {
        ),
      );
    }
+  // Widget _getBody(notes) {
+  //   return notes.isEmpty
+  //       ? const Center(
+  //           child: Text(
+  //             'No notes Yet,\nClick "+" to start adding',
+  //             textAlign: TextAlign.center,
+  //           ),
+  //         )
+  //       : ListView.builder(
+  //           itemCount: notes.length,
+  //           itemBuilder: (context, index) => Card(
+  //             color: notes[index].marks < 33
+  //                 ? Colors.red.shade100
+  //                 : notes[index].marks < 65
+  //                     ? Colors.yellow.shade100
+  //                     : Colors.green.shade100,
+  //             child: ListTile(
+  //               title: Text(notes[index].name),
+  //               subtitle: Text('Rollno: ${notes[index].rollno}'),
+  //               leading: CircleAvatar(
+  //                 radius: 25,
+  //                 child: Text('${notes[index].marks}'),
+  //               ),
+  //               trailing: SizedBox(
+  //                 width: 60,
+  //                 child: Row(
+  //                   children: [
+  //                     InkWell(
+  //                       child: Icon(
+  //                         Icons.edit,
+  //                         color: Colors.black.withOpacity(0.75),
+  //                       ),
+  //                       onTap: () {
+  //                         //
+  //                         Navigator.push(
+  //                             context,
+  //                             MaterialPageRoute(
+  //                               builder: (context) =>
+  //                                   UpdateNote(note: notes[index]),
+  //                             ));
+  //                       },
+  //                     ),
+  //                   ],
+  //                 ),
+  //               ),
+  //             ),
+  //           ),
+  //         );
+  // }
 }
-
