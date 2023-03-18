@@ -20,7 +20,8 @@ class Notes extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: const BottomNavigation(),
       floatingActionButton: FloatingActionButton(
-        mini: true,
+        // mini: true,
+        shape: const CircleBorder(),
         onPressed: () {
           Get.toNamed(RoutePaths.newNoteScreen);
         },
@@ -81,12 +82,12 @@ class Notes extends StatelessWidget {
             List<NotesModel> notes = documents
                 .map((e) => NotesModel(
                     userID: e['userID'],
-                    time: e['time'],
+                    time: e['time'].toDate(),
                     title: e['title'],
                     body: e['body']))
                 .toList();
 
-            return _getBody(notes as NotesModel);
+            return _getBody(notes);
           }
 
           return const Center(
@@ -97,119 +98,51 @@ class Notes extends StatelessWidget {
     );
   }
 
-   Widget _getBody(notes) {
-     return notes.isEmpty
-         ? const Center(
-       child: Text(
-         'No Student Yet\nClick + to start adding',
-         textAlign: TextAlign.center,
-       ),
-     )
-         : ListView.builder(
-       itemCount: notes.length,
-       itemBuilder: (context, index) => Card(
-         color: notes[index].body < 33
-             ? Colors.red.shade100
-             : notes[index].body < 65
-             ? Colors.yellow.shade100
-             : Colors.green.shade100,
-         child: ListTile(
-           title: Text(notes[index].time),
-           subtitle: Text('title: ${notes[index].title}'),
-           leading: CircleAvatar(
-             radius: 25,
-             child: Text('${notes[index].body}'),
-           ),
-           trailing: SizedBox(
-             width: 60,
-             child: Row(
-               children: [
-                 InkWell(
-                   child: Icon(
-                     Icons.edit,
-                     color: Colors.black.withOpacity(0.75),
-                   ),
-                   onTap: () {
-                     //
-                     Navigator.push(context,
-                         MaterialPageRoute(
-                           builder: (context) =>
-                               UpdateNote(note: notes[index]),
-                         ));
-                     //
-                   },
-                 ),
-/*
-                 InkWell(
-                   child: const Icon(Icons.delete),
-                   onTap: () {
-                     //
-                     _reference.doc(notes[index].id).delete();
-                     // To refresh
-                     Navigator.pushReplacement(
-                         context,
-                         MaterialPageRoute(
-                           builder: (context) => HomePage(),
-                         ));
-
-                     //
-                   },
-                 ),
-*/
-               ],
-             ),
-           ),
-         ),
-       ),
-     );
-   }
-  // Widget _getBody(notes) {
-  //   return notes.isEmpty
-  //       ? const Center(
-  //           child: Text(
-  //             'No notes Yet,\nClick "+" to start adding',
-  //             textAlign: TextAlign.center,
-  //           ),
-  //         )
-  //       : ListView.builder(
-  //           itemCount: notes.length,
-  //           itemBuilder: (context, index) => Card(
-  //             color: notes[index].marks < 33
-  //                 ? Colors.red.shade100
-  //                 : notes[index].marks < 65
-  //                     ? Colors.yellow.shade100
-  //                     : Colors.green.shade100,
-  //             child: ListTile(
-  //               title: Text(notes[index].name),
-  //               subtitle: Text('Rollno: ${notes[index].rollno}'),
-  //               leading: CircleAvatar(
-  //                 radius: 25,
-  //                 child: Text('${notes[index].marks}'),
-  //               ),
-  //               trailing: SizedBox(
-  //                 width: 60,
-  //                 child: Row(
-  //                   children: [
-  //                     InkWell(
-  //                       child: Icon(
-  //                         Icons.edit,
-  //                         color: Colors.black.withOpacity(0.75),
-  //                       ),
-  //                       onTap: () {
-  //                         //
-  //                         Navigator.push(
-  //                             context,
-  //                             MaterialPageRoute(
-  //                               builder: (context) =>
-  //                                   UpdateNote(note: notes[index]),
-  //                             ));
-  //                       },
-  //                     ),
-  //                   ],
-  //                 ),
-  //               ),
-  //             ),
-  //           ),
-  //         );
-  // }
+  Widget _getBody(List<NotesModel> notes) {
+    return notes.isEmpty
+        ? const Center(
+            child: Text(
+              'No notes Yet,\nClick "+" to start adding',
+              textAlign: TextAlign.center,
+            ),
+          )
+        : ListView.builder(
+            itemCount: notes.length,
+            itemBuilder: (context, index) => Card(
+              color: notes[index].body.length < 33
+                  ? Colors.red.shade100
+                  : notes[index].body.length < 65
+                      ? Colors.yellow.shade100
+                      : Colors.green.shade100,
+              child: ListTile(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => UpdateNote(note: notes[index]),
+                      ));
+                },
+                title: Text(
+                  notes[index].title,
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+                subtitle: Text('created at: ${notes[index].time.toString()}'),
+                leading: CircleAvatar(
+                  radius: 25,
+                  child: Text(notes[index].body[0]),
+                ),
+                trailing: IconButton(
+                    onPressed: () {
+                      //
+                      _noteController.deleteNote(notes[index]);
+                      //
+                    },
+                    icon: Icon(
+                      Icons.delete_forever_sharp,
+                      color: Colors.black.withOpacity(0.75),
+                    )),
+              ),
+            ),
+          );
+  }
 }

@@ -18,14 +18,15 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  final ProfileController profileController =
-      Get.put<ProfileController>(ProfileController());
   String userName = '';
   String userEmail = '';
 
+  final ProfileController _profileController =
+      Get.put<ProfileController>(ProfileController());
+
   @override
   void initState() {
-    profileController.getBioData().then((bioData) {
+    _profileController.getBioData().then((bioData) {
       setState(() {
         userName = bioData['name'];
         userEmail = bioData['email'];
@@ -69,11 +70,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const CircleAvatar(
-                radius: 50.0,
-                backgroundImage: AssetImage('assets/images/thessC.png'),
-                backgroundColor: Colors.transparent,
-              ),
+              Obx(() => CircleAvatar(
+                    radius: 50.0,
+                    // backgroundImage: NetworkImage('assets/images/thessC.png'),
+                    backgroundImage: NetworkImage(
+                        _profileController.currentProfilePictureURL.value),
+                    backgroundColor: Get.theme.primaryColor,
+                  )),
               Text(
                 userName,
                 style: const TextStyle(
