@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:timely/controllers/base_controller.dart';
 import 'package:timely/utilities/show_error_snackbar.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-// import 'package:image_picker/image_picker.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ProfileController extends BaseController {
   Future<bool> updateProfilePicture() async {
