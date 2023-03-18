@@ -85,7 +85,8 @@ class ConfirmPassword extends StatelessWidget {
                   }).catchError((err) {
                     debugPrint(err.toString());
 
-                    showErrorSnackbar('OTP verification failed');
+                    showErrorSnackbar(
+                        'Password rest failed, network error or wrong OTP provided');
                   });
                 },
                 style: OutlinedButton.styleFrom(

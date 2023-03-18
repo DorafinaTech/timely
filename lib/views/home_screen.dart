@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/controllers/auth_controller.dart';
+import 'package:timely/controllers/loading_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
 import 'package:timely/components/bottom_navigation.dart';
 
@@ -13,6 +14,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    LoadingControler().stopLoading();
+
     return Scaffold(
       bottomNavigationBar: const BottomNavigation(),
       appBar: AppBar(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:timely/controllers/auth_controller.dart';
+import 'package:timely/controllers/loading_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
 import 'package:timely/utilities/show_error_snackbar.dart';
 import 'package:timely/utilities/show_snackbar.dart';
@@ -313,6 +314,8 @@ class LoginState extends State<Login> {
             margin: const EdgeInsets.all(8.0),
             child: ElevatedButton(
               onPressed: () async {
+                LoadingControler().startLoading();
+
                 var userMessage = "";
 
                 AuthController()
@@ -328,6 +331,8 @@ class LoginState extends State<Login> {
                     showErrorSnackbar("Login failed, Something went wrong");
                   }
                 }).onError((error, stackTrace) {
+                  LoadingControler().stopLoading();
+
                   userMessage = "Login failed, Something went wrong";
                   showSnackbar("Oops", userMessage);
                   debugPrint(userMessage);
