@@ -1,11 +1,10 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:timely/controllers/auth_controller.dart';
-import 'package:timely/views/recover_password.dart';
 import 'package:timely/utilities/route_paths.dart';
-import 'package:timely/utilities/show_snackbar.dart';
 import 'package:timely/utilities/show_error_snackbar.dart';
+import 'package:timely/utilities/show_snackbar.dart';
+import 'package:timely/views/recover_password.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -30,8 +29,8 @@ class LoginState extends State<Login> {
           Center(
             child: Container(
               margin: const EdgeInsets.only(bottom: 25),
-              child: Center(
-                child: const Text(
+              child: const Center(
+                child: Text(
                   "Log in and Let's get started",
                   style: TextStyle(color: Colors.black, fontSize: 25),
                 ),
@@ -236,7 +235,7 @@ class LoginState extends State<Login> {
             padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
             child: TextFormField(
               controller: _emailController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: "Email",
                 border: OutlineInputBorder(
                     //     borderRadius: BorderRadius.circular(30),
@@ -262,7 +261,7 @@ class LoginState extends State<Login> {
                 // labelText: "Password",
                 helperText: "Password must contain special Characters",
                 hintStyle: const TextStyle(color: Colors.black54),
-                border: OutlineInputBorder(
+                border: const OutlineInputBorder(
                     //     borderRadius: BorderRadius.circular(30),
                     //     borderSide: BorderSide(
                     //         color: Colors.teal.shade200,
@@ -330,15 +329,13 @@ class LoginState extends State<Login> {
                     userMessage = "Login in successfully";
                     debugPrint(userMessage);
                   } else {
-                    showErrorSnackbar(
-                        "Login failed, Something went wrong"
-                    );
+                    showErrorSnackbar("Login failed, Something went wrong");
                   }
                 }).onError((error, stackTrace) {
                   userMessage = "Login failed, Something went wrong";
-                    showSnackbar("Oops", userMessage);
-                debugPrint(userMessage);
-              });
+                  showSnackbar("Oops", userMessage);
+                  debugPrint(userMessage);
+                });
 /*                    .catchError((error) {
                   userMessage = "Login failed, Something went wrong";
                   showSnackbar("Oops", userMessage);
@@ -404,7 +401,6 @@ class LoginState extends State<Login> {
           ),
         ],
       ),
-    )
-    );
+    ));
   }
 }

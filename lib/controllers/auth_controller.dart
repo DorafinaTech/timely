@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -119,5 +122,25 @@ class AuthController extends BaseController {
 
   User? get currentUser {
     return FirebaseAuth.instance.currentUser;
+  }
+
+  Future<bool> passwordReset() async {
+    try {
+      FirebaseAuth.instance.sendPasswordResetEmail(
+          email: FirebaseAuth.instance.currentUser!.email!);
+
+      return true;
+    } catch (e) {
+      log(e.toString());
+
+      return false;
+    }
+  }
+
+  Future<bool> confirmPasswordReset(String code, String newPassword) async {
+    FirebaseAuth.instance
+        .confirmPasswordReset(code: code, newPassword: newPassword);
+
+    return true;
   }
 }
