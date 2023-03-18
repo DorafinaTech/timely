@@ -18,62 +18,62 @@ class CalendarScreen extends StatelessWidget {
         // mini: true,
         shape: const CircleBorder(),
         onPressed: () {
-          Get.dialog(
-              Material(
-                color: Colors.transparent,
-                child: Center(
-                  child: Container(
-                    color: Colors.white,
-                    width: Get.width - 100,
-                    height: Get.height / 2,
-                    child: Padding(
-                      padding: const EdgeInsets.all(80.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            color: Get.theme.primaryColor,
-                            padding: const EdgeInsets.symmetric(vertical: 8),
-                            child: ListTile(
-                              enableFeedback: true,
-                              splashColor: Colors.white,
-                              title: const Center(child: Text('Add Exam', style: TextStyle(color: Colors.white),)),
-                              onTap: () {
-                                Get.toNamed(RoutePaths.examsScreen);
-                              },
-                            ),
-                          ),
-                          Container(
-                            padding: const EdgeInsets.symmetric(vertical: 8),
-                            color: Get.theme.primaryColor,
-                            child: ListTile(
-                              enableFeedback: true,
-                              splashColor: Colors.white,
-                              title: const Center(child: Text('Add Test', style: TextStyle(color: Colors.white))),
-                              onTap: () {
-                                Get.toNamed(RoutePaths.examsScreen);
-                              },
-                            ),
-                          ),
-                          Container(
-                            padding: const EdgeInsets.symmetric(vertical: 8),
-                            color: Get.theme.primaryColor,
-                            child: ListTile(
-                              enableFeedback: true,
-                              splashColor: Colors.white,
-                              title: const Center(child: Text('Add Reading', style: TextStyle(color: Colors.white))),
-                              onTap: () {
-                                Get.toNamed(RoutePaths.examsScreen);
-                              },
-                            ),
-                          ),
-                        ],
+          Get.bottomSheet(
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        color: Get.theme.primaryColor,
+                        padding: const EdgeInsets.symmetric(vertical: 8),
+                        child: ListTile(
+                          enableFeedback: true,
+                          splashColor: Colors.white,
+                          title: const Center(
+                              child: Text(
+                            'Add Exam',
+                            style: TextStyle(color: Colors.white),
+                          )),
+                          onTap: () {
+                            Get.toNamed(RoutePaths.examsScreen);
+                          },
+                        ),
                       ),
-                    ),
+                      Container(
+                        padding: const EdgeInsets.symmetric(vertical: 8),
+                        color: Get.theme.primaryColor,
+                        child: ListTile(
+                          enableFeedback: true,
+                          splashColor: Colors.white,
+                          title: const Center(
+                              child: Text('Add Test',
+                                  style: TextStyle(color: Colors.white))),
+                          onTap: () {
+                            Get.toNamed(RoutePaths.testScreen);
+                          },
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.symmetric(vertical: 8),
+                        color: Get.theme.primaryColor,
+                        child: ListTile(
+                          enableFeedback: true,
+                          splashColor: Colors.white,
+                          title: const Center(
+                              child: Text('Add Reading',
+                                  style: TextStyle(color: Colors.white))),
+                          onTap: () {
+                            Get.toNamed(RoutePaths.readingScreen);
+                          },
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
-              barrierDismissible: true);
+              backgroundColor: Colors.white);
         },
         backgroundColor: Theme.of(context).primaryColor,
         child: const Icon(Icons.add),

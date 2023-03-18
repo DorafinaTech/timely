@@ -50,7 +50,6 @@ class _TaskScreen2 extends State<TaskScreen2> {
                   borderSide: BorderSide(width: 0.5, color: Colors.black),
                 ),
                 hintStyle: TextStyle(color: Colors.grey),
-
               ),
               controller: _daysController,
               style: const TextStyle(
@@ -67,7 +66,6 @@ class _TaskScreen2 extends State<TaskScreen2> {
                   borderSide: BorderSide(width: 0.5, color: Colors.black),
                 ),
                 hintStyle: TextStyle(color: Colors.grey),
-
               ),
               controller: _coursesController,
               style: const TextStyle(
@@ -93,8 +91,8 @@ class _TaskScreen2 extends State<TaskScreen2> {
                             lastDate: DateTime(2100));
 
                         if (pickedDate != null) {
-                          debugPrint(
-                              pickedDate.toString()); //pickedDate output format => 2021-03-10 00:00:00.000
+                          debugPrint(pickedDate
+                              .toString()); //pickedDate output format => 2021-03-10 00:00:00.000
                           String formattedDate =
                               // DateFormat('yyyy-MM-dd').format(pickedDate);
                               DateFormat('dd-MM-yyyy').format(pickedDate);
@@ -285,7 +283,7 @@ class _TaskScreen2 extends State<TaskScreen2> {
               margin: const EdgeInsets.only(top: 20.0, left: 8.0, right: 8.0),
               child: ElevatedButton(
                 onPressed: () {
-                  Get.toNamed(RoutePaths.readingScreen);
+                  Navigator.of(context).pop();
                 },
                 style: OutlinedButton.styleFrom(
                   shape: const RoundedRectangleBorder(

@@ -4,13 +4,17 @@ import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/controllers/loading_controller.dart';
+import 'package:timely/controllers/profile_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
 import 'package:timely/components/bottom_navigation.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
-  final authController = Get.put<AuthController>(AuthController());
+  final AuthController authController =
+      Get.put<AuthController>(AuthController());
+  final ProfileController _profileController =
+      Get.put<ProfileController>(ProfileController());
 
   @override
   Widget build(BuildContext context) {
@@ -43,17 +47,19 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               child: ListView(children: [
                 ListTile(
-                  leading: const CircleAvatar(
-                    radius: 50.0,
-                    backgroundImage: AssetImage('assets/images/thessC.png'),
-                    backgroundColor: Colors.transparent,
-                  ),
+                  onTap: () => Get.toNamed(RoutePaths.profileScreen),
+                  leading: Obx(() => CircleAvatar(
+                        radius: 50.0,
+                        backgroundImage: NetworkImage(
+                            _profileController.currentProfilePictureURL.value),
+                        backgroundColor: Get.theme.primaryColor,
+                      )),
                   title: Text(
                     'Hey, ${authController.currentUser?.displayName!}',
                     style: const TextStyle(fontFamily: 'Satohi', fontSize: 16),
                   ),
                   subtitle: const Text(
-                    'lets get things Scheduled, shall we?',
+                    'let\'s get things Scheduled, shall we?',
                     style: TextStyle(
                       fontFamily: 'Satoshi',
                       fontSize: 14,

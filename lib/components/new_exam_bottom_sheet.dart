@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
@@ -14,9 +13,8 @@ class AddExamBottomSheet extends StatefulWidget {
 }
 
 class _TaskScreen extends State<AddExamBottomSheet> {
-
-
-  final ExamController _examController = Get.put<ExamController>(ExamController());
+  final ExamController _examController =
+      Get.put<ExamController>(ExamController());
 
   final TextEditingController titlecontroller = TextEditingController();
   final TextEditingController lecturercontroller = TextEditingController();
@@ -50,12 +48,11 @@ class _TaskScreen extends State<AddExamBottomSheet> {
             padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
             child: TextField(
               decoration: const InputDecoration(
-                  labelText: 'Title',
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(width: 0.5, color: Colors.black),
-                  ),
-                  hintStyle: TextStyle(color: Colors.grey),
-
+                labelText: 'Title',
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(width: 0.5, color: Colors.black),
+                ),
+                hintStyle: TextStyle(color: Colors.grey),
               ),
               controller: titlecontroller,
               style: const TextStyle(
@@ -74,7 +71,6 @@ class _TaskScreen extends State<AddExamBottomSheet> {
                         borderSide: BorderSide(width: 0.5, color: Colors.black),
                       ),
                       hintStyle: TextStyle(color: Colors.grey),
-
                     ),
                     controller: lecturercontroller,
                     style: const TextStyle(
@@ -92,7 +88,6 @@ class _TaskScreen extends State<AddExamBottomSheet> {
                         borderSide: BorderSide(width: 0.5, color: Colors.black),
                       ),
                       hintStyle: TextStyle(color: Colors.grey),
-
                     ),
                     controller: venuecontroller,
                     style: const TextStyle(
@@ -120,8 +115,8 @@ class _TaskScreen extends State<AddExamBottomSheet> {
                             lastDate: DateTime(2100));
 
                         if (pickedDate != null) {
-                          debugPrint(
-                              pickedDate.toString()); //pickedDate output format => 2021-03-10 00:00:00.000
+                          debugPrint(pickedDate
+                              .toString()); //pickedDate output format => 2021-03-10 00:00:00.000
                           String formattedDate =
                               // DateFormat('yyyy-MM-dd').format(pickedDate);
                               DateFormat('dd-MM-yyyy').format(pickedDate);
@@ -149,7 +144,6 @@ class _TaskScreen extends State<AddExamBottomSheet> {
                                 fontSize: 16,
                                 color: Colors.black),
                           ),
-
                           TextButton(
                             child: Text(sTime,
                                 textAlign: TextAlign.end,
@@ -244,7 +238,7 @@ class _TaskScreen extends State<AddExamBottomSheet> {
               margin: const EdgeInsets.only(top: 20.0, left: 8.0, right: 8.0),
               child: ElevatedButton(
                 onPressed: () {
-                  Get.toNamed(RoutePaths.testScreen);
+                  Navigator.of(context).pop();
                 },
                 style: OutlinedButton.styleFrom(
                   shape: const RoundedRectangleBorder(
@@ -281,7 +275,6 @@ class _TaskScreen extends State<AddExamBottomSheet> {
                         const EdgeInsets.only(top: 20.0, left: 8.0, right: 8.0),
                     child: ElevatedButton(
                       onPressed: () {
-
                         ExamsModel examModel = ExamsModel(
                             course_title: titlecontroller.text,
                             date: mDate,
@@ -293,7 +286,6 @@ class _TaskScreen extends State<AddExamBottomSheet> {
                             lecturerName: lecturercontroller.text);
 
                         addToFireBase(examModel, context);
-
                       },
                       style: OutlinedButton.styleFrom(
                         shape: const RoundedRectangleBorder(

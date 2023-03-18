@@ -19,6 +19,12 @@ class EditProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    _profileController.getBioData().then((bioData) {
+      _firstNameController.text = (bioData['name'] as String).split(' ')[0];
+      _lastNameController.text = (bioData['name'] as String).split(' ')[1];
+      _emailAddressController.text = bioData['email'] as String;
+    });
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -62,12 +68,14 @@ class EditProfileScreen extends StatelessWidget {
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Stack(children: [
-            const Positioned(
-              child: CircleAvatar(
-                radius: 50.0,
-                backgroundImage: AssetImage('assets/images/thessC.png'),
-                backgroundColor: Colors.transparent,
-              ),
+            Positioned(
+              child: Obx(() => CircleAvatar(
+                    radius: 50.0,
+                    // backgroundImage: NetworkImage('assets/images/thessC.png'),
+                    backgroundImage: NetworkImage(
+                        _profileController.currentProfilePictureURL.value),
+                    backgroundColor: Get.theme.primaryColor,
+                  )),
             ),
             Positioned(
                 bottom: 0.2,
@@ -182,21 +190,10 @@ class EditProfileScreen extends StatelessWidget {
             margin: const EdgeInsets.all(8.0),
             child: ElevatedButton(
               onPressed: () {
-                _profileController
-                    .updateBioData(
-                        '${_firstNameController.value.text.trim()} ${_lastNameController.value.text.trim()}',
-                        _emailAddressController.value.text.trim(),
-                        _phoneNumberController.value.text.trim())
-                    .then((value) {
-                  showSnackbar(
-                      'Successful', 'Your profile info has been updated');
-
-                  Get.toNamed(RoutePaths.homeScreen);
-                }).catchError((err) {
-                  debugPrint(err.toString());
-                  showErrorSnackbar(
-                      'Unable to update prfile info at this time');
-                });
+                _profileController.updateBioData(
+                    '${_firstNameController.value.text.trim()} ${_lastNameController.value.text.trim()}',
+                    _emailAddressController.value.text.trim(),
+                    _phoneNumberController.value.text.trim());
               },
               style: OutlinedButton.styleFrom(
                 shape: const RoundedRectangleBorder(
