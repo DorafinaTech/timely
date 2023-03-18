@@ -303,11 +303,7 @@ class LoginState extends State<Login> {
               ),
             ),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const RecoveryPassword()),
-              );
+              Get.toNamed(RoutePaths.resetPasswordViaEmail);
             },
           ),
 

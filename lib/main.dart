@@ -21,6 +21,7 @@ import 'package:timely/views/onboarding2.dart';
 import 'package:timely/views/profile_screen.dart';
 import 'package:timely/views/reading_screen.dart';
 import 'package:timely/views/calender_screen.dart';
+import 'package:timely/views/recover_password.dart';
 import 'package:timely/views/register.dart';
 import 'package:timely/views/splash_screen.dart';
 import 'package:timely/views/test_screen.dart';
@@ -87,6 +88,20 @@ class TimelyApp extends StatelessWidget {
           },
         ),
         GetPage(
+          name: RoutePaths.forgotPassword,
+          title: RouteNames.forgotPassword,
+          page: () {
+            return const RecoveryPassword();
+          },
+        ),
+        GetPage(
+          name: RoutePaths.resetPasswordViaEmail,
+          title: RouteNames.resetPasswordViaEmail,
+          page: () {
+            return const EmailRecovery();
+          },
+        ),
+        GetPage(
           name: RoutePaths.register,
           title: RouteNames.register,
           page: () {
@@ -139,10 +154,9 @@ class TimelyApp extends StatelessWidget {
           name: RoutePaths.notescreen,
           title: RouteNames.notescreen,
           page: () {
-            return  Notes();
+            return Notes();
           },
         ),
-
         GetPage(
           name: RoutePaths.newNoteScreen,
           title: RouteNames.newNoteScreen,
@@ -150,7 +164,6 @@ class TimelyApp extends StatelessWidget {
             return NewNoteScreen();
           },
         ),
-
         GetPage(
           name: RoutePaths.aboutscreen,
           title: RouteNames.aboutscreen,
@@ -158,15 +171,13 @@ class TimelyApp extends StatelessWidget {
             return const About();
           },
         ),
-
         GetPage(
           name: RoutePaths.confirmPasswordScreen,
           title: RouteNames.confirmPasswordScreen,
           page: () {
-            return const ConfirmPassword();
+            return ConfirmPassword();
           },
         ),
-
         GetPage(
           name: RoutePaths.emailecoveryScreen,
           title: RouteNames.emailecoveryScreen,
