@@ -8,11 +8,12 @@ import 'package:timely/models/exams_model.dart';
 import 'package:timely/utilities/show_snackbar.dart';
 
 class ExamController extends BaseController {
-  final String collectionName = 'examSchedule';
+  @override
+  String get collectionName => 'examSchedule';
 
   Future<void> addToFirebase(ExamsModel examModel, BuildContext context) async {
     final examsRef =
-    FirebaseFirestore.instance.collection(collectionName).doc();
+        FirebaseFirestore.instance.collection(collectionName).doc();
 
     examModel.id = examsRef.id;
     final data = examModel.toJson();
@@ -30,5 +31,4 @@ class ExamController extends BaseController {
   Stream<QuerySnapshot> getSnapshots() {
     return FirebaseFirestore.instance.collection(collectionName).snapshots();
   }
-
 }

@@ -1,29 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:timely/controllers/note_controller.dart';
-import 'package:timely/models/notemodel.dart';
-
-import '../Widgets/custom_icon_btn.dart';
-import '../controllers/auth_controller.dart';
-import '../controllers/userController.dart';
 
 class NewNoteScreen extends StatelessWidget {
-  // final UserController userController = Get.find<UserController>();
-  // final AuthController authController = Get.find<AuthController>();
-
-  final NoteController _noteController = Get.put<NoteController>(NoteController());
-
+  final NoteController _noteController =
+      Get.put<NoteController>(NoteController());
 
   final TextEditingController titleController = TextEditingController();
   final TextEditingController bodyController = TextEditingController();
+
+  NewNoteScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
         child: Container(
-          height: size.height,
-          padding: EdgeInsets.all(
+          height: Get.height,
+          padding: const EdgeInsets.all(
             16.0,
           ),
           child: Column(children: <Widget>[
@@ -33,7 +27,7 @@ class NewNoteScreen extends StatelessWidget {
                 SizedBox(
                   width: MediaQuery.of(context).size.width / 4,
                 ),
-                Text(
+                const Text(
                   "Notes",
                   style: TextStyle(
                     fontSize: 24,
@@ -42,7 +36,7 @@ class NewNoteScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Expanded(
@@ -55,15 +49,15 @@ class NewNoteScreen extends StatelessWidget {
                       controller: titleController,
                       keyboardType: TextInputType.multiline,
                       textCapitalization: TextCapitalization.sentences,
-                      decoration: InputDecoration.collapsed(
+                      decoration: const InputDecoration.collapsed(
                         hintText: "Title",
                       ),
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 26.0,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     TextFormField(
@@ -71,10 +65,10 @@ class NewNoteScreen extends StatelessWidget {
                       keyboardType: TextInputType.multiline,
                       maxLines: null,
                       textCapitalization: TextCapitalization.sentences,
-                      decoration: InputDecoration.collapsed(
+                      decoration: const InputDecoration.collapsed(
                         hintText: "Type something...",
                       ),
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20.0,
                       ),
                     ),
@@ -87,52 +81,51 @@ class NewNoteScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
-          if (titleController.text.length == 0 &&
-              bodyController.text.length == 0) {
+          if (titleController.text.isEmpty && bodyController.text.isEmpty) {
             showEmptyTitleDialog(context);
           } else {
             addNewNote(titleController.text.trim(), bodyController.text.trim());
+
             Navigator.pop(context);
           }
         },
-        label: Text("Save"),
-        icon: Icon(Icons.save),
+        label: const Text("Save"),
+        icon: const Icon(Icons.save),
       ),
     );
   }
 
-  void addNewNote (String title, String body){
+  void addNewNote(String title, String body) {
     _noteController.addNewNote(title, body);
   }
 }
 
-
-
 void showEmptyTitleDialog(BuildContext context) {
-  print("in dialog ");
+  debugPrint("in dialog ");
+
   showDialog(
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        backgroundColor: Theme.of(context).backgroundColor,
-        shape: RoundedRectangleBorder(
+        backgroundColor: Get.theme.colorScheme.background,
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(10.0),
           ),
         ),
         title: Text(
           "Notes is empty!",
-          style: Theme.of(context).textTheme.headline6,
+          style: Get.theme.textTheme.titleLarge,
         ),
         content: Text(
-          'The content of the note cannot be empty to be saved.',
-          style: Theme.of(context).textTheme.subtitle1,
+          'The content of the note cannot be empty.',
+          style: Get.theme.textTheme.titleMedium,
         ),
         actions: <Widget>[
           TextButton(
             child: Text(
               "Okay",
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Get.theme.textTheme.titleMedium,
             ),
             onPressed: () {
               Get.back();
@@ -181,7 +174,7 @@ void showEmptyTitleDialog(BuildContext context) {
 //         onPressed: () {
 //           // _noteController.addNewNote(_titleController.value.text, _bodyController.value.text);
 //         },
-//         backgroundColor: Theme.of(context).primaryColor,
+//         backgroundColor: Get.theme.primaryColor,
 //         child: const Icon(Icons.save),
 //       ),
 //       appBar: AppBar(
@@ -212,7 +205,7 @@ void showEmptyTitleDialog(BuildContext context) {
 //                   child: Row(
 //                     children: [
 //                       Icon(Icons.calendar_today,
-//                           color: Theme.of(context).primaryColor),
+//                           color: Get.theme.primaryColor),
 //                       const SizedBox(
 //                         // sized box with width 10
 //                         width: 10,
@@ -229,7 +222,7 @@ void showEmptyTitleDialog(BuildContext context) {
 //                   child: Row(
 //                     children: [
 //                       Icon(Icons.sticky_note_2,
-//                           color: Theme.of(context).primaryColor),
+//                           color: Get.theme.primaryColor),
 //                       const SizedBox(
 //                         // sized box with width 10
 //                         width: 10,
@@ -245,7 +238,7 @@ void showEmptyTitleDialog(BuildContext context) {
 //                   child: Row(
 //                     children: [
 //                       Icon(Icons.tag_faces,
-//                           color: Theme.of(context).primaryColor),
+//                           color: Get.theme.primaryColor),
 //                       const SizedBox(
 //                         // sized box with width 10
 //                         width: 10,
@@ -263,7 +256,7 @@ void showEmptyTitleDialog(BuildContext context) {
 //             )
 //           ]),
 //         ],
-//         backgroundColor: Theme.of(context).primaryColor,
+//         backgroundColor: Get.theme.primaryColor,
 //         foregroundColor: Colors.white,
 //         elevation: 0,
 //       ),

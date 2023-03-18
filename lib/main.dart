@@ -141,7 +141,7 @@ class TimelyApp extends StatelessWidget {
             name: RoutePaths.editProfileScreen,
             title: RouteNames.editProfileScreen,
             page: () {
-              return const EditProfileScreen();
+              return EditProfileScreen();
             },
           ),
           GetPage(
