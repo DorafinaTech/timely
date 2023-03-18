@@ -1,8 +1,6 @@
 import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:http/http.dart';
 import 'package:timely/controllers/base_controller.dart';
 import '../models/reading_model.dart';
 import '../utilities/show_snackbar.dart';

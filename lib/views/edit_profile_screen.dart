@@ -95,22 +95,23 @@ class EditProfileScreen extends StatelessWidget {
           Container(
             color: const Color(0xFFF6FDFC),
             margin: const EdgeInsets.all(8.0),
-            child: TextField(
+            child: TextFormField(
               controller: _firstNameController,
               decoration: InputDecoration(
-                  // labelText: 'Name',
-                  labelStyle: const TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'Satoshi',
-                      color: Colors.black54),
-                  hintText: "First Name ",
-                  hintStyle: const TextStyle(color: Colors.black54),
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(
-                          color: Colors.transparent,
-                          width: 1.5,
-                          style: BorderStyle.solid))),
+                labelText: 'First Name',
+                labelStyle: const TextStyle(
+                    fontSize: 20, fontFamily: 'Satoshi', color: Colors.black54),
+                hintText: "Your First name ",
+                hintStyle: const TextStyle(color: Colors.black54, fontSize: 10),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: const BorderSide(
+                        color: Colors.transparent,
+                        width: 1.5,
+                        style: BorderStyle.solid)),
+                alignLabelWithHint: false,
+                filled: false,
+              ),
             ),
           ),
           Container(
@@ -119,19 +120,20 @@ class EditProfileScreen extends StatelessWidget {
             child: TextField(
               controller: _lastNameController,
               decoration: InputDecoration(
-                  // labelText: 'Name',
-                  labelStyle: const TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'Satoshi',
-                      color: Colors.black54),
-                  hintText: "Last Name ",
-                  hintStyle: const TextStyle(color: Colors.black54),
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(
-                          color: Colors.transparent,
-                          width: 1.5,
-                          style: BorderStyle.solid))),
+                labelText: 'Last Name',
+                labelStyle: const TextStyle(
+                    fontSize: 20, fontFamily: 'Satoshi', color: Colors.black54),
+                hintText: "your Last Name ",
+                hintStyle: const TextStyle(color: Colors.black54, fontSize: 10),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: const BorderSide(
+                        color: Colors.transparent,
+                        width: 1.5,
+                        style: BorderStyle.solid)),
+                alignLabelWithHint: false,
+                filled: false,
+              ),
             ),
           ),
           Container(
@@ -140,19 +142,20 @@ class EditProfileScreen extends StatelessWidget {
             child: TextField(
               controller: _emailAddressController,
               decoration: InputDecoration(
-                  // labelText: 'Name',
-                  labelStyle: const TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'Satoshi',
-                      color: Colors.black54),
-                  hintText: "Email Address",
-                  hintStyle: const TextStyle(color: Colors.black54),
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(
-                          color: Colors.transparent,
-                          width: 1.5,
-                          style: BorderStyle.solid))),
+                labelText: 'Email Address',
+                labelStyle: const TextStyle(
+                    fontSize: 20, fontFamily: 'Satoshi', color: Colors.black54),
+                hintText: " Your Email Address",
+                hintStyle: const TextStyle(color: Colors.black54, fontSize: 10),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: const BorderSide(
+                        color: Colors.transparent,
+                        width: 1.5,
+                        style: BorderStyle.solid)),
+                alignLabelWithHint: false,
+                filled: false,
+              ),
             ),
           ),
           Container(
@@ -161,19 +164,20 @@ class EditProfileScreen extends StatelessWidget {
             child: TextField(
               controller: _phoneNumberController,
               decoration: InputDecoration(
-                  // labelText: 'Name',
-                  labelStyle: const TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'Satoshi',
-                      color: Colors.black54),
-                  hintText: "Phone Number",
-                  hintStyle: const TextStyle(color: Colors.black54),
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(
-                          color: Colors.transparent,
-                          width: 1.5,
-                          style: BorderStyle.solid))),
+                labelText: 'Phone Number',
+                labelStyle: const TextStyle(
+                    fontSize: 20, fontFamily: 'Satoshi', color: Colors.black54),
+                hintText: " Your Phone Number",
+                hintStyle: const TextStyle(color: Colors.black54, fontSize: 10),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: const BorderSide(
+                        color: Colors.transparent,
+                        width: 1.5,
+                        style: BorderStyle.solid)),
+                alignLabelWithHint: false,
+                filled: false,
+              ),
             ),
           ),
           Container(
