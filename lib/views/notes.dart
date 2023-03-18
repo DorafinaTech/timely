@@ -56,6 +56,11 @@ class Notes extends StatelessWidget {
         ],
         elevation: 0,
       ),
+      // body: FutureBuilder<QuerySnapshot>(
+      //   future: _reference.get(),
+      //   builder:(context, snapshot)  {
+      //     if(snapshot.hasError){
+      //       return Center(child: Text('Something went wrong'),);
       body: StreamBuilder<QuerySnapshot>(
         stream: _noteController.getSnapshots(),
         builder: (context, snapshot) {
@@ -92,53 +97,119 @@ class Notes extends StatelessWidget {
     );
   }
 
-  Widget _getBody(notes) {
-    return notes.isEmpty
-        ? const Center(
-            child: Text(
-              'No notes Yet,\nClick "+" to start adding',
-              textAlign: TextAlign.center,
-            ),
-          )
-        : ListView.builder(
-            itemCount: notes.length,
-            itemBuilder: (context, index) => Card(
-              color: notes[index].marks < 33
-                  ? Colors.red.shade100
-                  : notes[index].marks < 65
-                      ? Colors.yellow.shade100
-                      : Colors.green.shade100,
-              child: ListTile(
-                title: Text(notes[index].name),
-                subtitle: Text('Rollno: ${notes[index].rollno}'),
-                leading: CircleAvatar(
-                  radius: 25,
-                  child: Text('${notes[index].marks}'),
-                ),
-                trailing: SizedBox(
-                  width: 60,
-                  child: Row(
-                    children: [
-                      InkWell(
-                        child: Icon(
-                          Icons.edit,
-                          color: Colors.black.withOpacity(0.75),
-                        ),
-                        onTap: () {
-                          //
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    UpdateNote(note: notes[index]),
-                              ));
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          );
-  }
+   Widget _getBody(notes) {
+     return notes.isEmpty
+         ? const Center(
+       child: Text(
+         'No Student Yet\nClick + to start adding',
+         textAlign: TextAlign.center,
+       ),
+     )
+         : ListView.builder(
+       itemCount: notes.length,
+       itemBuilder: (context, index) => Card(
+         color: notes[index].body < 33
+             ? Colors.red.shade100
+             : notes[index].body < 65
+             ? Colors.yellow.shade100
+             : Colors.green.shade100,
+         child: ListTile(
+           title: Text(notes[index].time),
+           subtitle: Text('title: ${notes[index].title}'),
+           leading: CircleAvatar(
+             radius: 25,
+             child: Text('${notes[index].body}'),
+           ),
+           trailing: SizedBox(
+             width: 60,
+             child: Row(
+               children: [
+                 InkWell(
+                   child: Icon(
+                     Icons.edit,
+                     color: Colors.black.withOpacity(0.75),
+                   ),
+                   onTap: () {
+                     //
+                     Navigator.push(context,
+                         MaterialPageRoute(
+                           builder: (context) =>
+                               UpdateNote(note: notes[index]),
+                         ));
+                     //
+                   },
+                 ),
+/*
+                 InkWell(
+                   child: const Icon(Icons.delete),
+                   onTap: () {
+                     //
+                     _reference.doc(notes[index].id).delete();
+                     // To refresh
+                     Navigator.pushReplacement(
+                         context,
+                         MaterialPageRoute(
+                           builder: (context) => HomePage(),
+                         ));
+
+                     //
+                   },
+                 ),
+*/
+               ],
+             ),
+           ),
+         ),
+       ),
+     );
+   }
+  // Widget _getBody(notes) {
+  //   return notes.isEmpty
+  //       ? const Center(
+  //           child: Text(
+  //             'No notes Yet,\nClick "+" to start adding',
+  //             textAlign: TextAlign.center,
+  //           ),
+  //         )
+  //       : ListView.builder(
+  //           itemCount: notes.length,
+  //           itemBuilder: (context, index) => Card(
+  //             color: notes[index].marks < 33
+  //                 ? Colors.red.shade100
+  //                 : notes[index].marks < 65
+  //                     ? Colors.yellow.shade100
+  //                     : Colors.green.shade100,
+  //             child: ListTile(
+  //               title: Text(notes[index].name),
+  //               subtitle: Text('Rollno: ${notes[index].rollno}'),
+  //               leading: CircleAvatar(
+  //                 radius: 25,
+  //                 child: Text('${notes[index].marks}'),
+  //               ),
+  //               trailing: SizedBox(
+  //                 width: 60,
+  //                 child: Row(
+  //                   children: [
+  //                     InkWell(
+  //                       child: Icon(
+  //                         Icons.edit,
+  //                         color: Colors.black.withOpacity(0.75),
+  //                       ),
+  //                       onTap: () {
+  //                         //
+  //                         Navigator.push(
+  //                             context,
+  //                             MaterialPageRoute(
+  //                               builder: (context) =>
+  //                                   UpdateNote(note: notes[index]),
+  //                             ));
+  //                       },
+  //                     ),
+  //                   ],
+  //                 ),
+  //               ),
+  //             ),
+  //           ),
+  //         );
+  // }
 }
