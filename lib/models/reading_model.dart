@@ -39,6 +39,8 @@ class ReadingModel {
     // lecturerName: json["lecturerName"],
   );
 
+  get date => date;
+
   Map<String, dynamic> toJson() => {
     "id": id,
     "course_title": course_title,

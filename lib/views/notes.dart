@@ -57,7 +57,7 @@ class Notes extends StatelessWidget {
       ),
       body: FutureBuilder<QuerySnapshot>(
         future: _reference.get(),
-        builder:(context, snapshot){
+        builder:(context, snapshot)  {
           if(snapshot.hasError){
             return Center(child: Text('Something went wrong'),);
           }
@@ -88,17 +88,17 @@ class Notes extends StatelessWidget {
          : ListView.builder(
        itemCount: notes.length,
        itemBuilder: (context, index) => Card(
-         color: notes[index].marks < 33
+         color: notes[index].body < 33
              ? Colors.red.shade100
-             : notes[index].marks < 65
+             : notes[index].body < 65
              ? Colors.yellow.shade100
              : Colors.green.shade100,
          child: ListTile(
-           title: Text(notes[index].name),
-           subtitle: Text('Rollno: ${notes[index].rollno}'),
+           title: Text(notes[index].time),
+           subtitle: Text('title: ${notes[index].title}'),
            leading: CircleAvatar(
              radius: 25,
-             child: Text('${notes[index].marks}'),
+             child: Text('${notes[index].body}'),
            ),
            trailing: SizedBox(
              width: 60,
@@ -111,8 +111,7 @@ class Notes extends StatelessWidget {
                    ),
                    onTap: () {
                      //
-                     Navigator.push(
-                         context,
+                     Navigator.push(context,
                          MaterialPageRoute(
                            builder: (context) =>
                                UpdateNote(note: notes[index]),

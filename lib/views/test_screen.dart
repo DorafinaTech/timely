@@ -2,19 +2,15 @@ import 'package:calendar_view/calendar_view.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
-
-// import 'package:time_planner/time_planner.dart';
 import 'package:timely/components/bottom_navigation.dart';
 import 'package:timely/models/tests_model.dart';
-
 import '../components/popup_menu_buttons.dart';
 import '../components/new_exam_bottom_sheet.dart';
 import '../constants/menu_padding.dart';
 import '../controllers/test_controller.dart';
 
 class TestScreen extends StatefulWidget {
-  TestScreen({Key? key}) : super(key: key);
+  const TestScreen({Key? key}) : super(key: key);
 
   @override
   State<TestScreen> createState() => _TestScreenState();
@@ -75,77 +71,76 @@ class _TestScreenState extends State<TestScreen> {
       ),
       body: StreamBuilder(
         stream: _testController.getSnapshots(),
-    builder: (context, snapshot) {
-    if (snapshot.hasError) {
-    return const Center(
-    child: Text("Unable to get Events"),
-    );
-    }
+        builder: (context, snapshot) {
+          if (snapshot.hasError) {
+            return const Center(
+              child: Text("Unable to get Events"),
+            );
+          }
 
-    if (snapshot.connectionState == ConnectionState.waiting) {
-    return const Center(
-    child: CircularProgressIndicator(),
-    );
-    }
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
 
-    List<CalendarEventData<TestModel>> eventsToBeAdded = [];
+          List<CalendarEventData<TestModel>> eventsToBeAdded = [];
 
-    snapshot.data?.docs.forEach((testDoc) {
-    var testMap = testDoc.data();
-    if (kDebugMode) {
-    debugPrint(testMap.toString());
-    }
+          snapshot.data?.docs.forEach((testDoc) {
+            var testMap = testDoc.data();
+            if (kDebugMode) {
+              debugPrint(testMap.toString());
+            }
 
-    var testModel =
-    TestModel.fromJson(testMap as Map<String, dynamic>);
+            var testModel = TestModel.fromJson(testMap as Map<String, dynamic>);
 
-    var dateArray = testModel.date.split('-');
+            var dateArray = testModel.date.split('-');
 
-    var startTimeArray = testModel.start_time
-        .split(':')
-        .map((e) => int.parse(e.trim()))
-        .toList();
+            var startTimeArray = testModel.start_time
+                .split(':')
+                .map((e) => int.parse(e.trim()))
+                .toList();
 
-    var endTimeArray = testModel.end_time
-        .split(':')
-        .map((e) => int.parse(e.trim()))
-        .toList();
+            var endTimeArray = testModel.end_time
+                .split(':')
+                .map((e) => int.parse(e.trim()))
+                .toList();
 
-    var startDay = int.parse(dateArray[0]);
-    var startMonth = int.parse(dateArray[1]);
-    var startYear = int.parse(dateArray[2]);
+            var startDay = int.parse(dateArray[0]);
+            var startMonth = int.parse(dateArray[1]);
+            var startYear = int.parse(dateArray[2]);
 
-    var startHour = startTimeArray[0];
-    var startMinute = startTimeArray[1];
+            var startHour = startTimeArray[0];
+            var startMinute = startTimeArray[1];
 
-    var endHour = endTimeArray[0];
-    var endMinute = endTimeArray[1];
+            var endHour = endTimeArray[0];
+            var endMinute = endTimeArray[1];
 
-    var startDate = DateTime(
-    startYear, startMonth, startDay, startHour, startMinute);
+            var startDate = DateTime(
+                startYear, startMonth, startDay, startHour, startMinute);
 
-    var startTime = startDate;
+            var startTime = startDate;
 
-    var endTime = startDate.copyWith(hour: endHour, minute: endMinute);
+            var endTime = startDate.copyWith(hour: endHour, minute: endMinute);
 
-    var testEvent = CalendarEventData<TestModel>(
-    title: testModel.course_title,
-    date: startDate,
-    startTime: startTime,
-    event: testModel,
-    endTime: endTime);
+            var testEvent = CalendarEventData<TestModel>(
+                title: testModel.course_title,
+                date: startDate,
+                startTime: startTime,
+                event: testModel,
+                endTime: endTime);
 
-    eventsToBeAdded.add(testEvent);
-    });
+            eventsToBeAdded.add(testEvent);
+          });
 
-    _testEventController.removeWhere((element) => true);
-    _testEventController.addAll(eventsToBeAdded);
+          _testEventController.removeWhere((element) => true);
+          _testEventController.addAll(eventsToBeAdded);
 
-    return WeekView(
-    controller: _testEventController,
-    );
-    },
-    ),
+          return WeekView(
+            controller: _testEventController,
+          );
+        },
+      ),
     );
   }
 }
