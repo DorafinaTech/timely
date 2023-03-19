@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
+import 'package:timely/utilities/show_snackbar.dart';
 import 'package:timely/views/confirm_password.dart';
 
 class EmailRecovery extends StatefulWidget {
@@ -56,7 +57,10 @@ class _EmailRecoveryState extends State<EmailRecovery> {
                     _authController
                         .passwordReset(_emailController.value.text.trim())
                         .then((value) {
-                      Get.toNamed(RoutePaths.confirmPasswordScreen);
+                      // Get.toNamed(RoutePaths.confirmPasswordScreen);
+                      showSnackbar(
+                          'Alert', 'Check the link sent to your email');
+                      Get.toNamed(RoutePaths.login);
                     });
                   },
                   style: OutlinedButton.styleFrom(

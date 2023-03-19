@@ -6,7 +6,6 @@ import 'package:timely/views/notes.dart';
 
 import '../models/notemodel.dart';
 
-
 class UpdateNote extends StatelessWidget {
   late final NotesModel note;
   final TextEditingController titleController = TextEditingController();
@@ -18,9 +17,9 @@ class UpdateNote extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    titleController.text = '{note.title}';
-    timeController.text = '{note.time}';
-    bodyController.text = '{note.body}';
+    titleController.text = note.title;
+    // timeController.text = note.time;
+    bodyController.text = note.body;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Edit note'),
@@ -35,7 +34,7 @@ class UpdateNote extends StatelessWidget {
                 hintText: 'title',
                 textInputType: TextInputType.number,
                 controller: titleController),
-            getMyField(hintText: 'time', controller: timeController),
+            // getMyField(hintText: 'time', controller: timeController),
             getMyField(
                 hintText: 'body',
                 textInputType: TextInputType.number,
@@ -50,7 +49,7 @@ class UpdateNote extends StatelessWidget {
                       Notes updatedNote = note as Notes;
                       //
                       final collectionReference =
-                      FirebaseFirestore.instance.collection('note');
+                          FirebaseFirestore.instance.collection('note');
                       collectionReference
                           .doc(updatedNote as String?)
                           .update(updatedNote as Map<Object, Object?>)
@@ -87,9 +86,9 @@ class UpdateNote extends StatelessWidget {
 
   Widget getMyField(
       {required String hintText,
-        TextInputType textInputType = TextInputType.name,
-        required TextEditingController controller,
-        FocusNode? focusNode}) {
+      TextInputType textInputType = TextInputType.name,
+      required TextEditingController controller,
+      FocusNode? focusNode}) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: TextField(

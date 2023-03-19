@@ -6,6 +6,7 @@ import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/controllers/profile_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
+import 'package:timely/utilities/show_error_snackbar.dart';
 import 'package:timely/utilities/show_snackbar.dart';
 
 import '../components/popup_menu_buttons.dart';
@@ -203,17 +204,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 onPressed: () async {
                   AuthController().signOut().then((value) {
                     if (value) {
-                      Get.toNamed(RoutePaths.login);
                       showSnackbar("Alert", "You've logged out");
+                      Get.toNamed(RoutePaths.login);
                     } else {
-                      showSnackbar("Alert", "Logout failed");
+                      showErrorSnackbar("Logout failed");
                     }
                   }).catchError((error) {
-                    showSnackbar("Alert", "Logout failed");
+                    showErrorSnackbar("Logout failed");
 
-                    if (kDebugMode) {
-                      debugPrint(error);
-                    }
+                    debugPrint(error);
                   });
                 },
               )
