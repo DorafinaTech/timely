@@ -24,14 +24,14 @@ class ProfileController extends BaseController {
       Get.put<AuthController>(AuthController());
 
   @override
-  void onInit() {
-    super.onInit();
-
+  void onReady() {
     getBioData().then((bioData) {
       currentProfilePictureURL.value = bioData['photoURL'];
       debugPrint('Profile getxController has been initialized');
       update();
     });
+
+    return super.onReady();
   }
 
   Future<void> updateProfilePicture() async {
