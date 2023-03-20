@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:calendar_view/calendar_view.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -8,8 +10,6 @@ import 'package:timely/constants/menu_padding.dart';
 import 'package:intl/intl.dart';
 import '../controllers/reading_controller.dart';
 import 'package:timely/models/reading_model.dart';
-
-
 
 class ReadingScreen extends StatefulWidget {
   const ReadingScreen({Key? key}) : super(key: key);
@@ -88,11 +88,11 @@ class _ReadingScreenState extends State<ReadingScreen> {
 
           snapshot.data?.docs.forEach((readingDoc) {
             var readingMap = readingDoc.data();
-            if (kDebugMode) {
-              debugPrint(readingMap.toString());
-            }
 
-            var readingModel = ReadingModel.fromJson(readingMap as Map<String, dynamic>);
+            debugPrint(readingMap.toString());
+
+            var readingModel =
+                ReadingModel.fromJson(readingMap as Map<String, dynamic>);
 
             var dateArray = readingModel.date.split('-');
 
@@ -135,6 +135,8 @@ class _ReadingScreenState extends State<ReadingScreen> {
 
           _readingEventController.removeWhere((element) => true);
           _readingEventController.addAll(eventsToBeAdded);
+
+          debugPrint('Events to be added: $eventsToBeAdded');
 
           return WeekView(
             controller: _readingEventController,

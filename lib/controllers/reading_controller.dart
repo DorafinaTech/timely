@@ -6,11 +6,13 @@ import '../models/reading_model.dart';
 import '../utilities/show_snackbar.dart';
 
 class ReadingController extends BaseController {
-  final String collectionName = 'readingSchedule';
+  @override
+  String get collectionName => 'readingSchedule';
 
-  Future<void> addToFirebase(ReadingModel readingModel, BuildContext context) async {
+  Future<void> addToFirebase(
+      ReadingModel readingModel, BuildContext context) async {
     final readingRef =
-    FirebaseFirestore.instance.collection(collectionName).doc();
+        FirebaseFirestore.instance.collection(collectionName).doc();
 
     readingModel.id = readingRef.id;
     final data = readingModel.toJson();
@@ -24,8 +26,8 @@ class ReadingController extends BaseController {
       });
     });
   }
+
   Stream<QuerySnapshot> getSnapshots() {
     return FirebaseFirestore.instance.collection(collectionName).snapshots();
   }
 }
-
