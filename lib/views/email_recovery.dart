@@ -42,8 +42,12 @@ class _EmailRecoveryState extends State<EmailRecovery> {
                 child: TextField(
                   controller: _emailController,
                   decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
                     labelText: 'Email',
+                    border: OutlineInputBorder(
+                  ),
+                    hintText: "Your email address",
+                    alignLabelWithHint: false,
+                    filled: true,
                   ),
                 ),
               ),

@@ -19,6 +19,8 @@ class TaskScreen2 extends StatefulWidget {
 class _TaskScreen2 extends State<TaskScreen2> {
   final TextEditingController _daysController = TextEditingController();
   final TextEditingController _coursesController = TextEditingController();
+  final TextEditingController _readingController = TextEditingController();
+
   String mDate = "Choose Date";
   TimeOfDay? startInitialTime;
 
@@ -320,7 +322,18 @@ class _TaskScreen2 extends State<TaskScreen2> {
                         const EdgeInsets.only(top: 20.0, left: 8.0, right: 8.0),
                     child: ElevatedButton(
                       onPressed: () {
-                        Get.toNamed(RoutePaths.readingScreen);
+                        ReadingModel readingModel = ReadingModel(
+                          course: _readingController.text,
+                          // date: mDate,
+                          start_time: sTime,
+                          end_time: mTime,
+                          day: 'day',
+                          date: 'date',
+                        );
+                        // color: 'blue',
+                        // interval: 'true',);
+
+                        addToFireBase(readingModel, context);
                       },
                       style: OutlinedButton.styleFrom(
                         shape: const RoundedRectangleBorder(
@@ -356,18 +369,21 @@ class _TaskScreen2 extends State<TaskScreen2> {
   }
 
   void addToFireBase(ReadingModel readingModel, BuildContext context) {
-    final readingRef =
-        FirebaseFirestore.instance.collection('readingSchedule').doc();
-    readingModel.id = readingRef.id;
-    final data = readingModel.toJson();
-    readingRef.set(data).whenComplete(() {
-      log('reading inserted');
+//     final readingRef =
+//         FirebaseFirestore.instance.collection('readingSchedule').doc();
+//     readingModel.id = readingRef.id;
+//     final data = readingModel.toJson();
+//     readingRef.set(data).whenComplete(() {
+//       log('reading inserted');
+//
+//       showSnackbar('Successful', 'your Task has been added successfully');
+//
+//       Future.delayed(Duration(seconds: 1)).then((value) {
+//         Navigator.pop(Get.context!);
+//       });
+//     });
+//   }
+// }
 
-      showSnackbar('Successful', 'your Task has been added successfully');
-
-      Future.delayed(Duration(seconds: 1)).then((value) {
-        Navigator.pop(Get.context!);
-      });
-    });
   }
 }

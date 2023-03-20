@@ -124,7 +124,7 @@ class _ReadingScreenState extends State<ReadingScreen> {
             var endTime = startDate.copyWith(hour: endHour, minute: endMinute);
 
             var readingEvent = CalendarEventData<ReadingModel>(
-                title: readingModel.course_title,
+                title: readingModel.course,
                 date: startDate,
                 startTime: startTime,
                 event: readingModel,

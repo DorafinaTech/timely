@@ -13,6 +13,7 @@ class ConfirmPassword extends StatelessWidget {
 
   final TextEditingController _newPasswordController = TextEditingController();
   final TextEditingController _otpController = TextEditingController();
+  bool passwordVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -38,34 +39,69 @@ class ConfirmPassword extends StatelessWidget {
             Container(
               margin: const EdgeInsets.all(8.0),
               child: TextField(
-                obscureText: true,
+                obscureText: passwordVisible,
                 controller: _newPasswordController,
                 decoration: InputDecoration(
-                  hintText: " New Password",
+                  hintText: " Strong password",
+                  labelText: "New Password",
                   hintStyle: const TextStyle(color: Colors.black54),
-                  enabledBorder: OutlineInputBorder(
+                  border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
                       borderSide: BorderSide(
                           color: Colors.teal.shade200,
                           width: 1.5,
-                          style: BorderStyle.solid)),
+                          style: BorderStyle.solid)
+                  ),
+                  suffixIcon: IconButton(
+                    color: Colors.teal.shade200,
+                    icon: Icon(passwordVisible
+                        ? Icons.visibility
+                        : Icons.visibility_off),
+                    onPressed: () {
+                      setState(
+                            () {
+                          passwordVisible = !passwordVisible;
+                        },
+                      );
+                    },
+                  ),
+                  alignLabelWithHint: false,
+                  filled: true,
+                  ),
                 ),
               ),
-            ),
             Container(
               margin: const EdgeInsets.all(8.0),
               child: TextField(
                 obscureText: true,
                 controller: _otpController,
                 decoration: InputDecoration(
-                  hintText: "OTP",
+                  hintText: "Your OTP",
+                  labelText: "OTP",
                   hintStyle: const TextStyle(color: Colors.black54),
-                  enabledBorder: OutlineInputBorder(
+                  border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
                       borderSide: BorderSide(
                           color: Colors.teal.shade200,
                           width: 1.5,
-                          style: BorderStyle.solid)),
+                          style: BorderStyle.solid)
+                  ),
+                  suffixIcon: IconButton(
+                    color: Colors.teal.shade200,
+                    icon: Icon(passwordVisible
+                        ? Icons.visibility
+                        : Icons.visibility_off),
+                    onPressed: () {
+                      setState(
+                            () {
+                          passwordVisible = !passwordVisible;
+                        },
+                      );
+                    },
+                  ),
+                  alignLabelWithHint: false,
+                  filled: true,
+
                 ),
               ),
             ),
@@ -113,9 +149,10 @@ class ConfirmPassword extends StatelessWidget {
                 ),
               ),
             ),
-          ],
-        ),
+        ]),
       ),
     );
   }
+
+  void setState(Null Function() param0) {}
 }
