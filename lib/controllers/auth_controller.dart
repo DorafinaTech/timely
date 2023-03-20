@@ -125,7 +125,7 @@ class AuthController extends BaseController {
 
   Future<bool> passwordReset(String email) async {
     try {
-      FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
 
       return true;
     } catch (e) {

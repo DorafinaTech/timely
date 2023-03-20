@@ -24,14 +24,14 @@ class ProfileController extends BaseController {
       Get.put<AuthController>(AuthController());
 
   @override
-  void onInit() {
-    super.onInit();
-
+  void onReady() {
     getBioData().then((bioData) {
       currentProfilePictureURL.value = bioData['photoURL'];
       debugPrint('Profile getxController has been initialized');
       update();
     });
+
+    return super.onReady();
   }
 
   Future<void> updateProfilePicture() async {
@@ -45,32 +45,28 @@ class ProfileController extends BaseController {
       await FirebaseStorage.instance
           .ref('profilePictures/${_authController.currentUser!.uid}')
           .putData(await pickedImageFile!.readAsBytes())
-          .whenComplete(() {
-        asyncTask() async {
-          var downloadURL = await FirebaseStorage.instance
-              .ref('profilePictures/${_authController.currentUser!.uid}')
-              .getDownloadURL();
+          .whenComplete(() async {
+        var downloadURL = await FirebaseStorage.instance
+            .ref('profilePictures/${_authController.currentUser!.uid}')
+            .getDownloadURL();
 
-          await FirebaseAuth.instance.currentUser!.updatePhotoURL(downloadURL);
+        debugPrint('New profile picture download URL is: $downloadURL');
 
-          currentProfilePictureURL.value =
-              FirebaseAuth.instance.currentUser!.photoURL ??
-                  currentProfilePictureURL.value;
-          update();
+        await FirebaseAuth.instance.currentUser!.updatePhotoURL(downloadURL);
 
-          await _loadingController.stopLoading();
+        currentProfilePictureURL.value = downloadURL;
+        update();
 
-          debugPrint('Updated');
+        debugPrint('Updated');
 
-          showSnackbar('Success', 'Your profile picture has been updated');
-        }
+        await _loadingController.stopLoading();
 
-        asyncTask();
+        showSnackbar('Success', 'Your profile picture has been updated');
       });
     } catch (e) {
+      _loadingController.stopLoading();
       showErrorSnackbar('Unable to update profile picture');
       debugPrint('Failed to update profile photo: $e');
-      _loadingController.stopLoading();
     }
   }
 

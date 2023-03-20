@@ -324,16 +324,19 @@ class LoginState extends State<Login> {
                         _passwordController.value.text.trim())
                     .then((value) {
                   if (value) {
+                    LoadingControler().stopLoading();
                     Get.offAllNamed(RoutePaths.homeScreen);
+
                     userMessage = "Login in successfully";
                     debugPrint(userMessage);
                   } else {
+                    LoadingControler().stopLoading();
                     showErrorSnackbar("Login failed, Something went wrong");
                   }
                 }).onError((error, stackTrace) {
                   LoadingControler().stopLoading();
 
-                  userMessage = "Login failed, Something went wrong";
+                  userMessage = "Login failed, $error";
                   showSnackbar("Oops", userMessage);
                   debugPrint(userMessage);
                 });
