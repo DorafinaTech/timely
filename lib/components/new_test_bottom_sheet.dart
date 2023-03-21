@@ -1,36 +1,30 @@
-import 'dart:developer';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:timely/controllers/test_controller.dart';
 import 'package:intl/intl.dart';
-import 'package:timely/controllers/reading_controller.dart';
-import 'package:timely/utilities/route_paths.dart';
+import '../models/tests_model.dart';
 
-import '../models/reading_model.dart';
-import '../utilities/show_snackbar.dart';
-
-class TaskScreen2 extends StatefulWidget {
-  const TaskScreen2({Key? key}) : super(key: key);
+class AddTestBottomSheet extends StatefulWidget {
+  const AddTestBottomSheet({Key? key}) : super(key: key);
 
   @override
-  State<TaskScreen2> createState() => _TaskScreen2();
+  State<AddTestBottomSheet> createState() => _AddTestBottomSheet();
 }
 
-class _TaskScreen2 extends State<TaskScreen2> {
-  final TextEditingController _daysController = TextEditingController();
-  final TextEditingController _coursesController = TextEditingController();
-  // final TextEditingController _readingController = TextEditingController();
+class _AddTestBottomSheet extends State<AddTestBottomSheet> {
+  final TestController _testController =
+      Get.put<TestController>(TestController());
 
-  final ReadingController _getxReadingController =
-      Get.put<ReadingController>(ReadingController());
+  final TextEditingController titlecontroller = TextEditingController();
+  final TextEditingController lecturercontroller = TextEditingController();
+  final TextEditingController venuecontroller = TextEditingController();
 
   String mDate = "Choose Date";
   TimeOfDay? startInitialTime;
 
   // StartTime
   String sTime = "Choose Time";
-  static const TimeOfDay starttime = TimeOfDay(hour: 10, minute: 30);
+  TimeOfDay starttime = const TimeOfDay(hour: 10, minute: 30);
 
   // EndTime
   String mTime = "Choose Time";
@@ -38,6 +32,8 @@ class _TaskScreen2 extends State<TaskScreen2> {
 
   @override
   Widget build(BuildContext context) {
+    TimeOfDay selectedTime = TimeOfDay.now();
+
     return Container(
       padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
       decoration: const BoxDecoration(
@@ -47,38 +43,59 @@ class _TaskScreen2 extends State<TaskScreen2> {
       ),
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <
           Widget>[
-        // Container(
-        //     padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-        //     child: TextField(
-        //       decoration: const InputDecoration(
-        //         labelText: 'Day',
-        //         enabledBorder: UnderlineInputBorder(
-        //           borderSide: BorderSide(width: 0.5, color: Colors.black),
-        //         ),
-        //         hintStyle: TextStyle(color: Colors.grey),
-        //       ),
-        //       controller: _daysController,
-        //       style: const TextStyle(
-        //           fontSize: 16,
-        //           fontFamily: 'Satoshi, color: Color(0xFFB3B3B3)'),
-        //     )),
-
         Container(
             padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
             child: TextField(
               decoration: const InputDecoration(
-                labelText: 'Course',
+                labelText: 'Title',
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(width: 0.5, color: Colors.black),
                 ),
                 hintStyle: TextStyle(color: Colors.grey),
               ),
-              controller: _coursesController,
+              controller: titlecontroller,
               style: const TextStyle(
                   fontSize: 16,
                   fontFamily: 'Satoshi, color: Color(0xFFB3B3B3)'),
             )),
-
+        Row(
+          children: [
+            Expanded(
+              child: Container(
+                  padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  child: TextField(
+                    decoration: const InputDecoration(
+                      labelText: 'Lecturers Name',
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(width: 0.5, color: Colors.black),
+                      ),
+                      hintStyle: TextStyle(color: Colors.grey),
+                    ),
+                    controller: lecturercontroller,
+                    style: const TextStyle(
+                        fontSize: 16,
+                        fontFamily: 'Satoshi, color: Color(0xFFB3B3B3)'),
+                  )),
+            ),
+            Expanded(
+              child: Container(
+                  padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  child: TextField(
+                    decoration: const InputDecoration(
+                      labelText: ' Venue',
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(width: 0.5, color: Colors.black),
+                      ),
+                      hintStyle: TextStyle(color: Colors.grey),
+                    ),
+                    controller: venuecontroller,
+                    style: const TextStyle(
+                        fontSize: 16,
+                        fontFamily: 'Satoshi, color: Color(0xFFB3B3B3)'),
+                  )),
+            ),
+          ],
+        ),
         Flexible(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -125,16 +142,6 @@ class _TaskScreen2 extends State<TaskScreen2> {
                               fontSize: 16,
                               color: Colors.black),
                         ),
-/*
-              GestureDetector(
-                child: const Text('Tue, 20 Jan',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontFamily: 'Satoshi',
-                          fontSize: 16,
-                          color: Color(0xFF1C8E77))),
-              ),
-*/
                         TextButton(
                           child: Text(sTime,
                               textAlign: TextAlign.end,
@@ -158,7 +165,7 @@ class _TaskScreen2 extends State<TaskScreen2> {
                               if (newTime == null) return;
 
                               setState(() {
-                                newTime;
+                                starttime = newTime;
 
                                 sTime = newTime.toString();
                                 sTime = '${newTime.hour} : ${newTime.minute}';
@@ -176,16 +183,6 @@ class _TaskScreen2 extends State<TaskScreen2> {
                                   fontFamily: 'Satoshi',
                                   fontSize: 16,
                                   color: Colors.black)),
-/*
-            GestureDetector(
-              child: const Text('Tue, 20 Jan',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontFamily: 'Satoshi',
-                        fontSize: 16,
-                        color: Color(0xFF1C8E77))),
-            ),
-*/
                           TextButton(
                             child: Text(mTime,
                                 textAlign: TextAlign.end,
@@ -228,55 +225,6 @@ class _TaskScreen2 extends State<TaskScreen2> {
             ],
           ),
         ),
-
-        // Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-        //   Container(
-        //     padding: const EdgeInsets.only(right: 8),
-        //     height: 19,
-        //     child: Image.asset(
-        //       'svgs/vec.png',
-        //     ),
-        //   ),
-        //   const Text(
-        //     '10 minutes Before',
-        //     style: TextStyle(
-        //       fontSize: 16,
-        //       fontFamily: 'Satoshi',
-        //       color: Color(0xFF03110E),
-        //     ),
-        //   ),
-        //   Expanded(
-        //       child: Row(
-        //     mainAxisAlignment: MainAxisAlignment.end,
-        //     children: [
-        //       Container(
-        //         padding: EdgeInsets.zero,
-        //         child: TextButton(
-        //           onPressed: () {
-        //             showDialog(
-        //                 context: context,
-        //                 builder: (context) => const TopModalSheet());
-        //           },
-        //           child: Icon(Icons.add, color: Theme.of(context).primaryColor),
-        //         ),
-        //       ),
-        //     ],
-        //   ))
-        // ]),
-        // Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-        //   Container(
-        //     padding: const EdgeInsets.only(right: 8),
-        //     height: 19,
-        //     child: Image.asset(
-        //       'svgs/dont repeat.png',
-        //     ),
-        //   ),
-        //   const Text(
-        //     'Dont repeat',
-        //     style: TextStyle(
-        //         fontSize: 16, fontFamily: 'Satoshi', color: Color(0xFF1C8E77)),
-        //   ),
-        // ]),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -323,14 +271,18 @@ class _TaskScreen2 extends State<TaskScreen2> {
                         const EdgeInsets.only(top: 20.0, left: 8.0, right: 8.0),
                     child: ElevatedButton(
                       onPressed: () {
-                        ReadingModel readingModel = ReadingModel(
-                          course: _coursesController.text,
-                          date: mDate,
-                          start_time: sTime,
-                          end_time: mTime,
-                        );
+                        TestModel testModel = TestModel(
+                            course_title: titlecontroller.text,
+                            date: mDate,
+                            start_time: sTime,
+                            end_time: mTime,
+                            // color: 'blue',
+                            venue: venuecontroller.text,
+                            lecturerName: lecturercontroller.text,
+                            color: '',
+                            notification: '');
 
-                        addToFireBase(readingModel, context);
+                        addToFireBase(testModel, context);
                       },
                       style: OutlinedButton.styleFrom(
                         shape: const RoundedRectangleBorder(
@@ -365,7 +317,7 @@ class _TaskScreen2 extends State<TaskScreen2> {
     );
   }
 
-  void addToFireBase(ReadingModel readingModel, BuildContext context) {
-    _getxReadingController.addToFirebase(readingModel, context);
+  void addToFireBase(TestModel testModel, BuildContext context) {
+    _testController.addToFirebase(testModel, context);
   }
 }

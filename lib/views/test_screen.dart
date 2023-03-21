@@ -3,9 +3,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:timely/components/bottom_navigation.dart';
+import 'package:timely/components/new_test_bottom_sheet.dart';
+import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/models/tests_model.dart';
-import '../components/popup_menu_buttons.dart';
-import '../components/new_exam_bottom_sheet.dart';
 import '../constants/menu_padding.dart';
 import '../controllers/test_controller.dart';
 
@@ -41,7 +41,7 @@ class _TestScreenState extends State<TestScreen> {
         onPressed: () {
           showModalBottomSheet(
               context: context,
-              builder: (BuildContext context) => const AddExamBottomSheet());
+              builder: (BuildContext context) => const AddTestBottomSheet());
         },
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.white,

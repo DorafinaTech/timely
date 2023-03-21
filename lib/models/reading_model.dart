@@ -8,7 +8,7 @@ String readingToJson(ReadingModel data) => json.encode(data.toJson());
 class ReadingModel {
   ReadingModel({
     this.id,
-    required this.day,
+    // required this.day,
     required this.course,
     required this.date,
     required this.start_time,
@@ -16,7 +16,7 @@ class ReadingModel {
   });
 
   String? id;
-  final String day;
+  // final String day;
   final String course;
   final String date;
   final String start_time;
@@ -24,7 +24,7 @@ class ReadingModel {
 
   factory ReadingModel.fromJson(Map<String, dynamic> json) => ReadingModel(
         id: json["id"],
-        day: json['day'],
+        // day: json['day'],
         course: json['course'],
         date: json['date'],
         start_time: json['start_time'],
@@ -33,7 +33,7 @@ class ReadingModel {
 
   Map<String, dynamic> toJson() => {
         "id": id,
-        "day": day,
+        // "day": day,
         "course": course,
         "date": date,
         "start_time": start_time,

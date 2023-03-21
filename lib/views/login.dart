@@ -19,7 +19,7 @@ class LoginState extends State<Login> {
 
   final AuthController _authController =
       Get.put<AuthController>(AuthController());
-  bool passwordVisible = false;
+  bool passwordVisible = true;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class LoginState extends State<Login> {
               margin: const EdgeInsets.only(bottom: 25),
               child: const Center(
                 child: Text(
-                  "Log in and Let's get started",
+                  "Login, Let's get started",
                   style: TextStyle(color: Colors.black, fontSize: 25),
                 ),
               ),
@@ -202,28 +202,28 @@ class LoginState extends State<Login> {
           //           ),
           //         ),
           //       ),
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 16),
-            child: Center(
-              child: Row(
-                children: const [
-                  Expanded(
-                    child: Divider(
-                      thickness: 0.5,
-                      color: Colors.black54,
-                    ),
-                  ),
-                  Text('  Or  '),
-                  Expanded(
-                    child: Divider(
-                      thickness: 0.5,
-                      color: Colors.black54,
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ),
+          // Container(
+          //   margin: const EdgeInsets.symmetric(horizontal: 16),
+          //   child: Center(
+          //     child: Row(
+          //       children: const [
+          //         Expanded(
+          //           child: Divider(
+          //             thickness: 0.5,
+          //             color: Colors.black54,
+          //           ),
+          //         ),
+          //         Text('  Or  '),
+          //         Expanded(
+          //           child: Divider(
+          //             thickness: 0.5,
+          //             color: Colors.black54,
+          //           ),
+          //         )
+          //       ],
+          //     ),
+          //   ),
+          // ),
           // Container(
           //   padding: const EdgeInsets.all(10),
           //   child: TextFormField(
@@ -257,7 +257,7 @@ class LoginState extends State<Login> {
           Container(
             padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
             child: TextFormField(
-              obscureText: passwordVisible,
+              obscureText: !passwordVisible,
               controller: _passwordController,
               decoration: InputDecoration(
                 labelText: "Password",
