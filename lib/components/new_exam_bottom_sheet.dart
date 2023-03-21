@@ -18,11 +18,15 @@ class AddExamBottomSheet extends StatefulWidget {
 class _TaskScreen extends State<AddExamBottomSheet> {
   final TestController _testController =
       Get.put<TestController>(TestController());
+  var now = DateTime.now();
 
   final TextEditingController titlecontroller = TextEditingController();
   final TextEditingController lecturercontroller = TextEditingController();
   final TextEditingController venuecontroller = TextEditingController();
 
+
+
+  // print(dateStr);
   String mDate = "Choose Date";
   TimeOfDay? startInitialTime;
 
@@ -150,7 +154,7 @@ class _TaskScreen extends State<AddExamBottomSheet> {
                           TextButton(
                             child: Text(sTime,
                                 textAlign: TextAlign.end,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontFamily: 'Satoshi',
                                     fontSize: 16,
                                     color: Color(0xFF1C8E77))),
