@@ -1,16 +1,30 @@
 import 'dart:developer';
-
+import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:timely/controllers/base_controller.dart';
+import 'package:timely/utilities/route_paths.dart';
 import 'package:timely/utilities/show_error_snackbar.dart';
+import 'package:timely/utilities/show_snackbar.dart';
 
 class AuthController extends BaseController {
+  void listenForAuthChanges() {
+    FirebaseAuth.instance.userChanges().listen((user) {
+      if (user != null) {
+        currentUser.value = user;
+      }
+
+      // signOut();
+    });
+  }
+
   Future<bool> signInwithEmailAndPassword(String email, String password) async {
     try {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
+
+      listenForAuthChanges();
 
       return true;
     } on FirebaseAuthException catch (e) {
@@ -36,6 +50,8 @@ class AuthController extends BaseController {
       var user = credentials.user!;
       await user.updateDisplayName(fullName);
       await user.sendEmailVerification();
+
+      listenForAuthChanges();
 
       return true;
     } on FirebaseAuthException catch (e) {
@@ -78,6 +94,8 @@ class AuthController extends BaseController {
 
       await FirebaseAuth.instance.signInWithCredential(credential);
 
+      listenForAuthChanges();
+
       return true;
 
       // Get.toNamed(RouteNames.homeScreen);
@@ -94,12 +112,17 @@ class AuthController extends BaseController {
     try {
       await FirebaseAuth.instance.signOut();
 
+      showSnackbar("Alert", "You've logged out");
+
+      await Get.toNamed(RoutePaths.login);
+
       return true;
     } catch (e) {
       if (kDebugMode) {
-        debugPrint('Logout failed');
         debugPrint(e.toString());
       }
+
+      showErrorSnackbar("Logout failed");
 
       return false;
     }
@@ -119,9 +142,7 @@ class AuthController extends BaseController {
     }
   }
 
-  User? get currentUser {
-    return FirebaseAuth.instance.currentUser;
-  }
+  var currentUser = FirebaseAuth.instance.currentUser.obs;
 
   Future<bool> passwordReset(String email) async {
     try {

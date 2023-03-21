@@ -43,11 +43,12 @@ class ProfileController extends BaseController {
       await _loadingController.startLoading();
 
       await FirebaseStorage.instance
-          .ref('profilePictures/${_authController.currentUser!.uid}')
+          .ref(
+              'profilePictures/${_authController.currentUser.value?.displayName ?? ''}')
           .putData(await pickedImageFile!.readAsBytes())
           .whenComplete(() async {
         var downloadURL = await FirebaseStorage.instance
-            .ref('profilePictures/${_authController.currentUser!.uid}')
+            .ref('profilePictures/${_authController.currentUser.value?.uid}')
             .getDownloadURL();
 
         debugPrint('New profile picture download URL is: $downloadURL');
@@ -72,37 +73,55 @@ class ProfileController extends BaseController {
 
   Future<void> updateBioData(
       String name, String email, String phoneNumber) async {
+    _loadingController.startLoading();
+
     try {
-      FirebaseAuth.instance.currentUser!.updateDisplayName(name);
-      FirebaseAuth.instance.currentUser!.updateEmail(email);
+      await FirebaseAuth.instance.currentUser!.updateDisplayName(name);
+      await FirebaseAuth.instance.currentUser!.updateEmail(email);
+
+      _authController.currentUser.value = FirebaseAuth.instance.currentUser;
+      _authController.update();
+      update();
 
       showSnackbar('Successful', 'Your profile info has been updated');
 
-      Get.toNamed(RoutePaths.homeScreen);
+      _loadingController.stopLoading();
+
+      await Get.toNamed(RoutePaths.homeScreen);
     } catch (e) {
+      _loadingController.stopLoading();
+
       debugPrint(e.toString());
-      showErrorSnackbar('Unable to update prfile info at this time');
+      // showErrorSnackbar('Unable to update prfile info at this time');
     }
   }
 
   Future<Map> getBioData() async {
     try {
-      var user = FirebaseAuth.instance.currentUser!;
       var bioData = {};
 
-      bioData['name'] = user.displayName ?? '';
-      bioData['email'] = user.email ?? '';
-      bioData['photoURL'] = (user.photoURL != null)
-          ? user.photoURL.obs
-          : currentProfilePictureURL.value;
+      bioData['name'] = _authController.currentUser.value!.displayName ?? '';
+      bioData['email'] = _authController.currentUser.value!.email ?? '';
+      bioData['phoneNumber'] =
+          _authController.currentUser.value!.phoneNumber ?? '';
+      bioData['photoURL'] =
+          (_authController.currentUser.value!.photoURL != null)
+              ? _authController.currentUser.value!.photoURL
+              : currentProfilePictureURL.value;
 
-      currentProfilePictureURL = bioData['photoURL'].obs;
+      currentProfilePictureURL.value = bioData['photoURL'];
+
+      _authController.currentUser.value = FirebaseAuth.instance.currentUser;
+      _authController.update();
       update();
 
       return bioData;
     } catch (exception) {
-      showErrorSnackbar(
-          'Unable to retrive your profile info, please check your network connection');
+      // showErrorSnackbar(
+      //     'Unable to retrive your profile info, please check your network connection');
+
+      debugPrint('\n\n\n\n\n$exception\n\n\n\n\n');
+
       return {};
     }
   }

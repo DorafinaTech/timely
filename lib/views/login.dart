@@ -5,7 +5,6 @@ import 'package:timely/controllers/loading_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
 import 'package:timely/utilities/show_error_snackbar.dart';
 import 'package:timely/utilities/show_snackbar.dart';
-import 'package:timely/views/recover_password.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -17,6 +16,9 @@ class Login extends StatefulWidget {
 class LoginState extends State<Login> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
+  final AuthController _authController =
+      Get.put<AuthController>(AuthController());
   bool passwordVisible = false;
 
   @override
@@ -318,7 +320,7 @@ class LoginState extends State<Login> {
 
                 var userMessage = "";
 
-                AuthController()
+                _authController
                     .signInwithEmailAndPassword(
                         _emailController.value.text.trim(),
                         _passwordController.value.text.trim())

@@ -4,8 +4,6 @@ import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/controllers/profile_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
-import 'package:timely/utilities/show_error_snackbar.dart';
-import 'package:timely/utilities/show_snackbar.dart';
 
 class EditProfileScreen extends StatelessWidget {
   EditProfileScreen({Key? key}) : super(key: key);
@@ -23,6 +21,7 @@ class EditProfileScreen extends StatelessWidget {
       _firstNameController.text = (bioData['name'] as String).split(' ')[0];
       _lastNameController.text = (bioData['name'] as String).split(' ')[1];
       _emailAddressController.text = bioData['email'] as String;
+      _phoneNumberController.text = bioData['phoneNumber'] as String;
     });
 
     return Scaffold(
