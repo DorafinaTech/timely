@@ -5,6 +5,9 @@ import 'package:timely/controllers/exam_controller.dart';
 import 'package:timely/models/exams_model.dart';
 import 'package:timely/utilities/route_paths.dart';
 
+import '../controllers/test_controller.dart';
+import '../models/tests_model.dart';
+
 class AddExamBottomSheet extends StatefulWidget {
   const AddExamBottomSheet({Key? key}) : super(key: key);
 
@@ -13,8 +16,8 @@ class AddExamBottomSheet extends StatefulWidget {
 }
 
 class _TaskScreen extends State<AddExamBottomSheet> {
-  final ExamController _examController =
-      Get.put<ExamController>(ExamController());
+  final TestController _testController =
+      Get.put<TestController>(TestController());
 
   final TextEditingController titlecontroller = TextEditingController();
   final TextEditingController lecturercontroller = TextEditingController();
@@ -275,17 +278,18 @@ class _TaskScreen extends State<AddExamBottomSheet> {
                         const EdgeInsets.only(top: 20.0, left: 8.0, right: 8.0),
                     child: ElevatedButton(
                       onPressed: () {
-                        ExamsModel examModel = ExamsModel(
+                        TestModel testModel = TestModel(
                             course_title: titlecontroller.text,
                             date: mDate,
                             start_time: sTime,
                             end_time: mTime,
                             // color: 'blue',
-                            interval: 'true',
                             venue: venuecontroller.text,
-                            lecturerName: lecturercontroller.text);
+                            lecturerName: lecturercontroller.text,
+                            color: '',
+                            notification: '');
 
-                        addToFireBase(examModel, context);
+                        addToFireBase(testModel, context);
                       },
                       style: OutlinedButton.styleFrom(
                         shape: const RoundedRectangleBorder(
@@ -320,7 +324,7 @@ class _TaskScreen extends State<AddExamBottomSheet> {
     );
   }
 
-  void addToFireBase(ExamsModel examModel, BuildContext context) {
-    _examController.addToFirebase(examModel, context);
+  void addToFireBase(TestModel testModel, BuildContext context) {
+    _testController.addToFirebase(testModel, context);
   }
 }

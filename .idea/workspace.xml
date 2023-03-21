@@ -6,7 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="87ff8109-a765-434f-aea1-98d9d984d7e8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/new_exam_bottom_sheet.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/new_exam_bottom_sheet.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/task_screen2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/task_screen2.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/reading_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/reading_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/reading_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/reading_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/profile_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/reading_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/reading_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:timely/controllers/reading_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
 
 import '../models/reading_model.dart';
@@ -21,6 +22,9 @@ class _TaskScreen2 extends State<TaskScreen2> {
   final TextEditingController _coursesController = TextEditingController();
   final TextEditingController _readingController = TextEditingController();
 
+  final ReadingController _getxReadingController =
+      Get.put<ReadingController>(ReadingController());
+
   String mDate = "Choose Date";
   TimeOfDay? startInitialTime;
 
@@ -30,7 +34,7 @@ class _TaskScreen2 extends State<TaskScreen2> {
 
   // EndTime
   String mTime = "Choose Time";
-  TimeOfDay endtime = TimeOfDay(hour: 10, minute: 30);
+  TimeOfDay endtime = const TimeOfDay(hour: 10, minute: 30);
 
   @override
   Widget build(BuildContext context) {
@@ -44,9 +48,9 @@ class _TaskScreen2 extends State<TaskScreen2> {
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <
           Widget>[
         Container(
-            padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+            padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
             child: TextField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Day',
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(width: 0.5, color: Colors.black),
@@ -60,9 +64,9 @@ class _TaskScreen2 extends State<TaskScreen2> {
             )),
 
         Container(
-            padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+            padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
             child: TextField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Course',
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(width: 0.5, color: Colors.black),
@@ -81,8 +85,8 @@ class _TaskScreen2 extends State<TaskScreen2> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 10),
-                  margin: EdgeInsets.symmetric(horizontal: 8),
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  margin: const EdgeInsets.symmetric(horizontal: 8),
                   child: TextButton(
                       onPressed: () async {
                         DateTime? pickedDate = await showDatePicker(
@@ -135,7 +139,7 @@ class _TaskScreen2 extends State<TaskScreen2> {
                           TextButton(
                             child: Text(sTime,
                                 textAlign: TextAlign.end,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontFamily: 'Satoshi',
                                     fontSize: 16,
                                     color: Color(0xFF1C8E77))),
@@ -187,7 +191,7 @@ class _TaskScreen2 extends State<TaskScreen2> {
                             TextButton(
                               child: Text(mTime,
                                   textAlign: TextAlign.end,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontFamily: 'Satoshi',
                                       fontSize: 16,
                                       color: Color(0xFF1C8E77))),
@@ -324,14 +328,18 @@ class _TaskScreen2 extends State<TaskScreen2> {
                       onPressed: () {
                         ReadingModel readingModel = ReadingModel(
                           course: _readingController.text,
-                          // date: mDate,
+                          // venue: '',
+                          date: mDate,
+                          day: _daysController.text,
                           start_time: sTime,
+                          // notification: 'false',
                           end_time: mTime,
-                          day: 'day',
-                          date: 'date',
+                          // day: 'day',
+                          // date: 'date',
+                          // color: 'blue');
+                          // color: 'blue',
+                          // interval: 'true',);
                         );
-                        // color: 'blue',
-                        // interval: 'true',);
 
                         addToFireBase(readingModel, context);
                       },
@@ -369,21 +377,6 @@ class _TaskScreen2 extends State<TaskScreen2> {
   }
 
   void addToFireBase(ReadingModel readingModel, BuildContext context) {
-//     final readingRef =
-//         FirebaseFirestore.instance.collection('readingSchedule').doc();
-//     readingModel.id = readingRef.id;
-//     final data = readingModel.toJson();
-//     readingRef.set(data).whenComplete(() {
-//       log('reading inserted');
-//
-//       showSnackbar('Successful', 'your Task has been added successfully');
-//
-//       Future.delayed(Duration(seconds: 1)).then((value) {
-//         Navigator.pop(Get.context!);
-//       });
-//     });
-//   }
-// }
-
+    _getxReadingController.addToFirebase(readingModel, context);
   }
 }

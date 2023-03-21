@@ -22,6 +22,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   String userName = '';
   String userEmail = '';
 
+  final AuthController _authController =
+      Get.put<AuthController>(AuthController());
+
   final ProfileController _profileController =
       Get.put<ProfileController>(ProfileController());
 
@@ -79,12 +82,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     backgroundColor: Get.theme.primaryColor,
                   )),
               Text(
-                userName,
+                _authController.currentUser!.displayName!,
                 style: const TextStyle(
                     fontFamily: 'Satoshi', fontSize: 16, color: Colors.black),
               ),
               Text(
-                userEmail,
+                _authController.currentUser!.email!,
                 style: const TextStyle(
                     fontFamily: 'Satoshi', fontSize: 16, color: Colors.black54),
               ),
