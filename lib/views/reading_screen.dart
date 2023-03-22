@@ -1,7 +1,4 @@
-import 'dart:convert';
-
 import 'package:calendar_view/calendar_view.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:timely/components/bottom_navigation.dart';
 import 'package:timely/components/popup_menu_buttons.dart';
@@ -10,6 +7,7 @@ import 'package:timely/constants/menu_padding.dart';
 import 'package:intl/intl.dart';
 import '../controllers/reading_controller.dart';
 import 'package:timely/models/reading_model.dart';
+import 'package:get/get.dart';
 
 class ReadingScreen extends StatefulWidget {
   const ReadingScreen({Key? key}) : super(key: key);
@@ -23,7 +21,8 @@ class _ReadingScreenState extends State<ReadingScreen> {
   var dateFormatter = DateFormat('yyyy-MM-dd');
 
   String todaysDate = '';
-  final EventController _readingEventController = EventController();
+  final EventController<ReadingModel> _readingEventController =
+      EventController<ReadingModel>();
   final ReadingController _readingController = ReadingController();
 
   @override
@@ -138,11 +137,95 @@ class _ReadingScreenState extends State<ReadingScreen> {
 
           debugPrint('Events to be added: $eventsToBeAdded');
 
-          return WeekView(
+          return WeekView<ReadingModel>(
             controller: _readingEventController,
+            onEventTap: (events, dateTime) => onEventTap(events, dateTime),
           );
         },
       ),
     );
   }
+
+  //
+  void onEventTap(
+      List<CalendarEventData<ReadingModel>> events, DateTime dateTime) {
+    Get.bottomSheet(
+        Container(
+          padding: const EdgeInsets.all(20),
+          width: Get.width,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              ...events.map((e) => Card(
+                    color: Colors.orangeAccent,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              const Text(
+                                'Title: ',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                              Text(
+                                e.title,
+                                style: const TextStyle(color: Colors.black),
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              const Text(
+                                'Date: ',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                              Text(
+                                e.event!.date.toString(),
+                                style: const TextStyle(color: Colors.black),
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              const Text(
+                                'Start time: ',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                              Text(
+                                e.event!.start_time.toString(),
+                                style: const TextStyle(color: Colors.black),
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              const Text(
+                                'End time: ',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                              Text(
+                                e.event!.end_time.toString(),
+                                style: const TextStyle(color: Colors.black),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ))
+            ],
+          ),
+        ),
+        backgroundColor: Colors.white);
+  }
+  //
 }

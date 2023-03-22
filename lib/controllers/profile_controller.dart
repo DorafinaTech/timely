@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
@@ -43,8 +41,7 @@ class ProfileController extends BaseController {
       await _loadingController.startLoading();
 
       await FirebaseStorage.instance
-          .ref(
-              'profilePictures/${_authController.currentUser.value?.displayName ?? ''}')
+          .ref('profilePictures/${_authController.currentUser.value?.uid}')
           .putData(await pickedImageFile!.readAsBytes())
           .whenComplete(() async {
         var downloadURL = await FirebaseStorage.instance
@@ -54,8 +51,8 @@ class ProfileController extends BaseController {
         debugPrint('New profile picture download URL is: $downloadURL');
 
         await FirebaseAuth.instance.currentUser!.updatePhotoURL(downloadURL);
-
         currentProfilePictureURL.value = downloadURL;
+        _authController.update();
         update();
 
         debugPrint('Updated');
@@ -65,7 +62,7 @@ class ProfileController extends BaseController {
         showSnackbar('Success', 'Your profile picture has been updated');
       });
     } catch (e) {
-      _loadingController.stopLoading();
+      await _loadingController.stopLoading();
       showErrorSnackbar('Unable to update profile picture');
       debugPrint('Failed to update profile photo: $e');
     }
@@ -117,9 +114,6 @@ class ProfileController extends BaseController {
 
       return bioData;
     } catch (exception) {
-      // showErrorSnackbar(
-      //     'Unable to retrive your profile info, please check your network connection');
-
       debugPrint('\n\n\n\n\n$exception\n\n\n\n\n');
 
       return {};

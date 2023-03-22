@@ -2,14 +2,17 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:timely/controllers/base_controller.dart';
 import 'package:timely/models/notemodel.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:timely/utilities/show_error_snackbar.dart';
 import 'package:timely/utilities/show_snackbar.dart';
-import 'package:firebase_storage/firebase_storage.dart';
+import 'package:get/get.dart';
+import 'package:timely/controllers/auth_controller.dart';
+import 'package:timely/utilities/route_paths.dart';
 
 class NoteController extends BaseController {
   @override
   String get collectionName => 'notes';
+
+  final AuthController _authController = AuthController();
 
   Future<void> deleteNote(NotesModel note) async {
     try {
@@ -37,7 +40,28 @@ class NoteController extends BaseController {
   Future<void> addNewNote(String title, String body) async {
     try {
       var note = NotesModel(
-          userID: FirebaseAuth.instance.currentUser!.uid,
+          userID: _authController.currentUser.value!.uid,
+          time: DateTime.now(),
+          title: title,
+          body: body);
+
+      await FirebaseFirestore.instance
+          .collection(collectionName)
+          .add(note.toJson());
+
+      showSnackbar('Hurray', 'Your note has been saved');
+
+      await Get.toNamed(RoutePaths.notescreen);
+    } catch (exception) {
+      showErrorSnackbar(
+          'An error occurred while trying to save your note: $exception');
+    }
+  }
+
+  Future<void> updateNote(String title, String body) async {
+    try {
+      var note = NotesModel(
+          userID: _authController.currentUser.value!.uid,
           time: DateTime.now(),
           title: title,
           body: body);
@@ -53,26 +77,10 @@ class NoteController extends BaseController {
     }
   }
 
-  Future<void> updateNote(String title, String body) async {
-    try {
-      var note = NotesModel(
-          userID: FirebaseAuth.instance.currentUser!.uid,
-          time: DateTime.now(),
-          title: title,
-          body: body);
-
-      await FirebaseFirestore.instance.collection('notes').add(note.toJson());
-
-      showSnackbar('Hurray', 'Your note has been saved');
-    } catch (exception) {
-      showErrorSnackbar(
-          'An error occurred while trying to save your note: $exception');
-    }
-  }
-
   Stream<QuerySnapshot> getSnapshots() {
     return FirebaseFirestore.instance
         .collection(collectionName)
+        .where('userID', isEqualTo: _authController.currentUser.value!.uid)
         .orderBy('time', descending: true)
         .snapshots();
   }

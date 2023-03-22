@@ -1,17 +1,30 @@
 import 'dart:developer';
-
+import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:timely/controllers/auth_controller.dart';
+import 'package:timely/controllers/loading_controller.dart';
+import 'package:timely/utilities/route_paths.dart';
+import 'package:timely/utilities/show_error_snackbar.dart';
 import 'package:timely/views/notes.dart';
-
 import '../models/notemodel.dart';
+import 'package:timely/controllers/note_controller.dart';
 
 class UpdateNote extends StatelessWidget {
   late final NotesModel note;
+
   final TextEditingController titleController = TextEditingController();
   final TextEditingController timeController = TextEditingController();
   final TextEditingController bodyController = TextEditingController();
   final FocusNode focusNode = FocusNode();
+
+  final AuthController _authController =
+      Get.put<AuthController>(AuthController());
+
+  final LoadingControler _lodingController =
+      Get.put<LoadingControler>(LoadingControler());
+
+  final NoteController _noteController = NoteController();
 
   UpdateNote({super.key, required this.note});
 
@@ -20,6 +33,7 @@ class UpdateNote extends StatelessWidget {
     titleController.text = note.title;
     // timeController.text = note.time;
     bodyController.text = note.body;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Edit note'),
@@ -44,38 +58,56 @@ class UpdateNote extends StatelessWidget {
               children: [
                 ElevatedButton(
                     onPressed: () {
-                      //
-                      // ToDO: Update a note
-                      Notes updatedNote = note as Notes;
-                      //
-                      final collectionReference =
-                          FirebaseFirestore.instance.collection('note');
-                      collectionReference
-                          .doc(updatedNote as String?)
-                          .update(updatedNote as Map<Object, Object?>)
-                          .whenComplete(() {
-                        log('Note Updated');
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Notes(),
-                            ));
-                      });
-                      //
+                      _lodingController.startLoading();
+
+                      try {
+                        NotesModel updatedNote = NotesModel(
+                            userID: _authController.currentUser.value!.uid,
+                            time: DateTime.now(),
+                            title: titleController.text,
+                            body: bodyController.text);
+
+                        final collectionReference = FirebaseFirestore.instance
+                            .collection(_noteController.collectionName);
+
+                        FirebaseFirestore.instance
+                            .collection(_noteController.collectionName)
+                            .where('userID',
+                                isEqualTo:
+                                    _authController.currentUser.value!.uid)
+                            .where('title', isEqualTo: note.title)
+                            .get()
+                            .then((snapshot) {
+                          var ref = snapshot.docs[0].id;
+
+                          collectionReference
+                              .doc(ref)
+                              .update(updatedNote.toJson())
+                              .whenComplete(() {
+                            log('Note Updated');
+
+                            _lodingController.stopLoading();
+
+                            if (Navigator.canPop(Get.context!)) {
+                              Navigator.pop(Get.context!);
+                            } else {
+                              Get.toNamed(RoutePaths.notescreen);
+                            }
+                          }).onError((error, stackTrace) {
+                            _lodingController.stopLoading();
+                            showErrorSnackbar('Could not update note :-(');
+                            debugPrint(error.toString());
+                          });
+
+                          //
+                        });
+                      } catch (e) {
+                        _lodingController.stopLoading();
+                        showErrorSnackbar('Could not update note :-(');
+                        debugPrint(e.toString());
+                      }
                     },
                     child: const Text('Update')),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blueGrey),
-                    onPressed: () {
-                      //
-                      titleController.text = '';
-                      timeController.text = '';
-                      bodyController.text = '';
-                      focusNode.requestFocus();
-                      //
-                    },
-                    child: const Text('Corrected')),
               ],
             )
           ],

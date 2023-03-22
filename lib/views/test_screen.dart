@@ -8,6 +8,7 @@ import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/models/tests_model.dart';
 import '../constants/menu_padding.dart';
 import '../controllers/test_controller.dart';
+import 'package:get/get.dart';
 
 class TestScreen extends StatefulWidget {
   const TestScreen({Key? key}) : super(key: key);
@@ -22,7 +23,8 @@ class _TestScreenState extends State<TestScreen> {
   var dateFormatter = DateFormat('yyyy-MM-dd');
 
   String todaysDate = '';
-  final EventController _testEventController = EventController();
+  final EventController<TestModel> _testEventController =
+      EventController<TestModel>();
   final TestController _testController = TestController();
 
   @override
@@ -136,11 +138,110 @@ class _TestScreenState extends State<TestScreen> {
           _testEventController.removeWhere((element) => true);
           _testEventController.addAll(eventsToBeAdded);
 
-          return WeekView(
+          return WeekView<TestModel>(
             controller: _testEventController,
+            onEventTap: (events, dateTime) => onEventTap(events, dateTime),
           );
         },
       ),
     );
   }
+
+  //
+
+  void onEventTap(
+      List<CalendarEventData<TestModel>> events, DateTime dateTime) {
+    Get.bottomSheet(
+        Container(
+          padding: const EdgeInsets.all(20),
+          width: Get.width,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              ...events.map((e) => Card(
+                    color: Colors.orangeAccent,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              const Text(
+                                'Title: ',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                              Text(
+                                e.title,
+                                style: const TextStyle(color: Colors.black),
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              const Text(
+                                'Date: ',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                              Text(
+                                e.event!.date.toString(),
+                                style: const TextStyle(color: Colors.black),
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              const Text(
+                                'Start time: ',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                              Text(
+                                e.event!.start_time.toString(),
+                                style: const TextStyle(color: Colors.black),
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              const Text(
+                                'End time: ',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                              Text(
+                                e.event!.end_time.toString(),
+                                style: const TextStyle(color: Colors.black),
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              const Text(
+                                'Lecturer name: ',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                              Text(
+                                e.event!.lecturerName,
+                                style: const TextStyle(color: Colors.black),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ))
+            ],
+          ),
+        ),
+        backgroundColor: Colors.white);
+  }
+  //
 }
