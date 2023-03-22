@@ -144,33 +144,33 @@ class RegisterState extends State<Register> {
             //     ),
             //   ),
             // ),
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 16),
-              child: Center(
-                child: Row(
-                  children: const [
-                    Expanded(
-                      child: Divider(
-                        thickness: 0.5,
-                        color: Colors.black,
-                      ),
-                    ),
-                    Text('  Or  '),
-                    Expanded(
-                      child: Divider(
-                        thickness: 0.5,
-                        color: Colors.black,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
+            // Container(
+            //   margin: const EdgeInsets.symmetric(horizontal: 16),
+            //   child: Center(
+            //     child: Row(
+            //       children: const [
+            //         Expanded(
+            //           child: Divider(
+            //             thickness: 0.5,
+            //             color: Colors.black,
+            //           ),
+            //         ),
+            //         Text('  Or  '),
+            //         Expanded(
+            //           child: Divider(
+            //             thickness: 0.5,
+            //             color: Colors.black,
+            //           ),
+            //         )
+            //       ],
+            //     ),
+            //   ),
+            // ),
             Container(
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: TextFormField(
                 controller: _firstAndNameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: "First and last Name",
                   border: OutlineInputBorder(
                       //     borderRadius: BorderRadius.circular(30),
@@ -190,7 +190,7 @@ class RegisterState extends State<Register> {
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: TextFormField(
                 controller: _emailController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: "Email Address",
                   border: OutlineInputBorder(
                       //     borderRadius: BorderRadius.circular(30),
@@ -210,7 +210,7 @@ class RegisterState extends State<Register> {
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: TextFormField(
                 controller: _phoneNumberController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: "start with your country code (+234)",
                   border: OutlineInputBorder(
                       //     borderRadius: BorderRadius.circular(30),
@@ -236,7 +236,7 @@ class RegisterState extends State<Register> {
                   // labelText: "Password",
                   helperText: "Password must contain special Characters",
                   hintStyle: const TextStyle(color: Colors.black54),
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                   suffixIcon: IconButton(
                     color: Colors.teal.shade200,
                     icon: Icon(passwordVisible

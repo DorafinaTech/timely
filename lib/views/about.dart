@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 import '../components/bottom_navigation.dart';
 import '../components/popup_menu_buttons.dart';
 import '../constants/menu_padding.dart';
@@ -204,12 +205,17 @@ class About extends StatelessWidget {
                           height: 20,
                           width: 20,
                         ),
-                        Text(
-                          'Share',
-                          style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 16,
-                            fontFamily: 'Satoshi',
+                        InkWell(
+                          onTap: (){
+                            Share.share('check out this ');
+                          },
+                          child: Text(
+                            'Share',
+                            style: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              fontSize: 16,
+                              fontFamily: 'Satoshi',
+                            ),
                           ),
                         )
                       ],

@@ -20,7 +20,7 @@ class TaskScreen2 extends StatefulWidget {
 class _TaskScreen2 extends State<TaskScreen2> {
   final TextEditingController _daysController = TextEditingController();
   final TextEditingController _coursesController = TextEditingController();
-  final TextEditingController _readingController = TextEditingController();
+  // final TextEditingController _readingController = TextEditingController();
 
   final ReadingController _getxReadingController =
       Get.put<ReadingController>(ReadingController());
@@ -48,21 +48,21 @@ class _TaskScreen2 extends State<TaskScreen2> {
       ),
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <
           Widget>[
-        Container(
-            padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-            child: TextField(
-              decoration: const InputDecoration(
-                labelText: 'Day',
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(width: 0.5, color: Colors.black),
-                ),
-                hintStyle: TextStyle(color: Colors.grey),
-              ),
-              controller: _daysController,
-              style: const TextStyle(
-                  fontSize: 16,
-                  fontFamily: 'Satoshi, color: Color(0xFFB3B3B3)'),
-            )),
+        // Container(
+        //     padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+        //     child: TextField(
+        //       decoration: const InputDecoration(
+        //         labelText: 'Day',
+        //         enabledBorder: UnderlineInputBorder(
+        //           borderSide: BorderSide(width: 0.5, color: Colors.black),
+        //         ),
+        //         hintStyle: TextStyle(color: Colors.grey),
+        //       ),
+        //       controller: _daysController,
+        //       style: const TextStyle(
+        //           fontSize: 16,
+        //           fontFamily: 'Satoshi, color: Color(0xFFB3B3B3)'),
+        //     )),
 
         Container(
             padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
@@ -81,104 +81,51 @@ class _TaskScreen2 extends State<TaskScreen2> {
             )),
 
         Flexible(
-          child: Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  margin: const EdgeInsets.symmetric(horizontal: 8),
-                  child: TextButton(
-                      onPressed: () async {
-                        DateTime? pickedDate = await showDatePicker(
-                            context: context,
-                            initialDate: DateTime.now(),
-                            firstDate: DateTime(1950),
-                            //DateTime.now() - not to allow to choose before today.
-                            lastDate: DateTime(2100));
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                margin: const EdgeInsets.symmetric(horizontal: 8),
+                child: TextButton(
+                    onPressed: () async {
+                      DateTime? pickedDate = await showDatePicker(
+                          context: context,
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime(1950),
+                          //DateTime.now() - not to allow to choose before today.
+                          lastDate: DateTime(2100));
 
-                        if (pickedDate != null) {
-                          debugPrint(pickedDate
-                              .toString()); //pickedDate output format => 2021-03-10 00:00:00.000
-                          String formattedDate =
-                              // DateFormat('yyyy-MM-dd').format(pickedDate);
-                              DateFormat('dd-MM-yyyy').format(pickedDate);
+                      if (pickedDate != null) {
+                        debugPrint(pickedDate
+                            .toString()); //pickedDate output format => 2021-03-10 00:00:00.000
+                        String formattedDate =
+                            // DateFormat('yyyy-MM-dd').format(pickedDate);
+                            DateFormat('dd-MM-yyyy').format(pickedDate);
 
-                          debugPrint(
-                              formattedDate); //formatted date output using intl package =>  2021-03-16
-                          setState(() {
-                            mDate =
-                                formattedDate; //set output date to TextField value.
-                          });
-                        } else {}
-                      },
-                      child: Text(mDate)),
-                ),
-                Flexible(
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          const Text(
-                            'Start Time:',
-                            style: TextStyle(
-                                fontFamily: 'Satoshi',
-                                fontSize: 16,
-                                color: Colors.black),
-                          ),
-/*
-                GestureDetector(
-                  child: const Text('Tue, 20 Jan',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontFamily: 'Satoshi',
-                            fontSize: 16,
-                            color: Color(0xFF1C8E77))),
-                ),
-*/
-                          TextButton(
-                            child: Text(sTime,
-                                textAlign: TextAlign.end,
-                                style: const TextStyle(
-                                    fontFamily: 'Satoshi',
-                                    fontSize: 16,
-                                    color: Color(0xFF1C8E77))),
-                            onPressed: () async {
-                              {
-                                TimeOfDay? newTime = await showTimePicker(
-                                  context: context,
-                                  initialTime: starttime,
-                                  builder:
-                                      (BuildContext context, Widget? child) {
-                                    return MediaQuery(
-                                      data: MediaQuery.of(context).copyWith(
-                                          alwaysUse24HourFormat: true),
-                                      child: child!,
-                                    );
-                                  },
-                                );
-                                if (newTime == null) return;
-
-                                setState(() {
-                                  newTime;
-
-                                  sTime = newTime.toString();
-                                  sTime = '${newTime.hour} : ${newTime.minute}';
-                                });
-                              }
-                            },
-                          ),
-                        ],
-                      ),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            const Text('End Time:',
-                                style: TextStyle(
-                                    fontFamily: 'Satoshi',
-                                    fontSize: 16,
-                                    color: Colors.black)),
+                        debugPrint(
+                            formattedDate); //formatted date output using intl package =>  2021-03-16
+                        setState(() {
+                          mDate =
+                              formattedDate; //set output date to TextField value.
+                        });
+                      } else {}
+                    },
+                    child: Text(mDate)),
+              ),
+              Flexible(
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        const Text(
+                          'Start Time:',
+                          style: TextStyle(
+                              fontFamily: 'Satoshi',
+                              fontSize: 16,
+                              color: Colors.black),
+                        ),
 /*
               GestureDetector(
                 child: const Text('Tue, 20 Jan',
@@ -189,47 +136,97 @@ class _TaskScreen2 extends State<TaskScreen2> {
                           color: Color(0xFF1C8E77))),
               ),
 */
-                            TextButton(
-                              child: Text(mTime,
-                                  textAlign: TextAlign.end,
-                                  style: const TextStyle(
-                                      fontFamily: 'Satoshi',
-                                      fontSize: 16,
-                                      color: Color(0xFF1C8E77))),
-                              onPressed: () async {
-                                {
-                                  {
-                                    TimeOfDay? newTime = await showTimePicker(
-                                      context: context,
-                                      initialTime: endtime,
-                                      builder: (BuildContext context,
-                                          Widget? child) {
-                                        return MediaQuery(
-                                          data: MediaQuery.of(context).copyWith(
-                                              alwaysUse24HourFormat: true),
-                                          child: child!,
-                                        );
-                                      },
-                                    );
-                                    if (newTime == null) return;
+                        TextButton(
+                          child: Text(sTime,
+                              textAlign: TextAlign.end,
+                              style: const TextStyle(
+                                  fontFamily: 'Satoshi',
+                                  fontSize: 16,
+                                  color: Color(0xFF1C8E77))),
+                          onPressed: () async {
+                            {
+                              TimeOfDay? newTime = await showTimePicker(
+                                context: context,
+                                initialTime: starttime,
+                                builder: (BuildContext context, Widget? child) {
+                                  return MediaQuery(
+                                    data: MediaQuery.of(context)
+                                        .copyWith(alwaysUse24HourFormat: true),
+                                    child: child!,
+                                  );
+                                },
+                              );
+                              if (newTime == null) return;
 
-                                    setState(() {
-                                      endtime = newTime;
+                              setState(() {
+                                newTime;
 
-                                      mTime = newTime.toString();
-                                      mTime =
-                                          '${newTime.hour} : ${newTime.minute}';
-                                    });
-                                  }
-                                }
-                              },
-                            ),
-                          ]),
-                    ],
-                  ),
-                )
-              ],
+                                sTime = newTime.toString();
+                                sTime = '${newTime.hour} : ${newTime.minute}';
+                              });
+                            }
+                          },
+                        ),
+                      ],
+                    ),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          const Text('End Time:',
+                              style: TextStyle(
+                                  fontFamily: 'Satoshi',
+                                  fontSize: 16,
+                                  color: Colors.black)),
+/*
+            GestureDetector(
+              child: const Text('Tue, 20 Jan',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontFamily: 'Satoshi',
+                        fontSize: 16,
+                        color: Color(0xFF1C8E77))),
             ),
+*/
+                          TextButton(
+                            child: Text(mTime,
+                                textAlign: TextAlign.end,
+                                style: const TextStyle(
+                                    fontFamily: 'Satoshi',
+                                    fontSize: 16,
+                                    color: Color(0xFF1C8E77))),
+                            onPressed: () async {
+                              {
+                                {
+                                  TimeOfDay? newTime = await showTimePicker(
+                                    context: context,
+                                    initialTime: endtime,
+                                    builder:
+                                        (BuildContext context, Widget? child) {
+                                      return MediaQuery(
+                                        data: MediaQuery.of(context).copyWith(
+                                            alwaysUse24HourFormat: true),
+                                        child: child!,
+                                      );
+                                    },
+                                  );
+                                  if (newTime == null) return;
+
+                                  setState(() {
+                                    endtime = newTime;
+
+                                    mTime = newTime.toString();
+                                    mTime =
+                                        '${newTime.hour} : ${newTime.minute}';
+                                  });
+                                }
+                              }
+                            },
+                          ),
+                        ]),
+                  ],
+                ),
+              )
+            ],
           ),
         ),
 
@@ -328,18 +325,10 @@ class _TaskScreen2 extends State<TaskScreen2> {
                     child: ElevatedButton(
                       onPressed: () {
                         ReadingModel readingModel = ReadingModel(
-                          course: _readingController.text,
-                          // venue: '',
+                          course: _coursesController.text,
                           date: mDate,
-                          day: _daysController.text,
                           start_time: sTime,
-                          // notification: 'false',
                           end_time: mTime,
-                          // day: 'day',
-                          // date: 'date',
-                          // color: 'blue');
-                          // color: 'blue',
-                          // interval: 'true',);
                         );
 
                         addToFireBase(readingModel, context);

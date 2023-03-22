@@ -55,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                         backgroundColor: Get.theme.primaryColor,
                       )),
                   title: Text(
-                    'Hey, ${authController.currentUser?.displayName!}',
+                    'Hey, ${authController.currentUser.value?.displayName ?? ""}',
                     style: const TextStyle(fontFamily: 'Satohi', fontSize: 16),
                   ),
                   subtitle: const Text(

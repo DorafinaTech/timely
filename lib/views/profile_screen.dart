@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:timely/components/bottom_navigation.dart';
@@ -6,8 +5,7 @@ import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/controllers/profile_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
-import 'package:timely/utilities/show_error_snackbar.dart';
-import 'package:timely/utilities/show_snackbar.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../components/popup_menu_buttons.dart';
 
@@ -19,9 +17,6 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  String userName = '';
-  String userEmail = '';
-
   final AuthController _authController =
       Get.put<AuthController>(AuthController());
 
@@ -30,12 +25,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   void initState() {
-    _profileController.getBioData().then((bioData) {
-      setState(() {
-        userName = bioData['name'];
-        userEmail = bioData['email'];
-      });
-    });
+    _profileController.getBioData();
 
     super.initState();
   }
@@ -82,12 +72,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     backgroundColor: Get.theme.primaryColor,
                   )),
               Text(
-                _authController.currentUser!.displayName!,
+                _authController.currentUser.value?.displayName! ?? '',
                 style: const TextStyle(
                     fontFamily: 'Satoshi', fontSize: 16, color: Colors.black),
               ),
               Text(
-                _authController.currentUser!.email!,
+                _authController.currentUser.value?.email! ?? '',
                 style: const TextStyle(
                     fontFamily: 'Satoshi', fontSize: 16, color: Colors.black54),
               ),
@@ -168,6 +158,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
               ListTile(
+                onTap: () {
+                  Share.share('check out this ');
+                },
                 contentPadding:
                     const EdgeInsets.symmetric(vertical: 4, horizontal: 20),
                 leading: Container(
@@ -178,6 +171,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     width: 20,
                   ),
                 ),
+
                 title: const Text(
                   'Share',
                   style: TextStyle(
@@ -205,18 +199,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
                 onPressed: () async {
-                  AuthController().signOut().then((value) {
-                    if (value) {
-                      showSnackbar("Alert", "You've logged out");
-                      Get.toNamed(RoutePaths.login);
-                    } else {
-                      showErrorSnackbar("Logout failed");
-                    }
-                  }).catchError((error) {
-                    showErrorSnackbar("Logout failed");
-
-                    debugPrint(error);
-                  });
+                  await _authController.signOut();
                 },
               )
             ],
@@ -225,4 +208,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
   }
+}
+
+class _onShare {
+
 }

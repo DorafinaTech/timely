@@ -1,31 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:timely/controllers/test_controller.dart';
 import 'package:intl/intl.dart';
-import 'package:timely/controllers/exam_controller.dart';
-import 'package:timely/models/exams_model.dart';
+import '../models/tests_model.dart';
 
-class AddExamBottomSheet extends StatefulWidget {
-  const AddExamBottomSheet({Key? key}) : super(key: key);
+class AddTestBottomSheet extends StatefulWidget {
+  const AddTestBottomSheet({Key? key}) : super(key: key);
 
   @override
-  State<AddExamBottomSheet> createState() => _AddExamBottomSheet();
+  State<AddTestBottomSheet> createState() => _AddTestBottomSheet();
 }
-//
-// class _TaskScreen extends State<AddExamBottomSheet> {
-//   final TestController _testController =
-//       Get.put<TestController>(TestController());
-//   var now = DateTime.now();
-class _AddExamBottomSheet extends State<AddExamBottomSheet> {
-  final ExamController _examController =
-      Get.put<ExamController>(ExamController());
+
+class _AddTestBottomSheet extends State<AddTestBottomSheet> {
+  final TestController _testController =
+      Get.put<TestController>(TestController());
 
   final TextEditingController titlecontroller = TextEditingController();
   final TextEditingController lecturercontroller = TextEditingController();
   final TextEditingController venuecontroller = TextEditingController();
 
-
-
-  // print(dateStr);
   String mDate = "Choose Date";
   TimeOfDay? startInitialTime;
 
@@ -278,18 +271,18 @@ class _AddExamBottomSheet extends State<AddExamBottomSheet> {
                         const EdgeInsets.only(top: 20.0, left: 8.0, right: 8.0),
                     child: ElevatedButton(
                       onPressed: () {
-                        if (titlecontroller.text.isEmpty||venuecontroller.text.isEmpty||lecturercontroller.text.isEmpty||)
-                        ExamsModel testsModel = ExamsModel(
-                          course_title: titlecontroller.text,
-                          date: mDate,
-                          start_time: sTime,
-                          end_time: mTime,
-                          venue: venuecontroller.text,
-                          lecturerName: lecturercontroller.text,
-                          interval: '',
-                        );
+                        TestModel testModel = TestModel(
+                            course_title: titlecontroller.text,
+                            date: mDate,
+                            start_time: sTime,
+                            end_time: mTime,
+                            // color: 'blue',
+                            venue: venuecontroller.text,
+                            lecturerName: lecturercontroller.text,
+                            color: '',
+                            notification: '');
 
-                        addToFireBase(testsModel, context);
+                        addToFireBase(testModel, context);
                       },
                       style: OutlinedButton.styleFrom(
                         shape: const RoundedRectangleBorder(
@@ -324,7 +317,7 @@ class _AddExamBottomSheet extends State<AddExamBottomSheet> {
     );
   }
 
-  void addToFireBase(ExamsModel testModel, BuildContext context) {
-    _examController.addToFirebase(testModel, context);
+  void addToFireBase(TestModel testModel, BuildContext context) {
+    _testController.addToFirebase(testModel, context);
   }
 }

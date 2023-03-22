@@ -51,6 +51,8 @@ dependencies:
   image_picker: ^0.8.7
   image_picker_for_web: ^2.1.12
   firebase_storage: ^11.0.16
+  package_name: ^0.0.3
+  share_plus: ^6.3.1
 
 
 

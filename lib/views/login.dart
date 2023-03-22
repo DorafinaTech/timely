@@ -5,7 +5,6 @@ import 'package:timely/controllers/loading_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
 import 'package:timely/utilities/show_error_snackbar.dart';
 import 'package:timely/utilities/show_snackbar.dart';
-import 'package:timely/views/recover_password.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -17,7 +16,10 @@ class Login extends StatefulWidget {
 class LoginState extends State<Login> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  bool passwordVisible = false;
+
+  final AuthController _authController =
+      Get.put<AuthController>(AuthController());
+  bool passwordVisible = true;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class LoginState extends State<Login> {
               margin: const EdgeInsets.only(bottom: 25),
               child: const Center(
                 child: Text(
-                  "Log in and Let's get started",
+                  "Login, Let's get started",
                   style: TextStyle(color: Colors.black, fontSize: 25),
                 ),
               ),
@@ -200,28 +202,28 @@ class LoginState extends State<Login> {
           //           ),
           //         ),
           //       ),
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 16),
-            child: Center(
-              child: Row(
-                children: const [
-                  Expanded(
-                    child: Divider(
-                      thickness: 0.5,
-                      color: Colors.black54,
-                    ),
-                  ),
-                  Text('  Or  '),
-                  Expanded(
-                    child: Divider(
-                      thickness: 0.5,
-                      color: Colors.black54,
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ),
+          // Container(
+          //   margin: const EdgeInsets.symmetric(horizontal: 16),
+          //   child: Center(
+          //     child: Row(
+          //       children: const [
+          //         Expanded(
+          //           child: Divider(
+          //             thickness: 0.5,
+          //             color: Colors.black54,
+          //           ),
+          //         ),
+          //         Text('  Or  '),
+          //         Expanded(
+          //           child: Divider(
+          //             thickness: 0.5,
+          //             color: Colors.black54,
+          //           ),
+          //         )
+          //       ],
+          //     ),
+          //   ),
+          // ),
           // Container(
           //   padding: const EdgeInsets.all(10),
           //   child: TextFormField(
@@ -255,7 +257,7 @@ class LoginState extends State<Login> {
           Container(
             padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
             child: TextFormField(
-              obscureText: passwordVisible,
+              obscureText: !passwordVisible,
               controller: _passwordController,
               decoration: InputDecoration(
                 labelText: "Password",
@@ -318,7 +320,7 @@ class LoginState extends State<Login> {
 
                 var userMessage = "";
 
-                AuthController()
+                _authController
                     .signInwithEmailAndPassword(
                         _emailController.value.text.trim(),
                         _passwordController.value.text.trim())

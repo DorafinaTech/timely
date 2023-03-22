@@ -86,7 +86,7 @@ class _ReadingScreenState extends State<ReadingScreen> {
 
           List<CalendarEventData<ReadingModel>> eventsToBeAdded = [];
 
-          snapshot.data?.docs.forEach((readingDoc) {
+          for (var readingDoc in snapshot.data!.docs) {
             var readingMap = readingDoc.data();
 
             debugPrint(readingMap.toString());
@@ -131,7 +131,7 @@ class _ReadingScreenState extends State<ReadingScreen> {
                 endTime: endTime);
 
             eventsToBeAdded.add(readingEvent);
-          });
+          }
 
           _readingEventController.removeWhere((element) => true);
           _readingEventController.addAll(eventsToBeAdded);
