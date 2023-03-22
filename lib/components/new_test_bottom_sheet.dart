@@ -24,7 +24,8 @@ class _AddTestBottomSheet extends State<AddTestBottomSheet> {
 
   // StartTime
   String sTime = "Choose Time";
-  TimeOfDay starttime = const TimeOfDay(hour: 10, minute: 30);
+  // TimeOfDay starttime = const TimeOfDay(hour: 10, minute: 30);
+  TimeOfDay starttime = TimeOfDay.now();
 
   // EndTime
   String mTime = "Choose Time";
@@ -108,7 +109,7 @@ class _AddTestBottomSheet extends State<AddTestBottomSheet> {
                       DateTime? pickedDate = await showDatePicker(
                           context: context,
                           initialDate: DateTime.now(),
-                          firstDate: DateTime(1950),
+                          firstDate: DateTime.now(),
                           //DateTime.now() - not to allow to choose before today.
                           lastDate: DateTime(2100));
 

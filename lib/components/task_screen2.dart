@@ -1,14 +1,8 @@
-import 'dart:developer';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:timely/controllers/reading_controller.dart';
-import 'package:timely/utilities/route_paths.dart';
-
-import '../models/reading_model.dart';
-import '../utilities/show_snackbar.dart';
+import 'package:timely/models/reading_model.dart';
 
 class TaskScreen2 extends StatefulWidget {
   const TaskScreen2({Key? key}) : super(key: key);
@@ -30,7 +24,7 @@ class _TaskScreen2 extends State<TaskScreen2> {
 
   // StartTime
   String sTime = "Choose Time";
-  static const TimeOfDay starttime = TimeOfDay(hour: 10, minute: 30);
+  static TimeOfDay starttime = TimeOfDay.now();
   // TimeOfDay mytime =   TimeOfDay();
 
   // EndTime
@@ -92,7 +86,7 @@ class _TaskScreen2 extends State<TaskScreen2> {
                       DateTime? pickedDate = await showDatePicker(
                           context: context,
                           initialDate: DateTime.now(),
-                          firstDate: DateTime(1950),
+                          firstDate: DateTime.now(),
                           //DateTime.now() - not to allow to choose before today.
                           lastDate: DateTime(2100));
 
