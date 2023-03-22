@@ -10,6 +10,7 @@ class AddExamBottomSheet extends StatefulWidget {
   @override
   State<AddExamBottomSheet> createState() => _AddExamBottomSheet();
 }
+
 //
 // class _TaskScreen extends State<AddExamBottomSheet> {
 //   final TestController _testController =
@@ -23,15 +24,14 @@ class _AddExamBottomSheet extends State<AddExamBottomSheet> {
   final TextEditingController lecturercontroller = TextEditingController();
   final TextEditingController venuecontroller = TextEditingController();
 
-
-
   // print(dateStr);
   String mDate = "Choose Date";
   TimeOfDay? startInitialTime;
 
   // StartTime
   String sTime = "Choose Time";
-  TimeOfDay starttime = const TimeOfDay(hour: 10, minute: 30);
+  // TimeOfDay starttime = const TimeOfDay(hour: 10, minute: 30);
+  TimeOfDay starttime = TimeOfDay.now();
 
   // EndTime
   String mTime = "Choose Time";
@@ -115,7 +115,7 @@ class _AddExamBottomSheet extends State<AddExamBottomSheet> {
                       DateTime? pickedDate = await showDatePicker(
                           context: context,
                           initialDate: DateTime.now(),
-                          firstDate: DateTime(1950),
+                          firstDate: DateTime.now(),
                           //DateTime.now() - not to allow to choose before today.
                           lastDate: DateTime(2100));
 
