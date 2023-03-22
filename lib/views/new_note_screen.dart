@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:timely/utilities/route_paths.dart';
 import 'package:timely/controllers/note_controller.dart';
 
 class NewNoteScreen extends StatelessWidget {
@@ -14,6 +15,18 @@ class NewNoteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Notes",
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        leading: IconButton(
+            onPressed: () => Get.toNamed(RoutePaths.notescreen),
+            icon: const Icon(Icons.arrow_back)),
+      ),
       body: SafeArea(
         child: Container(
           height: Get.height,
@@ -21,21 +34,6 @@ class NewNoteScreen extends StatelessWidget {
             16.0,
           ),
           child: Column(children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width / 4,
-                ),
-                const Text(
-                  "Notes",
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
             const SizedBox(
               height: 20,
             ),

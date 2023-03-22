@@ -278,8 +278,8 @@ class _AddExamBottomSheet extends State<AddExamBottomSheet> {
                         const EdgeInsets.only(top: 20.0, left: 8.0, right: 8.0),
                     child: ElevatedButton(
                       onPressed: () {
-                        if (titlecontroller.text.isEmpty||venuecontroller.text.isEmpty||lecturercontroller.text.isEmpty||)
-                        ExamsModel testsModel = ExamsModel(
+                        // if (titlecontroller.text.isEmpty||venuecontroller.text.isEmpty||lecturercontroller.text.isEmpty||)
+                        ExamsModel examModel = ExamsModel(
                           course_title: titlecontroller.text,
                           date: mDate,
                           start_time: sTime,
@@ -289,7 +289,7 @@ class _AddExamBottomSheet extends State<AddExamBottomSheet> {
                           interval: '',
                         );
 
-                        addToFireBase(testsModel, context);
+                        addToFireBase(examModel, context);
                       },
                       style: OutlinedButton.styleFrom(
                         shape: const RoundedRectangleBorder(
@@ -324,7 +324,7 @@ class _AddExamBottomSheet extends State<AddExamBottomSheet> {
     );
   }
 
-  void addToFireBase(ExamsModel testModel, BuildContext context) {
-    _examController.addToFirebase(testModel, context);
+  void addToFireBase(ExamsModel examModel, BuildContext context) {
+    _examController.addToFirebase(examModel, context);
   }
 }

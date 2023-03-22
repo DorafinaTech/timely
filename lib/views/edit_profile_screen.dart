@@ -3,20 +3,33 @@ import 'package:get/get.dart';
 import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/controllers/profile_controller.dart';
+import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
 
-class EditProfileScreen extends StatelessWidget {
-  EditProfileScreen({Key? key}) : super(key: key);
+class EditProfileScreen extends StatefulWidget {
+  const EditProfileScreen({Key? key}) : super(key: key);
 
+  @override
+  State<EditProfileScreen> createState() => _EditProfileScreenState();
+}
+
+class _EditProfileScreenState extends State<EditProfileScreen> {
   final TextEditingController _firstNameController = TextEditingController();
+
   final TextEditingController _lastNameController = TextEditingController();
+
   final TextEditingController _emailAddressController = TextEditingController();
+
   final TextEditingController _phoneNumberController = TextEditingController();
+
   final ProfileController _profileController =
       Get.put<ProfileController>(ProfileController());
 
+  final AuthController _authController =
+      Get.put<AuthController>(AuthController());
+
   @override
-  Widget build(BuildContext context) {
+  void initState() {
     _profileController.getBioData().then((bioData) {
       _firstNameController.text = (bioData['name'] as String).split(' ')[0];
       _lastNameController.text = (bioData['name'] as String).split(' ')[1];
@@ -24,6 +37,11 @@ class EditProfileScreen extends StatelessWidget {
       _phoneNumberController.text = bioData['phoneNumber'] as String;
     });
 
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -70,9 +88,8 @@ class EditProfileScreen extends StatelessWidget {
             Positioned(
               child: Obx(() => CircleAvatar(
                     radius: 50.0,
-                    // backgroundImage: NetworkImage('assets/images/thessC.png'),
                     backgroundImage: NetworkImage(
-                        _profileController.currentProfilePictureURL.value),
+                        _authController.currentUser.value?.photoURL ?? ''),
                     backgroundColor: Get.theme.primaryColor,
                   )),
             ),
@@ -165,28 +182,28 @@ class EditProfileScreen extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            color: const Color(0xFFF6FDFC),
-            margin: const EdgeInsets.all(8.0),
-            child: TextField(
-              controller: _phoneNumberController,
-              decoration: InputDecoration(
-                labelText: 'Phone Number',
-                labelStyle: const TextStyle(
-                    fontSize: 20, fontFamily: 'Satoshi', color: Colors.black54),
-                hintText: " Your Phone Number",
-                hintStyle: const TextStyle(color: Colors.black54, fontSize: 10),
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                    borderSide: const BorderSide(
-                        color: Colors.transparent,
-                        width: 1.5,
-                        style: BorderStyle.solid)),
-                alignLabelWithHint: false,
-                filled: false,
-              ),
-            ),
-          ),
+          // Container(
+          //   color: const Color(0xFFF6FDFC),
+          //   margin: const EdgeInsets.all(8.0),
+          //   child: TextField(
+          //     controller: _phoneNumberController,
+          //     decoration: InputDecoration(
+          //       labelText: 'Phone Number',
+          //       labelStyle: const TextStyle(
+          //           fontSize: 20, fontFamily: 'Satoshi', color: Colors.black54),
+          //       hintText: " Your Phone Number",
+          //       hintStyle: const TextStyle(color: Colors.black54, fontSize: 10),
+          //       border: OutlineInputBorder(
+          //           borderRadius: BorderRadius.circular(20),
+          //           borderSide: const BorderSide(
+          //               color: Colors.transparent,
+          //               width: 1.5,
+          //               style: BorderStyle.solid)),
+          //       alignLabelWithHint: false,
+          //       filled: false,
+          //     ),
+          //   ),
+          // ),
           Container(
             width: double.infinity,
             height: 50,

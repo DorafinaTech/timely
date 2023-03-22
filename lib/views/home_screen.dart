@@ -51,7 +51,7 @@ class HomeScreen extends StatelessWidget {
                   leading: Obx(() => CircleAvatar(
                         radius: 50.0,
                         backgroundImage: NetworkImage(
-                            _profileController.currentProfilePictureURL.value),
+                            authController.currentUser.value?.photoURL ?? ''),
                         backgroundColor: Get.theme.primaryColor,
                       )),
                   title: Text(

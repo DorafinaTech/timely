@@ -5,34 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87ff8109-a765-434f-aea1-98d9d984d7e8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/components/new_test_bottom_sheet.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/controllers/rate_controller.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/controllers/share_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/components/new_exam_bottom_sheet.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/new_exam_bottom_sheet.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/task_screen2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/task_screen2.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/controllers/auth_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/auth_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/note_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/note_controller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/controllers/profile_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/profile_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/reading_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/reading_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/about.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/about.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/notemodel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/notemodel.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/views/edit_profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/edit_profile_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/exam_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/exam_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/views/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/home_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/new_note_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/new_note_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/notes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/notes.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/views/profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/profile_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/views/reading_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/reading_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/register.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/register.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/splash_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/views/test_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/test_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/generated_plugins.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/update_note.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/update_note.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +104,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/views/new_note_screen.dart</url>
-          <line>147</line>
+          <line>145</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

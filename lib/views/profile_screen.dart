@@ -66,9 +66,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             children: [
               Obx(() => CircleAvatar(
                     radius: 50.0,
-                    // backgroundImage: NetworkImage('assets/images/thessC.png'),
                     backgroundImage: NetworkImage(
-                        _profileController.currentProfilePictureURL.value),
+                        _authController.currentUser.value?.photoURL ?? ''),
                     backgroundColor: Get.theme.primaryColor,
                   )),
               Text(

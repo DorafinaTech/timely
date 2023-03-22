@@ -57,16 +57,14 @@ class Notes extends StatelessWidget {
         ],
         elevation: 0,
       ),
-      // body: FutureBuilder<QuerySnapshot>(
-      //   future: _reference.get(),
-      //   builder:(context, snapshot)  {
-      //     if(snapshot.hasError){
-      //       return Center(child: Text('Something went wrong'),);
       body: StreamBuilder<QuerySnapshot>(
         stream: _noteController.getSnapshots(),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
-            return const Center(child: Text('Something went wrong'));
+            debugPrint(snapshot.error.toString());
+
+            return Center(
+                child: Text('Something went wrong: ${snapshot.error}'));
           }
 
           if (snapshot.connectionState == ConnectionState.waiting) {

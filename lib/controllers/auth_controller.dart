@@ -13,6 +13,7 @@ class AuthController extends BaseController {
     FirebaseAuth.instance.userChanges().listen((user) {
       if (user != null) {
         currentUser.value = user;
+        update();
       }
 
       // signOut();
