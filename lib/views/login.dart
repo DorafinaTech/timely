@@ -17,6 +17,8 @@ class LoginState extends State<Login> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
+  final _formKey = GlobalKey<FormState>();
+
   final AuthController _authController =
       Get.put<AuthController>(AuthController());
   bool passwordVisible = true;
@@ -24,389 +26,188 @@ class LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-      padding: const EdgeInsets.fromLTRB(8, 80, 8, 8),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Container(
-              margin: const EdgeInsets.only(bottom: 25),
-              child: const Center(
-                child: Text(
-                  "Login, Let's get started",
-                  style: TextStyle(color: Colors.black, fontSize: 25),
-                ),
-              ),
-            ),
-          ),
-          // Container(
-          //   width: double.infinity,
-          //   height: 50,
-          //   margin: const EdgeInsets.all(8.0),
-          //   child: OutlinedButton(
-          //     onPressed: () async {
-          //       String userMessage = '';
-          //       AuthController().signInwithGoogle().then((value) {
-          //         if (value) {
-          //           Get.offAndToNamed(RoutePaths.homeScreen);
-          //           userMessage = "Login in successfully";
-          //
-          //           debugPrint("Value is true$userMessage");
-          //         } else {
-          //           Get.snackbar("Oops", "Could not login");
-          //           debugPrint("Value is false");
-          //         }
-          //       }).catchError((error) {
-          //         userMessage = "Login failed, Something went wrong";
-          //         Get.snackbar("Oops", userMessage);
-          //         debugPrint(userMessage);
-          //
-          //         if (kDebugMode) {
-          //           debugPrint(error);
-          //         }
-          //       });
-          //     },
-          //     style: OutlinedButton.styleFrom(
-          //         side: BorderSide(color: Colors.teal.shade200),
-          //         shape: RoundedRectangleBorder(
-          //             borderRadius: BorderRadius.circular(30))),
-          //     child: Row(
-          //       mainAxisAlignment: MainAxisAlignment.center,
-          //       children: [
-          //         Container(
-          //           padding: const EdgeInsets.all(8.0),
-          //           child: Image.asset(
-          //             'svgs/google_icon.png',
-          //             height: 20,
-          //             width: 20,
-          //           ),
-          //         ),
-          //         const Text(
-          //           'Log in with Google',
-          //           style: TextStyle(
-          //             color: Colors.teal,
-          //           ),
-          //         ),
-          //       ],
-          //     ),
-          //   ),
-          // ),
-          // Container(
-          //   margin: const EdgeInsets.symmetric(horizontal: 16),
-          //   child: Center(
-          //     child: Row(
-          //       children: const [
-          //         Expanded(
-          //           child: Divider(
-          //             thickness: 0.5,
-          //             color: Colors.black54,
-          //           ),
-          //         ),
-          //         Text('  Or  '),
-          //         Expanded(
-          //           child: Divider(
-          //             thickness: 0.5,
-          //             color: Colors.black54,
-          //           ),
-          //         )
-          //       ],
-          //     ),
-          //   ),
-          // ),
-          // Container(
-          //   margin: const EdgeInsets.all(8.0),
-          //   child: TextField(
-          //     controller: _emailController,
-          //     decoration: InputDecoration(
-          //         hintText: "Email Addresss",
-          //         hintStyle: const TextStyle(color: Colors.black54),
-          //         border: OutlineInputBorder(
-          //             borderRadius: BorderRadius.circular(30),
-          //             borderSide: BorderSide(
-          //                 color: Colors.teal.shade200,
-          //                 width: 1.5,
-          //                 style: BorderStyle.solid))),
-          //   ),
-          // ),
-          // SizedBox(
-          //   height: 20,
-          // ),
-          //       Container(
-          //         padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-          //         child: TextField(
-          //           controller: _emailController,
-          //           decoration: InputDecoration(
-          //             labelText: "Email Address",
-          //             // labelText: "Password",
-          //             hintStyle: const TextStyle(color: Colors.black54),
-          //             border: OutlineInputBorder(
-          //                 borderRadius: BorderRadius.circular(30),
-          //                 borderSide: BorderSide(
-          //                     color: Colors.teal.shade200,
-          //                     width: 1.5,
-          //                     style: BorderStyle.solid)),
-          //           ),
-          // ),
-          //       ),
-          //       Container(
-          //         padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-          //         width: double.infinity,
-          //         height: 50,
-          //         margin: const EdgeInsets.all(8.0),
-          //         child: OutlinedButton(
-          //           onPressed: () async {
-          //             String userMessage = '';
-          //             AuthController().signInwithGoogle().then((value) {
-          //               if (value) {
-          //                 Get.offAndToNamed(RoutePaths.homeScreen);
-          //                 userMessage = "Login in successfully";
-          //
-          //                 debugPrint("Value is true$userMessage");
-          //               } else {
-          //                 showSnackbar("Oops", "Could not login");
-          //                 debugPrint("Value is false");
-          //               }
-          //             }).catchError((error) {
-          //               userMessage = "Login failed, Something went wrong";
-          //               showSnackbar("Oops", userMessage);
-          //               debugPrint(userMessage);
-          //
-          //               if (kDebugMode) {
-          //                 debugPrint(error);
-          //               }
-          //             });
-          //           },
-          //           style: OutlinedButton.styleFrom(
-          //               side: BorderSide(color: Colors.teal.shade200),
-          //               shape: RoundedRectangleBorder(
-          //                   borderRadius: BorderRadius.circular(30))),
-          //           child: Row(
-          //             mainAxisAlignment: MainAxisAlignment.center,
-          //             children: [
-          //               Container(
-          //                 padding: const EdgeInsets.all(8.0),
-          //                 child: Image.asset(
-          //                   'svgs/google_icon.png',
-          //                   height: 20,
-          //                   width: 20,
-          //                 ),
-          //               ),
-          //               const Text(
-          //                 'Log in with Google',
-          //                 style: TextStyle(
-          //                   color: Colors.teal,
-          //                 ),
-          //               ),
-          //             ],
-          //           ),
-          //         ),
-          //       ),
-          // Container(
-          //   margin: const EdgeInsets.symmetric(horizontal: 16),
-          //   child: Center(
-          //     child: Row(
-          //       children: const [
-          //         Expanded(
-          //           child: Divider(
-          //             thickness: 0.5,
-          //             color: Colors.black54,
-          //           ),
-          //         ),
-          //         Text('  Or  '),
-          //         Expanded(
-          //           child: Divider(
-          //             thickness: 0.5,
-          //             color: Colors.black54,
-          //           ),
-          //         )
-          //       ],
-          //     ),
-          //   ),
-          // ),
-          // Container(
-          //   padding: const EdgeInsets.all(10),
-          //   child: TextFormField(
-          //     controller: _emailController,
-          //     decoration: const InputDecoration(
-          //       border: OutlineInputBorder(),
-          //       labelText: 'Email Address',
-          //     ),
-          //   ),
-          // ),
-          Container(
-            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-            child: TextFormField(
-              controller: _emailController,
-              decoration: const InputDecoration(
-                labelText: "Email",
-                border: OutlineInputBorder(
-                    //     borderRadius: BorderRadius.circular(30),
-                    //     borderSide: BorderSide(
-                    //         color: Colors.teal.shade200,
-                    //         width: 1.5,
-                    //         style: BorderStyle.solid)),
-                    // helperStyle: TextStyle(
-                    //   color: Colors.teal.shade200,
-                    ),
-                alignLabelWithHint: false,
-                filled: true,
-              ),
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-            child: TextFormField(
-              obscureText: !passwordVisible,
-              controller: _passwordController,
-              decoration: InputDecoration(
-                labelText: "Password",
-                // labelText: "Password",
-                helperText: "Password must contain special Characters",
-                hintStyle: const TextStyle(color: Colors.black54),
-                border: const OutlineInputBorder(
-                    //     borderRadius: BorderRadius.circular(30),
-                    //     borderSide: BorderSide(
-                    //         color: Colors.teal.shade200,
-                    //         width: 1.5,
-                    //         style: BorderStyle.solid)),
-                    // helperStyle: TextStyle(
-                    //   color: Colors.teal.shade200,
-                    ),
-                suffixIcon: IconButton(
-                  color: Colors.teal.shade200,
-                  icon: Icon(passwordVisible
-                      ? Icons.visibility
-                      : Icons.visibility_off),
-                  onPressed: () {
-                    setState(
-                      () {
-                        passwordVisible = !passwordVisible;
-                      },
-                    );
-                  },
-                ),
-                alignLabelWithHint: false,
-                filled: true,
-              ),
-            ),
-          ),
-
-          // const Login(),
-          const SizedBox(
-            height: 20,
-          ),
-          TextButton(
-            child: Text(
-              'Forgot Password?',
-              style: TextStyle(
-                fontFamily: 'Satoshi',
-                fontSize: 14,
-                color: Theme.of(context).primaryColor,
-              ),
-            ),
-            onPressed: () {
-              Get.toNamed(RoutePaths.resetPasswordViaEmail);
-            },
-          ),
-
-          Container(
-            width: double.infinity,
-            height: 50,
-            margin: const EdgeInsets.all(8.0),
-            child: ElevatedButton(
-              onPressed: () async {
-                LoadingControler().startLoading();
-
-                var userMessage = "";
-
-                _authController
-                    .signInwithEmailAndPassword(
-                        _emailController.value.text.trim(),
-                        _passwordController.value.text.trim())
-                    .then((value) {
-                  if (value) {
-                    LoadingControler().stopLoading();
-                    Get.offAllNamed(RoutePaths.homeScreen);
-
-                    userMessage = "Login in successfully";
-                    debugPrint(userMessage);
-                  } else {
-                    LoadingControler().stopLoading();
-                    showErrorSnackbar("Login failed, Something went wrong");
-                  }
-                }).onError((error, stackTrace) {
-                  LoadingControler().stopLoading();
-
-                  userMessage = "Login failed, $error";
-                  showSnackbar("Oops", userMessage);
-                  debugPrint(userMessage);
-                });
-/*                    .catchError((error) {
-                  userMessage = "Login failed, Something went wrong";
-                  showSnackbar("Oops", userMessage);
-                  debugPrint(userMessage);
-
-                  if (kDebugMode) {
-                    debugPrint(error);
-                  }
-                });*/
-              },
-              style: OutlinedButton.styleFrom(
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(
-                      60,
-                    ),
-                  ),
-                ),
-                maximumSize: const Size(double.infinity, 100),
-                backgroundColor: Colors.teal,
-                side: const BorderSide(
-                  color: Colors.teal,
-                ),
-              ),
-              child: const Text(
-                'Log In',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
-          Center(
-            child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 16.0),
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
+        body: Form(
+            key: _formKey,
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.fromLTRB(8, 80, 8, 8),
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    'Dont have an account?',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 15,
+                  Center(
+                    child: Container(
+                      margin: const EdgeInsets.only(bottom: 25),
+                      child: const Center(
+                        child: Text(
+                          "Login, Let's get started",
+                          style: TextStyle(color: Colors.black, fontSize: 25),
+                        ),
+                      ),
                     ),
                   ),
-                  TextButton(
-                      onPressed: () {
-                        Get.toNamed(RoutePaths.register);
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+                    child: TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter some text';
+                        }
+
+                        if (!GetUtils.isEmail(value)) {
+                          return "Email is not valid";
+                        }
+
+                        return null;
                       },
-                      child: const Text(
-                        'Register',
-                        style: TextStyle(
-                          color: Colors.teal,
-                          fontSize: 15,
+                      controller: _emailController,
+                      decoration: const InputDecoration(
+                        labelText: "Email",
+                        border: OutlineInputBorder(),
+                        alignLabelWithHint: false,
+                        filled: true,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+                    child: TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter some text';
+                        }
+                        return null;
+                      },
+                      obscureText: !passwordVisible,
+                      controller: _passwordController,
+                      decoration: InputDecoration(
+                        labelText: "Password",
+                        helperText: "Password must contain special Characters",
+                        hintStyle: const TextStyle(color: Colors.black54),
+                        border: const OutlineInputBorder(),
+                        suffixIcon: IconButton(
+                          color: Colors.teal.shade200,
+                          icon: Icon(passwordVisible
+                              ? Icons.visibility
+                              : Icons.visibility_off),
+                          onPressed: () {
+                            setState(
+                              () {
+                                passwordVisible = !passwordVisible;
+                              },
+                            );
+                          },
                         ),
-                      ))
+                        alignLabelWithHint: false,
+                        filled: true,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextButton(
+                    child: Text(
+                      'Forgot Password?',
+                      style: TextStyle(
+                        fontFamily: 'Satoshi',
+                        fontSize: 14,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                    ),
+                    onPressed: () {
+                      Get.toNamed(RoutePaths.resetPasswordViaEmail);
+                    },
+                  ),
+                  Container(
+                    width: double.infinity,
+                    height: 50,
+                    margin: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                      onPressed: () async {
+                        if (_formKey.currentState!.validate()) {
+                          LoadingControler().startLoading();
+
+                          var userMessage = "";
+
+                          _authController
+                              .signInwithEmailAndPassword(
+                                  _emailController.value.text.trim(),
+                                  _passwordController.value.text.trim())
+                              .then((value) {
+                            if (value) {
+                              LoadingControler().stopLoading();
+                              Get.offAllNamed(RoutePaths.homeScreen);
+
+                              userMessage = "Login in successfully";
+                              debugPrint(userMessage);
+                            } else {
+                              LoadingControler().stopLoading();
+                              showErrorSnackbar(
+                                  "Login failed, Something went wrong");
+                            }
+                          }).onError((error, stackTrace) {
+                            LoadingControler().stopLoading();
+
+                            userMessage = "Login failed, $error";
+                            showSnackbar("Oops", userMessage);
+                            debugPrint(userMessage);
+                          });
+                        }
+                      },
+                      style: OutlinedButton.styleFrom(
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(
+                              60,
+                            ),
+                          ),
+                        ),
+                        maximumSize: const Size(double.infinity, 100),
+                        backgroundColor: Colors.teal,
+                        side: const BorderSide(
+                          color: Colors.teal,
+                        ),
+                      ),
+                      child: const Text(
+                        'Log In',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            'Dont have an account?',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                            ),
+                          ),
+                          TextButton(
+                              onPressed: () {
+                                Get.toNamed(RoutePaths.register);
+                              },
+                              child: const Text(
+                                'Register',
+                                style: TextStyle(
+                                  color: Colors.teal,
+                                  fontSize: 15,
+                                ),
+                              ))
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
-            ),
-          ),
-        ],
-      ),
-    ));
+            )));
   }
 }

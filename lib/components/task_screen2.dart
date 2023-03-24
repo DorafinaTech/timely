@@ -12,9 +12,9 @@ class TaskScreen2 extends StatefulWidget {
 }
 
 class _TaskScreen2 extends State<TaskScreen2> {
-  final TextEditingController _daysController = TextEditingController();
   final TextEditingController _coursesController = TextEditingController();
-  // final TextEditingController _readingController = TextEditingController();
+
+  final _formKey = GlobalKey<FormState>();
 
   final ReadingController _getxReadingController =
       Get.put<ReadingController>(ReadingController());
@@ -25,7 +25,6 @@ class _TaskScreen2 extends State<TaskScreen2> {
   // StartTime
   String sTime = "Choose Time";
   static TimeOfDay starttime = TimeOfDay.now();
-  // TimeOfDay mytime =   TimeOfDay();
 
   // EndTime
   String mTime = "Choose Time";
@@ -40,160 +39,86 @@ class _TaskScreen2 extends State<TaskScreen2> {
         borderRadius: BorderRadius.only(
             topRight: Radius.circular(30), topLeft: Radius.circular(30)),
       ),
-      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <
-          Widget>[
-        // Container(
-        //     padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-        //     child: TextField(
-        //       decoration: const InputDecoration(
-        //         labelText: 'Day',
-        //         enabledBorder: UnderlineInputBorder(
-        //           borderSide: BorderSide(width: 0.5, color: Colors.black),
-        //         ),
-        //         hintStyle: TextStyle(color: Colors.grey),
-        //       ),
-        //       controller: _daysController,
-        //       style: const TextStyle(
-        //           fontSize: 16,
-        //           fontFamily: 'Satoshi, color: Color(0xFFB3B3B3)'),
-        //     )),
-
-        Container(
-            padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-            child: TextField(
-              decoration: const InputDecoration(
-                labelText: 'Course',
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(width: 0.5, color: Colors.black),
-                ),
-                hintStyle: TextStyle(color: Colors.grey),
-              ),
-              controller: _coursesController,
-              style: const TextStyle(
-                  fontSize: 16,
-                  fontFamily: 'Satoshi, color: Color(0xFFB3B3B3)'),
-            )),
-
-        Flexible(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                padding: const EdgeInsets.symmetric(vertical: 10),
-                margin: const EdgeInsets.symmetric(horizontal: 8),
-                child: TextButton(
-                    onPressed: () async {
-                      DateTime? pickedDate = await showDatePicker(
-                          context: context,
-                          initialDate: DateTime.now(),
-                          firstDate: DateTime.now(),
-                          //DateTime.now() - not to allow to choose before today.
-                          lastDate: DateTime(2100));
-
-                      if (pickedDate != null) {
-                        debugPrint(pickedDate
-                            .toString()); //pickedDate output format => 2021-03-10 00:00:00.000
-                        String formattedDate =
-                            // DateFormat('yyyy-MM-dd').format(pickedDate);
-                            DateFormat('dd-MM-yyyy').format(pickedDate);
-
-                        debugPrint(
-                            formattedDate); //formatted date output using intl package =>  2021-03-16
-                        setState(() {
-                          mDate =
-                              formattedDate; //set output date to TextField value.
-                        });
-                      } else {}
-                    },
-                    child: Text(mDate)),
-              ),
-              Flexible(
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        const Text(
-                          'Start Time:',
-                          style: TextStyle(
-                              fontFamily: 'Satoshi',
-                              fontSize: 16,
-                              color: Colors.black),
-                        ),
-/*
-              GestureDetector(
-                child: const Text('Tue, 20 Jan',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontFamily: 'Satoshi',
-                          fontSize: 16,
-                          color: Color(0xFF1C8E77))),
-              ),
-*/
-                        TextButton(
-                          child: Text(sTime,
-                              textAlign: TextAlign.end,
-                              style: const TextStyle(
-                                  fontFamily: 'Satoshi',
-                                  fontSize: 16,
-                                  color: Color(0xFF1C8E77))),
-                          onPressed: () async {
-                            {
-                              TimeOfDay? newTime = await showTimePicker(
-                                context: context,
-                                initialTime: starttime,
-                                builder: (BuildContext context, Widget? child) {
-                                  return MediaQuery(
-                                    data: MediaQuery.of(context)
-                                        .copyWith(alwaysUse24HourFormat: true),
-                                    child: child!,
-                                  );
-                                },
-                              );
-                              if (newTime == null) return;
-
-                              setState(() {
-                                newTime;
-
-                                sTime = newTime.toString();
-                                sTime = '${newTime.hour} : ${newTime.minute}';
-                              });
-                            }
-                          },
-                        ),
-                      ],
+      child: Form(
+          key: _formKey,
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <
+              Widget>[
+            Container(
+                padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                child: TextFormField(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter some text';
+                    }
+                    return null;
+                  },
+                  decoration: const InputDecoration(
+                    labelText: 'Course',
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(width: 0.5, color: Colors.black),
                     ),
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          const Text('End Time:',
+                    hintStyle: TextStyle(color: Colors.grey),
+                  ),
+                  controller: _coursesController,
+                  style: const TextStyle(
+                      fontSize: 16,
+                      fontFamily: 'Satoshi, color: Color(0xFFB3B3B3)'),
+                )),
+            Flexible(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    margin: const EdgeInsets.symmetric(horizontal: 8),
+                    child: TextButton(
+                        onPressed: () async {
+                          DateTime? pickedDate = await showDatePicker(
+                              context: context,
+                              initialDate: DateTime.now(),
+                              firstDate: DateTime.now(),
+                              lastDate: DateTime(2100));
+
+                          if (pickedDate != null) {
+                            debugPrint(pickedDate.toString());
+                            String formattedDate =
+                                DateFormat('dd-MM-yyyy').format(pickedDate);
+
+                            debugPrint(
+                                formattedDate); //formatted date output using intl package =>  2021-03-16
+                            setState(() {
+                              mDate =
+                                  formattedDate; //set output date to TextFormField value.
+                            });
+                          } else {}
+                        },
+                        child: Text(mDate)),
+                  ),
+                  Flexible(
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            const Text(
+                              'Start Time:',
                               style: TextStyle(
                                   fontFamily: 'Satoshi',
                                   fontSize: 16,
-                                  color: Colors.black)),
-/*
-            GestureDetector(
-              child: const Text('Tue, 20 Jan',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontFamily: 'Satoshi',
-                        fontSize: 16,
-                        color: Color(0xFF1C8E77))),
-            ),
-*/
-                          TextButton(
-                            child: Text(mTime,
-                                textAlign: TextAlign.end,
-                                style: const TextStyle(
-                                    fontFamily: 'Satoshi',
-                                    fontSize: 16,
-                                    color: Color(0xFF1C8E77))),
-                            onPressed: () async {
-                              {
+                                  color: Colors.black),
+                            ),
+                            TextButton(
+                              child: Text(sTime,
+                                  textAlign: TextAlign.end,
+                                  style: const TextStyle(
+                                      fontFamily: 'Satoshi',
+                                      fontSize: 16,
+                                      color: Color(0xFF1C8E77))),
+                              onPressed: () async {
                                 {
                                   TimeOfDay? newTime = await showTimePicker(
                                     context: context,
-                                    initialTime: endtime,
+                                    initialTime: starttime,
                                     builder:
                                         (BuildContext context, Widget? child) {
                                       return MediaQuery(
@@ -206,157 +131,167 @@ class _TaskScreen2 extends State<TaskScreen2> {
                                   if (newTime == null) return;
 
                                   setState(() {
-                                    endtime = newTime;
+                                    newTime;
 
-                                    mTime = newTime.toString();
-                                    mTime =
+                                    sTime = newTime.toString();
+                                    sTime =
                                         '${newTime.hour} : ${newTime.minute}';
                                   });
                                 }
-                              }
-                            },
-                          ),
-                        ]),
-                  ],
-                ),
-              )
-            ],
-          ),
-        ),
-
-        // Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-        //   Container(
-        //     padding: const EdgeInsets.only(right: 8),
-        //     height: 19,
-        //     child: Image.asset(
-        //       'svgs/vec.png',
-        //     ),
-        //   ),
-        //   const Text(
-        //     '10 minutes Before',
-        //     style: TextStyle(
-        //       fontSize: 16,
-        //       fontFamily: 'Satoshi',
-        //       color: Color(0xFF03110E),
-        //     ),
-        //   ),
-        //   Expanded(
-        //       child: Row(
-        //     mainAxisAlignment: MainAxisAlignment.end,
-        //     children: [
-        //       Container(
-        //         padding: EdgeInsets.zero,
-        //         child: TextButton(
-        //           onPressed: () {
-        //             showDialog(
-        //                 context: context,
-        //                 builder: (context) => const TopModalSheet());
-        //           },
-        //           child: Icon(Icons.add, color: Theme.of(context).primaryColor),
-        //         ),
-        //       ),
-        //     ],
-        //   ))
-        // ]),
-        // Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-        //   Container(
-        //     padding: const EdgeInsets.only(right: 8),
-        //     height: 19,
-        //     child: Image.asset(
-        //       'svgs/dont repeat.png',
-        //     ),
-        //   ),
-        //   const Text(
-        //     'Dont repeat',
-        //     style: TextStyle(
-        //         fontSize: 16, fontFamily: 'Satoshi', color: Color(0xFF1C8E77)),
-        //   ),
-        // ]),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Container(
-              width: 80,
-              height: 30,
-              margin: const EdgeInsets.only(top: 20.0, left: 8.0, right: 8.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                style: OutlinedButton.styleFrom(
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(
-                        10,
-                      ),
-                    ),
-                  ),
-                  minimumSize: const Size(double.infinity, 5),
-                  backgroundColor: Colors.white,
-                  side: const BorderSide(
-                    color: Colors.teal,
-                  ),
-                ),
-                child: const Text(
-                  'Cancel',
-                  style: TextStyle(
-                    color: Colors.teal,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Container(
-                    width: 80,
-                    height: 30,
-                    margin:
-                        const EdgeInsets.only(top: 20.0, left: 8.0, right: 8.0),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        ReadingModel readingModel = ReadingModel(
-                          course: _coursesController.text,
-                          date: mDate,
-                          start_time: sTime,
-                          end_time: mTime,
-                        );
-
-                        addToFireBase(readingModel, context);
-                      },
-                      style: OutlinedButton.styleFrom(
-                        shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(
-                              10,
+                              },
                             ),
-                          ),
+                          ],
                         ),
-                        minimumSize: const Size(double.infinity, 5),
-                        backgroundColor: Colors.teal,
-                        side: const BorderSide(
-                          color: Colors.teal,
-                        ),
-                      ),
-                      child: const Text(
-                        'Save',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              const Text('End Time:',
+                                  style: TextStyle(
+                                      fontFamily: 'Satoshi',
+                                      fontSize: 16,
+                                      color: Colors.black)),
+/*
+            GestureDetector(
+              child: const Text('Tue, 20 Jan',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontFamily: 'Satoshi',
+                        fontSize: 16,
+                        color: Color(0xFF1C8E77))),
+            ),
+*/
+                              TextButton(
+                                child: Text(mTime,
+                                    textAlign: TextAlign.end,
+                                    style: const TextStyle(
+                                        fontFamily: 'Satoshi',
+                                        fontSize: 16,
+                                        color: Color(0xFF1C8E77))),
+                                onPressed: () async {
+                                  {
+                                    {
+                                      TimeOfDay? newTime = await showTimePicker(
+                                        context: context,
+                                        initialTime: endtime,
+                                        builder: (BuildContext context,
+                                            Widget? child) {
+                                          return MediaQuery(
+                                            data: MediaQuery.of(context)
+                                                .copyWith(
+                                                    alwaysUse24HourFormat:
+                                                        true),
+                                            child: child!,
+                                          );
+                                        },
+                                      );
+                                      if (newTime == null) return;
+
+                                      setState(() {
+                                        endtime = newTime;
+
+                                        mTime = newTime.toString();
+                                        mTime =
+                                            '${newTime.hour} : ${newTime.minute}';
+                                      });
+                                    }
+                                  }
+                                },
+                              ),
+                            ]),
+                      ],
                     ),
-                  ),
+                  )
                 ],
               ),
             ),
-          ],
-        ),
-      ]),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  width: 80,
+                  height: 30,
+                  margin:
+                      const EdgeInsets.only(top: 20.0, left: 8.0, right: 8.0),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    style: OutlinedButton.styleFrom(
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(
+                            10,
+                          ),
+                        ),
+                      ),
+                      minimumSize: const Size(double.infinity, 5),
+                      backgroundColor: Colors.white,
+                      side: const BorderSide(
+                        color: Colors.teal,
+                      ),
+                    ),
+                    child: const Text(
+                      'Cancel',
+                      style: TextStyle(
+                        color: Colors.teal,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Container(
+                        width: 80,
+                        height: 30,
+                        margin: const EdgeInsets.only(
+                            top: 20.0, left: 8.0, right: 8.0),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              ReadingModel readingModel = ReadingModel(
+                                course: _coursesController.text,
+                                date: mDate,
+                                start_time: sTime,
+                                end_time: mTime,
+                              );
+
+                              addToFireBase(readingModel, context);
+                            }
+                          },
+                          style: OutlinedButton.styleFrom(
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(
+                                  10,
+                                ),
+                              ),
+                            ),
+                            minimumSize: const Size(double.infinity, 5),
+                            backgroundColor: Colors.teal,
+                            side: const BorderSide(
+                              color: Colors.teal,
+                            ),
+                          ),
+                          child: const Text(
+                            'Save',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ])),
     );
   }
 

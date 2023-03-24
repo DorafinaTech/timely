@@ -117,67 +117,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 color: Color(0xFF000000),
               ),
               Container(height: 15),
-              ListTile(
-                contentPadding:
-                    const EdgeInsets.symmetric(vertical: 4, horizontal: 20),
-                leading: Container(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Image.asset(
-                    'svgs/Note.png',
-                    height: 20,
-                    width: 20,
-                  ),
-                ),
-                onTap: () {
-                  Get.toNamed(RoutePaths.notescreen);
-                },
-                title: const Text(
-                  'Notes',
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-              ListTile(
-                contentPadding:
-                    const EdgeInsets.symmetric(vertical: 4, horizontal: 20),
-                leading: Container(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Image.asset(
-                    'svgs/Rate.png',
-                    height: 20,
-                    width: 20,
-                  ),
-                ),
-                title: const Text(
-                  'Rate',
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-              ListTile(
-                onTap: () {
-                  Share.share('check out this ');
-                },
-                contentPadding:
-                    const EdgeInsets.symmetric(vertical: 4, horizontal: 20),
-                leading: Container(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Image.asset(
-                    'svgs/Share.png',
-                    height: 20,
-                    width: 20,
-                  ),
-                ),
-
-                title: const Text(
-                  'Share',
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
-                ),
-              ),
               TextButton(
                 child: ListTile(
                   contentPadding:
@@ -207,8 +146,4 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
   }
-}
-
-class _onShare {
-
 }

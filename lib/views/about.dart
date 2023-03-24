@@ -165,65 +165,65 @@ class About extends StatelessWidget {
                     fontFamily: 'Satoshi'),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 30, right: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.only(
-                      left: 20,
-                      right: 10,
-                    ),
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          'svgs/Rate.png',
-                          height: 20,
-                          width: 20,
-                        ),
-                        Text(
-                          'Rate',
-                          style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 16,
-                            fontFamily: 'Satoshi',
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.only(
-                      left: 20,
-                      right: 10,
-                    ),
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          'svgs/Share.png',
-                          height: 20,
-                          width: 20,
-                        ),
-                        InkWell(
-                          onTap: (){
-                            Share.share('check out this ');
-                          },
-                          child: Text(
-                            'Share',
-                            style: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontSize: 16,
-                              fontFamily: 'Satoshi',
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.only(top: 30, right: 20),
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //     children: [
+            //       Container(
+            //         padding: const EdgeInsets.only(
+            //           left: 20,
+            //           right: 10,
+            //         ),
+            //         child: Row(
+            //           children: [
+            //             Image.asset(
+            //               'svgs/Rate.png',
+            //               height: 20,
+            //               width: 20,
+            //             ),
+            //             Text(
+            //               'Rate',
+            //               style: TextStyle(
+            //                 color: Theme.of(context).primaryColor,
+            //                 fontSize: 16,
+            //                 fontFamily: 'Satoshi',
+            //               ),
+            //             ),
+            //           ],
+            //         ),
+            //       ),
+            //       Container(
+            //         padding: const EdgeInsets.only(
+            //           left: 20,
+            //           right: 10,
+            //         ),
+            //         child: Row(
+            //           children: [
+            //             Image.asset(
+            //               'svgs/Share.png',
+            //               height: 20,
+            //               width: 20,
+            //             ),
+            //             InkWell(
+            //               onTap: (){
+            //                 Share.share('check out this ');
+            //               },
+            //               child: Text(
+            //                 'Share',
+            //                 style: TextStyle(
+            //                   color: Theme.of(context).primaryColor,
+            //                   fontSize: 16,
+            //                   fontFamily: 'Satoshi',
+            //                 ),
+            //               ),
+            //             )
+            //           ],
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
           ],
         ),
       ),

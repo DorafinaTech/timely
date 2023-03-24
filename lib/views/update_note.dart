@@ -6,7 +6,6 @@ import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/controllers/loading_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
 import 'package:timely/utilities/show_error_snackbar.dart';
-import 'package:timely/views/notes.dart';
 import '../models/notemodel.dart';
 import 'package:timely/controllers/note_controller.dart';
 
@@ -26,12 +25,13 @@ class UpdateNote extends StatelessWidget {
 
   final NoteController _noteController = NoteController();
 
+  final _formKey = GlobalKey<FormState>();
+
   UpdateNote({super.key, required this.note});
 
   @override
   Widget build(BuildContext context) {
     titleController.text = note.title;
-    // timeController.text = note.time;
     bodyController.text = note.body;
 
     return Scaffold(
@@ -39,80 +39,87 @@ class UpdateNote extends StatelessWidget {
         title: const Text('Edit note'),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(height: 20),
-            getMyField(
-                focusNode: focusNode,
-                hintText: 'title',
-                textInputType: TextInputType.number,
-                controller: titleController),
-            // getMyField(hintText: 'time', controller: timeController),
-            getMyField(
-                hintText: 'body',
-                textInputType: TextInputType.number,
-                controller: bodyController),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      body: Form(
+          key: _formKey,
+          child: SingleChildScrollView(
+            child: Column(
               children: [
-                ElevatedButton(
-                    onPressed: () {
-                      _lodingController.startLoading();
+                const SizedBox(height: 20),
+                getMyField(
+                    focusNode: focusNode,
+                    hintText: 'title',
+                    textInputType: TextInputType.number,
+                    controller: titleController),
+                // getMyField(hintText: 'time', controller: timeController),
+                getMyField(
+                    hintText: 'body',
+                    textInputType: TextInputType.number,
+                    controller: bodyController),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ElevatedButton(
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            _lodingController.startLoading();
 
-                      try {
-                        NotesModel updatedNote = NotesModel(
-                            userID: _authController.currentUser.value!.uid,
-                            time: DateTime.now(),
-                            title: titleController.text,
-                            body: bodyController.text);
+                            try {
+                              NotesModel updatedNote = NotesModel(
+                                  userID:
+                                      _authController.currentUser.value!.uid,
+                                  time: DateTime.now(),
+                                  title: titleController.text,
+                                  body: bodyController.text);
 
-                        final collectionReference = FirebaseFirestore.instance
-                            .collection(_noteController.collectionName);
+                              final collectionReference = FirebaseFirestore
+                                  .instance
+                                  .collection(_noteController.collectionName);
 
-                        FirebaseFirestore.instance
-                            .collection(_noteController.collectionName)
-                            .where('userID',
-                                isEqualTo:
-                                    _authController.currentUser.value!.uid)
-                            .where('title', isEqualTo: note.title)
-                            .get()
-                            .then((snapshot) {
-                          var ref = snapshot.docs[0].id;
+                              FirebaseFirestore.instance
+                                  .collection(_noteController.collectionName)
+                                  .where('userID',
+                                      isEqualTo: _authController
+                                          .currentUser.value!.uid)
+                                  .where('title', isEqualTo: note.title)
+                                  .get()
+                                  .then((snapshot) {
+                                var ref = snapshot.docs[0].id;
 
-                          collectionReference
-                              .doc(ref)
-                              .update(updatedNote.toJson())
-                              .whenComplete(() {
-                            log('Note Updated');
+                                collectionReference
+                                    .doc(ref)
+                                    .update(updatedNote.toJson())
+                                    .whenComplete(() {
+                                  log('Note Updated');
 
-                            _lodingController.stopLoading();
+                                  _lodingController.stopLoading();
 
-                            if (Navigator.canPop(Get.context!)) {
-                              Navigator.pop(Get.context!);
-                            } else {
-                              Get.toNamed(RoutePaths.notescreen);
+                                  if (Navigator.canPop(Get.context!)) {
+                                    Navigator.pop(Get.context!);
+                                  } else {
+                                    Get.toNamed(RoutePaths.notescreen);
+                                  }
+                                }).onError((error, stackTrace) {
+                                  _lodingController.stopLoading();
+                                  showErrorSnackbar(
+                                      'Could not update note :-(');
+                                  debugPrint(error.toString());
+                                });
+
+                                //
+                              });
+                            } catch (e) {
+                              _lodingController.stopLoading();
+                              showErrorSnackbar('Could not update note :-(');
+                              debugPrint(e.toString());
                             }
-                          }).onError((error, stackTrace) {
-                            _lodingController.stopLoading();
-                            showErrorSnackbar('Could not update note :-(');
-                            debugPrint(error.toString());
-                          });
-
-                          //
-                        });
-                      } catch (e) {
-                        _lodingController.stopLoading();
-                        showErrorSnackbar('Could not update note :-(');
-                        debugPrint(e.toString());
-                      }
-                    },
-                    child: const Text('Update')),
+                          }
+                        },
+                        child: const Text('Update')),
+                  ],
+                )
               ],
-            )
-          ],
-        ),
-      ),
+            ),
+          )),
     );
   }
 
@@ -123,7 +130,13 @@ class UpdateNote extends StatelessWidget {
       FocusNode? focusNode}) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
-      child: TextField(
+      child: TextFormField(
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'Please enter some text';
+          }
+          return null;
+        },
         focusNode: focusNode,
         controller: controller,
         keyboardType: textInputType,
