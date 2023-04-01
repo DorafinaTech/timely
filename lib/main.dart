@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:get/get.dart';
 import 'package:timely/firebase_options.dart';
@@ -35,8 +38,31 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
+  requestNotificationPermission();
   runApp(const TimelyApp());
+}
+
+void requestNotificationPermission() async {
+  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+      FlutterLocalNotificationsPlugin();
+// initialise the plugin. app_icon needs to be a added as a drawable resource to the Android head project
+  const AndroidInitializationSettings initializationSettingsAndroid =
+      AndroidInitializationSettings('app_icon');
+  // final DarwinInitializationSettings initializationSettingsDarwin =
+  // DarwinInitializationSettings(
+  // onDidReceiveLocalNotification: onDidReceiveLocalNotification);
+
+  await flutterLocalNotificationsPlugin
+      .initialize(initializationSettingsAndroid as InitializationSettings);
+
+  if (Platform.isAndroid) {
+    FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+        FlutterLocalNotificationsPlugin();
+    flutterLocalNotificationsPlugin
+        .resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin>()
+        ?.requestPermission();
+  }
 }
 
 class TimelyApp extends StatelessWidget {
