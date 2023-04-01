@@ -5,7 +5,6 @@ import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/controllers/profile_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
-import 'package:share_plus/share_plus.dart';
 
 import '../components/popup_menu_buttons.dart';
 
