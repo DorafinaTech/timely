@@ -91,7 +91,7 @@ class HomeScreen extends StatelessWidget {
                       Get.toNamed(RoutePaths.calendarScreen);
                     },
                     subtitle: const Text(
-                      'Thursady 5th January 2023',
+                      'Update your Calender',
                       style: TextStyle(color: Colors.black54, fontSize: 14),
                     ),
                   ),
