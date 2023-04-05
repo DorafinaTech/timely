@@ -37,28 +37,38 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
   requestNotificationPermission();
+
   runApp(const TimelyApp());
 }
 
 void requestNotificationPermission() async {
-  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-      FlutterLocalNotificationsPlugin();
+  try {
+    //
 
-  const AndroidInitializationSettings initializationSettingsAndroid =
-      AndroidInitializationSettings('app_icon');
-
-  await flutterLocalNotificationsPlugin
-      .initialize(initializationSettingsAndroid as InitializationSettings);
-
-  if (Platform.isAndroid) {
     FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
         FlutterLocalNotificationsPlugin();
 
-    flutterLocalNotificationsPlugin
-        .resolvePlatformSpecificImplementation<
-            AndroidFlutterLocalNotificationsPlugin>()
-        ?.requestPermission();
+    const AndroidInitializationSettings initializationSettingsAndroid =
+        AndroidInitializationSettings('app_icon');
+
+    await flutterLocalNotificationsPlugin
+        .initialize(initializationSettingsAndroid as InitializationSettings);
+
+    if (Platform.isAndroid) {
+      FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+          FlutterLocalNotificationsPlugin();
+
+      flutterLocalNotificationsPlugin
+          .resolvePlatformSpecificImplementation<
+              AndroidFlutterLocalNotificationsPlugin>()
+          ?.requestPermission();
+    }
+
+    //
+  } catch (e) {
+    debugPrint(e.toString());
   }
 }
 
