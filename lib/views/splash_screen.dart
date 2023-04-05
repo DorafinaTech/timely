@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     Timer(const Duration(seconds: 10), () {
       if (_authController.currentUser.value != null) {
-        Get.offAllNamed(RoutePaths.onboarding1);
+        Get.offAllNamed(RoutePaths.homeScreen);
       }
 
       Get.offAllNamed(RoutePaths.onboarding1);

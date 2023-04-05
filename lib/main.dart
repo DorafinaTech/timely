@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -38,30 +37,38 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
   requestNotificationPermission();
+
   runApp(const TimelyApp());
 }
 
 void requestNotificationPermission() async {
-  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-      FlutterLocalNotificationsPlugin();
-// initialise the plugin. app_icon needs to be a added as a drawable resource to the Android head project
-  const AndroidInitializationSettings initializationSettingsAndroid =
-      AndroidInitializationSettings('app_icon');
-  // final DarwinInitializationSettings initializationSettingsDarwin =
-  // DarwinInitializationSettings(
-  // onDidReceiveLocalNotification: onDidReceiveLocalNotification);
+  try {
+    //
 
-  await flutterLocalNotificationsPlugin
-      .initialize(initializationSettingsAndroid as InitializationSettings);
-
-  if (Platform.isAndroid) {
     FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
         FlutterLocalNotificationsPlugin();
-    flutterLocalNotificationsPlugin
-        .resolvePlatformSpecificImplementation<
-            AndroidFlutterLocalNotificationsPlugin>()
-        ?.requestPermission();
+
+    const AndroidInitializationSettings initializationSettingsAndroid =
+        AndroidInitializationSettings('app_icon');
+
+    await flutterLocalNotificationsPlugin
+        .initialize(initializationSettingsAndroid as InitializationSettings);
+
+    if (Platform.isAndroid) {
+      FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+          FlutterLocalNotificationsPlugin();
+
+      flutterLocalNotificationsPlugin
+          .resolvePlatformSpecificImplementation<
+              AndroidFlutterLocalNotificationsPlugin>()
+          ?.requestPermission();
+    }
+
+    //
+  } catch (e) {
+    debugPrint(e.toString());
   }
 }
 
@@ -146,14 +153,14 @@ class TimelyApp extends StatelessWidget {
             name: RoutePaths.testScreen,
             title: RouteNames.testScreen,
             page: () {
-              return TestScreen();
+              return const TestScreen();
             },
           ),
           GetPage(
             name: RoutePaths.readingScreen,
             title: RouteNames.readingScreen,
             page: () {
-              return ReadingScreen();
+              return const ReadingScreen();
             },
           ),
           GetPage(
@@ -167,7 +174,7 @@ class TimelyApp extends StatelessWidget {
             name: RoutePaths.editProfileScreen,
             title: RouteNames.editProfileScreen,
             page: () {
-              return EditProfileScreen();
+              return const EditProfileScreen();
             },
           ),
           GetPage(
