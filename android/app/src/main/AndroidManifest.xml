@@ -5,8 +5,6 @@
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
-            android:showWhenLocked="true"
-            android:turnScreenOn="true"
             android:name=".MainActivity"
             android:exported="true"
             android:launchMode="singleTop"
@@ -33,16 +31,4 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
-
-    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
-    <uses-permission android:name="android.permission.READ_CALENDAR" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-
-    <queries>
-        <intent>
-          <action android:name="android.intent.action.INSERT" />
-          <data android:mimeType="vnd.android.cursor.item/event" />
-        </intent>
-      </queries>
-
 </manifest>
