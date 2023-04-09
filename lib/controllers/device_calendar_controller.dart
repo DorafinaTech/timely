@@ -1,4 +1,3 @@
-import 'package:flutter_app_badger/flutter_app_badger.dart';
 import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/controllers/base_controller.dart';
 import 'package:add_2_calendar/add_2_calendar.dart';
@@ -38,8 +37,8 @@ class DeviceNotificationController extends BaseController {
 
     await Add2Calendar.addEvent2Cal(event);
 
-    if (await FlutterAppBadger.isAppBadgeSupported()) {
-      FlutterAppBadger.updateBadgeCount(1);
+    // if (await FlutterAppBadger.isAppBadgeSupported()) {
+    //   FlutterAppBadger.updateBadgeCount(1);
     }
   }
-}
+
