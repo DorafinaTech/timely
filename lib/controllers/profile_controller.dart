@@ -89,7 +89,7 @@ class ProfileController extends BaseController {
       _loadingController.stopLoading();
 
       debugPrint(e.toString());
-      // showErrorSnackbar('Unable to update prfile info at this time');
+      // showErrorSnackbar('Unable to update profile info at this time');
     }
   }
 
