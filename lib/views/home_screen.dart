@@ -3,9 +3,10 @@ import 'package:get/get.dart';
 import 'package:timely/components/popup_menu_buttons.dart';
 import 'package:timely/constants/menu_padding.dart';
 import 'package:timely/controllers/auth_controller.dart';
-import 'package:timely/controllers/loading_controller.dart';
 import 'package:timely/utilities/route_paths.dart';
 import 'package:timely/components/bottom_navigation.dart';
+
+import '../controllers/loading_controller.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    LoadingControler().stopLoading();
+    LoadingController().stopLoading();
 
     return Scaffold(
       bottomNavigationBar: const BottomNavigation(),
@@ -134,29 +135,29 @@ class HomeScreen extends StatelessWidget {
                     color: const Color(0xFFEEFCF9),
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: ListTile(
-                    trailing: const Icon(
-                      Icons.note_add,
-                      size: 50,
-                      color: Color(0xFF1C8E77),
-                    ),
-                    title: const Text(
-                      'Notes',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        fontFamily: 'Satoshi',
-                      ),
-                    ),
-                    onTap: () {
-                      Get.toNamed(RoutePaths.notescreen);
-                    },
-                    subtitle: const Text(
-                      'Save your thoughts',
-                      style: TextStyle(color: Colors.black54, fontSize: 14),
-                    ),
-                  ),
+                  // child: ListTile(
+                  //   trailing: const Icon(
+                  //     Icons.note_add,
+                  //     size: 50,
+                  //     color: Color(0xFF1C8E77),
+                  //   ),
+                  //   title: const Text(
+                  //     'Notes',
+                  //     style: TextStyle(
+                  //       color: Colors.black,
+                  //       fontWeight: FontWeight.bold,
+                  //       fontSize: 16,
+                  //       fontFamily: 'Satoshi',
+                  //     ),
+                  //   ),
+                  //   onTap: () {
+                  //     Get.toNamed(RoutePaths.notescreen);
+                  //   },
+                  //   subtitle: const Text(
+                  //     'Save your thoughts',
+                  //     style: TextStyle(color: Colors.black54, fontSize: 14),
+                  //   ),
+                  // ),
                 ),
               ]),
             )

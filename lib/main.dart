@@ -8,15 +8,11 @@ import 'package:timely/firebase_options.dart';
 import 'package:timely/utilities/get_primary_swatch.dart';
 import 'package:timely/utilities/route_names.dart';
 import 'package:timely/utilities/route_paths.dart';
-import 'package:timely/views/about.dart';
 import 'package:timely/views/confirm_password.dart';
 import 'package:timely/views/edit_profile_screen.dart';
 import 'package:timely/views/email_recovery.dart';
-import 'package:timely/views/exam_screen.dart';
 import 'package:timely/views/home_screen.dart';
 import 'package:timely/views/login.dart';
-import 'package:timely/views/new_note_screen.dart';
-import 'package:timely/views/notes.dart';
 import 'package:timely/views/onboarding.dart';
 import 'package:timely/views/onboarding1.dart';
 import 'package:timely/views/onboarding2.dart';
@@ -40,7 +36,7 @@ void main() async {
 
   requestNotificationPermission();
 
-  runApp(const TimelyApp());
+  runApp(const ReadingCompanion());
 }
 
 void requestNotificationPermission() async {
@@ -63,7 +59,7 @@ void requestNotificationPermission() async {
       flutterLocalNotificationsPlugin
           .resolvePlatformSpecificImplementation<
               AndroidFlutterLocalNotificationsPlugin>()
-          ?.requestPermission();
+          ?.requestExactAlarmsPermission();
     }
 
     //
@@ -72,8 +68,8 @@ void requestNotificationPermission() async {
   }
 }
 
-class TimelyApp extends StatelessWidget {
-  const TimelyApp({Key? key}) : super(key: key);
+class ReadingCompanion extends StatelessWidget {
+  const ReadingCompanion({Key? key}) : super(key: key);
 
   final splashScreen = const SplashScreen();
 
@@ -82,7 +78,7 @@ class TimelyApp extends StatelessWidget {
     return GlobalLoaderOverlay(
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Timely',
+        title: 'ReadingCompanion',
         initialRoute: RoutePaths.splash,
         getPages: [
           GetPage(
@@ -143,13 +139,6 @@ class TimelyApp extends StatelessWidget {
             },
           ),
           GetPage(
-            name: RoutePaths.examsScreen,
-            title: RouteNames.examsScreen,
-            page: () {
-              return const ExamScreen();
-            },
-          ),
-          GetPage(
             name: RoutePaths.testScreen,
             title: RouteNames.testScreen,
             page: () {
@@ -182,27 +171,6 @@ class TimelyApp extends StatelessWidget {
             title: RouteNames.calenderscreen,
             page: () {
               return CalendarScreen();
-            },
-          ),
-          GetPage(
-            name: RoutePaths.notescreen,
-            title: RouteNames.notescreen,
-            page: () {
-              return Notes();
-            },
-          ),
-          GetPage(
-            name: RoutePaths.newNoteScreen,
-            title: RouteNames.newNoteScreen,
-            page: () {
-              return NewNoteScreen();
-            },
-          ),
-          GetPage(
-            name: RoutePaths.aboutscreen,
-            title: RouteNames.aboutscreen,
-            page: () {
-              return const About();
             },
           ),
           GetPage(

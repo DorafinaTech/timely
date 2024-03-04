@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:timely/controllers/base_controller.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 
-class LoadingControler extends BaseController {
-  Future<void> startLoading() async {
+class LoadingController extends BaseController {
+  void startLoading() async {
     return Get.context?.loaderOverlay.show();
   }
 

@@ -38,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: Image.asset("assets/images/timely.gif"),
+            child: Image.asset("assets/images/reading.companion.png"),
           ),
         ],
       )),

@@ -1,1 +1,1 @@
-int primaryColorCode = 0XFF1C8E77;
+int primaryColorCode = 0XFFC5DAC9;

@@ -1,7 +1,8 @@
 import 'package:timely/controllers/auth_controller.dart';
 import 'package:timely/controllers/base_controller.dart';
-import 'package:add_2_calendar/add_2_calendar.dart';
 import 'package:get/get.dart';
+import 'package:add_2_calendar/add_2_calendar.dart';
+import 'package:calendar_view/calendar_view.dart';
 
 class DeviceNotificationController extends BaseController {
   final AuthController _authController =
@@ -26,7 +27,7 @@ class DeviceNotificationController extends BaseController {
             hours: timeDifference
                 .inHours), // on iOS, you can set alarm notification after your event.
         url:
-            'https://gettimelyapp.com', // on iOS, you can set url to your event.
+            'https://getreading_companion.com', // on iOS, you can set url to your event.
       ),
       androidParams: AndroidParams(
         emailInvites: [
@@ -39,6 +40,5 @@ class DeviceNotificationController extends BaseController {
 
     // if (await FlutterAppBadger.isAppBadgeSupported()) {
     //   FlutterAppBadger.updateBadgeCount(1);
-    }
   }
-
+}
