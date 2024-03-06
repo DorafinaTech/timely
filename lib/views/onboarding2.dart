@@ -21,7 +21,7 @@ class Onboarding2 extends StatelessWidget {
             child: Text(
               "Every moment should count, So make a TimeTable for that here",
               style: TextStyle(
-                  color: Colors.teal,
+                  color: Color(0xFFC5DAC9),
                   fontSize: 20,
                   fontFamily: "Satoshi",
                   fontWeight: FontWeight.w100),

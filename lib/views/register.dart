@@ -190,12 +190,12 @@ class RegisterState extends State<Register> {
                       child: ElevatedButton(
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
-                            LoadingControler().startLoading();
+                            LoadingController().startLoading();
 
                             if (_passwordController.value.text.trim() !=
                                 _confirmPasswordController.value.text.trim()) {
                               showErrorSnackbar('Password must match');
-                              LoadingControler().stopLoading();
+                              LoadingController().stopLoading();
                             }
 
                             AuthController()
@@ -209,7 +209,7 @@ class RegisterState extends State<Register> {
                                 Get.toNamed(RoutePaths.homeScreen);
                               }
                             }).catchError((error) {
-                              LoadingControler().stopLoading();
+                              LoadingController().stopLoading();
 
                               showErrorSnackbar("Sign in failed");
                               if (kDebugMode) {

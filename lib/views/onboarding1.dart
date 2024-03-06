@@ -27,7 +27,7 @@ class Onboarding1 extends StatelessWidget {
             child: Text(
               "Get to schedule yourself for your school dealings",
               style: TextStyle(
-                  color: Colors.teal,
+                  color: Color(0xFFC5DAC9),
                   fontSize: 20,
                   fontFamily: "Satoshi",
                   fontWeight: FontWeight.w100),

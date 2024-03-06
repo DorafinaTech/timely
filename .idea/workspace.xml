@@ -10,16 +10,73 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87ff8109-a765-434f-aea1-98d9d984d7e8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/images/reading-companion.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/google-services.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/kotlin/com/gettimelyapp/mobile/timely/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/profile/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/profile/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/new_exam_bottom_sheet.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/new_test_bottom_sheet.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/new_test_bottom_sheet.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/popup_menu_buttons.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/popup_menu_buttons.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/task_screen2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/task_screen2.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constants/primary_color.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants/primary_color.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/device_calendar_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/device_calendar_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/exam_controller.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/loading_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/loading_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/note_controller.dart" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/controllers/profile_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/profile_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/exams_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/notemodel.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/about.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/add_exams_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/exam_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/new_note_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/notes.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/onboarding.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/onboarding.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/onboarding1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/onboarding1.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/onboarding2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/onboarding2.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/otp_number.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/register.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/register.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/splash_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/update_note.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/ephemeral/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/ephemeral/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/widget_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -54,16 +111,23 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
     "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "master",
     "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "C:/Users/USER/AndroidStudioProjects/reading_companion/assets/images",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\AndroidStudioProjects\reading_companion\assets\images" />
       <recent name="C:\Users\USER\AndroidStudioProjects\timely\lib\models" />
       <recent name="C:\Users\USER\AndroidStudioProjects\timely\lib\controllers" />
       <recent name="C:\Users\USER\AndroidStudioProjects\timely\lib\Widgets" />
@@ -96,16 +160,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/views/new_note_screen.dart</url>
-          <line>152</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

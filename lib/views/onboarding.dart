@@ -24,7 +24,7 @@ class _OnboardingState extends State<Onboarding> {
             const Center(
               child: Text(
                 "Let's get started",
-                style: TextStyle(color: Colors.teal, fontSize: 20),
+                style: TextStyle(color: Color(0xFFC5DAC9), fontSize: 20),
               ),
             ),
             Container(
@@ -46,7 +46,7 @@ class _OnboardingState extends State<Onboarding> {
                     ),
                   ),
                   maximumSize: const Size(double.infinity, 100),
-                  backgroundColor: Colors.teal,
+                  backgroundColor: const Color(0xFFC5DAC9),
                   side: const BorderSide(
                     color: Colors.teal,
                   ),
@@ -85,13 +85,13 @@ class _OnboardingState extends State<Onboarding> {
                   maximumSize: const Size(double.infinity, 100),
                   backgroundColor: Colors.white,
                   side: const BorderSide(
-                    color: Colors.teal,
+                    color: Color(0xFFC5DAC9),
                   ),
                 ),
                 child: const Text(
                   'Register',
                   style: TextStyle(
-                    color: Colors.teal,
+                    color: Color(0xFFC5DAC9),
                   ),
                 ),
               ),

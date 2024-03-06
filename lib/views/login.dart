@@ -84,7 +84,7 @@ class LoginState extends State<Login> {
                         hintStyle: const TextStyle(color: Colors.black54),
                         border: const OutlineInputBorder(),
                         suffixIcon: IconButton(
-                          color: Colors.teal.shade200,
+                          color: const Color(0xFFC5DAC9),
                           icon: Icon(passwordVisible
                               ? Icons.visibility
                               : Icons.visibility_off),
@@ -124,7 +124,7 @@ class LoginState extends State<Login> {
                     child: ElevatedButton(
                       onPressed: () async {
                         if (_formKey.currentState!.validate()) {
-                          LoadingControler().startLoading();
+                          LoadingController().startLoading();
 
                           var userMessage = "";
 
@@ -134,18 +134,18 @@ class LoginState extends State<Login> {
                                   _passwordController.value.text.trim())
                               .then((value) {
                             if (value) {
-                              LoadingControler().stopLoading();
+                              LoadingController().stopLoading();
                               Get.offAllNamed(RoutePaths.homeScreen);
 
                               userMessage = "Login in successfully";
                               debugPrint(userMessage);
                             } else {
-                              LoadingControler().stopLoading();
+                              LoadingController().stopLoading();
                               showErrorSnackbar(
                                   "Login failed, Something went wrong");
                             }
                           }).onError((error, stackTrace) {
-                            LoadingControler().stopLoading();
+                            LoadingController().stopLoading();
 
                             userMessage = "Login failed, $error";
                             showSnackbar("Oops", userMessage);

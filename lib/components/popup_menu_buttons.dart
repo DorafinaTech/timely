@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:timely/utilities/route_paths.dart';
-import 'package:timely/views/about.dart';
 
 class MenuButton extends StatelessWidget {
   const MenuButton({Key? key, required this.popupColor}) : super(key: key);
@@ -78,11 +77,11 @@ class MenuButton extends StatelessWidget {
             ),
             GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const About(),
-                      ));
+                  // Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //       builder: (context) => const About(),
+                  //     ));
                 },
                 child: const Text("About",
                     style: TextStyle(

@@ -10,13 +10,15 @@ import 'package:image_picker/image_picker.dart';
 import 'package:get/get.dart';
 import 'package:timely/utilities/show_snackbar.dart';
 
+import 'base_controller.dart';
+
 class ProfileController extends BaseController {
   var currentProfilePictureURL =
       'https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o='
           .obs;
 
-  final LoadingControler _loadingController =
-      Get.put<LoadingControler>(LoadingControler());
+  final LoadingController _loadingController =
+      Get.put<LoadingController>(LoadingController());
 
   final AuthController _authController =
       Get.put<AuthController>(AuthController());
@@ -26,7 +28,7 @@ class ProfileController extends BaseController {
     getBioData().then((bioData) {
       currentProfilePictureURL.value = bioData['photoURL'];
       debugPrint('Profile getxController has been initialized');
-      update();
+      updateProfilePicture();
     });
 
     return super.onReady();
@@ -38,7 +40,7 @@ class ProfileController extends BaseController {
       var pickedImageFile =
           await imagePicker.pickImage(source: ImageSource.gallery);
 
-      await _loadingController.startLoading();
+      _loadingController.startLoading();
 
       await FirebaseStorage.instance
           .ref('profilePictures/${_authController.currentUser.value?.uid}')
@@ -53,7 +55,7 @@ class ProfileController extends BaseController {
         await FirebaseAuth.instance.currentUser!.updatePhotoURL(downloadURL);
         currentProfilePictureURL.value = downloadURL;
         _authController.update();
-        update();
+        updateProfilePicture();
 
         debugPrint('Updated');
 
@@ -89,7 +91,6 @@ class ProfileController extends BaseController {
       _loadingController.stopLoading();
 
       debugPrint(e.toString());
-      // showErrorSnackbar('Unable to update profile info at this time');
     }
   }
 
